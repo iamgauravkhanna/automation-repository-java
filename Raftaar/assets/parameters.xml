@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+	<parameter>
+		<name>trustStoreType</name>
+		<value>JKS</value>
+	</parameter>
+	<parameter>
+		<name>keyStore</name>
+		<value>assets/client.p12</value>
+	</parameter>
+	<parameter>
+		<name>keyStorePassword</name>
+		<value>TEST</value>
+	</parameter>
+	<parameter>
+		<name>keyStoreType</name>
+		<value>PKCS12</value>
+	</parameter>
+	<parameter>
+		<name>u_zipCode</name>
+		<value>18017</value>
+	</parameter>
+</config>
