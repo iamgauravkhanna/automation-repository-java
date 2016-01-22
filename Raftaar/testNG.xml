@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My First Test Suite">
+	<test name="My First Test">
+		<parameter name="browser" value="Firefox" />		
+		<classes>
+			<class name="raftaar.testautomation.testcases.UITests" />
+		</classes>
+	</test>
+</suite>
