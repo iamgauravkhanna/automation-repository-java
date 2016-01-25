@@ -95,9 +95,12 @@ public class TestDriver {
 			 * testCaseId, loc, value, testCaseId, testCaseId, testCaseId);
 			 */
 
-			System.out.println("Executing STEP : " + c + "\n");
-
-			tm.runTestStep(a, b, c, d, e1, f, g, h, i);
+			if (!(i.contains("{skip}"))) {
+				System.out.println("Executing STEP : " + c + "\n");
+				tm.runTestStep(a, b, c, d, e1, f, g, h, i);
+			} else {
+				System.out.println("Skipping Test Step");
+			}
 
 			// System.out.println(myHashMapObj.keySet());
 
@@ -112,17 +115,18 @@ public class TestDriver {
 
 		for (int i = 0; i < SheetCount; i++) {
 
-			//System.out.println("Sheet Count : " + i);
+			// System.out.println("Sheet Count : " + i);
 
 			sheetName = excelFile.getSheetName(i);
 
-			//System.out.println("Sheet Name : " + sheetName);
+			// System.out.println("Sheet Name : " + sheetName);
 
 			if (sheetName.equals("Sheet1")) {
 
-				//System.out.println("Test Sheet Found");
+				// System.out.println("Test Sheet Found");
 
-				//System.out.println("Total Number of Rows in Excel : " + excelFile.getRowCount(sheetName));
+				// System.out.println("Total Number of Rows in Excel : " +
+				// excelFile.getRowCount(sheetName));
 
 				int o = 0;
 
@@ -153,7 +157,8 @@ public class TestDriver {
 					if ((!(j == 2))) {
 						if ((!(testcaseid.isEmpty()))) {
 							baseTestCaseID = testcaseid;
-							//System.out.println("New Test Case Found at row number : " + j);
+							// System.out.println("New Test Case Found at row
+							// number : " + j);
 							o = 0;
 							testCaseDetails = new HashMap<>();
 
@@ -171,13 +176,14 @@ public class TestDriver {
 					testStepDetails.put("iterations", iterations);
 					testStepDetails.put("flags", flags);
 
-					//System.out.println("Row Number : " + j);
+					// System.out.println("Row Number : " + j);
 
-					//System.out.println("TEST STEP Details Info : " + testStepDetails.toString() + "\n");
+					// System.out.println("TEST STEP Details Info : " +
+					// testStepDetails.toString() + "\n");
 
-					//System.out.println("Putting Value in HashMap");
+					// System.out.println("Putting Value in HashMap");
 
-					//System.out.println("Value of Step Number : " + o);
+					// System.out.println("Value of Step Number : " + o);
 
 					testCaseDetails.put(o, testStepDetails);
 
@@ -189,15 +195,17 @@ public class TestDriver {
 
 					o++;
 				}
-			//	System.out.println("Inner For Loop is Complete");
+				// System.out.println("Inner For Loop is Complete");
 			}
 
-		//	System.out.println("Outer For Loop is Complete");
+			// System.out.println("Outer For Loop is Complete");
 
 		}
-		//System.out.println("TEST CASE Details Info : " + testCaseDetails.toString() + "\n");
+		// System.out.println("TEST CASE Details Info : " +
+		// testCaseDetails.toString() + "\n");
 
-		//System.out.println("TEST CASE Info : " + testCases.toString() + "\n");
+		// System.out.println("TEST CASE Info : " + testCases.toString() +
+		// "\n");
 		return testCases;
 
 	}

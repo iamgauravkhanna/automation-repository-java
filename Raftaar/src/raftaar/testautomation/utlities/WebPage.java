@@ -9,6 +9,7 @@ package raftaar.testautomation.utlities;
  */
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -39,8 +40,11 @@ public class WebPage {
 	public static String highlightColor = "#00ff00 solid 3px";
 	public static String originalColor = "none";
 	public By loc;
+	public int elementWaitTime = 10; // timeout value in second while waiting
+										// for an element to appear DISPLAYED
 
-	public String ExecuteKeyword(String action, String parent, String object, String data) throws InterruptedException {
+	public String ExecuteKeyword(String action, String parent, String object, String data)
+			throws InterruptedException, TimeoutException {
 
 		StepOutcome = "NULL";
 
@@ -73,7 +77,7 @@ public class WebPage {
 
 		case "openBrowser":
 
-			openBrowser(data);
+			openBrowser(TestManager.MyDataDicitonary.get("browser"));
 			StepOutcome = "Opening Browser";
 			break;
 
@@ -196,6 +200,35 @@ public class WebPage {
 			int data3 = (int) Double.parseDouble(data);
 			WebDriverWait wait = new WebDriverWait(driver, data3);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
+
+			break;
+
+		case "waitForNot":
+			Long startTime = System.currentTimeMillis();
+			// int originalWaitTime = Integer.parseInt(data);
+			int originalWaitTime = elementWaitTime;
+			elementWaitTime = originalWaitTime / 10;
+			boolean isDisplayed = true;
+			do {
+				try {
+					isDisplayed = e.isDisplayed();
+				} catch (Exception e) {
+					isDisplayed = false;
+					break;
+				}
+
+			} while (isDisplayed && (System.currentTimeMillis() - startTime) < originalWaitTime * 1000);
+
+			elementWaitTime = originalWaitTime;
+			// d.manage().timeouts().implicitlyWait(elementWaitTime,
+			// TimeUnit.SECONDS);
+
+			if (!isDisplayed)
+				System.out.println("Time Is : " + (int) ((System.currentTimeMillis() - startTime) / 1000));
+			else
+				throw new TimeoutException("Object didn't disappear even after timeout of " + data + " seconds.");
+
+			StepOutcome = "Wait For Not Element";
 			break;
 
 		case "scrollDown":
@@ -261,13 +294,13 @@ public class WebPage {
 			if (browserName.equalsIgnoreCase("firefox")) {
 				driver = new FirefoxDriver();
 			} else if (browserName.equalsIgnoreCase("chrome")) {
-				String chromepath = "C:\\GK\\Selenium\\NewLib\\drivers\\chromedriver.exe";
+				String chromepath = System.getProperty("user.dir") + "\\lib\\drivers\\chromedriver.exe";
 				System.setProperty("webdriver.chrome.driver", chromepath);
 				driver = new ChromeDriver();
 			} else if (browserName.equalsIgnoreCase("ie")) {
 				// String iepath = System.getProperty("user.dir") +
 				// "\\drivers\\IEDriverServer.exe";
-				String iepath = "C:\\GK\\Selenium\\NewLib\\drivers\\IEDriverServer.exe";
+				String iepath = System.getProperty("user.dir") + "\\lib\\drivers\\IEDriverServer.exe";
 				System.setProperty("webdriver.ie.driver", iepath);
 				// driver = new InternetExplorerDriver();
 				DesiredCapabilities caps = DesiredCapabilities.internetExplorer();

@@ -359,11 +359,16 @@ public class XmlUtils {
 
 		String xmlPath = System.getProperty("user.dir") + "\\assets\\parameters.xml";
 		
+		if(xmlPath.isEmpty())
+		{
+			System.out.println("File Not Found");
+		}
+		
 		Document document = builder.parse(new File(xmlPath));
 		
 		Element rootElement = document.getDocumentElement();
 		
-		System.out.println(rootElement);
+		System.out.println("Root Element Is : " + rootElement);
 		
 		NodeList list = rootElement.getElementsByTagName("parameter");
 		
