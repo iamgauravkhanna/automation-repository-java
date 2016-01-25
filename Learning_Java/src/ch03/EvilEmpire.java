@@ -1,3 +1,5 @@
+package ch03;
+
 //file: EvilEmpire.java
 import java.net.*;
 
