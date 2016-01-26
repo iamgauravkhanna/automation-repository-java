@@ -1,0 +1,16 @@
+Framework Check List :
+
+- Building XLS File Having Test Cases and Keywords
+- Building XLS File Having Test Data
+- Building Base class
+- Reading XPATHS, Configuration from properties file
+- Implementing WebdriverWait
+- Implementing the keywords using the reflection API
+- Implementing tests
+- Assertions and Reporting Errors
+- Parameterizing tests using DataProvider and XLS Files
+- Repeating a test with different Data
+- Running the framework through ANT
+- Generating the reports
+- Emailing test reports
+- Creating a BAT file for project execution
