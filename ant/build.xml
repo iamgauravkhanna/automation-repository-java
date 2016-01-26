@@ -1,0 +1,45 @@
+<project name="selenium" basedir=".">
+
+	<property environment="env" />
+	<property name="src" location="src1" />
+	<property name="build" location="build" />
+	<property name="libs" location="lib" />
+	<property name="testresults" location="junit-results1" />
+	<property name="testreport" location="junit-report1" />
+
+	<path id="junit.class.path">
+		<pathelement location="${libs}/junit-4.8.1.jar" />
+		<pathelement location="${libs}/selenium-java-client-driver.jar" />
+		<pathelement location="${libs}/selenium-server.jar" />
+		<pathelement location="${build}" />
+	</path>
+
+	<target name="makedir">
+		<mkdir dir="${build}" />
+		<mkdir dir="${testresults}" />
+		<mkdir dir="${testreport}" />
+	</target>
+
+	<target name="compile">
+		<javac srcdir="${src}" destdir="${build}" debug="true" includeAntRuntime="false">
+			<classpath refid="junit.class.path" />
+		</javac>
+	</target>
+
+	<target name="run_junit_tests_requiring_server_started">
+		<antcall target="start-selenium-server" />
+		<junit printsummary="yes" fork="yes" errorproperty="junit.error" failureproperty="junit.error">
+			<classpath refid="junit.class.path" />
+			<formatter type="xml" />
+			<test todir="${testresults}" name="com.eviltester.seleniumtutorials.MyFirstSeleniumTests" />
+			<test todir="${testresults}" name="com.eviltester.seleniumtutorials.MySecondSeleniumTests" />
+			<test todir="${testresults}" name="com.eviltester.seleniumtutorials.chap18.HTML_form_tests" />
+			<test todir="${testresults}" name="com.eviltester.seleniumtutorials.chap19.Static_HTML_tests" />
+			<test todir="${testresults}" name="com.eviltester.seleniumtutorials.chap20.JavaScript_With_Selenium_Tests" />
+		</junit>
+		<antcall target="report-junit" />
+		<antcall target="stop-selenium-server" />
+		<fail if="junit.error" message="Selenium test(s) failed. See reports!" />
+	</target>
+
+</project>
