@@ -1,12 +1,20 @@
 package raftaar.testautomation.manager;
 
 import java.util.HashMap;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+
+import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.ExcelUtils;
 
 public class TestDriver {
 
 	public ExcelUtils excelFile = new ExcelUtils(System.getProperty("user.dir") + "\\assets\\testcase.xlsx");
+
+	//Logger log = Logger.getLogger("TestDriver");
+	//configure log4j properties file
 
 	public int SheetCount;
 	public String sheetName;
@@ -64,6 +72,9 @@ public class TestDriver {
 	}
 
 	public void readTestCase(String testCaseId) throws Exception {
+		
+		//configure log4j properties file
+	    //PropertyConfigurator.configure("Log4j.properties");
 
 		HashMap<String, HashMap<Integer, HashMap<String, String>>> myHashMap = createTestCaseMap();
 
@@ -96,10 +107,13 @@ public class TestDriver {
 			 */
 
 			if (!(i.contains("{skip}"))) {
-				System.out.println("Executing STEP : " + c + "\n");
+				
+				UITests.log.info("Executing STEP : " + c + "\n");
+				//System.out.println("Executing STEP : " + c + "\n");
 				tm.runTestStep(a, b, c, d, e1, f, g, h, i);
 			} else {
-				System.out.println("Skipping Test Step");
+				UITests.log.info("Skipping Test Step");
+				//System.out.println("Skipping Test Step");
 			}
 
 			// System.out.println(myHashMapObj.keySet());
@@ -110,6 +124,9 @@ public class TestDriver {
 
 	public HashMap<String, HashMap<Integer, HashMap<String, String>>> createTestCaseMap() throws Exception {
 
+		//configure log4j properties file
+	    //PropertyConfigurator.configure("Log4j.properties");
+		
 		// System.out.println("Sheet Count : " + excelFile.getSheetCount());
 		SheetCount = excelFile.getSheetCount();
 

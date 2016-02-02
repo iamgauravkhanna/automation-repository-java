@@ -6,7 +6,11 @@ package raftaar.testautomation.manager;
 
 import java.util.HashMap;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+
+import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.JavaUtils;
 import raftaar.testautomation.utlities.WebPage;
 
@@ -29,6 +33,7 @@ public class TestManager {
 	public String iterations;
 	public String flags;
 	public String parent;
+	//Logger log = Logger.getLogger("TestManager");
 	WebPage d = new WebPage();
 	// static final Logger logger =
 	// LogManager.getLogger(TestRunner.class.getName());
@@ -47,6 +52,9 @@ public class TestManager {
 	public void runTestStep(String testcaseid, String summary, String description, String parent, String object,
 			String action, String data, String iterations, String flags) throws Exception {
 
+		//configure log4j properties file
+	    PropertyConfigurator.configure("Log4j.properties");
+		
 		// System.out.println(tsid);
 		// System.out.println(testid);
 		// System.out.println(description);
@@ -88,7 +96,8 @@ public class TestManager {
 		stepJsonMetaInfo.put("flags", flags);
 		// TestCase.put(1, stepJsonMetaInfo);
 
-		System.out.println("STEP Meta Info : " + stepJsonMetaInfo.toString() + "\n");
+		UITests.log.info("STEP Meta Info : " + stepJsonMetaInfo.toString() + "\n");
+		//System.out.println("STEP Meta Info : " + stepJsonMetaInfo.toString() + "\n");
 		// System.out.println("Test Case Info : " + TestCase.toString() + "\n");
 
 		// Log.info("STEP Meta Info : " + stepJsonMetaInfo.toString() + "\n");
@@ -103,7 +112,8 @@ public class TestManager {
 
 		StepOutcome = d.ExecuteKeyword(action, parent, object, data);
 		
-		System.out.println("Step Outcome : " + StepOutcome + "\n");
+		UITests.log.info("Step Outcome : " + StepOutcome + "\n");
+		//System.out.println("Step Outcome : " + StepOutcome + "\n");
 
 	}
 
