@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="My First Test Suite">
 	<test name="My First Test">
-		<parameter name="browser" value="Chrome" />		
+		<parameter name="browser" value="Firefox" />		
 		<parameter name="testcaseid" value="Test.Case.001" />
 		<classes>
 			<class name="raftaar.testautomation.testcases.UITests" />
