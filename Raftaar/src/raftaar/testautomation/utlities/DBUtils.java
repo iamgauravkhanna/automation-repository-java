@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -27,11 +28,16 @@ public class DBUtils {
 	// Database credentials
 	static final String USER = "PHIX_QA08_001_REPLICA";
 	static final String PASS = "pr1vate";
+	static String [] columns = null;
+	static HashMap<String, String> dataMap = new HashMap<>();
+		static int rowCount = 0;
+		static int i = 0;
+		
+		static ResultSet result = null;
+		static ResultSetMetaData resultInfo;
 
-	public static void runSelectQuery(String FileLocation) throws Exception {
+	public static int runSelectQuery(String FileLocation) throws Exception {
 
-		try
-		{
 		Connection conn = null;
 		Statement stmt = null;
 		String connectionString= null;
@@ -84,23 +90,61 @@ public class DBUtils {
 		
 		UITests.log.info("Success");
 		
-		ResultSetMetaData rsmd = rs.getMetaData();
-		int col = rsmd.getColumnCount();
+		//ResultSetMetaData rsmd = rs.getMetaData();
+		resultInfo = rs.getMetaData();
+		//int col = rsmd.getColumnCount();
 		
-		System.out.println("Coloumn Count : " +  col);
-		
+		//System.out.println("Coloumn Count : " +  col);
+/*		
 	
 		for (int i = 1 ; i <= col ; i++){
-			
 			String arg1 = rsmd.getColumnName(i);
 			System.out.println("args 1 : " + arg1);
-			//String arg2 = rs.getString(0);
+			//String arg2 = rs.getString(arg1);
 			//System.out.println("args 2 : " + arg2);
-			//TestManager.MyDataDicitonary.put(arg1, arg2);			
+			//TestManager.MyDataDicitonary.put(arg1, arg2);
+			//}
+			columns[i] = arg1; 			
 		}
 
+		for( int u = 0; u <= columns.length - 1; u++)
+		{
+		    // get element number 0 and 1 and put it in a variable, 
+		    // and the next time get element      1 and 2 and put this in another variable. 
+			TestManager.MyDataDicitonary.put(columns[u], rs.getString(columns[u]));
+		}*/
 		
-		UITests.log.info("Result Set Meta Data : " + rsmd + "\n");
+		
+
+			dataMap.put("db_column_count", Integer.toString(resultInfo.getColumnCount()));
+			System.out.println("resultInfo : " + resultInfo.getColumnCount());
+			while (rs.next())
+			{
+				rowCount++;
+				int rowNo = rs.getRow();
+				
+				System.out.println("Row Count");
+
+				for (i = 1; i <= resultInfo.getColumnCount(); i++)
+				{
+					String columnName = resultInfo.getColumnLabel(i).toLowerCase();
+					String value = "";
+
+					if (resultInfo.getColumnTypeName(i).equalsIgnoreCase("SYS.XMLTYPE"))
+						value = rs.getSQLXML(i).getString();
+					else
+						value = rs.getString(i);
+
+					//if (value == null) value = "NULL";
+					
+					System.out.println(value);
+					TestManager.MyDataDicitonary.put(columnName, value);
+					UITests.log.info("Putting columnName as : " + columnName + " and value as : " + value);
+
+				}
+			}
+		
+		//UITests.log.info("Result Set Meta Data : " + rsmd + "\n");
 		
 		// Select all records having ID equal or greater than 101
 /*		System.out.println("Fetching records with condition...");
@@ -122,21 +166,11 @@ public class DBUtils {
 		}*/
 		rs.close();
 
-		if (stmt != null)
-			conn.close();
+		return i-1;
+				}
 
-		try {
-			if (conn != null)
-				conn.close();
-		} catch (SQLException se) {
-			se.printStackTrace();
-		}
-		}catch
-		(Exception e) {
-	        UITests.log.info(e);
-	    }
+
 		
-	}
 
 	/**
 	 * Creates a connection to the database. It will try upto 10 times if there are exceptions connecting to database server.

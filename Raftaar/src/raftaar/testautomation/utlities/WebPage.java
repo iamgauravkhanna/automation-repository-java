@@ -11,6 +11,10 @@ package raftaar.testautomation.utlities;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -182,11 +186,20 @@ public class WebPage {
 			driver.getPageSource();
 			break;
 
-		case "runjavascript":
+		case "runJavaScript":
 			System.out.println("Run JavaScript");
-			JavascriptExecutor js;
-			js = (JavascriptExecutor) driver;
-			js.executeScript(data);
+			
+			ScriptEngineManager factory = new ScriptEngineManager();
+			ScriptEngine engine = factory.getEngineByName("JavaScript");
+			try {
+				StepOutcome = (String) engine.eval(data);
+			} catch (ScriptException e) {
+				e.printStackTrace();
+			}
+			
+			//JavascriptExecutor js;
+			//js = (JavascriptExecutor) driver;
+			//js.executeScript(data);
 			// System.out.println("Step Outcome : "+ StepOutcome);
 			// System.out.println("Java Script Executed");
 			break;
@@ -261,7 +274,8 @@ public class WebPage {
 		case "runSelectQuery":
 			//System.out.println("DB Method");
 			UITests.log.info("Running DB Query Method");
-			DBUtils.runSelectQuery(data);			
+			int count = DBUtils.runSelectQuery(data);
+			StepOutcome = count + " Coloumns Fetched ";
 		break;
 		}
 		
