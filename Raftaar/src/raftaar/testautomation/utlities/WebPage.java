@@ -11,6 +11,7 @@ package raftaar.testautomation.utlities;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -27,6 +28,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import raftaar.testautomation.manager.TestManager;
+import raftaar.testautomation.testcases.UITests;
 
 public class WebPage {
 
@@ -42,9 +44,11 @@ public class WebPage {
 	public By loc;
 	public int elementWaitTime = 10; // timeout value in second while waiting
 										// for an element to appear DISPLAYED
+	
+	public static Logger log = Logger.getLogger(WebPage.class);
 
 	public String ExecuteKeyword(String action, String parent, String object, String data)
-			throws InterruptedException, TimeoutException {
+			throws Exception {
 
 		StepOutcome = "NULL";
 
@@ -251,10 +255,16 @@ public class WebPage {
 			for (Character c : data.toCharArray()) {
 				driver.findElement(loc).sendKeys(c.toString());
 				// System.out.println("Character " + c);
-			}
+			}	
 			break;
+			
+		case "runSelectQuery":
+			//System.out.println("DB Method");
+			UITests.log.info("Running DB Query Method");
+			DBUtils.runSelectQuery(data);			
+		break;
 		}
-
+		
 		return StepOutcome;
 	}
 
