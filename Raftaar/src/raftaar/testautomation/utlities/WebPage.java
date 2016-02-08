@@ -1,5 +1,7 @@
 package raftaar.testautomation.utlities;
 
+import java.util.Set;
+
 /**
  * 
  * This class represents handling all possible methods on web page in a browser
@@ -271,6 +273,54 @@ public class WebPage {
 			}	
 			break;
 			
+		case "switchBrowser":
+			// System.out.println("Type Keys");
+			//for (Character c : data.toCharArray()) {
+				//driver.findElement(loc).sendKeys(c.toString());
+				// System.out.println("Character " + c);
+			//}
+/*			String handle= driver.getWindowHandle();
+			System.out.println("Printing Window Handle : " + handle + "Current Url : " + driver.getCurrentUrl());
+			// Store and Print the name of all the windows open	              			 
+	        Set handles = driver.getWindowHandles();
+	        System.out.println("Printing Window Handles : " + handles + "Current Url : " + driver.getCurrentUrl());
+	        
+	        // Pass a window handle to the other window
+ 
+	        for (String handle1 : driver.getWindowHandles()) {
+ 
+	        	System.out.println("Printing Window Handle in Loop : " + handle1);
+ 
+	        	driver.switchTo().window(handle1);*/
+ 
+		     //parentWindowHandle = WebDriverInitialize.getDriver().getWindowHandle(); // save the current window handle.
+	        WebDriver popup = null;
+	        Set<String> windowIterator = driver.getWindowHandles();
+	        System.err.println("No of windows :  " + windowIterator.size());
+	        for (String s : windowIterator) {
+	          String windowHandle = s; 
+	          popup = driver.switchTo().window(windowHandle);
+	          System.out.println("Window Title : " + popup.getTitle());
+	          System.out.println("Window Url : " + popup.getCurrentUrl());
+	          if (popup.getTitle().equalsIgnoreCase(data) ){
+	              System.out.println("Selected Window Title : " + popup.getTitle());
+	              
+	          }
+
+	        }
+	                System.out.println("Window Title :" + popup.getTitle());
+	                System.out.println();
+	            //return popup;
+			
+			
+/*			 for(String winHandle : driver.getWindowHandles()){
+		          driver.switchTo().window(winHandle);
+		        }
+		       System.out.println("Title of the page after - switchingTo: " + driver.getTitle());*/
+	        	
+			
+			break;
+			
 		case "runSelectQuery":
 			//System.out.println("DB Method");
 			UITests.log.info("Running DB Query Method");
@@ -315,7 +365,7 @@ public class WebPage {
 
 	public void openBrowser(String browserName) {
 		try {
-			if (browserName.equalsIgnoreCase("firefox")) {
+			if (browserName.equalsIgnoreCase("firefox")) {				
 				driver = new FirefoxDriver();
 			} else if (browserName.equalsIgnoreCase("chrome")) {
 				String chromepath = System.getProperty("user.dir") + "\\lib\\drivers\\chromedriver.exe";
