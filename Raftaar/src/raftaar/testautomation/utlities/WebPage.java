@@ -59,6 +59,8 @@ public class WebPage {
 		StepOutcome = "NULL";
 
 		value = null;
+		
+		System.out.println("Object : " + object);
 
 		if (object.contains("=") && !(object.isEmpty())) {
 			locatorType = object.split("=")[0].toLowerCase().trim();
@@ -75,10 +77,10 @@ public class WebPage {
 		}
 
 		if (loc == null) {
-			// System.out.println("Oops Locator Is Null");
+			 System.out.println("Oops Locator Is Null");
 		} else {
 			e = what(driver, loc);
-			// System.out.println("Got the Element");
+			 System.out.println("Got the Element");
 		}
 
 		// System.out.println("Action is : " + action);
@@ -175,7 +177,8 @@ public class WebPage {
 
 		case "getPageUrl":
 			// System.out.println("Get Current Page URL");
-			driver.getCurrentUrl();
+			String url = driver.getCurrentUrl();
+			TestManager.MyDataDicitonary.put(data, url);
 			break;
 
 		case "getPageTitle":
@@ -195,6 +198,7 @@ public class WebPage {
 			ScriptEngine engine = factory.getEngineByName("JavaScript");
 			try {
 				StepOutcome = (String) engine.eval(data);
+				TestManager.MyDataDicitonary.put(data, StepOutcome);
 			} catch (ScriptException e) {
 				e.printStackTrace();
 			}
@@ -424,11 +428,11 @@ public class WebPage {
 
 		// System.out.println("WTF");
 
-		// System.out.println("locator is : " + locator);
+		 System.out.println("locator is : " + locator);
 
 		element = driver.findElement(locator);
 
-		// System.out.println("Element is : " + element);
+		 System.out.println("Element is : " + element);
 
 		fnHighlightMe(driver, element);
 

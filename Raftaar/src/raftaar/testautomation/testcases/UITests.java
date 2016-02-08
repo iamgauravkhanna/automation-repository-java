@@ -1,6 +1,9 @@
 package raftaar.testautomation.testcases;
 
+import java.util.Map.Entry;
+
 import org.apache.log4j.Logger;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -35,4 +38,19 @@ public class UITests {
 		myDriver.runTestCase(TestManager.MyDataDicitonary.get("testcaseid"));
 	}
 
+	@AfterClass
+	public void afterMethod(){
+		
+		System.out.println("----------------------------------------");
+		
+		System.out.println(" Key : Value ");
+		
+		for (Entry<String, String> entry : TestManager.MyDataDicitonary.entrySet()) {
+			System.out.println("----------------------------------------");
+			
+		    System.out.println(entry.getKey()+" : "+entry.getValue());
+		}
+		
+	}
+	
 }
