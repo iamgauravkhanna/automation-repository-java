@@ -24,8 +24,8 @@ Raftaar_Version_0.2
 Date : 1st - 29th Feb 2016
 
 - Reporting - Storing logs in log file
-- Others : Take Screenshots, Save HTML files
 - DB : Development of DB Utilities to fetch/insert data into database
+- Others : Take Screenshots, Save HTML files
 - Selenium Grid - Provision to run test on Selenium Grid or on local
 
 Raftaar_Version_0.3
