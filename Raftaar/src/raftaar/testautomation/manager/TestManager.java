@@ -1,14 +1,21 @@
 package raftaar.testautomation.manager;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *  @author Gaurav Khanna
  */
 
 import java.util.HashMap;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.JavaUtils;
@@ -117,4 +124,5 @@ public class TestManager {
 
 	}
 
+	
 }

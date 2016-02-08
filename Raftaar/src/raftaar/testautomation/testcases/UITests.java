@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import raftaar.testautomation.manager.TestDriver;
 import raftaar.testautomation.manager.TestManager;
+import raftaar.testautomation.utlities.WebPage;
 
 public class UITests {
 
@@ -49,6 +50,8 @@ public class UITests {
 			System.out.println("----------------------------------------");
 			
 		    System.out.println(entry.getKey()+" : "+entry.getValue());
+		    
+		    WebPage.screenShotCounter = 0;
 		}
 		
 	}
