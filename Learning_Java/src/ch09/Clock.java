@@ -1,3 +1,5 @@
+package ch09;
+
 //file: Clock.java
 public class Clock extends UpdateApplet {
     public void paint( java.awt.Graphics graphics ) {

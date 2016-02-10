@@ -1,3 +1,5 @@
+package ch10;
+
 //file: Hello.java
 import java.util.*;
 
