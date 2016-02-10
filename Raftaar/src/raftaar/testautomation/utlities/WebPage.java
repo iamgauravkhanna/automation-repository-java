@@ -114,13 +114,20 @@ public class WebPage {
 			break;
 
 		case "click":
-			// System.out.println("Click");
+			long startTime1 = System.currentTimeMillis();
 			// WebElement e = driver.findElement(locator);
 			// System.out.println("Value of e :" + e);
 			e.click();
-			// long startTime = System.currentTimeMillis();
+			System.out.println("Element Clicked");
+			//long startTime = System.currentTimeMillis();
 			// System.out.println(" Load Time :" + (int)
 			// (System.currentTimeMillis() - startTime));
+			//long clickTime = System.currentTimeMillis() - startTime ;
+			long elapsed = ((System.currentTimeMillis() - startTime1) / 1000);
+
+			String display = String.format("%02d:%02d:%02d", elapsed / 3600, (elapsed % 3600) / 60, (elapsed % 60));
+			
+			StepOutcome = display ;
 			break;
 
 		case "selectByVisibleText":
@@ -268,7 +275,7 @@ public class WebPage {
 			break;
 
 		case "setVariable":
-			// System.out.println("Set Variable");
+			System.out.println("Set Variable");
 			TestManager.MyDataDicitonary.put(object, data);
 			// System.out.println("Value : " +
 			// TestRunner.MyDataDicitonary.get(parent) + " & Key : "
@@ -334,6 +341,14 @@ public class WebPage {
 			 * "Title of the page after - switchingTo: " + driver.getTitle());
 			 */
 
+			break;
+			
+		case "getUniqueText":
+			int intvar = (int) Double.parseDouble(data);			
+			String UniqueString = JavaUtils.getRandomString(intvar);
+			TestManager.MyDataDicitonary.put(object, UniqueString);
+			System.out.println("getUniqueText is " + object  + " : " + UniqueString );
+			StepOutcome = UniqueString ;
 			break;
 
 		case "runSelectQuery":

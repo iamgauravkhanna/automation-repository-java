@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 public class JavaUtils {
@@ -316,4 +317,15 @@ public class JavaUtils {
 		return sortedKeysList;
 	}
 
+	/**
+	 * Generates a random string of specified length
+	 * 
+	 * @param length no of characters in the string to be generated
+	 * @return a random string
+	 */
+	public static synchronized String generateUniqueString(int length)
+	{
+		return RandomStringUtils.randomAlphabetic(length);
+	}
+	
 }

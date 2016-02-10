@@ -78,6 +78,13 @@ public class TestManager {
 			//System.out.println("Data is :" + data);
 			//logger.info("This is Logger Info");
 		}
+		
+		if (object.contains("#")) {
+			//System.out.println("Parameterized value found");
+			object = JavaUtils.replaceVariablesInString(object, TestManager.MyDataDicitonary);
+			//System.out.println("Data is :" + data);
+			//logger.info("This is Logger Info");
+		}
 
 		// locator = locatorValue(object);
 
