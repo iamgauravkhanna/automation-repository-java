@@ -1,0 +1,42 @@
+package webdriverScripts;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+public class Grid_2 {
+
+	WebDriver webDriver;
+	String baseUrl, nodeUrl;
+
+	@BeforeTest
+	public void setUp() throws MalformedURLException {
+
+		baseUrl = "http://www.google.com";
+		nodeUrl = "http://192.168.49.17:4444/wd/hub";
+		DesiredCapabilities capability = DesiredCapabilities.firefox();
+		capability.setBrowserName("firefox");
+		capability.setPlatform(Platform.WINDOWS);
+		webDriver = new RemoteWebDriver(new URL(nodeUrl), capability);
+	}
+
+	@Test
+	public void testGrid_2() {
+		webDriver.get(baseUrl);
+		Assert.assertEquals("Google", webDriver.getTitle());
+	}
+
+	@AfterTest
+	public void tearDown() {
+
+		webDriver.quit();
+
+	}
+
+}
