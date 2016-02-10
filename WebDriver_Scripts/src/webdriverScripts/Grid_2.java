@@ -19,10 +19,10 @@ public class Grid_2 {
 	public void setUp() throws MalformedURLException {
 
 		baseUrl = "http://www.google.com";
-		nodeUrl = "http://192.168.49.17:4444/wd/hub";
+		nodeUrl = "http://10.10.6.135:4449/wd/hub/";
 		DesiredCapabilities capability = DesiredCapabilities.firefox();
 		capability.setBrowserName("firefox");
-		capability.setPlatform(Platform.WINDOWS);
+		capability.setPlatform(Platform.LINUX);
 		webDriver = new RemoteWebDriver(new URL(nodeUrl), capability);
 	}
 
@@ -30,6 +30,7 @@ public class Grid_2 {
 	public void testGrid_2() {
 		webDriver.get(baseUrl);
 		Assert.assertEquals("Google", webDriver.getTitle());
+		System.out.println("Test Complete");
 	}
 
 	@AfterTest
