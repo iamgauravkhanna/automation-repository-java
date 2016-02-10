@@ -1,6 +1,8 @@
 package raftaar.testautomation.utlities;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
@@ -26,6 +28,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -34,6 +37,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -66,8 +70,8 @@ public class WebPage {
 
 		value = null;
 
-		System.out.println("Object : " + object);
-
+		UITests.log.info("Object : " + object);
+		
 		if (object.contains("=") && !(object.isEmpty())) {
 			locatorType = object.split("=")[0].toLowerCase().trim();
 
@@ -393,8 +397,17 @@ public class WebPage {
 		return by;
 	}
 
-	public void openBrowser(String browserName) {
-		try {
+	public void openBrowser(String browserName) throws MalformedURLException {
+		
+		if(!(TestManager.MyDataDicitonary.get("RemoteURL").equalsIgnoreCase("local")))
+		{
+			DesiredCapabilities capability = DesiredCapabilities.firefox();
+			capability.setBrowserName("firefox");
+			capability.setPlatform(Platform.WINDOWS);
+			driver =  new RemoteWebDriver(new URL(TestManager.MyDataDicitonary.get("RemoteURL")), capability);
+		}	
+		
+/*		try {
 			if (browserName.equalsIgnoreCase("firefox")) {
 				driver = new FirefoxDriver();
 			} else if (browserName.equalsIgnoreCase("chrome")) {
@@ -413,7 +426,7 @@ public class WebPage {
 			}
 		} catch (WebDriverException e) {
 			System.out.println(e.getMessage());
-		}
+		}*/
 	}
 
 	public String acceptAlert() {

@@ -25,6 +25,7 @@ public class UITests {
 		TestManager.MyDataDicitonary.put("browser", browser);
 		TestManager.MyDataDicitonary.put("testcaseid", testcaseid);
 		TestManager.MyDataDicitonary.put("DBConnection", DBConnection);
+		TestManager.MyDataDicitonary.put("RemoteURL", "http://192.168.49.17:4444/wd/hub");
 
 	}
 
@@ -42,14 +43,14 @@ public class UITests {
 	@AfterClass
 	public void afterMethod(){
 		
-		System.out.println("----------------------------------------");
+		log.info("----------------------------------------");
 		
-		System.out.println(" Key : Value ");
+		log.info(" Key : Value ");
 		
 		for (Entry<String, String> entry : TestManager.MyDataDicitonary.entrySet()) {
-			System.out.println("----------------------------------------");
+			log.info("----------------------------------------");
 			
-		    System.out.println(entry.getKey()+" : "+entry.getValue());
+			log.info(entry.getKey()+" : "+entry.getValue());
 		    
 		    WebPage.screenShotCounter = 0;
 		}
