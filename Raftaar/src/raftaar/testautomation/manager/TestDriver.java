@@ -12,6 +12,7 @@ import raftaar.testautomation.utlities.ExcelUtils;
 public class TestDriver {
 
 	public ExcelUtils excelFile = new ExcelUtils(System.getProperty("user.dir") + "\\assets\\testcase.xlsx");
+	public ExcelUtils dataFile = new ExcelUtils(System.getProperty("user.dir") + "\\assets\\testdata.xlsx");
 
 	//Logger log = Logger.getLogger("TestDriver");
 	//configure log4j properties file
@@ -67,10 +68,26 @@ public class TestDriver {
 
 		// System.out.println("Entering runTestCase Class");
 
-		readTestCase(testCaseId);
+		readTestData("EmployeeInfo",1);
+		//readTestCase(testCaseId);
 
 	}
 
+	public void readTestData(String SheetName,int iteration) throws Exception {
+					
+		for (int rowVar = 1; rowVar <=dataFile.getRowCount(SheetName); rowVar ++){
+			for(int colVar =  1;colVar<dataFile.getColumnCount(SheetName);colVar++){
+				
+				System.out.println( "Value of Cell (" + rowVar + "," + colVar +") is : " + dataFile.getCellData("EmployeeInfo", colVar,rowVar));
+				
+				
+			}
+		}
+		
+		HashMap<String, HashMap<Integer, HashMap<String, String>>> myHashMap = createTestDataMap();
+		
+	}
+	
 	public void readTestCase(String testCaseId) throws Exception {
 		
 		//configure log4j properties file
@@ -123,6 +140,111 @@ public class TestDriver {
 	}
 
 	public HashMap<String, HashMap<Integer, HashMap<String, String>>> createTestCaseMap() throws Exception {
+
+		//configure log4j properties file
+	    //PropertyConfigurator.configure("Log4j.properties");
+		
+		// System.out.println("Sheet Count : " + excelFile.getSheetCount());
+		SheetCount = excelFile.getSheetCount();
+
+		for (int i = 0; i < SheetCount; i++) {
+
+			// System.out.println("Sheet Count : " + i);
+
+			sheetName = excelFile.getSheetName(i);
+
+			// System.out.println("Sheet Name : " + sheetName);
+
+			if (sheetName.equals("Sheet1")) {
+
+				// System.out.println("Test Sheet Found");
+
+				// System.out.println("Total Number of Rows in Excel : " +
+				// excelFile.getRowCount(sheetName));
+
+				int o = 0;
+
+				for (int j = 2; j <= excelFile.getRowCount(sheetName); j++) {
+
+					testcaseid = excelFile.getCellData(sheetName, 0, j);
+
+					summary = excelFile.getCellData(sheetName, 1, j);
+
+					description = excelFile.getCellData(sheetName, 2, j);
+
+					parent = excelFile.getCellData(sheetName, 3, j);
+
+					object = excelFile.getCellData(sheetName, 4, j);
+
+					action = excelFile.getCellData(sheetName, 5, j);
+
+					data = excelFile.getCellData(sheetName, 6, j);
+
+					iterations = excelFile.getCellData(sheetName, 7, j);
+
+					flags = excelFile.getCellData(sheetName, 8, j);
+
+					if (j == 2) {
+						baseTestCaseID = testcaseid;
+					}
+
+					if ((!(j == 2))) {
+						if ((!(testcaseid.isEmpty()))) {
+							baseTestCaseID = testcaseid;
+							// System.out.println("New Test Case Found at row
+							// number : " + j);
+							o = 0;
+							testCaseDetails = new HashMap<>();
+
+						}
+
+					}
+
+					testStepDetails.put("testcaseid", testcaseid);
+					testStepDetails.put("summary", summary);
+					testStepDetails.put("description", description);
+					testStepDetails.put("parent", parent);
+					testStepDetails.put("object", object);
+					testStepDetails.put("action", action);
+					testStepDetails.put("data", data);
+					testStepDetails.put("iterations", iterations);
+					testStepDetails.put("flags", flags);
+
+					// System.out.println("Row Number : " + j);
+
+					// System.out.println("TEST STEP Details Info : " +
+					// testStepDetails.toString() + "\n");
+
+					// System.out.println("Putting Value in HashMap");
+
+					// System.out.println("Value of Step Number : " + o);
+
+					testCaseDetails.put(o, testStepDetails);
+
+					testCases.put(baseTestCaseID, testCaseDetails);
+
+					testStepDetails = new HashMap<>();
+
+					// testCaseDetails = new HashMap<>();
+
+					o++;
+				}
+				// System.out.println("Inner For Loop is Complete");
+			}
+
+			// System.out.println("Outer For Loop is Complete");
+
+		}
+		// System.out.println("TEST CASE Details Info : " +
+		// testCaseDetails.toString() + "\n");
+
+		// System.out.println("TEST CASE Info : " + testCases.toString() +
+		// "\n");
+		return testCases;
+
+	}
+
+	public HashMap<String, HashMap<Integer, HashMap<String, String>>> createTestDataMap() throws Exception {
 
 		//configure log4j properties file
 	    //PropertyConfigurator.configure("Log4j.properties");
