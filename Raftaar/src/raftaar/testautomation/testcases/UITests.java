@@ -30,7 +30,7 @@ public class UITests {
 
 	}
 
-	@Test
+	
 	public void testCase() throws Exception {
 
 		// configure log4j properties file
