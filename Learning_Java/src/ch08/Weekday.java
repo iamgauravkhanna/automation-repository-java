@@ -1,3 +1,5 @@
+package ch08;
+
 
 public enum Weekday {
 

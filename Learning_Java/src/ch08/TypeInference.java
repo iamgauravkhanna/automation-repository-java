@@ -1,3 +1,5 @@
+package ch08;
+
 class Base { }
 class Sub1 extends Base implements Runnable { public void run() { } }
 class Sub2 extends Base implements Runnable { public void run() { } }

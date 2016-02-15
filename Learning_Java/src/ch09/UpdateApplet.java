@@ -1,3 +1,5 @@
+
+package ch09;
 public class UpdateApplet extends java.applet.Applet
     implements Runnable 
 {

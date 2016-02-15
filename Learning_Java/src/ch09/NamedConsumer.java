@@ -1,3 +1,5 @@
+package ch09;
+
 //file: NamedConsumer.java
 
 public class NamedConsumer implements Runnable 

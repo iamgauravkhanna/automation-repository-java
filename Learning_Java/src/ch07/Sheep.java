@@ -1,3 +1,5 @@
+package ch07;
+
 import java.util.HashMap; 
  
 public class Sheep implements Cloneable { 

@@ -1,3 +1,5 @@
+package ch08;
+
 
 class Mouse { }
 

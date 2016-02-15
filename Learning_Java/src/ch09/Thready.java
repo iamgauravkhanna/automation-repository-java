@@ -1,3 +1,5 @@
+package ch09;
+
 public class Thready {
     public static void main( String args [] ) {
         Thread foo = new ShowThread("Foo");
