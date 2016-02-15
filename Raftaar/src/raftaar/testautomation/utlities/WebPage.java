@@ -71,7 +71,7 @@ public class WebPage {
 		value = null;
 
 		UITests.log.info("Object : " + object);
-		
+
 		if (object.contains("=") && !(object.isEmpty())) {
 			locatorType = object.split("=")[0].toLowerCase().trim();
 
@@ -123,15 +123,15 @@ public class WebPage {
 			// System.out.println("Value of e :" + e);
 			e.click();
 			System.out.println("Element Clicked");
-			//long startTime = System.currentTimeMillis();
+			// long startTime = System.currentTimeMillis();
 			// System.out.println(" Load Time :" + (int)
 			// (System.currentTimeMillis() - startTime));
-			//long clickTime = System.currentTimeMillis() - startTime ;
+			// long clickTime = System.currentTimeMillis() - startTime ;
 			long elapsed = ((System.currentTimeMillis() - startTime1) / 1000);
 
 			String display = String.format("%02d:%02d:%02d", elapsed / 3600, (elapsed % 3600) / 60, (elapsed % 60));
-			
-			StepOutcome = display ;
+
+			StepOutcome = display;
 			break;
 
 		case "selectByVisibleText":
@@ -346,13 +346,13 @@ public class WebPage {
 			 */
 
 			break;
-			
+
 		case "getUniqueText":
-			int intvar = (int) Double.parseDouble(data);			
+			int intvar = (int) Double.parseDouble(data);
 			String UniqueString = JavaUtils.getRandomString(intvar);
 			TestManager.MyDataDicitonary.put(object, UniqueString);
-			System.out.println("getUniqueText is " + object  + " : " + UniqueString );
-			StepOutcome = UniqueString ;
+			System.out.println("getUniqueText is " + object + " : " + UniqueString);
+			StepOutcome = UniqueString;
 			break;
 
 		case "runSelectQuery":
@@ -398,35 +398,38 @@ public class WebPage {
 	}
 
 	public void openBrowser(String browserName) throws MalformedURLException {
-		
-		if(!(TestManager.MyDataDicitonary.get("RemoteURL").equalsIgnoreCase("local")))
-		{
+
+		if (!(TestManager.MyDataDicitonary.get("RemoteURL").equalsIgnoreCase("local"))) {
+			System.out.println("Entering Remote URL section");
+
 			DesiredCapabilities capability = DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
 			capability.setPlatform(Platform.WINDOWS);
-			driver =  new RemoteWebDriver(new URL(TestManager.MyDataDicitonary.get("RemoteURL")), capability);
-		}	
-		
-/*		try {
-			if (browserName.equalsIgnoreCase("firefox")) {
-				driver = new FirefoxDriver();
-			} else if (browserName.equalsIgnoreCase("chrome")) {
-				String chromepath = System.getProperty("user.dir") + "\\lib\\drivers\\chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", chromepath);
-				driver = new ChromeDriver();
-			} else if (browserName.equalsIgnoreCase("ie")) {
-				// String iepath = System.getProperty("user.dir") +
-				// "\\drivers\\IEDriverServer.exe";
-				String iepath = System.getProperty("user.dir") + "\\lib\\drivers\\IEDriverServer.exe";
-				System.setProperty("webdriver.ie.driver", iepath);
-				// driver = new InternetExplorerDriver();
-				DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
-				caps.setCapability("ignoreZoomSetting", true);
-				driver = new InternetExplorerDriver(caps);
+			driver = new RemoteWebDriver(new URL(TestManager.MyDataDicitonary.get("RemoteURL")), capability);
+		}
+
+		else {
+			try {
+				if (browserName.equalsIgnoreCase("firefox")) {
+					driver = new FirefoxDriver();
+				} else if (browserName.equalsIgnoreCase("chrome")) {
+					String chromepath = System.getProperty("user.dir") + "\\lib\\drivers\\chromedriver.exe";
+					System.setProperty("webdriver.chrome.driver", chromepath);
+					driver = new ChromeDriver();
+				} else if (browserName.equalsIgnoreCase("ie")) {
+					// String iepath = System.getProperty("user.dir") +
+					// "\\drivers\\IEDriverServer.exe";
+					String iepath = System.getProperty("user.dir") + "\\lib\\drivers\\IEDriverServer.exe";
+					System.setProperty("webdriver.ie.driver", iepath);
+					// driver = new InternetExplorerDriver();
+					DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+					caps.setCapability("ignoreZoomSetting", true);
+					driver = new InternetExplorerDriver(caps);
+				}
+			} catch (WebDriverException e) {
+				System.out.println(e.getMessage());
 			}
-		} catch (WebDriverException e) {
-			System.out.println(e.getMessage());
-		}*/
+		}
 	}
 
 	public String acceptAlert() {
@@ -476,7 +479,7 @@ public class WebPage {
 		fnHighlightMe(driver, element);
 
 		getscreenshot();
-		
+
 		return element;
 
 	}
@@ -489,7 +492,7 @@ public class WebPage {
 		String out = new SimpleDateFormat(screenShotCounter + "-yyyy-MM-dd hh-mm-ss'.png'").format(new Date());
 
 		FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "\\screenshots\\" + out));
-		screenShotCounter ++ ;
+		screenShotCounter++;
 	}
 
 }

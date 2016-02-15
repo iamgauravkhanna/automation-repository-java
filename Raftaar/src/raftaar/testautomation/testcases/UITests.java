@@ -25,7 +25,8 @@ public class UITests {
 		TestManager.MyDataDicitonary.put("browser", browser);
 		TestManager.MyDataDicitonary.put("testcaseid", testcaseid);
 		TestManager.MyDataDicitonary.put("DBConnection", DBConnection);
-		TestManager.MyDataDicitonary.put("RemoteURL", "http://192.168.49.17:4444/wd/hub");
+		//TestManager.MyDataDicitonary.put("RemoteURL", "http://192.168.49.17:4444/wd/hub");
+		TestManager.MyDataDicitonary.put("RemoteURL", "local");
 
 	}
 
