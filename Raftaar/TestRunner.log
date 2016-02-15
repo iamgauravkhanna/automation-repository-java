@@ -1,0 +1,69 @@
+2016-02-15 17:16:16 INFO  UITests:113 - STEP Meta Info : {summary=Dashboard - Complete Test Case, flags=, iterations=, description=Open Browser, data=Firefox, action=openBrowser, parent=, object=, testcaseid=Test.Case.100}
+
+2016-02-15 17:16:16 INFO  UITests:73 - Object : 
+2016-02-15 17:16:26 INFO  UITests:129 - Step Outcome : Opening Browser
+
+2016-02-15 17:16:26 INFO  UITests:131 - Executing STEP : Maximize Window
+
+2016-02-15 17:16:26 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-02-15 17:16:26 INFO  UITests:73 - Object : 
+2016-02-15 17:16:28 INFO  UITests:129 - Step Outcome : Maximize Window
+
+2016-02-15 17:16:28 INFO  UITests:131 - Executing STEP : Launch Employer portal
+
+2016-02-15 17:16:28 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Launch Employer portal, data=https://automation.phix-qa08.demo.hcinternal.net/employer, action=getUrl, parent=, object=, testcaseid=}
+
+2016-02-15 17:16:28 INFO  UITests:73 - Object : 
+2016-02-15 17:16:28 INFO  UITests:129 - Step Outcome : https://automation.phix-qa08.demo.hcinternal.net/employer
+
+2016-02-15 17:16:28 INFO  UITests:131 - Executing STEP : Click Sign up link on header
+
+2016-02-15 17:16:28 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Click Sign up link on header, data=, action=click, parent=, object=linktext=Sign Up, testcaseid=}
+
+2016-02-15 17:16:28 INFO  UITests:73 - Object : linktext=Sign Up
+2016-02-15 17:16:42 INFO  UITests:129 - Step Outcome : 00:00:00
+
+2016-02-15 17:16:42 INFO  UITests:131 - Executing STEP : Get ON/ OFF status for SSO
+
+2016-02-15 17:16:42 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Get ON/ OFF status for SSO, data=/assets/sql/GetConfigElementKeyStatus.sql, action=runSelectQuery, parent=, object=, testcaseid=}
+
+2016-02-15 17:16:42 INFO  UITests:73 - Object : 
+2016-02-15 17:16:46 INFO  UITests:47 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:49 -  Key : Value 
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - sl : 1
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - Scenario : Employer, employee only coverage, and selects Medical Benefit
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - Classes : skip
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - SignUpInfo : 1
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - Class3 : skip
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - Class2 : skip
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - Class1 : skip
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - CreateClass : skip
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - LaunchPortal : Yes
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - Class4 : skip
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - UploadEmployeeRoster : 1-5
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - AddManualEmployee : 6
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - RemoteURL : local
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - AddMoreEmployees : skip
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - browser : Firefox
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - PackageDetails : 2
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-02-15 17:16:46 INFO  UITests:52 - ----------------------------------------
+2016-02-15 17:16:46 INFO  UITests:54 - testcaseid : Test.Case.100
