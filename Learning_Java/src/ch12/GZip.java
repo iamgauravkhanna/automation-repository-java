@@ -1,3 +1,5 @@
+package ch12;
+
 //file: GZip.java
 import java.io.*;
 import java.util.zip.*;

@@ -1,3 +1,5 @@
+package ch21;
+
 //file: NoisyButton.java
 import java.applet.*;
 import java.awt.*;

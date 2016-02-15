@@ -1,3 +1,5 @@
+package ch12;
+
 //file: LoggerDaemon.java
 import java.io.*;
 

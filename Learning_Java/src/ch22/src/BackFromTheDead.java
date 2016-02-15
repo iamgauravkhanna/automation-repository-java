@@ -1,3 +1,5 @@
+
+package ch22.src;
 //file: BackFromTheDead.java
 import java.awt.Component;
 import javax.swing.*; 

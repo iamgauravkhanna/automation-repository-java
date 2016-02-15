@@ -1,3 +1,5 @@
+package ch21;
+
 //file: ImageProcessor.java
 import java.awt.*;
 import java.awt.event.*;

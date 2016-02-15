@@ -1,3 +1,5 @@
+package ch21;
+
 //file: StatusImage.java
 import java.awt.*;
 import javax.swing.*;

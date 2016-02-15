@@ -1,3 +1,5 @@
+package ch22.src;
+
 import magicbeans.sunw.demo.juggler.Juggler;
 import java.io.*;
 

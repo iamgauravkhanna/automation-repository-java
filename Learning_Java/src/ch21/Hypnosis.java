@@ -1,3 +1,5 @@
+package ch21;
+
 //file: Hypnosis.java
 import java.awt.*;
 import java.awt.geom.GeneralPath;

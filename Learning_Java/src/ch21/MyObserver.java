@@ -1,3 +1,5 @@
+package ch21;
+
 //file: MyObserver.java
 import java.awt.*;
 import java.awt.image.*;

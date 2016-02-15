@@ -1,3 +1,5 @@
+package ch22.src;
+
 //file: DynamicHookup.java
 import javax.swing.*;
 import java.awt.event.*;
