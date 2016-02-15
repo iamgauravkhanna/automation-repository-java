@@ -90,7 +90,7 @@ public class WebPage {
 			System.out.println("Oops Locator Is Null");
 		} else {
 			e = what(driver, loc);
-			System.out.println("Got the Element");
+			System.out.println("Got the Element : " + e);
 		}
 
 		// System.out.println("Action is : " + action);
@@ -239,6 +239,7 @@ public class WebPage {
 
 			int data3 = (int) Double.parseDouble(data);
 			WebDriverWait wait = new WebDriverWait(driver, data3);
+			System.out.println("Value of loc is : " + loc);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
 
 			break;
@@ -472,6 +473,10 @@ public class WebPage {
 
 		System.out.println("locator is : " + locator);
 
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		//WebElement data = By.linkText("Chapter1");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		
 		element = driver.findElement(locator);
 
 		System.out.println("Element is : " + element);

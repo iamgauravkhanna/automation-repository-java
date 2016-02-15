@@ -41,7 +41,7 @@ public class UITests {
 		myDriver.runTestCase(TestManager.MyDataDicitonary.get("testcaseid"));
 	}
 
-	@AfterClass
+/*	@AfterClass
 	public void afterMethod(){
 		
 		log.info("----------------------------------------");
@@ -56,6 +56,6 @@ public class UITests {
 		    WebPage.screenShotCounter = 0;
 		}
 		
-	}
+	}*/
 	
 }
