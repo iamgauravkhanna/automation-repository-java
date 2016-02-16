@@ -28,12 +28,13 @@ Date : 1st - 29th Feb 2016
 - Others : Take Screenshots, Save HTML files
 - Selenium Grid - Provision to run test on Selenium Grid or on local
 - Iterations : Using Concept of Iteration to read data from data sheet
+- Methods : Concept of re-usability introduced by calling directly call another test case
 
 Raftaar_Version_0.3
 
 Date : 1st - 31st Mar 2016
 
-- Methods : Concept of re-usability introduced by calling directly call another test case 
 - Jenkins : Run your test suite from Jenkins
-- Dashboard : User your Oracle Apex Dashboard to see live status of your test suite
+- Reporting - Creating customized HTML Reports
 - Ant : Using Ant to build your automation project jar
+- Dashboard : User your Oracle Apex Dashboard to see live status of your test suite

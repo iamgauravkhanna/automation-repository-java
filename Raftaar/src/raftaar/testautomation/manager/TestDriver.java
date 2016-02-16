@@ -130,7 +130,15 @@ public class TestDriver {
 
 				UITests.log.info("Executing STEP : " + c + "\n");
 				// System.out.println("Executing STEP : " + c + "\n");
-				tm.runTestStep(a, b, c, d, e1, f, g, h, i);
+				if(f.contains("."))
+				{
+					System.out.println("Test Case Found In Between");
+					this.readTestCase(f);
+				}
+				else
+				{
+					tm.runTestStep(a, b, c, d, e1, f, g, h, i);
+				}
 			} else {
 				UITests.log.info("Skipping Test Step");
 				// System.out.println("Skipping Test Step");
