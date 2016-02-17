@@ -1,4 +1,4 @@
-package java.examples.set;
+package others;
 /*package javaPrograms;
 
 import org.testng.annotations.Test;

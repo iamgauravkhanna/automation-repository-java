@@ -1,4 +1,4 @@
-package java.examples.set;
+package others;
 
 import jetr.nsef.api.xmlgenner.XMLGennerSingleton;
 import jetr.nsef.api.xmlgenner.XmlGenner;
