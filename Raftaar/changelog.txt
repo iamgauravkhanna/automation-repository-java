@@ -40,7 +40,7 @@ v0.3
 
 Date : 1st - 31st Mar 2016
 
-- Jenkins : Run your test suite from Jenkins
 - Reporting - Creating customized HTML Reports
-- Ant : Using Ant to build your automation project jar
 - Dashboard : User your Oracle Apex Dashboard to see live status of your test suite
+- Jenkins : Run your test suite from Jenkins
+- Ant : Using Ant to build your automation project jar

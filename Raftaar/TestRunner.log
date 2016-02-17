@@ -124,4 +124,40 @@
 2016-02-16 18:40:25 INFO  UITests:49 - ----------------------------------------
 2016-02-16 18:40:25 INFO  UITests:50 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
 2016-02-16 18:40:25 INFO  UITests:49 - ----------------------------------------
-2016-02-16 18:40:25 INFO  UITests:50 - testcaseid : Test.Case.103
+2016-02-16 18:40:25 INFO  UITests:50 - testcaseid : Test.Case.1032016-02-17 18:28:02 INFO  UITests:113 - STEP Meta Info : {summary=Launch employer portal in a new browser window, flags=, iterations=, description=Launch employer portal, data=#EmployerUrl, action=openBrowser, parent=, object=, testcaseid=Employer.launchPortal()}
+
+2016-02-17 18:28:02 INFO  UITests:73 - Object : 
+2016-02-17 18:28:19 INFO  UITests:129 - Step Outcome : Opening Browser
+
+2016-02-17 18:28:19 INFO  UITests:45 - ----------------------------------------
+2016-02-17 18:28:19 INFO  UITests:46 -  Key : Value 
+2016-02-17 18:28:19 INFO  UITests:49 - ----------------------------------------
+2016-02-17 18:28:19 INFO  UITests:50 - RemoteURL : local
+2016-02-17 18:28:19 INFO  UITests:49 - ----------------------------------------
+2016-02-17 18:28:19 INFO  UITests:50 - browser : Firefox
+2016-02-17 18:28:19 INFO  UITests:49 - ----------------------------------------
+2016-02-17 18:28:19 INFO  UITests:50 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-02-17 18:28:19 INFO  UITests:49 - ----------------------------------------
+2016-02-17 18:28:19 INFO  UITests:50 - testcaseid : Employer.launchPortal()
+2016-02-17 18:30:20 INFO  UITests:113 - STEP Meta Info : {summary=Main Test Case, flags={testdatasheet=EmployeeInfo}, iterations=3.0, description=Open Browser, data=Firefox, action=openBrowser, parent=, object=, testcaseid=Test.Case.103}
+
+2016-02-17 18:30:20 INFO  UITests:73 - Object : 
+2016-02-17 18:32:27 INFO  UITests:113 - STEP Meta Info : {summary=Main Test Case, flags={testdatasheet=EmployeeInfo}, iterations=3.0, description=Open Browser, data=Firefox, action=openBrowser, parent=, object=, testcaseid=Test.Case.103}
+
+2016-02-17 18:32:27 INFO  UITests:73 - Object : 
+2016-02-17 18:32:44 INFO  UITests:113 - STEP Meta Info : {summary=Main Test Case, flags={testdatasheet=EmployeeInfo}, iterations=3.0, description=Open Browser, data=Firefox, action=openBrowser, parent=, object=, testcaseid=Test.Case.103}
+
+2016-02-17 18:32:44 INFO  UITests:73 - Object : 
+2016-02-17 18:32:52 INFO  UITests:129 - Step Outcome : Opening Browser
+
+2016-02-17 18:32:52 INFO  UITests:140 - Executing STEP : Maximize Window
+
+2016-02-17 18:32:52 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-02-17 18:32:52 INFO  UITests:73 - Object : 
+2016-02-17 18:34:56 INFO  UITests:113 - STEP Meta Info : {summary=Main Test Case, flags={testdatasheet=EmployeeInfo}, iterations=3.0, description=Open Browser, data=Firefox, action=openBrowser, parent=, object=, testcaseid=Test.Case.103}
+
+2016-02-17 18:34:56 INFO  UITests:73 - Object : 
+2016-02-17 18:36:11 INFO  UITests:113 - STEP Meta Info : {summary=Main Test Case, flags={testdatasheet=EmployeeInfo}, iterations=3.0, description=Open Browser, data=Firefox, action=openBrowser, parent=, object=, testcaseid=Test.Case.103}
+
+2016-02-17 18:36:11 INFO  UITests:73 - Object : 

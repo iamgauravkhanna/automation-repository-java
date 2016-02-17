@@ -139,6 +139,15 @@ public class TestDriver {
 
 				UITests.log.info("Executing STEP : " + c + "\n");
 				// System.out.println("Executing STEP : " + c + "\n");
+				
+				if(i.contains("testdatasheet"))
+				{
+					String getSheetName = i.substring(15);
+					getSheetName.replaceAll("[^a-zA-Z0-9]", "");
+					//getSheetName.trim();
+					System.out.println("SheetName is : " + getSheetName);
+				}
+				
 				if(f.contains("."))
 				{
 					System.out.println("Test Case Found In Between");
