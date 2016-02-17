@@ -32,6 +32,8 @@ public class TestDriver {
 	public String flags;
 	public By loc;
 	public String baseTestCaseID;
+	public HashMap<Integer, HashMap<String, String>> TestDataMap ; 
+	public HashMap<String, String> testDataRepo ;  
 
 	TestManager tm = new TestManager();
 
@@ -74,31 +76,38 @@ public class TestDriver {
 
 		// System.out.println("Entering runTestCase Class");
 
-		readTestData("EmployeeInfo", 1);
-		readTestCase(testCaseId);
+		readTestData("EmployeeInfo");
+		createTestCaseMap();
+		executeTestCase(testCaseId);
+		//readTestCase();
 
 	}
 
-	public void readTestData(String SheetName, int iteration) throws Exception {
+	public void readTestData(String SheetName) throws Exception {
 
-		HashMap<Integer, HashMap<String, String>> TestDataMap =  createTestDataMap(SheetName);
+		TestDataMap =  createTestDataMap(SheetName);
+				
+	}
+	
+	public void getTestData(String SheetName, int iteration) throws Exception {
 		
-		HashMap<String, String> testDataRepo = TestDataMap.get(iteration);
+		testDataRepo = TestDataMap.get(iteration);
 		
 		System.out.println(testDataRepo.toString());
 		
 		TestManager.MyDataDicitonary.putAll(testDataRepo);
 		
+		
 	}
 
-	public void readTestCase(String testCaseId) throws Exception {
+	public void executeTestCase(String testCaseId) throws Exception {
 
 		// configure log4j properties file
 		// PropertyConfigurator.configure("Log4j.properties");
 
-		HashMap<String, HashMap<Integer, HashMap<String, String>>> myHashMap = createTestCaseMap();
+		//HashMap<String, HashMap<Integer, HashMap<String, String>>> myHashMap = createTestCaseMap();
 
-		HashMap<Integer, HashMap<String, String>> myHashMapObject = myHashMap.get(testCaseId);
+		HashMap<Integer, HashMap<String, String>> myHashMapObject = testCases.get(testCaseId);
 
 		// System.out.println("Printing Values of TestCase Hash Map : " +
 		// myHashMap.entrySet());
@@ -109,7 +118,7 @@ public class TestDriver {
 		// System.out.println(myHashMap.entrySet());
 
 		for (int k = 0; k < myHashMapObject.size(); k++) {
-			HashMap<String, String> myHashMapObj = myHashMap.get(testCaseId).get(k);
+			HashMap<String, String> myHashMapObj = testCases.get(testCaseId).get(k);
 
 			String a = myHashMapObj.get("testcaseid");
 			String b = myHashMapObj.get("summary");
@@ -133,7 +142,7 @@ public class TestDriver {
 				if(f.contains("."))
 				{
 					System.out.println("Test Case Found In Between");
-					this.readTestCase(f);
+					this.executeTestCase(f);
 				}
 				else
 				{

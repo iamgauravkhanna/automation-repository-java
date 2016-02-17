@@ -25,7 +25,8 @@ public class UITests {
 		TestManager.MyDataDicitonary.put("browser", browser);
 		TestManager.MyDataDicitonary.put("testcaseid", testcaseid);
 		TestManager.MyDataDicitonary.put("DBConnection", DBConnection);
-		//TestManager.MyDataDicitonary.put("RemoteURL", "http://192.168.49.17:4444/wd/hub");
+		// TestManager.MyDataDicitonary.put("RemoteURL",
+		// "http://192.168.49.17:4444/wd/hub");
 		TestManager.MyDataDicitonary.put("RemoteURL", "local");
 
 	}
@@ -33,29 +34,23 @@ public class UITests {
 	@Test
 	public void testCase() throws Exception {
 
-		// configure log4j properties file
-		// PropertyConfigurator.configure("Log4j.properties");
-
 		log.info("Running Test Case : " + TestManager.MyDataDicitonary.get("testcaseid"));
 
 		myDriver.runTestCase(TestManager.MyDataDicitonary.get("testcaseid"));
 	}
 
-/*	@AfterClass
-	public void afterMethod(){
-		
+	@AfterClass
+	public void afterMethod() {
+
 		log.info("----------------------------------------");
-		
 		log.info(" Key : Value ");
-		
+
 		for (Entry<String, String> entry : TestManager.MyDataDicitonary.entrySet()) {
 			log.info("----------------------------------------");
-			
-			log.info(entry.getKey()+" : "+entry.getValue());
-		    
-		    WebPage.screenShotCounter = 0;
+			log.info(entry.getKey() + " : " + entry.getValue());
+			WebPage.screenShotCounter = 0;
 		}
-		
-	}*/
-	
+
+	}
+
 }

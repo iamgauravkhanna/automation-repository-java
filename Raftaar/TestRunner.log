@@ -1,0 +1,127 @@
+2016-02-16 18:37:48 INFO  UITests:113 - STEP Meta Info : {summary=Main Test Case, flags={testdatasheet=EmployeeInfo}, iterations=3.0, description=Open Browser, data=Firefox, action=openBrowser, parent=, object=, testcaseid=Test.Case.103}
+
+2016-02-16 18:37:48 INFO  UITests:73 - Object : 
+2016-02-16 18:37:57 INFO  UITests:129 - Step Outcome : Opening Browser
+
+2016-02-16 18:37:57 INFO  UITests:140 - Executing STEP : Maximize Window
+
+2016-02-16 18:37:57 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-02-16 18:37:57 INFO  UITests:73 - Object : 
+2016-02-16 18:37:59 INFO  UITests:129 - Step Outcome : Maximize Window
+
+2016-02-16 18:37:59 INFO  UITests:140 - Executing STEP : Launch Employer portal
+
+2016-02-16 18:37:59 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Launch Employer portal, data=https://automation.phix-qa08.demo.hcinternal.net/employer, action=getUrl, parent=, object=, testcaseid=}
+
+2016-02-16 18:37:59 INFO  UITests:73 - Object : 
+2016-02-16 18:37:59 INFO  UITests:129 - Step Outcome : https://automation.phix-qa08.demo.hcinternal.net/employer
+
+2016-02-16 18:37:59 INFO  UITests:140 - Executing STEP : Run Test Case
+
+2016-02-16 18:37:59 INFO  UITests:140 - Executing STEP : Wait for Page to Load
+
+2016-02-16 18:37:59 INFO  UITests:113 - STEP Meta Info : {summary=Sub Test Case 1, flags=, iterations=, description=Wait for Page to Load, data=30, action=waitFor, parent=, object=xpath=//h2[text()='Employer Registration'], testcaseid=Test.Case.104}
+
+2016-02-16 18:37:59 INFO  UITests:73 - Object : xpath=//h2[text()='Employer Registration']
+2016-02-16 18:38:30 INFO  UITests:45 - ----------------------------------------
+2016-02-16 18:38:30 INFO  UITests:46 -  Key : Value 
+2016-02-16 18:38:30 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:38:30 INFO  UITests:50 - RemoteURL : local
+2016-02-16 18:38:30 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:38:30 INFO  UITests:50 - browser : Firefox
+2016-02-16 18:38:30 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:38:30 INFO  UITests:50 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-02-16 18:38:30 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:38:30 INFO  UITests:50 - testcaseid : Test.Case.103
+2016-02-16 18:39:46 INFO  UITests:113 - STEP Meta Info : {summary=Main Test Case, flags={testdatasheet=EmployeeInfo}, iterations=3.0, description=Open Browser, data=Firefox, action=openBrowser, parent=, object=, testcaseid=Test.Case.103}
+
+2016-02-16 18:39:46 INFO  UITests:73 - Object : 
+2016-02-16 18:39:55 INFO  UITests:129 - Step Outcome : Opening Browser
+
+2016-02-16 18:39:55 INFO  UITests:140 - Executing STEP : Maximize Window
+
+2016-02-16 18:39:55 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-02-16 18:39:55 INFO  UITests:73 - Object : 
+2016-02-16 18:39:56 INFO  UITests:129 - Step Outcome : Maximize Window
+
+2016-02-16 18:39:56 INFO  UITests:140 - Executing STEP : Launch Employer portal
+
+2016-02-16 18:39:56 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Launch Employer portal, data=https://automation.phix-qa08.demo.hcinternal.net/employer, action=getUrl, parent=, object=, testcaseid=}
+
+2016-02-16 18:39:56 INFO  UITests:73 - Object : 
+2016-02-16 18:39:56 INFO  UITests:129 - Step Outcome : https://automation.phix-qa08.demo.hcinternal.net/employer
+
+2016-02-16 18:39:56 INFO  UITests:140 - Executing STEP : Go to URL
+
+2016-02-16 18:39:56 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=https://automation.phix-qa08.demo.hcinternal.net/employer/employer/register?manual=true, action=getUrl, parent=, object=, testcaseid=}
+
+2016-02-16 18:39:56 INFO  UITests:73 - Object : 
+2016-02-16 18:39:57 INFO  UITests:129 - Step Outcome : https://automation.phix-qa08.demo.hcinternal.net/employer/employer/register?manual=true
+
+2016-02-16 18:39:57 INFO  UITests:140 - Executing STEP : Run Sub Test Case 1
+
+2016-02-16 18:39:57 INFO  UITests:140 - Executing STEP : Wait for Page to Load
+
+2016-02-16 18:39:57 INFO  UITests:113 - STEP Meta Info : {summary=Sub Test Case 1, flags=, iterations=, description=Wait for Page to Load, data=30, action=waitFor, parent=, object=xpath=//h2[text()='Employer Registration'], testcaseid=Test.Case.104}
+
+2016-02-16 18:39:57 INFO  UITests:73 - Object : xpath=//h2[text()='Employer Registration']
+2016-02-16 18:40:12 INFO  UITests:129 - Step Outcome : NULL
+
+2016-02-16 18:40:12 INFO  UITests:140 - Executing STEP : Get Random String
+
+2016-02-16 18:40:12 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Random String, data=7.0, action=getUniqueText, parent=, object=EmployerUserId, testcaseid=}
+
+2016-02-16 18:40:12 INFO  UITests:73 - Object : EmployerUserId
+2016-02-16 18:40:13 INFO  UITests:129 - Step Outcome : 45rf1ga
+
+2016-02-16 18:40:13 INFO  UITests:140 - Executing STEP : Enter a unique userid
+
+2016-02-16 18:40:13 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Enter a unique userid, data=45rf1ga, action=setText, parent=, object=id=userId, testcaseid=}
+
+2016-02-16 18:40:13 INFO  UITests:73 - Object : id=userId
+2016-02-16 18:40:15 INFO  UITests:129 - Step Outcome : NULL
+
+2016-02-16 18:40:15 INFO  UITests:140 - Executing STEP : Enter password
+
+2016-02-16 18:40:15 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Enter password, data=#Password, action=setText, parent=, object=id=password, testcaseid=}
+
+2016-02-16 18:40:15 INFO  UITests:73 - Object : id=password
+2016-02-16 18:40:17 INFO  UITests:129 - Step Outcome : NULL
+
+2016-02-16 18:40:17 INFO  UITests:140 - Executing STEP : Confirm password
+
+2016-02-16 18:40:17 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Confirm password, data=#ConfirmPassword, action=setText, parent=, object=id=confirmPassword, testcaseid=}
+
+2016-02-16 18:40:17 INFO  UITests:73 - Object : id=confirmPassword
+2016-02-16 18:40:18 INFO  UITests:129 - Step Outcome : NULL
+
+2016-02-16 18:40:18 INFO  UITests:140 - Executing STEP : Select a random security question
+
+2016-02-16 18:40:18 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Select a random security question, data=What is the first name of your favorite uncle ?, action=setVariable, parent=, object=SecurityQ1, testcaseid=}
+
+2016-02-16 18:40:18 INFO  UITests:73 - Object : SecurityQ1
+2016-02-16 18:40:20 INFO  UITests:129 - Step Outcome : NULL
+
+2016-02-16 18:40:20 INFO  UITests:140 - Executing STEP : Close Browser
+
+2016-02-16 18:40:20 INFO  UITests:113 - STEP Meta Info : {summary=, flags=, iterations=, description=Close Browser, data=, action=closeBrowser, parent=, object=, testcaseid=}
+
+2016-02-16 18:40:20 INFO  UITests:73 - Object : 
+2016-02-16 18:40:25 INFO  UITests:129 - Step Outcome : NULL
+
+2016-02-16 18:40:25 INFO  UITests:45 - ----------------------------------------
+2016-02-16 18:40:25 INFO  UITests:46 -  Key : Value 
+2016-02-16 18:40:25 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:40:25 INFO  UITests:50 - RemoteURL : local
+2016-02-16 18:40:25 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:40:25 INFO  UITests:50 - SecurityQ1 : What is the first name of your favorite uncle ?
+2016-02-16 18:40:25 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:40:25 INFO  UITests:50 - browser : Firefox
+2016-02-16 18:40:25 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:40:25 INFO  UITests:50 - EmployerUserId : 45rf1ga
+2016-02-16 18:40:25 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:40:25 INFO  UITests:50 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-02-16 18:40:25 INFO  UITests:49 - ----------------------------------------
+2016-02-16 18:40:25 INFO  UITests:50 - testcaseid : Test.Case.103

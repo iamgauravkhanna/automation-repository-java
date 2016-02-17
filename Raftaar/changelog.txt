@@ -1,12 +1,16 @@
-Components of Good Framework :
+Raftaar ( Regression Automation Framework To Allow Artificial Runs )
+================================================================
+
+Components of Good Framework : 
 
 - Perfect Locators
 - Method Re-usability Logic
 - Best Reporting
 - Full Business Coverage
-- Configurable & Independent
+- Configurable & Platform Independent
 
-Raftaar_Version_0.1 ( Regression Automation Framework To Allow Artificial Runs )
+v0.1
+=======
 
 Date : 1st - 31st Jan 2016
 
@@ -19,7 +23,8 @@ Date : 1st - 31st Jan 2016
 - TestNG : Using TestNG for reports, running suite using testNG.xml 
 - Others : Storing Test Cases in Hash Map, Highlight UI Elements.
 
-Raftaar_Version_0.2
+v0.2
+=======
 
 Date : 1st - 29th Feb 2016
 
@@ -30,7 +35,8 @@ Date : 1st - 29th Feb 2016
 - Iterations : Using Concept of Iteration to read data from data sheet
 - Methods : Concept of re-usability introduced by calling directly call another test case
 
-Raftaar_Version_0.3
+v0.3
+=======
 
 Date : 1st - 31st Mar 2016
 
