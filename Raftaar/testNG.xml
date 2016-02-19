@@ -1,5 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="My First Test Suite">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	</listeners>
+
 	<test name="My First Test">
 		<parameter name="browser" value="Firefox" />		
 		<parameter name="testcaseid" value="Test.Case.103" />
