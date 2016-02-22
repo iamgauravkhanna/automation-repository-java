@@ -7,7 +7,7 @@
 
 	<test name="My First Test">
 		<parameter name="browser" value="Firefox" />		
-		<parameter name="testcaseid" value="Test.Case.103" />
+		<parameter name="testcaseid" value="Test.Case.001" />
 		<parameter name="DBConnection" value="jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix" />		
 		<classes>
 			<class name="raftaar.testautomation.testcases.UITests" />

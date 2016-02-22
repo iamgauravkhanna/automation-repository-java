@@ -35,13 +35,13 @@ Date : 1st - 29th Feb 2016
 - Iterations : Using Concept of Iteration to read data from data sheet
 - Methods : Concept of re-usability introduced by calling directly call another test case
 - Reporting - Creating customized HTML Reports
+- Jenkins : Run your test suite from Jenkins
+- Ant : Using Ant to build your automation project jar
 
 v0.3
 =======
 
-Date : 1st - 31st Mar 2016
+Date : 1st - 30th June 2016
 
 
 - Dashboard : User your Oracle Apex Dashboard to see live status of your test suite
-- Jenkins : Run your test suite from Jenkins
-- Ant : Using Ant to build your automation project jar
