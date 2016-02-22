@@ -3,6 +3,7 @@ package raftaar.testautomation.utlities;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -326,6 +327,13 @@ public class JavaUtils {
 	public static synchronized String generateUniqueString(int length)
 	{
 		return RandomStringUtils.randomAlphabetic(length);
+	}
+	
+	protected static List<String> convertStringToList(String pattern)
+	{
+		String strArr[] = pattern.split("\\|");
+		List<String> list = Arrays.asList(strArr);
+		return list;
 	}
 	
 }
