@@ -16,6 +16,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.Reporter;
+import org.uncommons.reportng.ReportNGUtils;
 
 import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.JavaUtils;
@@ -126,7 +128,9 @@ public class TestManager {
 
 		StepOutcome = d.ExecuteKeyword(action, parent, object, data);
 		
-		UITests.log.info("Step Outcome : " + StepOutcome + "\n");
+		UITests.log.info("Step Outcome : " + StepOutcome + "\n");		
+		Reporter.log("Step Outcome : " + StepOutcome + "\n");
+		//Reporter.setEscapeHtml(""<HTML>);
 		//System.out.println("Step Outcome : " + StepOutcome + "\n");
 
 	}

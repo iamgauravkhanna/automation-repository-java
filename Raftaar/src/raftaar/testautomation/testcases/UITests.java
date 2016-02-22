@@ -51,6 +51,7 @@ public class UITests {
 			WebPage.screenShotCounter = 0;
 		}
 
+		
 	}
 
 }

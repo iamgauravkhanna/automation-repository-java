@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+import org.testng.Reporter;
 
 import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.ExcelUtils;
@@ -138,6 +139,7 @@ public class TestDriver {
 			if (!(i.contains("{skip}"))) {
 
 				UITests.log.info("Executing STEP : " + c + "\n");
+				Reporter.log("Executing STEP : " + c + "\n");
 				// System.out.println("Executing STEP : " + c + "\n");
 				
 				if(i.contains("testdatasheet"))
