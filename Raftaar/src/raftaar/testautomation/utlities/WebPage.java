@@ -30,12 +30,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -61,6 +63,7 @@ public class WebPage {
 	public By loc;
 	public int elementWaitTime = 10; // timeout value in second while waiting
 										// for an element to appear DISPLAYED
+	public WebDriverWait wait ;
 
 	public static Logger log = Logger.getLogger(WebPage.class);
 
@@ -411,6 +414,9 @@ public class WebPage {
 
 		else {
 			try {
+				DesiredCapabilities dc = new DesiredCapabilities();
+				dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);							
+				
 				if (browserName.equalsIgnoreCase("firefox")) {
 					driver = new FirefoxDriver();
 				} else if (browserName.equalsIgnoreCase("chrome")) {
@@ -427,6 +433,7 @@ public class WebPage {
 					caps.setCapability("ignoreZoomSetting", true);
 					driver = new InternetExplorerDriver(caps);
 				}
+				wait = new WebDriverWait(driver, 30);
 			} catch (WebDriverException e) {
 				System.out.println(e.getMessage());
 			}
@@ -435,6 +442,8 @@ public class WebPage {
 
 	public String acceptAlert() {
 		String alertText = "";
+		wait.until(ExpectedConditions.alertIsPresent());
+		// Before you try to switch to the so given alert, he needs to be present.
 		Alert alert = driver.switchTo().alert();
 		alertText = alert.getText();
 		alert.accept();
@@ -472,8 +481,7 @@ public class WebPage {
 		// System.out.println("WTF");
 
 		System.out.println("locator is : " + locator);
-
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		
 		//WebElement data = By.linkText("Chapter1");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		
