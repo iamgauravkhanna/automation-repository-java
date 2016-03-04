@@ -1,4 +1,4 @@
-Raftaar ( Regression Automation Framework To Allow Artificial Runs )
+Raftaar ( Regression Automation Framework That Allow Artificial Runs )
 ================================================================
 
 Components of Good Framework : 
