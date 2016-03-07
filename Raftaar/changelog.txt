@@ -41,7 +41,7 @@ Date : 1st - 29th Feb 2016
 v0.3
 =======
 
-Date : 1st - 30th June 2016
+Date : 1st - 31st March 2016
 
 
 - Dashboard : User your Oracle Apex Dashboard to see live status of your test suite
