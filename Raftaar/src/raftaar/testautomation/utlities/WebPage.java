@@ -127,16 +127,16 @@ public class WebPage {
 			// WebElement e = driver.findElement(locator);
 			// System.out.println("Value of e :" + e);
 			e.click();
-			System.out.println("Element Clicked");
+			//System.out.println("Element Clicked");
 			// long startTime = System.currentTimeMillis();
 			// System.out.println(" Load Time :" + (int)
 			// (System.currentTimeMillis() - startTime));
 			// long clickTime = System.currentTimeMillis() - startTime ;
-			long elapsed = ((System.currentTimeMillis() - startTime1) / 1000);
+			//long elapsed = ((System.currentTimeMillis() - startTime1) / 1000);
 
-			String display = String.format("%02d:%02d:%02d", elapsed / 3600, (elapsed % 3600) / 60, (elapsed % 60));
+			//String display = String.format("%02d:%02d:%02d", elapsed / 3600, (elapsed % 3600) / 60, (elapsed % 60));
 
-			StepOutcome = display;
+			//StepOutcome = display;
 			break;
 
 		case "selectByVisibleText":
@@ -442,12 +442,13 @@ public class WebPage {
 		}
 	}
 
-	public String acceptAlert() {
+	public String acceptAlert() throws InterruptedException {
 		boolean presentFlag = false;
 		String alertText = "";
 		
 		 try {
 			 
+			 	Thread.sleep(20000);
 			   // Check the presence of alert
 			   Alert alert = driver.switchTo().alert();
 			   // Get Alert Text
@@ -459,6 +460,7 @@ public class WebPage {
 			 
 			  } catch (NoAlertPresentException ex) {
 			   // Alert not present
+				  System.out.println("Exception Occured");
 			   ex.printStackTrace();
 			  }		 
 		return alertText;

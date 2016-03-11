@@ -1,0 +1,245 @@
+2016-03-11 18:45:18 INFO  UITests:35 - Running Test Case : Test.Case.1000
+2016-03-11 18:45:19 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-11 18:45:19 INFO  UITests:115 - STEP Meta Info : {summary=Accepts an alert (Click on Yes, OK, Done etc), flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.1000}
+
+2016-03-11 18:45:19 INFO  UITests:78 - Object : 
+2016-03-11 18:45:30 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-11 18:45:30 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-11 18:45:30 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=file:///C:/Selenium/Raftaar/html/alerts.html, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-11 18:45:30 INFO  UITests:78 - Object : 
+2016-03-11 18:45:30 INFO  UITests:131 - Step Outcome : file:///C:/Selenium/Raftaar/html/alerts.html
+
+2016-03-11 18:45:30 INFO  UITests:141 - Executing STEP : Click on Link Text
+
+2016-03-11 18:45:30 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=xpath=//button[@onclick='alertFunction()'], testcaseid=}
+
+2016-03-11 18:45:30 INFO  UITests:78 - Object : xpath=//button[@onclick='alertFunction()']
+2016-03-11 18:45:32 INFO  UITests:131 - Step Outcome : 00:00:00
+
+2016-03-11 18:45:32 INFO  UITests:141 - Executing STEP : Get Alert Text
+
+2016-03-11 18:45:32 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Alert Text, data=, action=acceptAlert, parent=, object=, testcaseid=}
+
+2016-03-11 18:45:32 INFO  UITests:78 - Object : 
+2016-03-11 18:45:32 INFO  UITests:43 - ----------------------------------------
+2016-03-11 18:45:32 INFO  UITests:44 -  Key : Value 
+2016-03-11 18:45:32 INFO  UITests:47 - ----------------------------------------
+2016-03-11 18:45:32 INFO  UITests:48 - RemoteURL : local
+2016-03-11 18:45:32 INFO  UITests:47 - ----------------------------------------
+2016-03-11 18:45:32 INFO  UITests:48 - browser : Firefox
+2016-03-11 18:45:32 INFO  UITests:47 - ----------------------------------------
+2016-03-11 18:45:32 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-11 18:45:32 INFO  UITests:47 - ----------------------------------------
+2016-03-11 18:45:32 INFO  UITests:48 - testcaseid : Test.Case.1000
+2016-03-11 19:11:38 INFO  UITests:35 - Running Test Case : Test.Case.1000
+2016-03-11 19:11:38 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-11 19:11:38 INFO  UITests:115 - STEP Meta Info : {summary=Accepts an alert (Click on Yes, OK, Done etc), flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.1000}
+
+2016-03-11 19:11:38 INFO  UITests:78 - Object : 
+2016-03-11 19:11:46 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-11 19:11:46 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-11 19:11:46 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=file:///C:/Selenium/Raftaar/html/alerts.html, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-11 19:11:46 INFO  UITests:78 - Object : 
+2016-03-11 19:11:46 INFO  UITests:131 - Step Outcome : file:///C:/Selenium/Raftaar/html/alerts.html
+
+2016-03-11 19:11:46 INFO  UITests:141 - Executing STEP : Click on Link Text
+
+2016-03-11 19:11:46 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=xpath=//button[@onclick='alertFunction()'], testcaseid=}
+
+2016-03-11 19:11:46 INFO  UITests:78 - Object : xpath=//button[@onclick='alertFunction()']
+2016-03-11 19:11:48 INFO  UITests:131 - Step Outcome : 00:00:00
+
+2016-03-11 19:11:48 INFO  UITests:141 - Executing STEP : Get Alert Text
+
+2016-03-11 19:11:48 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Alert Text, data=, action=acceptAlert, parent=, object=, testcaseid=}
+
+2016-03-11 19:11:48 INFO  UITests:78 - Object : 
+2016-03-11 19:11:49 INFO  UITests:43 - ----------------------------------------
+2016-03-11 19:11:49 INFO  UITests:44 -  Key : Value 
+2016-03-11 19:11:49 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:11:49 INFO  UITests:48 - RemoteURL : local
+2016-03-11 19:11:49 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:11:49 INFO  UITests:48 - browser : Firefox
+2016-03-11 19:11:49 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:11:49 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-11 19:11:49 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:11:49 INFO  UITests:48 - testcaseid : Test.Case.1000
+2016-03-11 19:13:32 INFO  UITests:35 - Running Test Case : Test.Case.1000
+2016-03-11 19:13:32 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-11 19:13:32 INFO  UITests:115 - STEP Meta Info : {summary=Accepts an alert (Click on Yes, OK, Done etc), flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.1000}
+
+2016-03-11 19:13:32 INFO  UITests:78 - Object : 
+2016-03-11 19:13:38 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-11 19:13:38 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-11 19:13:38 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=file:///C:/Selenium/Raftaar/html/alerts.html, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-11 19:13:38 INFO  UITests:78 - Object : 
+2016-03-11 19:13:39 INFO  UITests:131 - Step Outcome : file:///C:/Selenium/Raftaar/html/alerts.html
+
+2016-03-11 19:13:39 INFO  UITests:141 - Executing STEP : Click on Link Text
+
+2016-03-11 19:13:39 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=xpath=//button[@onclick='alertFunction()'], testcaseid=}
+
+2016-03-11 19:13:39 INFO  UITests:78 - Object : xpath=//button[@onclick='alertFunction()']
+2016-03-11 19:14:04 INFO  UITests:43 - ----------------------------------------
+2016-03-11 19:14:04 INFO  UITests:44 -  Key : Value 
+2016-03-11 19:14:04 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:14:04 INFO  UITests:48 - RemoteURL : local
+2016-03-11 19:14:04 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:14:04 INFO  UITests:48 - browser : Firefox
+2016-03-11 19:14:04 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:14:04 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-11 19:14:04 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:14:04 INFO  UITests:48 - testcaseid : Test.Case.1000
+2016-03-11 19:14:12 INFO  UITests:35 - Running Test Case : Test.Case.1000
+2016-03-11 19:14:12 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-11 19:14:12 INFO  UITests:115 - STEP Meta Info : {summary=Accepts an alert (Click on Yes, OK, Done etc), flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.1000}
+
+2016-03-11 19:14:12 INFO  UITests:78 - Object : 
+2016-03-11 19:14:17 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-11 19:14:17 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-11 19:14:17 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=file:///C:/Selenium/Raftaar/html/alerts.html, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-11 19:14:17 INFO  UITests:78 - Object : 
+2016-03-11 19:14:19 INFO  UITests:131 - Step Outcome : file:///C:/Selenium/Raftaar/html/alerts.html
+
+2016-03-11 19:14:19 INFO  UITests:141 - Executing STEP : Click on Link Text
+
+2016-03-11 19:14:19 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=xpath=//button[@onclick='alertFunction()'], testcaseid=}
+
+2016-03-11 19:14:19 INFO  UITests:78 - Object : xpath=//button[@onclick='alertFunction()']
+2016-03-11 19:14:49 INFO  UITests:43 - ----------------------------------------
+2016-03-11 19:14:49 INFO  UITests:44 -  Key : Value 
+2016-03-11 19:14:49 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:14:49 INFO  UITests:48 - RemoteURL : local
+2016-03-11 19:14:49 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:14:49 INFO  UITests:48 - browser : Firefox
+2016-03-11 19:14:49 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:14:49 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-11 19:14:49 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:14:49 INFO  UITests:48 - testcaseid : Test.Case.1000
+2016-03-11 19:15:29 INFO  UITests:35 - Running Test Case : Test.Case.1000
+2016-03-11 19:15:29 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-11 19:15:29 INFO  UITests:115 - STEP Meta Info : {summary=Accepts an alert (Click on Yes, OK, Done etc), flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.1000}
+
+2016-03-11 19:15:29 INFO  UITests:78 - Object : 
+2016-03-11 19:15:35 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-11 19:15:35 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-11 19:15:35 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=file:///C:/Selenium/Raftaar/html/alerts.html, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-11 19:15:35 INFO  UITests:78 - Object : 
+2016-03-11 19:15:35 INFO  UITests:131 - Step Outcome : file:///C:/Selenium/Raftaar/html/alerts.html
+
+2016-03-11 19:15:35 INFO  UITests:141 - Executing STEP : Click on Link Text
+
+2016-03-11 19:15:35 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=xpath=//button[@onclick='alertFunction()'], testcaseid=}
+
+2016-03-11 19:15:35 INFO  UITests:78 - Object : xpath=//button[@onclick='alertFunction()']
+2016-03-11 19:15:37 INFO  UITests:131 - Step Outcome : 00:00:00
+
+2016-03-11 19:15:37 INFO  UITests:141 - Executing STEP : Get Alert Text
+
+2016-03-11 19:15:37 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Alert Text, data=, action=acceptAlert, parent=, object=, testcaseid=}
+
+2016-03-11 19:15:37 INFO  UITests:78 - Object : 
+2016-03-11 19:15:37 INFO  UITests:43 - ----------------------------------------
+2016-03-11 19:15:37 INFO  UITests:44 -  Key : Value 
+2016-03-11 19:15:37 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:15:37 INFO  UITests:48 - RemoteURL : local
+2016-03-11 19:15:37 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:15:37 INFO  UITests:48 - browser : Firefox
+2016-03-11 19:15:37 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:15:37 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-11 19:15:37 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:15:37 INFO  UITests:48 - testcaseid : Test.Case.1000
+2016-03-11 19:18:10 INFO  UITests:35 - Running Test Case : Test.Case.1000
+2016-03-11 19:18:10 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-11 19:18:10 INFO  UITests:115 - STEP Meta Info : {summary=Accepts an alert (Click on Yes, OK, Done etc), flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.1000}
+
+2016-03-11 19:18:10 INFO  UITests:78 - Object : 
+2016-03-11 19:18:15 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-11 19:18:15 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-11 19:18:15 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=file:///C:/Selenium/Raftaar/html/alerts.html, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-11 19:18:15 INFO  UITests:78 - Object : 
+2016-03-11 19:18:16 INFO  UITests:131 - Step Outcome : file:///C:/Selenium/Raftaar/html/alerts.html
+
+2016-03-11 19:18:16 INFO  UITests:141 - Executing STEP : Click on Link Text
+
+2016-03-11 19:18:16 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=xpath=//button[@onclick='alertFunction()'], testcaseid=}
+
+2016-03-11 19:18:16 INFO  UITests:78 - Object : xpath=//button[@onclick='alertFunction()']
+2016-03-11 19:18:17 INFO  UITests:131 - Step Outcome : 00:00:00
+
+2016-03-11 19:18:17 INFO  UITests:141 - Executing STEP : Get Alert Text
+
+2016-03-11 19:18:17 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Alert Text, data=, action=acceptAlert, parent=, object=, testcaseid=}
+
+2016-03-11 19:18:17 INFO  UITests:78 - Object : 
+2016-03-11 19:18:18 INFO  UITests:43 - ----------------------------------------
+2016-03-11 19:18:18 INFO  UITests:44 -  Key : Value 
+2016-03-11 19:18:18 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:18:18 INFO  UITests:48 - RemoteURL : local
+2016-03-11 19:18:18 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:18:18 INFO  UITests:48 - browser : Firefox
+2016-03-11 19:18:18 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:18:18 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-11 19:18:18 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:18:18 INFO  UITests:48 - testcaseid : Test.Case.1000
+2016-03-11 19:19:36 INFO  UITests:35 - Running Test Case : Test.Case.1000
+2016-03-11 19:19:36 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-11 19:19:36 INFO  UITests:115 - STEP Meta Info : {summary=Accepts an alert (Click on Yes, OK, Done etc), flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.1000}
+
+2016-03-11 19:19:36 INFO  UITests:78 - Object : 
+2016-03-11 19:19:41 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-11 19:19:41 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-11 19:19:41 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=file:///C:/Selenium/Raftaar/html/alerts.html, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-11 19:19:41 INFO  UITests:78 - Object : 
+2016-03-11 19:19:42 INFO  UITests:131 - Step Outcome : file:///C:/Selenium/Raftaar/html/alerts.html
+
+2016-03-11 19:19:42 INFO  UITests:141 - Executing STEP : Click on Link Text
+
+2016-03-11 19:19:42 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=xpath=//button[@onclick='alertFunction()'], testcaseid=}
+
+2016-03-11 19:19:42 INFO  UITests:78 - Object : xpath=//button[@onclick='alertFunction()']
+2016-03-11 19:19:44 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-11 19:19:44 INFO  UITests:141 - Executing STEP : Get Alert Text
+
+2016-03-11 19:19:44 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Alert Text, data=, action=acceptAlert, parent=, object=, testcaseid=}
+
+2016-03-11 19:19:44 INFO  UITests:78 - Object : 
+2016-03-11 19:19:44 INFO  UITests:43 - ----------------------------------------
+2016-03-11 19:19:44 INFO  UITests:44 -  Key : Value 
+2016-03-11 19:19:44 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:19:44 INFO  UITests:48 - RemoteURL : local
+2016-03-11 19:19:44 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:19:44 INFO  UITests:48 - browser : Firefox
+2016-03-11 19:19:44 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:19:44 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-11 19:19:44 INFO  UITests:47 - ----------------------------------------
+2016-03-11 19:19:44 INFO  UITests:48 - testcaseid : Test.Case.1000
