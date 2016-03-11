@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Selenium Easy Prompt popup Sample </title>
+</head>
+<body>
+<h2>Prompt Box Example</h2>
+<fieldset>
+<legend>Prompt Box</legend>
+<p>Click the button to demonstrate the prompt box.</p>
+<button onclick="promptFunction()">Click on me</button>
+<p id="promptdemo"></p>
+<script>
+function promptFunction()
+{
+var x;
+var person=prompt("Please enter your name","Your name");
+if (person!=null)
+  {
+  x="Hello " + person + "! Welcome to Selenium Easy..";
+  document.getElementById("promptdemo").innerHTML=x;
+  }
+}
+</script>
+</fieldset>
+</body>
+</html>

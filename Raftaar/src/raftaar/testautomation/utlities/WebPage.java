@@ -27,6 +27,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
@@ -44,6 +45,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 import raftaar.testautomation.manager.TestManager;
 import raftaar.testautomation.testcases.UITests;
@@ -441,12 +443,24 @@ public class WebPage {
 	}
 
 	public String acceptAlert() {
+		boolean presentFlag = false;
 		String alertText = "";
-		wait.until(ExpectedConditions.alertIsPresent());
-		// Before you try to switch to the so given alert, he needs to be present.
-		Alert alert = driver.switchTo().alert();
-		alertText = alert.getText();
-		alert.accept();
+		
+		 try {
+			 
+			   // Check the presence of alert
+			   Alert alert = driver.switchTo().alert();
+			   // Get Alert Text
+			   alertText = alert.getText();
+			   // Alert present; set the flag
+			   presentFlag = true;
+			   // if present consume the alert
+			   alert.accept();
+			 
+			  } catch (NoAlertPresentException ex) {
+			   // Alert not present
+			   ex.printStackTrace();
+			  }		 
 		return alertText;
 	}
 

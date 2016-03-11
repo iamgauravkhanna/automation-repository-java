@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Selenium Easy Confirm popup Sample </title>
+</head>
+<body>
+<h2>Confirm Box Example</h2>
+<fieldset>
+<legend>Confirm Box</legend>
+<p>Click the button to display a confirm box.</p>
+<button onclick="confirmFunction()">Click on me</button>
+<p id="confirmdemo"></p>
+<script>
+function confirmFunction()
+{
+var cb;
+var c=confirm("I am an Example for Confirm Box.\n Press any button!");
+if (c==true)
+  {
+  cb="You Clicked on OK!";
+  }
+else
+  {
+  cb="You Clicked on Cancel!";
+  }
+document.getElementById("confirmdemo").innerHTML=cb;
+}
+</script>
+</fieldset>
+</body>
+</html>
