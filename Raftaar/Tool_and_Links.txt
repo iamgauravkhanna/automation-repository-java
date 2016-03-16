@@ -1,4 +1,7 @@
 Links :
 
 http://www.seleniumhq.org/docs/
-http://toolsqa.com/
+
+http://toolsqa.com/selenium-webdriver/handling-multiple-browsers-in-selenium-webdriver/
+
+http://www.seleniumeasy.com/selenium-tutorials/how-to-handle-javascript-alerts-confirmation-prompts
