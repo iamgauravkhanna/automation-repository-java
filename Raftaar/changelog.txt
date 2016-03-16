@@ -28,13 +28,13 @@ v0.2
 
 Date : 1st - 29th Feb 2016
 
-- Reporting - Storing logs in log file
+- Reporting : Storing logs in log file
 - DB : Development of DB Utilities to fetch/insert data into database
 - Others : Take Screenshots, Save HTML files
 - Selenium Grid - Provision to run test on Selenium Grid or on local
 - Iterations : Using Concept of Iteration to read data from data sheet
 - Methods : Concept of re-usability introduced by calling directly call another test case
-- Reporting - Creating customized HTML Reports
+- Reporting : Creating customized HTML Reports
 - Jenkins : Run your test suite from Jenkins
 - Ant : Using Ant to build your automation project jar
 
@@ -52,4 +52,4 @@ v0.4
 Date : 1st - 30th April 2016
 
 
-- Add new keywords
+- WebPage : Add new keywords
