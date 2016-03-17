@@ -45,8 +45,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.Reporter;
 
+import raftaar.testautomation.utlities.JavaUtils;
 import raftaar.testautomation.manager.TestManager;
 import raftaar.testautomation.testcases.UITests;
 
@@ -66,6 +66,8 @@ public class WebPage {
 	public int elementWaitTime = 10; // timeout value in second while waiting
 										// for an element to appear DISPLAYED
 	public WebDriverWait wait ;
+	public String alertText ;
+	public static Alert alert;
 
 	public static Logger log = Logger.getLogger(WebPage.class);
 
@@ -108,6 +110,12 @@ public class WebPage {
 			StepOutcome = "Opening Browser";
 			break;
 
+		case "assert=":
+
+			JavaUtils.assertEqual(Float.parseFloat(JavaUtils.getNumbersFromString(object)),
+					Float.parseFloat(JavaUtils.getNumbersFromString(data)));
+			break;
+			
 		case "getUrl":
 
 			// System.out.println("getUrl");
@@ -361,6 +369,10 @@ public class WebPage {
 			StepOutcome = UniqueString;
 			break;
 
+		case "acceptAlert":
+			acceptAlert();
+			break;
+			
 		case "runSelectQuery":
 			// System.out.println("DB Method");
 			UITests.log.info("Running DB Query Method");
@@ -444,13 +456,13 @@ public class WebPage {
 
 	public String acceptAlert() throws InterruptedException {
 		boolean presentFlag = false;
-		String alertText = "";
-		
+		alertText = "";
+		System.out.println("Entering Accept Alert Method");
 		 try {
 			 
 			 	Thread.sleep(20000);
 			   // Check the presence of alert
-			   Alert alert = driver.switchTo().alert();
+			   alert = driver.switchTo().alert();
 			   // Get Alert Text
 			   alertText = alert.getText();
 			   // Alert present; set the flag

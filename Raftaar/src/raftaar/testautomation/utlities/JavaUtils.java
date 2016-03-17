@@ -17,26 +17,33 @@ public class JavaUtils {
 	private static SecureRandom random = new SecureRandom();
 
 	/**
-	 * Extract numeric characters from a string E.g. gets 30 from $30
+	 * Extract numeric characters from a string
+	 * E.g. gets 30 from $30
 	 * 
-	 * @param inputString
-	 *            input string from which numbers needs to be extracted
+	 * @param inputString input string from which numbers needs to be extracted
 	 * @return float retrieved from the string
 	 */
-	public static float getNumbersFromString(String inputString) {
+	public static String getNumbersFromString(String inputString)
+	{
 		String outValue = "";
-		for (char c : inputString.toCharArray()) {
+		for (char c : inputString.toCharArray())
+		{
 			if ((c >= '0' && c <= '9') || (c == '.'))
 				outValue = outValue + c;
-			else if (outValue.length() > 0 && (c == ' '))
-				break;
+			else if (outValue.length() > 0 && (c == ' ')) break;
 		}
-		try {
-			return Float.parseFloat(outValue);
-		} catch (NumberFormatException e) {
-			if (e.getMessage().toLowerCase().contains("empty string")) {
-				return (float) 0.00;
-			} else {
+		try
+		{
+			// return Float.parseFloat(outValue);
+			return outValue;
+		} catch (NumberFormatException e)
+		{
+			if (e.getMessage().toLowerCase().contains("empty string"))
+			{
+				// return (float) 0.00;
+				return "0.00";
+			} else
+			{
 				throw e;
 			}
 		}
@@ -335,5 +342,5 @@ public class JavaUtils {
 		List<String> list = Arrays.asList(strArr);
 		return list;
 	}
-	
+		
 }
