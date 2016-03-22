@@ -1,0 +1,50 @@
+2016-03-22 18:57:13 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-22 18:57:13 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-22 18:57:13 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-22 18:57:13 INFO  UITests:80 - Object : 
+2016-03-22 18:57:13 INFO  UITests:81 - Data : http://book.theautomatedtester.co.uk
+2016-03-22 18:57:13 INFO  UITests:43 - ----------------------------------------
+2016-03-22 18:57:13 INFO  UITests:44 -  Key : Value 
+2016-03-22 18:57:13 INFO  UITests:47 - ----------------------------------------
+2016-03-22 18:57:13 INFO  UITests:48 - RemoteURL : local
+2016-03-22 18:57:13 INFO  UITests:47 - ----------------------------------------
+2016-03-22 18:57:13 INFO  UITests:48 - browser : Firefox
+2016-03-22 18:57:13 INFO  UITests:47 - ----------------------------------------
+2016-03-22 18:57:13 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-22 18:57:13 INFO  UITests:47 - ----------------------------------------
+2016-03-22 18:57:13 INFO  UITests:48 - testcaseid : Test.Case.001
+2016-03-22 18:59:00 INFO  UITests:35 - Running Test Case : Test.Case.001
+2016-03-22 18:59:00 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-22 18:59:00 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-03-22 18:59:00 INFO  UITests:80 - Object : 
+2016-03-22 18:59:00 INFO  UITests:81 - Data : 
+2016-03-22 18:59:48 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-22 18:59:48 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-22 18:59:48 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-22 18:59:48 INFO  UITests:80 - Object : 
+2016-03-22 18:59:48 INFO  UITests:81 - Data : http://book.theautomatedtester.co.uk
+2016-03-22 18:59:48 INFO  UITests:43 - ----------------------------------------
+2016-03-22 18:59:48 INFO  UITests:44 -  Key : Value 
+2016-03-22 18:59:48 INFO  UITests:47 - ----------------------------------------
+2016-03-22 18:59:48 INFO  UITests:48 - RemoteURL : local
+2016-03-22 18:59:48 INFO  UITests:47 - ----------------------------------------
+2016-03-22 18:59:48 INFO  UITests:48 - browser : Firefox
+2016-03-22 18:59:48 INFO  UITests:47 - ----------------------------------------
+2016-03-22 18:59:48 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-22 18:59:48 INFO  UITests:47 - ----------------------------------------
+2016-03-22 18:59:48 INFO  UITests:48 - testcaseid : Test.Case.001
+2016-03-22 19:07:53 INFO  UITests:35 - Running Test Case : Test.Case.001
+2016-03-22 19:07:53 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-22 19:07:53 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-03-22 19:07:53 INFO  UITests:80 - Object : 
+2016-03-22 19:07:53 INFO  UITests:81 - Data : 

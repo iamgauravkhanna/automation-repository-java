@@ -157,6 +157,7 @@ public class TestDriver {
 				}
 				else
 				{
+					System.out.println("Running Test Step");
 					tm.runTestStep(a, b, c, d, e1, f, g, h, i);
 				}
 			} else {

@@ -16,10 +16,10 @@
 	<classpathentry kind="lib" path="lib/poi/poi-ooxml-schemas-3.13-20150929.jar"/>
 	<classpathentry kind="lib" path="lib/poi/poi-scratchpad-3.13-20150929.jar"/>
 	<classpathentry kind="lib" path="lib/poi/xmlbeans-2.6.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.48.2.jar"/>
 	<classpathentry kind="lib" path="lib/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/guice-4.0.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/reportng-1.1.4/reportng-1.1.4.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/reportng-1.1.4/velocity-dep-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.53.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

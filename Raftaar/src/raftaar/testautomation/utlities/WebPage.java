@@ -78,6 +78,7 @@ public class WebPage {
 		value = null;
 
 		UITests.log.info("Object : " + object);
+		UITests.log.info("Data : " + data);
 
 		if (object.contains("=") && !(object.isEmpty())) {
 			locatorType = object.split("=")[0].toLowerCase().trim();
@@ -119,7 +120,7 @@ public class WebPage {
 		case "getUrl":
 
 			// System.out.println("getUrl");
-			// System.out.println(data);
+			System.out.println("Data is " + data);
 			driver.get(data);
 			StepOutcome = data;
 			break;
