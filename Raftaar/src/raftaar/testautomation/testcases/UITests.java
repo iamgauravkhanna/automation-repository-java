@@ -40,16 +40,21 @@ public class UITests {
 	@AfterClass
 	public void afterMethod() {
 
-		log.info("----------------------------------------");
+/*		log.info("----------------------------------------");
 		log.info(" Key : Value ");
 
 		for (Entry<String, String> entry : TestManager.MyDataDicitonary.entrySet()) {
 			log.info("----------------------------------------");
-			log.info(entry.getKey() + " : " + entry.getValue());
-			WebPage.screenShotCounter = 0;
-		}
-
+			log.info(entry.getKey() + " : " + entry.getValue());*/
+			
 		
+
+		for (Entry<String, String> entry : TestManager.MyDataDicitonary.entrySet()) {
+			log.info("Key : " + entry.getKey() + " and " + " Value : " + entry.getValue());
+		}
+	
+	WebPage.screenShotCounter = 0;
+	
 	}
 
 }
