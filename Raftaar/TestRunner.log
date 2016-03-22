@@ -48,3 +48,83 @@
 
 2016-03-22 19:07:53 INFO  UITests:80 - Object : 
 2016-03-22 19:07:53 INFO  UITests:81 - Data : 
+2016-03-22 19:14:04 INFO  UITests:35 - Running Test Case : Test.Case.001
+2016-03-22 19:14:04 INFO  UITests:141 - Executing STEP : Open Browser
+
+2016-03-22 19:14:04 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-03-22 19:14:04 INFO  UITests:80 - Object : 
+2016-03-22 19:14:04 INFO  UITests:81 - Data : 
+2016-03-22 19:14:10 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-22 19:14:10 INFO  UITests:141 - Executing STEP : Go to URL
+
+2016-03-22 19:14:10 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-22 19:14:10 INFO  UITests:80 - Object : 
+2016-03-22 19:14:10 INFO  UITests:81 - Data : http://book.theautomatedtester.co.uk
+2016-03-22 19:14:11 INFO  UITests:131 - Step Outcome : http://book.theautomatedtester.co.uk
+
+2016-03-22 19:14:11 INFO  UITests:141 - Executing STEP : Maximize Window
+
+2016-03-22 19:14:11 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-03-22 19:14:11 INFO  UITests:80 - Object : 
+2016-03-22 19:14:11 INFO  UITests:81 - Data : 
+2016-03-22 19:14:12 INFO  UITests:131 - Step Outcome : Maximize Window
+
+2016-03-22 19:14:12 INFO  UITests:141 - Executing STEP : Click on Link Text
+
+2016-03-22 19:14:12 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=linkText=Chapter1, testcaseid=}
+
+2016-03-22 19:14:12 INFO  UITests:80 - Object : linkText=Chapter1
+2016-03-22 19:14:12 INFO  UITests:81 - Data : 
+2016-03-22 19:14:13 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-22 19:14:13 INFO  UITests:141 - Executing STEP : Click on Radio Button
+
+2016-03-22 19:14:13 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Radio Button, data=, action=click, parent=, object=id=radiobutton, testcaseid=}
+
+2016-03-22 19:14:13 INFO  UITests:80 - Object : id=radiobutton
+2016-03-22 19:14:13 INFO  UITests:81 - Data : 
+2016-03-22 19:14:15 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-22 19:14:15 INFO  UITests:141 - Executing STEP : Set Variable
+
+2016-03-22 19:14:15 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Set Variable, data=Selenium Core, action=setVariable, parent=, object=dropDownValue, testcaseid=}
+
+2016-03-22 19:14:15 INFO  UITests:80 - Object : dropDownValue
+2016-03-22 19:14:15 INFO  UITests:81 - Data : Selenium Core
+2016-03-22 19:14:15 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-22 19:14:15 INFO  UITests:141 - Executing STEP : Select option from dropdown
+
+2016-03-22 19:14:15 INFO  UITests:43 - ----------------------------------------
+2016-03-22 19:14:15 INFO  UITests:44 -  Key : Value 
+2016-03-22 19:14:15 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:14:15 INFO  UITests:48 - RemoteURL : local
+2016-03-22 19:14:15 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:14:15 INFO  UITests:48 - browser : Firefox
+2016-03-22 19:14:15 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:14:15 INFO  UITests:48 - dropDownValue : Selenium Core
+2016-03-22 19:14:15 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:14:15 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-22 19:14:15 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:14:15 INFO  UITests:48 - testcaseid : Test.Case.001
+2016-03-22 19:16:23 INFO  UITests:35 - Running Test Case : Test.Case.1001
+2016-03-22 19:16:23 INFO  UITests:141 - Executing STEP : Compare 2 Values
+
+2016-03-22 19:16:23 INFO  UITests:115 - STEP Meta Info : {summary=Verify Assert= keyword, flags=, iterations=, description=Compare 2 Values, data=5.0, action=assert=, parent=, object=5.0, testcaseid=Test.Case.1001}
+
+2016-03-22 19:16:23 INFO  UITests:80 - Object : 5.0
+2016-03-22 19:16:23 INFO  UITests:81 - Data : 5.0
+2016-03-22 19:16:23 INFO  UITests:43 - ----------------------------------------
+2016-03-22 19:16:23 INFO  UITests:44 -  Key : Value 
+2016-03-22 19:16:23 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:16:23 INFO  UITests:48 - RemoteURL : local
+2016-03-22 19:16:23 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:16:23 INFO  UITests:48 - browser : Firefox
+2016-03-22 19:16:23 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:16:23 INFO  UITests:48 - DBConnection : jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix
+2016-03-22 19:16:23 INFO  UITests:47 - ----------------------------------------
+2016-03-22 19:16:23 INFO  UITests:48 - testcaseid : Test.Case.1001
