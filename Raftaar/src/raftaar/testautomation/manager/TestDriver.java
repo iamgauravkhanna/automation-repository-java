@@ -33,8 +33,8 @@ public class TestDriver {
 	public String flags;
 	public By loc;
 	public String baseTestCaseID;
-	public HashMap<Integer, HashMap<String, String>> TestDataMap ; 
-	public HashMap<String, String> testDataRepo ;  
+	public HashMap<Integer, HashMap<String, String>> TestDataMap;
+	public HashMap<String, String> testDataRepo;
 
 	TestManager tm = new TestManager();
 
@@ -63,111 +63,43 @@ public class TestDriver {
 
 	public void runTestCase(String testCaseId) throws Exception {
 
-		// System.out.println("Dicitionary Values are : " +
-		// TestManager.MyDataDicitonary.entrySet());
-
-		// XmlUtils xu = new XmlUtils();
-		// String x = xu.readParameters();
-
-		// TestManager.MyDataDicitonary.putAll(params);
-
-		// System.out.println("Value of Parameters File : " + x);
-		// System.out.println("Dicitionary Values after explicit : " +
-		// TestManager.MyDataDicitonary.entrySet());
-
-		// System.out.println("Entering runTestCase Class");
-
-		readTestData("EmployeeInfo");
+		createTestDataMap("EmployeeInfo");
 		createTestCaseMap();
 		executeTestCase(testCaseId);
-		//readTestCase();
 
 	}
 
-	public void readTestData(String SheetName) throws Exception {
+	public HashMap<Integer, HashMap<String, String>> createTestDataMap(String SheetName) throws Exception {
 
-		TestDataMap =  createTestDataMap(SheetName);
-				
-	}
-	
-	public void getTestData(String SheetName, int iteration) throws Exception {
-		
-		testDataRepo = TestDataMap.get(iteration);
-		
-		System.out.println(testDataRepo.toString());
-		
-		TestManager.MyDataDicitonary.putAll(testDataRepo);
-		
-		
-	}
+		int slnumber = 0;
 
-	public void executeTestCase(String testCaseId) throws Exception {
+		for (int rowVar = 1; rowVar <= dataFile.getRowCount(SheetName); rowVar++) {
+			for (int colVar = 0; colVar < dataFile.getColumnCount(SheetName); colVar++) {
 
-		// configure log4j properties file
-		// PropertyConfigurator.configure("Log4j.properties");
+				/*
+				 * System.out.println("Value of Cell (" + rowVar + "," + colVar
+				 * + ") is : " + dataFile.getCellData("EmployeeInfo", colVar,
+				 * rowVar));
+				 */
 
-		//HashMap<String, HashMap<Integer, HashMap<String, String>>> myHashMap = createTestCaseMap();
+				String key = dataFile.getCellData("EmployeeInfo", colVar, 1);
+				String value = dataFile.getCellData("EmployeeInfo", colVar, rowVar);
 
-		HashMap<Integer, HashMap<String, String>> myHashMapObject = testCases.get(testCaseId);
-
-		// System.out.println("Printing Values of TestCase Hash Map : " +
-		// myHashMap.entrySet());
-
-		// System.out.println(myHashMap.size());
-		// System.out.println(myHashMap.keySet());
-
-		// System.out.println(myHashMap.entrySet());
-
-		for (int k = 0; k < myHashMapObject.size(); k++) {
-			HashMap<String, String> myHashMapObj = testCases.get(testCaseId).get(k);
-
-			String a = myHashMapObj.get("testcaseid");
-			String b = myHashMapObj.get("summary");
-			String c = myHashMapObj.get("description");
-			String d = myHashMapObj.get("parent");
-			String e1 = myHashMapObj.get("object");
-			String f = myHashMapObj.get("action");
-			String g = myHashMapObj.get("data");
-			String h = myHashMapObj.get("iterations");
-			String i = myHashMapObj.get("flags");
-			/*
-			 * if((e.getKey())=="testcaseid"); {a = testcaseid}
-			 * TestDriver.runTestStep(tsid, testid, testCaseId, keyword,
-			 * testCaseId, loc, value, testCaseId, testCaseId, testCaseId);
-			 */
-
-			if (!(i.contains("{skip}"))) {
-
-				UITests.log.info("Executing STEP : " + c + "\n");
-				Reporter.log("Executing STEP : " + c + "\n");
-				// System.out.println("Executing STEP : " + c + "\n");
-				
-				if(i.contains("testdatasheet"))
-				{
-					String getSheetName = i.substring(15);
-					getSheetName.replaceAll("[^a-zA-Z0-9]", "");
-					//getSheetName.trim();
-					System.out.println("SheetName is : " + getSheetName);
-				}
-				
-				if(f.contains("."))
-				{
-					System.out.println("Test Case Found In Between");
-					this.executeTestCase(f);
-				}
-				else
-				{
-					System.out.println("Running Test Step");
-					tm.runTestStep(a, b, c, d, e1, f, g, h, i);
-				}
-			} else {
-				UITests.log.info("Skipping Test Step");
-				// System.out.println("Skipping Test Step");
+				dataIterationStepDetails.put(key, value);
 			}
+			dataIterationDetails.put(slnumber, dataIterationStepDetails);
+			dataIterationStepDetails = new HashMap<>();
 
-			// System.out.println(myHashMapObj.keySet());
-
+			slnumber++;
 		}
+
+		/*
+		 * Iterator<?> it = dataIterationDetails.entrySet().iterator(); while
+		 * (it.hasNext()){ Map.Entry pair = (Map.Entry)it.next();
+		 * System.out.println(pair.getKey() + " = " + pair.getValue()); }
+		 */
+
+		return dataIterationDetails;
 
 	}
 
@@ -276,36 +208,80 @@ public class TestDriver {
 
 	}
 
-	public HashMap<Integer, HashMap<String, String>> createTestDataMap(String SheetName) throws Exception {
-		
-		int slnumber =0;
-		
-		for (int rowVar = 1; rowVar <= dataFile.getRowCount(SheetName); rowVar++) {
-			for (int colVar = 0; colVar < dataFile.getColumnCount(SheetName); colVar++) {
+	public void getTestData(String SheetName, int iteration) throws Exception {
 
-				System.out.println("Value of Cell (" + rowVar + "," + colVar + ") is : "
-						+ dataFile.getCellData("EmployeeInfo", colVar, rowVar));
+		testDataRepo = TestDataMap.get(iteration);
 
-				String key = dataFile.getCellData("EmployeeInfo", colVar, 1);
-				String value = dataFile.getCellData("EmployeeInfo", colVar, rowVar);
+		// System.out.println(testDataRepo.toString());
 
-				dataIterationStepDetails.put(key, value);
+		TestManager.MyDataDicitonary.putAll(testDataRepo);
+
+	}
+
+	public void executeTestCase(String testCaseId) throws Exception {
+
+		// configure log4j properties file
+		// PropertyConfigurator.configure("Log4j.properties");
+
+		// HashMap<String, HashMap<Integer, HashMap<String, String>>> myHashMap
+		// = createTestCaseMap();
+
+		HashMap<Integer, HashMap<String, String>> myHashMapObject = testCases.get(testCaseId);
+
+		// System.out.println("Printing Values of TestCase Hash Map : " +
+		// myHashMap.entrySet());
+
+		// System.out.println(myHashMap.size());
+		// System.out.println(myHashMap.keySet());
+
+		// System.out.println(myHashMap.entrySet());
+
+		for (int k = 0; k < myHashMapObject.size(); k++) {
+			HashMap<String, String> myHashMapObj = testCases.get(testCaseId).get(k);
+
+			String a = myHashMapObj.get("testcaseid");
+			String b = myHashMapObj.get("summary");
+			String c = myHashMapObj.get("description");
+			String d = myHashMapObj.get("parent");
+			String e1 = myHashMapObj.get("object");
+			String f = myHashMapObj.get("action");
+			String g = myHashMapObj.get("data");
+			String h = myHashMapObj.get("iterations");
+			String i = myHashMapObj.get("flags");
+			/*
+			 * if((e.getKey())=="testcaseid"); {a = testcaseid}
+			 * TestDriver.runTestStep(tsid, testid, testCaseId, keyword,
+			 * testCaseId, loc, value, testCaseId, testCaseId, testCaseId);
+			 */
+
+			if (!(i.contains("{skip}"))) {
+
+				UITests.log.info("Executing STEP : " + c + "\n");
+				Reporter.log("Executing STEP : " + c + "\n");
+				// System.out.println("Executing STEP : " + c + "\n");
+
+				if (i.contains("testdatasheet")) {
+					String getSheetName = i.substring(15);
+					getSheetName.replaceAll("[^a-zA-Z0-9]", "");
+					// getSheetName.trim();
+					//System.out.println("SheetName is : " + getSheetName);
+				}
+
+				if (f.contains(".")) {
+					//System.out.println("Test Case Found In Between");
+					this.executeTestCase(f);
+				} else {
+					//System.out.println("Running Test Step");
+					tm.runTestStep(a, b, c, d, e1, f, g, h, i);
+				}
+			} else {
+				UITests.log.info("Skipping Test Step");
+				// System.out.println("Skipping Test Step");
 			}
-			dataIterationDetails.put(slnumber, dataIterationStepDetails);
-			dataIterationStepDetails = new HashMap<>();
-			
-			slnumber ++;
-		}
 
-		
-		
-		Iterator<?> it = dataIterationDetails.entrySet().iterator();
-		while (it.hasNext()){
-			Map.Entry pair = (Map.Entry)it.next();
-	        System.out.println(pair.getKey() + " = " + pair.getValue());
+			// System.out.println(myHashMapObj.keySet());
+
 		}
-		
-		return dataIterationDetails;
 
 	}
 

@@ -77,8 +77,8 @@ public class WebPage {
 
 		value = null;
 
-		UITests.log.info("Object : " + object);
-		UITests.log.info("Data : " + data);
+		//UITests.log.info("Object : " + object);
+		//UITests.log.info("Data : " + data);
 
 		if (object.contains("=") && !(object.isEmpty())) {
 			locatorType = object.split("=")[0].toLowerCase().trim();
@@ -95,10 +95,10 @@ public class WebPage {
 		}
 
 		if (loc == null) {
-			System.out.println("Oops Locator Is Null");
+			//System.out.println("Oops Locator Is Null");
 		} else {
 			e = what(driver, loc);
-			System.out.println("Got the Element : " + e);
+			//System.out.println("Got the Element : " + e);
 		}
 
 		// System.out.println("Action is : " + action);
@@ -108,6 +108,8 @@ public class WebPage {
 		case "openBrowser":
 
 			openBrowser(TestManager.MyDataDicitonary.get("browser"));
+			driver.get(data);
+			driver.manage().window().maximize();
 			StepOutcome = "Opening Browser";
 			break;
 
@@ -115,6 +117,7 @@ public class WebPage {
 
 			JavaUtils.assertEqual(Float.parseFloat(JavaUtils.getNumbersFromString(object)),
 					Float.parseFloat(JavaUtils.getNumbersFromString(data)));
+			
 			break;
 			
 		case "getUrl":
@@ -182,7 +185,7 @@ public class WebPage {
 
 		case "getAttribute":
 			String var3 = driver.findElement(loc).getAttribute(data);
-			TestManager.MyDataDicitonary.put("argument1", var3);
+			TestManager.MyDataDicitonary.put(data, var3);
 			break;
 
 		case "closeBrowser":
@@ -249,11 +252,11 @@ public class WebPage {
 			break;
 
 		case "waitFor":
-			System.out.println("Wait For Element");
+			//System.out.println("Wait For Element");
 
 			int data3 = (int) Double.parseDouble(data);
 			WebDriverWait wait = new WebDriverWait(driver, data3);
-			System.out.println("Value of loc is : " + loc);
+			//System.out.println("Value of loc is : " + loc);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
 
 			break;
@@ -376,7 +379,7 @@ public class WebPage {
 			
 		case "runSelectQuery":
 			// System.out.println("DB Method");
-			UITests.log.info("Running DB Query Method");
+			//UITests.log.info("Running DB Query Method");
 			int count = DBUtils.runSelectQuery(data);
 			StepOutcome = count + " Coloumns Fetched ";
 			break;
@@ -473,7 +476,7 @@ public class WebPage {
 			 
 			  } catch (NoAlertPresentException ex) {
 			   // Alert not present
-				  System.out.println("Exception Occured");
+				 // System.out.println("Exception Occured");
 			   ex.printStackTrace();
 			  }		 
 		return alertText;
@@ -509,14 +512,14 @@ public class WebPage {
 
 		// System.out.println("WTF");
 
-		System.out.println("locator is : " + locator);
+		//System.out.println("locator is : " + locator);
 		
 		//WebElement data = By.linkText("Chapter1");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		
 		element = driver.findElement(locator);
 
-		System.out.println("Element is : " + element);
+		//System.out.println("Element is : " + element);
 
 		fnHighlightMe(driver, element);
 

@@ -1,16 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="My First Test Suite">
+
+<suite name="Test Suite">
+
 	<listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
-	<test name="My First Test">
-		<parameter name="browser" value="Firefox" />		
-		<parameter name="testcaseid" value="Test.Case.1002" />
-		<parameter name="DBConnection" value="jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix" />		
+	<test name="Test Case">
+		<parameter name="browser" value="Firefox" />
+		<parameter name="testcaseid" value="End.To.End.TestCase.001" />
+		<parameter name="DBConnection"
+			value="jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix" />
 		<classes>
 			<class name="raftaar.testautomation.testcases.UITests" />
 		</classes>
 	</test>
+
 </suite>

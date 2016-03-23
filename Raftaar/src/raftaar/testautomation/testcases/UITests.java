@@ -15,7 +15,7 @@ import raftaar.testautomation.utlities.WebPage;
 
 public class UITests {
 
-	static TestDriver myDriver = new TestDriver();
+	static TestDriver TestDriverObject = new TestDriver();
 	public static Logger log = Logger.getLogger(UITests.class);
 
 	@Parameters({ "browser", "testcaseid", "DBConnection" })
@@ -34,27 +34,18 @@ public class UITests {
 
 		log.info("Running Test Case : " + TestManager.MyDataDicitonary.get("testcaseid"));
 
-		myDriver.runTestCase(TestManager.MyDataDicitonary.get("testcaseid"));
+		TestDriverObject.runTestCase(TestManager.MyDataDicitonary.get("testcaseid"));
 	}
 
 	@AfterClass
 	public void afterMethod() {
 
-/*		log.info("----------------------------------------");
-		log.info(" Key : Value ");
-
-		for (Entry<String, String> entry : TestManager.MyDataDicitonary.entrySet()) {
-			log.info("----------------------------------------");
-			log.info(entry.getKey() + " : " + entry.getValue());*/
-			
-		
-
 		for (Entry<String, String> entry : TestManager.MyDataDicitonary.entrySet()) {
 			log.info("Key : " + entry.getKey() + " and " + " Value : " + entry.getValue());
 		}
-	
-	WebPage.screenShotCounter = 0;
-	
+
+		WebPage.screenShotCounter = 0;
+
 	}
 
 }
