@@ -253,7 +253,33 @@ public class WebPage {
 		case "assertPresent":
 			// System.out.println("Get Current Page Source");
 			e.isDisplayed();
-			break;	
+			break;
+			
+		case "assertContains":
+			// System.out.println("Get Current Page Source");
+			e.getText().trim();
+			JavaUtils.assertContains(object, data);
+			break;
+			
+		case "assertContainsNot":
+			// System.out.println("Get Current Page Source");
+			e.getText().trim();
+			JavaUtils.assertContainsNot(object, data);
+			break;		
+			
+		case "assertNotPresent":
+			// System.out.println("Get Current Page Source");
+			Boolean isPresent ;
+			
+			if(e.isDisplayed()){			
+			isPresent = true;
+			}
+			else
+			{
+				isPresent  = false ;
+			}
+			if (isPresent) throw new Exception("Element  is visible on page.");
+			break;
 		
 		case "assertEqual":
 			// System.out.println("Get Current Page Source");
