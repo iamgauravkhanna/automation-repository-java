@@ -23,5 +23,6 @@
 	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.53.0.jar"/>
 	<classpathentry kind="lib" path="lib/apache-xml-xerces.jar"/>
 	<classpathentry kind="lib" path="/WebDriver/lib/selenium-server-standalone-2.52.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

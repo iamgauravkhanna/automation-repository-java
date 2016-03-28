@@ -125,10 +125,16 @@ public class WebPage {
 			
 			break;
 			
+		case "uploadFile":
+
+			e.sendKeys(data);
+						
+			break;
+			
 		case "getUrl":
 
 			// System.out.println("getUrl");
-			System.out.println("Data is " + data);
+			//System.out.println("Data is " + data);
 			driver.get(data);
 			StepOutcome = data;
 			break;
@@ -379,7 +385,7 @@ public class WebPage {
 			break;
 
 		case "setVariable":
-			System.out.println("Set Variable");
+			//System.out.println("Set Variable");
 			TestManager.MyDataDicitonary.put(object, data);
 			// System.out.println("Value : " +
 			// TestRunner.MyDataDicitonary.get(parent) + " & Key : "

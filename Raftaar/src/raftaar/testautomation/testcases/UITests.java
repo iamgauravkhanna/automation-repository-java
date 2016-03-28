@@ -1,13 +1,15 @@
 package raftaar.testautomation.testcases;
 
-import java.util.Map.Entry;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 import org.apache.log4j.Logger;
-import org.testng.annotations.AfterClass;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
 import raftaar.testautomation.manager.TestDriver;
 import raftaar.testautomation.manager.TestManager;
@@ -38,11 +40,7 @@ public class UITests {
 	}
 
 	@AfterClass
-	public void afterMethod() {
-
-		for (Entry<String, String> entry : TestManager.MyDataDicitonary.entrySet()) {
-			log.info("Key : " + entry.getKey() + " and " + " Value : " + entry.getValue());
-		}
+	public void afterMethod() throws IOException {
 
 		WebPage.screenShotCounter = 0;
 
