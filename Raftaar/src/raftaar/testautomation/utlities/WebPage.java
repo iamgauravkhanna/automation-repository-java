@@ -220,6 +220,26 @@ public class WebPage {
 			driver.getTitle();
 			break;
 
+		case "refresh":
+			// System.out.println("Get Current Page Title");
+			driver.navigate().refresh();
+			break;
+			
+		case "goTo":
+			// System.out.println("Get Current Page Title");
+			driver.navigate().to(data);
+			break;
+			
+		case "goBack":
+			// System.out.println("Get Current Page Title");
+			driver.navigate().back();
+			break;
+			
+		case "goForward":
+			// System.out.println("Get Current Page Title");
+			driver.navigate().forward();
+			break;	
+			
 		case "getPageSource":
 			// System.out.println("Get Current Page Source");
 			driver.getPageSource();
