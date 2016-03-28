@@ -1,0 +1,55 @@
+2016-03-28 18:17:02 INFO  UITests:38 - Running Test Case : Test.Case.001
+2016-03-28 18:17:02 INFO  UITests:259 - Executing STEP : Open Browser
+
+2016-03-28 18:17:02 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-03-28 18:17:10 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-28 18:17:10 INFO  UITests:259 - Executing STEP : Go to URL
+
+2016-03-28 18:17:10 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-03-28 18:17:12 INFO  UITests:131 - Step Outcome : http://book.theautomatedtester.co.uk
+
+2016-03-28 18:17:12 INFO  UITests:259 - Executing STEP : Maximize Window
+
+2016-03-28 18:17:12 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-03-28 18:17:12 INFO  UITests:131 - Step Outcome : Maximize Window
+
+2016-03-28 18:17:12 INFO  UITests:259 - Executing STEP : Click on Link Text
+
+2016-03-28 18:17:12 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=linkText=Chapter1, testcaseid=}
+
+2016-03-28 18:17:13 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-28 18:17:13 INFO  UITests:259 - Executing STEP : Click on Radio Button
+
+2016-03-28 18:17:13 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Radio Button, data=, action=click, parent=, object=id=radiobutton, testcaseid=}
+
+2016-03-28 18:17:14 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-28 18:17:14 INFO  UITests:259 - Executing STEP : Set Variable
+
+2016-03-28 18:17:14 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Set Variable, data=Selenium Core, action=setVariable, parent=, object=dropDownValue, testcaseid=}
+
+2016-03-28 18:17:15 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-28 18:17:15 INFO  UITests:259 - Executing STEP : Select option from dropdown
+
+2016-03-28 18:17:15 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Select option from dropdown, data=Selenium Core, action=selectByVisibleText, parent=, object=id=selecttype, testcaseid=}
+
+2016-03-28 18:17:16 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-28 18:17:16 INFO  UITests:259 - Executing STEP : Get Text
+
+2016-03-28 18:17:16 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Text, data=text1, action=getText, parent=, object=id=divontheleft, testcaseid=}
+
+2016-03-28 18:17:17 INFO  UITests:131 - Step Outcome : NULL
+
+2016-03-28 18:17:17 INFO  UITests:259 - Executing STEP : Close Browser
+
+2016-03-28 18:17:17 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Close Browser, data=, action=closeBrowser, parent=, object=, testcaseid=}
+
+2016-03-28 18:17:19 INFO  UITests:131 - Step Outcome : NULL
+

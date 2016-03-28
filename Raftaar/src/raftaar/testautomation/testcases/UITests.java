@@ -4,6 +4,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import org.apache.log4j.Logger;
 
@@ -41,6 +42,14 @@ public class UITests {
 
 	@AfterClass
 	public void afterMethod() throws IOException {
+
+		Iterator iterator = TestManager.MyDataDicitonary.keySet().iterator();
+
+		while (iterator.hasNext()) {
+			String key = iterator.next().toString();
+			String value = TestManager.MyDataDicitonary.get(key).toString();
+			log.info("Key =" + key + " and  Value =  " + value);
+		}
 
 		WebPage.screenShotCounter = 0;
 
