@@ -23,6 +23,10 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -41,6 +45,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.Response;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -245,6 +250,37 @@ public class WebPage {
 			driver.getPageSource();
 			break;
 
+		case "assertPresent":
+			// System.out.println("Get Current Page Source");
+			e.isDisplayed();
+			break;	
+		
+		case "assertEqual":
+			// System.out.println("Get Current Page Source");
+			JavaUtils.assertEqual(object,data,parent);
+			break;	
+
+		case "assertLinkStatus":
+			// System.out.println("Get Current Page Source");
+			 String href;
+		     href = driver.getCurrentUrl();
+				HttpClient client = HttpClientBuilder.create().build();
+				HttpGet request = new HttpGet(href);
+				try {
+					HttpResponse response = client.execute(request);
+					int invalidLinksCount = 0;
+					// verifying response code and The HttpStatus should be 200 if not,
+					// increment invalid link count
+					////We can also check for 404 status code like response.getStatusLine().getStatusCode() == 404
+					if (response.getStatusLine().getStatusCode() != 200)
+						invalidLinksCount++;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			 
+			break;		
+			
 		case "runJavaScript":
 			System.out.println("Run JavaScript");
 
