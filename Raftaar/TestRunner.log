@@ -52,3 +52,13 @@
 
 2016-03-29 17:03:36 INFO  UITests:131 - Step Outcome : NULL
 
+2016-03-29 17:46:05 INFO  UITests:115 - STEP Meta Info : {summary=verify keyword : assertNotPresent, flags=, iterations=, description=Open Browser, data=http://book.theautomatedtester.co.uk/, action=openBrowser, parent=, object=, testcaseid=Test.Case.035}
+
+2016-03-29 17:46:14 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-03-29 17:46:14 INFO  UITests:259 - Executing STEP : execute keyword
+
+2016-03-29 17:46:14 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=execute keyword, data=, action=assertNotPresent, parent=, object=xpath=//a[@href='/chapter88'], testcaseid=}
+
+2016-03-29 17:46:14 INFO  UITests:131 - Step Outcome : NULL
+
