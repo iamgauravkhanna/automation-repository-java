@@ -21,7 +21,7 @@ public class UITests {
 	static TestDriver TestDriverObject = new TestDriver();
 	public static Logger log = Logger.getLogger(UITests.class);
 
-	@Parameters({ "browser", "testcaseid", "DBConnection" })
+/*	@Parameters({ "browser", "testcaseid", "DBConnection" })
 	@BeforeClass(alwaysRun = true)
 	public void beforeMethod(@Optional("firefox") String browser, @Optional("Test.Case.001") String testcaseid,
 			@Optional("firefox") String DBConnection) {
@@ -30,14 +30,16 @@ public class UITests {
 		TestManager.MyDataDicitonary.put("DBConnection", DBConnection);
 		TestManager.MyDataDicitonary.put("RemoteURL", "local");
 
-	}
+	}*/
 
 	@Test
 	public void testCase() throws Exception {
-
-		log.info("Running Test Case : " + TestManager.MyDataDicitonary.get("testcaseid"));
+		
+		log.info("Running Test Case : " + TestManager.MyDataDicitonary.get("testcaseid") + " \n");
 
 		TestDriverObject.runTestCase(TestManager.MyDataDicitonary.get("testcaseid"));
+		
+		System.out.println("Test Case Finish");
 	}
 
 	@AfterClass
@@ -48,10 +50,12 @@ public class UITests {
 		while (iterator.hasNext()) {
 			String key = iterator.next().toString();
 			String value = TestManager.MyDataDicitonary.get(key).toString();
-			log.info("Key =" + key + " and  Value =  " + value);
+			log.info("Key = " + key + " and  Value =  " + value + " \n");
 		}
 
 		WebPage.screenShotCounter = 0;
+		
+		System.out.println("Starting Test Case");
 
 	}
 

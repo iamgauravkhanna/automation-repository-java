@@ -12,6 +12,8 @@ import java.util.List;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import raftaar.testautomation.testcases.UITests;
+
 public class JavaUtils {
 
 	private static SecureRandom random = new SecureRandom();
@@ -50,8 +52,15 @@ public class JavaUtils {
 	}
 
 	public static boolean assertEqual(float actual, float expected) throws Exception {
-		if (!(actual == expected))
-			throw new Exception("expected [" + expected + "] but found [" + actual + "]");
+		try
+		{
+			if (!(actual == expected))
+				throw new Exception("expected [" + expected + "] but found [" + actual + "]");
+		}
+		catch (Exception e){
+			UITests.log.info(e + "\n");
+			throw e;
+		}	
 		return true;
 	}
 

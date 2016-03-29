@@ -28,6 +28,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.log4j.Logger;
+import org.apache.velocity.runtime.directive.Parse;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -68,6 +69,7 @@ public class WebPage {
 	public static String originalColor = "none";
 	public static int screenShotCounter = 1;
 	public By loc;
+	public boolean elementNotFound ;
 	public int elementWaitTime = 10; // timeout value in second while waiting
 										// for an element to appear DISPLAYED
 	public WebDriverWait wait ;
@@ -101,9 +103,19 @@ public class WebPage {
 
 		if (loc == null) {
 			//System.out.println("Oops Locator Is Null");
-		} else {
+		} else if(!(action.equalsIgnoreCase("assertNotPresent"))){
 			e = what(driver, loc);
 			//System.out.println("Got the Element : " + e);
+		}
+		else{
+			try
+			{
+				element = driver.findElement(loc);			
+			}
+			catch(Exception e)
+			{
+				elementNotFound = true ;
+			}
 		}
 
 		// System.out.println("Action is : " + action);
@@ -122,6 +134,8 @@ public class WebPage {
 
 			JavaUtils.assertEqual(Float.parseFloat(JavaUtils.getNumbersFromString(object)),
 					Float.parseFloat(JavaUtils.getNumbersFromString(data)));
+			
+			StepOutcome = "Assertion Successfull";
 			
 			break;
 			
@@ -143,7 +157,7 @@ public class WebPage {
 			// System.out.println("Maximize Window");
 			driver.manage().window().maximize();
 			StepOutcome = "Maximize Window";
-			break;
+			break;			
 
 		case "click":
 			long startTime1 = System.currentTimeMillis();
@@ -190,13 +204,14 @@ public class WebPage {
 			break;
 
 		case "assertText":
-			String var1 = TestManager.MyDataDicitonary.get(value);
-			Assert.assertEquals(var1, data);
+			//String var1 = TestManager.MyDataDicitonary.get(value);
+			//Assert.assertEquals(var1, data);
+			JavaUtils.assertEqual(object, data, "dummy");
 			break;
 
 		case "getAttribute":
-			String var3 = driver.findElement(loc).getAttribute(data);
-			TestManager.MyDataDicitonary.put(data, var3);
+			String var3 = e.getAttribute(data);
+			TestManager.MyDataDicitonary.put(parent, var3);
 			break;
 
 		case "closeBrowser":
@@ -263,8 +278,9 @@ public class WebPage {
 			
 		case "assertContains":
 			// System.out.println("Get Current Page Source");
-			e.getText().trim();
-			JavaUtils.assertContains(object, data);
+			String text = e.getText().trim();
+			//System.out.println(text);
+			JavaUtils.assertContains(text, data);
 			break;
 			
 		case "assertContainsNot":
@@ -274,17 +290,14 @@ public class WebPage {
 			break;		
 			
 		case "assertNotPresent":
-			// System.out.println("Get Current Page Source");
-			Boolean isPresent ;
-			
-			if(e.isDisplayed()){			
-			isPresent = true;
+			try {
+				if (!(elementNotFound)) throw new Exception("Element  is visible on page.");
 			}
-			else
+			catch (Exception e )
 			{
-				isPresent  = false ;
+				log.info(e + "\n");
+				throw e;
 			}
-			if (isPresent) throw new Exception("Element  is visible on page.");
 			break;
 		
 		case "assertEqual":
@@ -334,8 +347,15 @@ public class WebPage {
 
 		case "check":
 			// System.out.println("Check");
-			if (!driver.findElement(loc).isSelected()) {
-				driver.findElement(loc).click();
+			try
+			{
+				if (!e.isSelected()) {
+			}
+				e.click();
+			}
+			catch (Exception e){
+				log.info(e );
+				throw new Exception ("Checkbox is already selected" );
 			}
 			break;
 
@@ -344,7 +364,6 @@ public class WebPage {
 
 			int data3 = (int) Double.parseDouble(data);
 			WebDriverWait wait = new WebDriverWait(driver, data3);
-			//System.out.println("Value of loc is : " + loc);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
 
 			break;
