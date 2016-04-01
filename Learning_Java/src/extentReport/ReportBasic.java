@@ -44,7 +44,7 @@ public class ReportBasic {
 		baseUrl = "http://book.theautomatedtester.co.uk";
 		
 		test.log(LogStatus.INFO, "Browser Opened");
-		test.addScreenCapture("C:\\Code\\File.png");
+		test.log(LogStatus.INFO, "Snapshot :  " + test.addScreenCapture("C:\\Code\\Selenium\\Raftaar\\framework-logo.png"));
 
 		// Open the link
 		webDriver.get(baseUrl);
