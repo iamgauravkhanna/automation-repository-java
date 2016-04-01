@@ -7,16 +7,19 @@ public class JarExample {
 
 	public static void main(String[] args) throws Exception {
 
+		String a, b;
 		String c, d;
 
-		String a = args[0];
-		String b = args[1];
+	//	String a = args[0];
+//		String b = args[1];
 		/*
 		 * String c = args[2]; String d = args[3];
 		 */
-		/*
-		 * a = "Firefox"; b = "Test.Case.035";
-		 */
+		
+		 a = "Firefox"; 
+		 b = "Test.Case.001";
+		 
+		
 		c = "jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix";
 		d = "local";
 		TestManager.MyDataDicitonary.put("browser", a);

@@ -9,6 +9,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.ExcelUtils;
 
@@ -258,6 +260,7 @@ public class TestDriver {
 
 				UITests.log.info("Executing STEP : " + c + "\n");
 				Reporter.log("Executing STEP : " + c + "\n");
+				UITests.extentReportTestObject.log(LogStatus.INFO,c);
 				// System.out.println("Executing STEP : " + c + "\n");
 
 				if (i.contains("testdatasheet")) {
