@@ -129,7 +129,7 @@ public class TestManager {
 		StepOutcome = d.ExecuteKeyword(action, parent, object, data);
 		
 		UITests.log.info("Step Outcome : " + StepOutcome + "\n");		
-		Reporter.log("Step Outcome : " + StepOutcome + "\n");
+		Reporter.log("Step Outcome : " + StepOutcome + "\n");		
 		//Reporter.setEscapeHtml(""<HTML>);
 		//System.out.println("Step Outcome : " + StepOutcome + "\n");
 

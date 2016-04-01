@@ -25,7 +25,7 @@ public class UITests {
 
 	static TestDriver TestDriverObject = new TestDriver();
 	public static Logger log = Logger.getLogger(UITests.class);
-	static String OutputDirectory = "C:\\Code\\Basic.html" ;
+	static String OutputDirectory = System.getProperty("user.dir") + "\\TestResults.html" ;
 	
 	public static  ExtentReports extentReport = new ExtentReports(OutputDirectory , true);
 	public static ExtentTest extentReportTestObject ;
