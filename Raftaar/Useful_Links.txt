@@ -1,0 +1,11 @@
+Links :
+
+http://www.seleniumhq.org/docs/
+
+http://toolsqa.com/selenium-webdriver/handling-multiple-browsers-in-selenium-webdriver/
+
+http://www.seleniumeasy.com/selenium-tutorials/how-to-handle-javascript-alerts-confirmation-prompts
+
+http://relevantcodes.com/extentreports-for-selenium/
+
+http://sqa.stackexchange.com/questions/12967/is-there-any-way-to-continue-selenium-web-driver-script-after-assert-fails

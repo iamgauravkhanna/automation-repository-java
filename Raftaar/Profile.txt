@@ -1,0 +1,15 @@
+- Designing and Developing test Automation Frameworks 
+- Developing state-of-the-art Automation Framework using Java
+- Working experience on Selenium is highly required
+- Working knowledge of UNIX / Linux.
+- Selenium/Web Driver is essentially required.
+- Sound knowledge of Databases.
+- Proven capabilities in architecting test automation solutions from scratch for complex distributed applications.
+- Expertise and automation in testing Web Service API, SQL database part of enterprise architecture
+- Strong hands on programming languages - Java
+- Strong hands on relational databases (MySQL, SQL) and 
+- Knowledge on NOSQL DB's(Aerospike, MongoDB etc) would be an added advantage.
+- Good Knowledge of UNIX commands and working on LINUX system.
+- Experience on Maven/Jenkins/TestNG and knowledge on CI pipeline would be added advantage.
+- White box testing of Code and working on unit test cases.
+- Experience in API Automation - by Java framework rather than open source tools.
