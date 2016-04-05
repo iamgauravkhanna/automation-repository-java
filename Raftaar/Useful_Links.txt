@@ -15,3 +15,5 @@ http://software-testing-tutorials-automation.blogspot.in/2016/04/usage-of-maxses
 http://www.abodeqa.com/
 
 https://seleniumbycharan.wordpress.com/2015/09/13/keyword-driven-framework-in-selenium-webdriver-hybrid-keyworddriven-testng-datadriven/
+
+http://www.guru99.com/xpath-selenium.html
