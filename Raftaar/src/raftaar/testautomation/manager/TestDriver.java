@@ -23,6 +23,7 @@ public class TestDriver {
 	// configure log4j properties file
 
 	public int SheetCount;
+	public static int stepNumber = 0 ;
 	public String sheetName;
 	public String testcaseid;
 	public String summary;
@@ -259,8 +260,10 @@ public class TestDriver {
 			if (!(i.contains("{skip}"))) {
 
 				UITests.log.info("Executing STEP : " + c + "\n");
-				Reporter.log("Executing STEP : " + c + "\n");
-				UITests.extentReportTestObject.log(LogStatus.INFO,c);
+				stepNumber++;
+				Reporter.log("Executing STEP : " + c +  " and Step Number : " + stepNumber +"\n");
+				
+				UITests.extentReportTestObject.log(LogStatus.INFO,c);				
 				// System.out.println("Executing STEP : " + c + "\n");
 
 				if (i.contains("testdatasheet")) {
@@ -270,6 +273,8 @@ public class TestDriver {
 					//System.out.println("SheetName is : " + getSheetName);
 				}
 
+				
+				
 				if (f.contains(".")) {
 					//System.out.println("Test Case Found In Between");
 					this.executeTestCase(f);

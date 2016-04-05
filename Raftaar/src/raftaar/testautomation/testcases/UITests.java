@@ -33,6 +33,7 @@ public class UITests {
 	public static String OutputDirectory = System.getProperty("user.dir") + "\\"+ "test-output-" + dateTime + ".html" ;	
 	public static  ExtentReports extentReport = new ExtentReports(OutputDirectory , true);
 	public static ExtentTest extentReportTestObject ;
+	
 
 /*	@Parameters({ "browser", "testcaseid", "DBConnection" })
 	@BeforeClass(alwaysRun = true)

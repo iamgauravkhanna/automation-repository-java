@@ -52,6 +52,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import raftaar.testautomation.utlities.JavaUtils;
 import raftaar.testautomation.manager.TestManager;
 import raftaar.testautomation.testcases.UITests;
@@ -649,8 +651,10 @@ public class WebPage {
 		
 		FileUtils.copyFile(scrFile, image);
 		
-		UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath());
-		
+		//UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath());
+		//UITests.extentReportTestObject.log(LogStatus.INFO, "Image", "Image example:", image.getAbsolutePath());
+		//UITests.extentReportTestObject.log(LogStatus.INFO,"Image",image.getAbsolutePath());
+		UITests.extentReportTestObject.log(LogStatus.INFO,"Image",UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath()));
 		screenShotCounter++;
 	}
 
