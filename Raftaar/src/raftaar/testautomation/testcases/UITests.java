@@ -9,6 +9,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import org.apache.log4j.Logger;
@@ -23,10 +26,11 @@ import raftaar.testautomation.utlities.WebPage;
 
 public class UITests {
 
-	static TestDriver TestDriverObject = new TestDriver();
+	public static TestDriver TestDriverObject = new TestDriver();
 	public static Logger log = Logger.getLogger(UITests.class);
-	static String OutputDirectory = System.getProperty("user.dir") + "\\TestResults.html" ;
-	
+	//public static String dateTime = new Date().toString();		
+	public static String dateTime = new SimpleDateFormat("yyyyMMddhhmm").format(new Date());
+	public static String OutputDirectory = System.getProperty("user.dir") + "\\"+ "test-output-" + dateTime + ".html" ;	
 	public static  ExtentReports extentReport = new ExtentReports(OutputDirectory , true);
 	public static ExtentTest extentReportTestObject ;
 
@@ -43,6 +47,8 @@ public class UITests {
 
 	@Test
 	public void testCase() throws Exception {
+		
+		//TestManager.MyDataDicitonary.putAll(arg0);
 		
 		log.info("Running Test Case : " + TestManager.MyDataDicitonary.get("testcaseid") + " \n");
 		
@@ -62,7 +68,7 @@ public class UITests {
 			String key = iterator.next().toString();
 			String value = TestManager.MyDataDicitonary.get(key).toString();
 			log.info("Key = " + key + " and  Value =  " + value + " \n");
-			extentReportTestObject.log(LogStatus.INFO, "DataDictionary", "Key = " + key + " and  Value =  " + value + " \n");
+			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary", "Key = " + key + " and  Value =  " + value + " \n");
 		}
 
 		extentReport.endTest(extentReportTestObject);
@@ -85,7 +91,7 @@ public class UITests {
 
 		WebPage.screenShotCounter = 0;
 		
-		System.out.println("Starting Test Case");
+		System.out.println("Blah Blah Blah Test Case");
 
 	}
 

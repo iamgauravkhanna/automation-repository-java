@@ -7,12 +7,10 @@ public class Framework {
 
 	public static void main(String[] args) throws Exception {
 
-		String a, b;
-		String c, d;
+		String a, b, c, d;
 
 		// String a = args[0];
 		// String b = args[1];
-
 
 		a = "Firefox";
 		b = "Test.Case.001";

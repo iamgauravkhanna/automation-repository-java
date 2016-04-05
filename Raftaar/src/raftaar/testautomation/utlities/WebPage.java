@@ -631,6 +631,8 @@ public class WebPage {
 		fnHighlightMe(driver, element);
 
 		getscreenshot();
+		
+		
 
 		return element;
 
@@ -643,7 +645,12 @@ public class WebPage {
 
 		String out = new SimpleDateFormat(screenShotCounter + "-yyyy-MM-dd hh-mm-ss'.png'").format(new Date());
 
-		FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "\\screenshots\\" + out));
+		File image = new File(System.getProperty("user.dir") + "\\screenshots\\" + out);
+		
+		FileUtils.copyFile(scrFile, image);
+		
+		UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath());
+		
 		screenShotCounter++;
 	}
 
