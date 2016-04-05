@@ -7,7 +7,6 @@
 	<classpathentry kind="lib" path="lib/logs/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="lib/others/ATUReporter_Selenium_testNG_5.5_BETA.jar"/>
 	<classpathentry kind="lib" path="lib/others/ATUTestRecorder_2.1.jar"/>
-	<classpathentry kind="lib" path="lib/others/extentreports-java-2.05.jar"/>
 	<classpathentry kind="lib" path="lib/others/Fillo-1.12.jar"/>
 	<classpathentry kind="lib" path="lib/poi/poi-3.13-20150929.jar"/>
 	<classpathentry kind="lib" path="lib/poi/poi-examples-3.13-20150929.jar"/>
@@ -16,13 +15,19 @@
 	<classpathentry kind="lib" path="lib/poi/poi-ooxml-schemas-3.13-20150929.jar"/>
 	<classpathentry kind="lib" path="lib/poi/poi-scratchpad-3.13-20150929.jar"/>
 	<classpathentry kind="lib" path="lib/poi/xmlbeans-2.6.0.jar"/>
-	<classpathentry kind="lib" path="lib/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/guice-4.0.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/reportng-1.1.4/reportng-1.1.4.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/reportng-1.1.4/velocity-dep-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.53.0.jar"/>
-	<classpathentry kind="lib" path="lib/apache-xml-xerces.jar"/>
-	<classpathentry kind="lib" path="/WebDriver/lib/selenium-server-standalone-2.52.0.jar"/>
-	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/extentreports-java-2.40.2.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/sqlite-jdbc-3.8.11.1.jar"/>
+	<classpathentry kind="lib" path="lib/others/extentreports-java-2.05.jar"/>
+	<classpathentry kind="lib" path="lib/testng/testng-6.9.6.jar"/>
+	<classpathentry kind="lib" path="lib/apache/apache-xml-xerces.jar"/>
+	<classpathentry kind="lib" path="lib/apache/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/db/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="/framework/lib/selenium/selenium-server-standalone.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -110,7 +110,19 @@ public class ExcelUtils {
 		}
 	}
 
-	// returns the data from a cell
+	
+	/**
+	 * 
+	 * This method returns the data from a cell
+	 * 
+	 * @param sheetName
+	 * @param colNum
+	 * @param rowNum
+	 * 
+	 * @return String
+	 * 
+	 */
+
 	public String getCellData(String sheetName, int colNum, int rowNum) {
 		try {
 			if (rowNum <= 0)
