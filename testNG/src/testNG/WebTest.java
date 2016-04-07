@@ -13,7 +13,7 @@ public class WebTest {
 	@Test
 	public void testServer() {
 		for (int i = 0; i < m_numberOfTimes; i++) {
-			
+
 			System.out.println(i);
 		}
 	}

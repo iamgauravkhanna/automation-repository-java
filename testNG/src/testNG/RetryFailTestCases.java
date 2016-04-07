@@ -1,6 +1,3 @@
-/*
- * @Author : Gaurav Khanna 
- */
 
 package testNG;
 

@@ -37,8 +37,7 @@ public class TestParameterXML {
 			System.out.println("password : " + password);
 
 			Class.forName(drivers);
-			con = DriverManager
-					.getConnection(connectionURL, username, password);
+			con = DriverManager.getConnection(connectionURL, username, password);
 
 		} catch (Exception e) {
 			e.printStackTrace();
