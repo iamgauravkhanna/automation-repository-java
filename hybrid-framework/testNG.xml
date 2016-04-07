@@ -1,7 +1,0 @@
-<suite name="Suite 1" >
-   <test name="Test 1" >
-      <classes>
-         <class name="testCases.TestCaseRunner" />
-      </classes>
-   </test>
-</suite>
