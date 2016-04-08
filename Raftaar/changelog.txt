@@ -4,6 +4,8 @@ Raftaar ( Regression Automation Framework That Allow Artificial Runs )
 v0.1
 =======
 
+Date : 1st Jan - 31st Mar 2016
+
 - WebPage : Creation of WebPage class which contains all methods that support WebDriver commands 
 - Variables : Generating a global dictionary to store Variables
 - Flags : Introducing Flag - {skip} which will skip test step
@@ -16,13 +18,13 @@ v0.1
 v0.2
 =======
 
-Date : 1st - 30th April 2016
+Date : 1st April - 30th June 2016
 
 - WebPage : New keywords added
 - Reporting : Creating customized HTML Reports by Using extent Report. User can Take Screenshots, Save HTML files and use them in HTML report.
 - DB : Development of DB Utilities to fetch/update data into database
 - Selenium Grid - Provision to run test on Selenium Grid or on local
 - Iterations : Using Concept of Iteration to read data from data sheet
-- Methods : Concept of re-usability introduced by calling directly call another test case
-- Jenkins : Run your test suite from Jenkins
-- Ant : Using Ant to build your automation project jar
+- Methods : Concept of re-usability introduced by directly calling another test case
+- Jenkins : Run test suites from Jenkins
+- Ant : Using Ant to build automation project jar
