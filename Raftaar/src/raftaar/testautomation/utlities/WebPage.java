@@ -71,11 +71,11 @@ public class WebPage {
 	public static String originalColor = "none";
 	public static int screenShotCounter = 1;
 	public By loc;
-	public boolean elementNotFound ;
+	public boolean elementNotFound;
 	public int elementWaitTime = 10; // timeout value in second while waiting
 										// for an element to appear DISPLAYED
-	public WebDriverWait wait ;
-	public String alertText ;
+	public WebDriverWait wait;
+	public String alertText;
 	public static Alert alert;
 
 	public static Logger log = Logger.getLogger(WebPage.class);
@@ -86,8 +86,8 @@ public class WebPage {
 
 		value = null;
 
-		//UITests.log.info("Object : " + object);
-		//UITests.log.info("Data : " + data);
+		// UITests.log.info("Object : " + object);
+		// UITests.log.info("Data : " + data);
 
 		if (object.contains("=") && !(object.isEmpty())) {
 			locatorType = object.split("=")[0].toLowerCase().trim();
@@ -104,19 +104,15 @@ public class WebPage {
 		}
 
 		if (loc == null) {
-			//System.out.println("Oops Locator Is Null");
-		} else if(!(action.equalsIgnoreCase("assertNotPresent"))){
+			// System.out.println("Oops Locator Is Null");
+		} else if (!(action.equalsIgnoreCase("assertNotPresent"))) {
 			e = what(driver, loc);
-			//System.out.println("Got the Element : " + e);
-		}
-		else{
-			try
-			{
-				element = driver.findElement(loc);			
-			}
-			catch(Exception e)
-			{
-				elementNotFound = true ;
+			// System.out.println("Got the Element : " + e);
+		} else {
+			try {
+				element = driver.findElement(loc);
+			} catch (Exception e) {
+				elementNotFound = true;
 			}
 		}
 
@@ -136,21 +132,21 @@ public class WebPage {
 
 			JavaUtils.assertEqual(Float.parseFloat(JavaUtils.getNumbersFromString(object)),
 					Float.parseFloat(JavaUtils.getNumbersFromString(data)));
-			
+
 			StepOutcome = "Assertion Successfull";
-			
+
 			break;
-			
+
 		case "uploadFile":
 
 			e.sendKeys(data);
-						
+
 			break;
-			
+
 		case "getUrl":
 
 			// System.out.println("getUrl");
-			//System.out.println("Data is " + data);
+			// System.out.println("Data is " + data);
 			driver.get(data);
 			StepOutcome = data;
 			break;
@@ -159,23 +155,25 @@ public class WebPage {
 			// System.out.println("Maximize Window");
 			driver.manage().window().maximize();
 			StepOutcome = "Maximize Window";
-			break;			
+			break;
 
 		case "click":
 			long startTime1 = System.currentTimeMillis();
 			// WebElement e = driver.findElement(locator);
 			// System.out.println("Value of e :" + e);
 			e.click();
-			//System.out.println("Element Clicked");
+			// System.out.println("Element Clicked");
 			// long startTime = System.currentTimeMillis();
 			// System.out.println(" Load Time :" + (int)
 			// (System.currentTimeMillis() - startTime));
 			// long clickTime = System.currentTimeMillis() - startTime ;
-			//long elapsed = ((System.currentTimeMillis() - startTime1) / 1000);
+			// long elapsed = ((System.currentTimeMillis() - startTime1) /
+			// 1000);
 
-			//String display = String.format("%02d:%02d:%02d", elapsed / 3600, (elapsed % 3600) / 60, (elapsed % 60));
+			// String display = String.format("%02d:%02d:%02d", elapsed / 3600,
+			// (elapsed % 3600) / 60, (elapsed % 60));
 
-			//StepOutcome = display;
+			// StepOutcome = display;
 			break;
 
 		case "selectByVisibleText":
@@ -206,8 +204,8 @@ public class WebPage {
 			break;
 
 		case "assertText":
-			//String var1 = TestManager.MyDataDicitonary.get(value);
-			//Assert.assertEquals(var1, data);
+			// String var1 = TestManager.MyDataDicitonary.get(value);
+			// Assert.assertEquals(var1, data);
 			JavaUtils.assertEqual(object, data, "dummy");
 			break;
 
@@ -252,22 +250,22 @@ public class WebPage {
 			// System.out.println("Get Current Page Title");
 			driver.navigate().refresh();
 			break;
-			
+
 		case "goTo":
 			// System.out.println("Get Current Page Title");
 			driver.navigate().to(data);
 			break;
-			
+
 		case "goBack":
 			// System.out.println("Get Current Page Title");
 			driver.navigate().back();
 			break;
-			
+
 		case "goForward":
 			// System.out.println("Get Current Page Title");
 			driver.navigate().forward();
-			break;	
-			
+			break;
+
 		case "getPageSource":
 			// System.out.println("Get Current Page Source");
 			driver.getPageSource();
@@ -277,57 +275,57 @@ public class WebPage {
 			// System.out.println("Get Current Page Source");
 			e.isDisplayed();
 			break;
-			
+
 		case "assertContains":
 			// System.out.println("Get Current Page Source");
 			String text = e.getText().trim();
-			//System.out.println(text);
+			// System.out.println(text);
 			JavaUtils.assertContains(text, data);
 			break;
-			
+
 		case "assertContainsNot":
 			// System.out.println("Get Current Page Source");
 			e.getText().trim();
 			JavaUtils.assertContainsNot(object, data);
-			break;		
-			
+			break;
+
 		case "assertNotPresent":
 			try {
-				if (!(elementNotFound)) throw new Exception("Element  is visible on page.");
-			}
-			catch (Exception e )
-			{
+				if (!(elementNotFound))
+					throw new Exception("Element  is visible on page.");
+			} catch (Exception e) {
 				log.info(e + "\n");
 				throw e;
 			}
 			break;
-		
+
 		case "assertEqual":
 			// System.out.println("Get Current Page Source");
-			JavaUtils.assertEqual(object,data,parent);
-			break;	
+			JavaUtils.assertEqual(object, data, parent);
+			break;
 
 		case "assertLinkStatus":
 			// System.out.println("Get Current Page Source");
-			 String href;
-		     href = driver.getCurrentUrl();
-				HttpClient client = HttpClientBuilder.create().build();
-				HttpGet request = new HttpGet(href);
-				try {
-					HttpResponse response = client.execute(request);
-					int invalidLinksCount = 0;
-					// verifying response code and The HttpStatus should be 200 if not,
-					// increment invalid link count
-					////We can also check for 404 status code like response.getStatusLine().getStatusCode() == 404
-					if (response.getStatusLine().getStatusCode() != 200)
-						invalidLinksCount++;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+			String href;
+			href = driver.getCurrentUrl();
+			HttpClient client = HttpClientBuilder.create().build();
+			HttpGet request = new HttpGet(href);
+			try {
+				HttpResponse response = client.execute(request);
+				int invalidLinksCount = 0;
+				// verifying response code and The HttpStatus should be 200 if
+				// not,
+				// increment invalid link count
+				//// We can also check for 404 status code like
+				// response.getStatusLine().getStatusCode() == 404
+				if (response.getStatusLine().getStatusCode() != 200)
+					invalidLinksCount++;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
-			 
-			break;		
-			
+			break;
+
 		case "runJavaScript":
 			System.out.println("Run JavaScript");
 
@@ -349,20 +347,18 @@ public class WebPage {
 
 		case "check":
 			// System.out.println("Check");
-			try
-			{
+			try {
 				if (!e.isSelected()) {
-			}
+				}
 				e.click();
-			}
-			catch (Exception e){
-				log.info(e );
-				throw new Exception ("Checkbox is already selected" );
+			} catch (Exception e) {
+				log.info(e);
+				throw new Exception("Checkbox is already selected");
 			}
 			break;
 
 		case "waitFor":
-			//System.out.println("Wait For Element");
+			// System.out.println("Wait For Element");
 
 			int data3 = (int) Double.parseDouble(data);
 			WebDriverWait wait = new WebDriverWait(driver, data3);
@@ -406,7 +402,7 @@ public class WebPage {
 			break;
 
 		case "setVariable":
-			//System.out.println("Set Variable");
+			// System.out.println("Set Variable");
 			TestManager.MyDataDicitonary.put(object, data);
 			// System.out.println("Value : " +
 			// TestRunner.MyDataDicitonary.get(parent) + " & Key : "
@@ -485,10 +481,10 @@ public class WebPage {
 		case "acceptAlert":
 			acceptAlert();
 			break;
-			
+
 		case "runSelectQuery":
 			// System.out.println("DB Method");
-			//UITests.log.info("Running DB Query Method");
+			// UITests.log.info("Running DB Query Method");
 			int count = DBUtils.runSelectQuery(data);
 			StepOutcome = count + " Coloumns Fetched ";
 			break;
@@ -542,8 +538,8 @@ public class WebPage {
 		else {
 			try {
 				DesiredCapabilities dc = new DesiredCapabilities();
-				dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);							
-				
+				dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+
 				if (browserName.equalsIgnoreCase("firefox")) {
 					driver = new FirefoxDriver();
 				} else if (browserName.equalsIgnoreCase("chrome")) {
@@ -571,23 +567,23 @@ public class WebPage {
 		boolean presentFlag = false;
 		alertText = "";
 		System.out.println("Entering Accept Alert Method");
-		 try {
-			 
-			 	Thread.sleep(20000);
-			   // Check the presence of alert
-			   alert = driver.switchTo().alert();
-			   // Get Alert Text
-			   alertText = alert.getText();
-			   // Alert present; set the flag
-			   presentFlag = true;
-			   // if present consume the alert
-			   alert.accept();
-			 
-			  } catch (NoAlertPresentException ex) {
-			   // Alert not present
-				 // System.out.println("Exception Occured");
-			   ex.printStackTrace();
-			  }		 
+		try {
+
+			Thread.sleep(20000);
+			// Check the presence of alert
+			alert = driver.switchTo().alert();
+			// Get Alert Text
+			alertText = alert.getText();
+			// Alert present; set the flag
+			presentFlag = true;
+			// if present consume the alert
+			alert.accept();
+
+		} catch (NoAlertPresentException ex) {
+			// Alert not present
+			// System.out.println("Exception Occured");
+			ex.printStackTrace();
+		}
 		return alertText;
 	}
 
@@ -621,20 +617,18 @@ public class WebPage {
 
 		// System.out.println("WTF");
 
-		//System.out.println("locator is : " + locator);
-		
-		//WebElement data = By.linkText("Chapter1");
+		// System.out.println("locator is : " + locator);
+
+		// WebElement data = By.linkText("Chapter1");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-		
+
 		element = driver.findElement(locator);
 
-		//System.out.println("Element is : " + element);
+		// System.out.println("Element is : " + element);
 
 		fnHighlightMe(driver, element);
 
 		getscreenshot();
-		
-		
 
 		return element;
 
@@ -648,13 +642,15 @@ public class WebPage {
 		String out = new SimpleDateFormat(screenShotCounter + "-yyyy-MM-dd hh-mm-ss'.png'").format(new Date());
 
 		File image = new File(System.getProperty("user.dir") + "\\screenshots\\" + out);
-		
+
 		FileUtils.copyFile(scrFile, image);
-		
-		//UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath());
-		//UITests.extentReportTestObject.log(LogStatus.INFO, "Image", "Image example:", image.getAbsolutePath());
-		//UITests.extentReportTestObject.log(LogStatus.INFO,"Image",image.getAbsolutePath());
-		UITests.extentReportTestObject.log(LogStatus.INFO,"Image",UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath()));
+
+		// UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath());
+		// UITests.extentReportTestObject.log(LogStatus.INFO, "Image", "Image
+		// example:", image.getAbsolutePath());
+		// UITests.extentReportTestObject.log(LogStatus.INFO,"Image",image.getAbsolutePath());
+		UITests.extentReportTestObject.log(LogStatus.INFO, "Image",
+				UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath()));
 		screenShotCounter++;
 	}
 

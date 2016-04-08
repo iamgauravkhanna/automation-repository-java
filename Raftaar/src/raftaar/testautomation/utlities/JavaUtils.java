@@ -19,48 +19,41 @@ public class JavaUtils {
 	private static SecureRandom random = new SecureRandom();
 
 	/**
-	 * Extract numeric characters from a string
-	 * E.g. gets 30 from $30
+	 * Extract numeric characters from a string E.g. gets 30 from $30
 	 * 
-	 * @param inputString input string from which numbers needs to be extracted
+	 * @param inputString
+	 *            input string from which numbers needs to be extracted
 	 * @return float retrieved from the string
 	 */
-	public static String getNumbersFromString(String inputString)
-	{
+	public static String getNumbersFromString(String inputString) {
 		String outValue = "";
-		for (char c : inputString.toCharArray())
-		{
+		for (char c : inputString.toCharArray()) {
 			if ((c >= '0' && c <= '9') || (c == '.'))
 				outValue = outValue + c;
-			else if (outValue.length() > 0 && (c == ' ')) break;
+			else if (outValue.length() > 0 && (c == ' '))
+				break;
 		}
-		try
-		{
+		try {
 			// return Float.parseFloat(outValue);
 			return outValue;
-		} catch (NumberFormatException e)
-		{
-			if (e.getMessage().toLowerCase().contains("empty string"))
-			{
+		} catch (NumberFormatException e) {
+			if (e.getMessage().toLowerCase().contains("empty string")) {
 				// return (float) 0.00;
 				return "0.00";
-			} else
-			{
+			} else {
 				throw e;
 			}
 		}
 	}
 
 	public static boolean assertEqual(float actual, float expected) throws Exception {
-		try
-		{
+		try {
 			if (!(actual == expected))
 				throw new Exception("expected [" + expected + "] but found [" + actual + "]");
-		}
-		catch (Exception e){
+		} catch (Exception e) {
 			UITests.log.info(e + "\n");
 			throw e;
-		}	
+		}
 		return true;
 	}
 
@@ -124,10 +117,10 @@ public class JavaUtils {
 	/**
 	 * Replaces variables in a string, keys being stored in the dictionary
 	 * passed As a special feature in automation framework, we could write
-	 * something like this in test data column AssertTextPresent Welcome, Anil
-	 * Kumar! OR Welcome, ${username}! OR simply--> #username! Now, username
-	 * varible would represent runtime actual name of the user who has logged in
-	 * or recently registered
+	 * something like this in test data column AssertTextPresent Welcome, James
+	 * OR Welcome, ${username}! OR simply--> #username! Now, username varible
+	 * would represent runtime actual name of the user who has logged in or
+	 * recently registered
 	 * 
 	 * @param tobeReplaced
 	 *            String that contains variables, usually from testdata column
@@ -201,7 +194,7 @@ public class JavaUtils {
 
 		// try replacing with default dictionary
 		for (triedCounter = 0; triedCounter < maxTries; triedCounter++) {
-			//System.out.println("tobeReplaced : " + tobeReplaced);
+			// System.out.println("tobeReplaced : " + tobeReplaced);
 			if (!tobeReplaced.contains("#"))
 				break;
 
@@ -337,19 +330,18 @@ public class JavaUtils {
 	/**
 	 * Generates a random string of specified length
 	 * 
-	 * @param length no of characters in the string to be generated
+	 * @param length
+	 *            no of characters in the string to be generated
 	 * @return a random string
 	 */
-	public static synchronized String generateUniqueString(int length)
-	{
+	public static synchronized String generateUniqueString(int length) {
 		return RandomStringUtils.randomAlphabetic(length);
 	}
-	
-	protected static List<String> convertStringToList(String pattern)
-	{
+
+	protected static List<String> convertStringToList(String pattern) {
 		String strArr[] = pattern.split("\\|");
 		List<String> list = Arrays.asList(strArr);
 		return list;
 	}
-		
+
 }
