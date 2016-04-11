@@ -1,9 +1,3 @@
-/**
- * 
- * @Author : Gaurav Khanna
- *  
- */
-
 package webdriverScripts;
 
 import org.openqa.selenium.By;
@@ -25,21 +19,17 @@ public class ActionBuildPerform {
 		webDriver.get("http://jqueryui.com/selectable/");
 
 		Thread.sleep(5000);
-		
-		WebElement one = webDriver
-				.findElement(By.xpath("//*[@id='selectable']/li[1]"));
 
-		WebElement three = webDriver.findElement(By
-				.xpath("//*[@id='selectable']/li[2]"));
+		WebElement one = webDriver.findElement(By.xpath("//*[@id='selectable']/li[1]"));
 
-		WebElement five = webDriver.findElement(By
-				.xpath("//*[@id='selectable']/li[3]"));
+		WebElement three = webDriver.findElement(By.xpath("//*[@id='selectable']/li[2]"));
+
+		WebElement five = webDriver.findElement(By.xpath("//*[@id='selectable']/li[3]"));
 
 		// Add all the actions into the Actions builder.
 		Actions builder = new Actions(webDriver);
 
-		builder.keyDown(Keys.CONTROL).click(one).click(three).click(five)
-				.keyUp(Keys.CONTROL);
+		builder.keyDown(Keys.CONTROL).click(one).click(three).click(five).keyUp(Keys.CONTROL);
 
 		// Generate the composite action.
 		Action compositeAction = builder.build();
