@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class ActionBuildPerform2 {
+public class ActionsExample2 {
 
 	@Test
 	public void testActionBuildPerform2() throws InterruptedException {

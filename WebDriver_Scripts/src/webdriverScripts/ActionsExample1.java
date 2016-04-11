@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class ActionBuildPerform {
+public class ActionsExample1 {
 
 	@Test
 	public void testActionBuildPerform() throws InterruptedException {
