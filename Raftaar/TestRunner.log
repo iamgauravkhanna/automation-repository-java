@@ -1,0 +1,208 @@
+2016-04-13 15:17:35 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-04-13 15:17:48 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-04-13 15:17:48 INFO  UITests:262 - Executing STEP : Go to URL
+
+2016-04-13 15:17:48 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-04-13 15:17:50 INFO  UITests:131 - Step Outcome : http://book.theautomatedtester.co.uk
+
+2016-04-13 15:17:50 INFO  UITests:262 - Executing STEP : Maximize Window
+
+2016-04-13 15:17:50 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-04-13 15:17:50 INFO  UITests:131 - Step Outcome : Maximize Window
+
+2016-04-13 15:17:50 INFO  UITests:262 - Executing STEP : Click on Link Text
+
+2016-04-13 15:17:50 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=linkText=Chapter1, testcaseid=}
+
+2016-04-13 15:17:52 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:17:52 INFO  UITests:262 - Executing STEP : Click on Radio Button
+
+2016-04-13 15:17:52 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Radio Button, data=, action=click, parent=, object=id=radiobutton, testcaseid=}
+
+2016-04-13 15:17:53 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:17:53 INFO  UITests:262 - Executing STEP : Set Variable
+
+2016-04-13 15:17:53 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Set Variable, data=Selenium Core, action=setVariable, parent=, object=dropDownValue, testcaseid=}
+
+2016-04-13 15:17:54 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:17:54 INFO  UITests:262 - Executing STEP : Select option from dropdown
+
+2016-04-13 15:17:54 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Select option from dropdown, data=Selenium Core, action=selectByVisibleText, parent=, object=id=selecttype, testcaseid=}
+
+2016-04-13 15:17:55 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:17:55 INFO  UITests:262 - Executing STEP : Get Text
+
+2016-04-13 15:17:55 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Text, data=text1, action=getText, parent=, object=id=divontheleft, testcaseid=}
+
+2016-04-13 15:17:56 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:17:56 INFO  UITests:262 - Executing STEP : Close Browser
+
+2016-04-13 15:17:56 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Close Browser, data=, action=closeBrowser, parent=, object=, testcaseid=}
+
+2016-04-13 15:18:01 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:18:01 INFO  UITests:71 - Key = RemoteURL and  Value =  local 
+
+2016-04-13 15:18:01 INFO  UITests:71 - Key = text1 and  Value =  Assert that this text is on the page 
+
+2016-04-13 15:18:01 INFO  UITests:71 - Key = browser and  Value =  Firefox 
+
+2016-04-13 15:18:01 INFO  UITests:71 - Key = dropDownValue and  Value =  Selenium Core 
+
+2016-04-13 15:18:01 INFO  UITests:71 - Key = DBConnection and  Value =  jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix 
+
+2016-04-13 15:18:01 INFO  UITests:71 - Key = testcaseid and  Value =  Test.Case.001 
+
+2016-04-13 15:21:54 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-04-13 15:22:03 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-04-13 15:22:03 INFO  UITests:262 - Executing STEP : Go to URL
+
+2016-04-13 15:22:03 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-04-13 15:22:05 INFO  UITests:131 - Step Outcome : http://book.theautomatedtester.co.uk
+
+2016-04-13 15:22:05 INFO  UITests:262 - Executing STEP : Maximize Window
+
+2016-04-13 15:22:05 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-04-13 15:22:05 INFO  UITests:131 - Step Outcome : Maximize Window
+
+2016-04-13 15:22:05 INFO  UITests:262 - Executing STEP : Click on Link Text
+
+2016-04-13 15:22:05 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=linkText=Chapter1, testcaseid=}
+
+2016-04-13 15:25:06 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-04-13 15:25:14 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-04-13 15:25:14 INFO  UITests:262 - Executing STEP : Go to URL
+
+2016-04-13 15:25:14 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-04-13 15:25:15 INFO  UITests:131 - Step Outcome : http://book.theautomatedtester.co.uk
+
+2016-04-13 15:25:15 INFO  UITests:262 - Executing STEP : Maximize Window
+
+2016-04-13 15:25:15 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-04-13 15:25:15 INFO  UITests:131 - Step Outcome : Maximize Window
+
+2016-04-13 15:25:15 INFO  UITests:262 - Executing STEP : Click on Link Text
+
+2016-04-13 15:25:15 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=linkText=Chapter1, testcaseid=}
+
+2016-04-13 15:30:54 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-04-13 15:31:02 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-04-13 15:31:02 INFO  UITests:262 - Executing STEP : Go to URL
+
+2016-04-13 15:31:02 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-04-13 15:31:03 INFO  UITests:131 - Step Outcome : http://book.theautomatedtester.co.uk
+
+2016-04-13 15:31:03 INFO  UITests:262 - Executing STEP : Maximize Window
+
+2016-04-13 15:31:03 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-04-13 15:31:03 INFO  UITests:131 - Step Outcome : Maximize Window
+
+2016-04-13 15:31:03 INFO  UITests:262 - Executing STEP : Click on Link Text
+
+2016-04-13 15:31:03 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=linkText=Chapter1, testcaseid=}
+
+2016-04-13 15:31:50 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-04-13 15:31:58 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-04-13 15:31:58 INFO  UITests:262 - Executing STEP : Go to URL
+
+2016-04-13 15:31:58 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-04-13 15:31:59 INFO  UITests:131 - Step Outcome : http://book.theautomatedtester.co.uk
+
+2016-04-13 15:31:59 INFO  UITests:262 - Executing STEP : Maximize Window
+
+2016-04-13 15:31:59 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-04-13 15:31:59 INFO  UITests:131 - Step Outcome : Maximize Window
+
+2016-04-13 15:31:59 INFO  UITests:262 - Executing STEP : Click on Link Text
+
+2016-04-13 15:31:59 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=linkText=Chapter1, testcaseid=}
+
+2016-04-13 15:32:00 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:32:00 INFO  UITests:262 - Executing STEP : Click on Radio Button
+
+2016-04-13 15:32:00 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Radio Button, data=, action=click, parent=, object=id=radiobutton, testcaseid=}
+
+2016-04-13 15:32:01 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:32:01 INFO  UITests:262 - Executing STEP : Set Variable
+
+2016-04-13 15:32:01 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Set Variable, data=Selenium Core, action=setVariable, parent=, object=dropDownValue, testcaseid=}
+
+2016-04-13 15:32:02 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:32:02 INFO  UITests:262 - Executing STEP : Select option from dropdown
+
+2016-04-13 15:32:02 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Select option from dropdown, data=Selenium Core, action=selectByVisibleText, parent=, object=id=selecttype, testcaseid=}
+
+2016-04-13 15:32:03 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:32:03 INFO  UITests:262 - Executing STEP : Get Text
+
+2016-04-13 15:32:03 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Get Text, data=text1, action=getText, parent=, object=id=divontheleft, testcaseid=}
+
+2016-04-13 15:32:04 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:32:04 INFO  UITests:262 - Executing STEP : Close Browser
+
+2016-04-13 15:32:04 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Close Browser, data=, action=closeBrowser, parent=, object=, testcaseid=}
+
+2016-04-13 15:32:06 INFO  UITests:131 - Step Outcome : NULL
+
+2016-04-13 15:32:06 INFO  UITests:71 - Key = RemoteURL and  Value =  local 
+
+2016-04-13 15:32:06 INFO  UITests:71 - Key = text1 and  Value =  Assert that this text is on the page 
+
+2016-04-13 15:32:06 INFO  UITests:71 - Key = browser and  Value =  Firefox 
+
+2016-04-13 15:32:06 INFO  UITests:71 - Key = dropDownValue and  Value =  Selenium Core 
+
+2016-04-13 15:32:06 INFO  UITests:71 - Key = DBConnection and  Value =  jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix 
+
+2016-04-13 15:32:06 INFO  UITests:71 - Key = testcaseid and  Value =  Test.Case.001 
+
+2016-04-13 15:32:35 INFO  UITests:115 - STEP Meta Info : {summary=Basic Script, flags=, iterations=, description=Open Browser, data=, action=openBrowser, parent=, object=, testcaseid=Test.Case.001}
+
+2016-04-13 15:32:43 INFO  UITests:131 - Step Outcome : Opening Browser
+
+2016-04-13 15:32:43 INFO  UITests:262 - Executing STEP : Go to URL
+
+2016-04-13 15:32:43 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Go to URL, data=http://book.theautomatedtester.co.uk, action=getUrl, parent=, object=, testcaseid=}
+
+2016-04-13 15:32:44 INFO  UITests:131 - Step Outcome : http://book.theautomatedtester.co.uk
+
+2016-04-13 15:32:44 INFO  UITests:262 - Executing STEP : Maximize Window
+
+2016-04-13 15:32:44 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Maximize Window, data=, action=maximizeWindow, parent=, object=, testcaseid=}
+
+2016-04-13 15:32:44 INFO  UITests:131 - Step Outcome : Maximize Window
+
+2016-04-13 15:32:44 INFO  UITests:262 - Executing STEP : Click on Link Text
+
+2016-04-13 15:32:44 INFO  UITests:115 - STEP Meta Info : {summary=, flags=, iterations=, description=Click on Link Text, data=, action=click, parent=, object=linkText=Chapter1, testcaseid=}
+

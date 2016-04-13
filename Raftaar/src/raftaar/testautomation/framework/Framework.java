@@ -15,7 +15,8 @@ public class Framework {
 		a = "Firefox";
 		b = "Test.Case.001";
 		c = "jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix";
-		d = "local";
+		//d = "local";
+		d = "http://192.168.49.19:4444/wd/hub";
 
 		TestManager.MyDataDicitonary.put("browser", a);
 		TestManager.MyDataDicitonary.put("testcaseid", b);
