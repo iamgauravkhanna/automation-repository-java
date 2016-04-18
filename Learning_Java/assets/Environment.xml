@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<environments>
+	<environment name="qa01">
+		<host>dinkar</host>
+		<WicSftpUrl>kad</WicSftpUrl>
+		<serverName>dinkar</serverName>
+		<dbDetails>85</dbDetails>
+	</environment>
+	<environment name="qa02">
+		<host>Vaneet</host>
+		<WicSftpUrl>Gupta</WicSftpUrl>
+		<serverName>vinni</serverName>
+		<dbDetails>95</dbDetails>
+	</environment>
+	<environment name="common">
+		<build.version>3.1_Sprint_6</build.version>
+		<commandtimeout>6000</commandtimeout>
+		<testLocation>/assets/prod/tests</testLocation>
+		<testDataLocation>/assets/prod/tests</testDataLocation>
+	</environment>
+</environments>
