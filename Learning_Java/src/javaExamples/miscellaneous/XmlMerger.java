@@ -1,7 +1,7 @@
 /**
  * 
  */
-package javaExamples;
+package javaExamples.miscellaneous;
 
 import java.io.BufferedWriter;
 import java.io.File;

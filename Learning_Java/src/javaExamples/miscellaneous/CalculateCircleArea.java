@@ -1,4 +1,4 @@
-package javaExamples;
+package javaExamples.miscellaneous;
 
 /**
  * 
