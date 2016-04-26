@@ -5,7 +5,7 @@ Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts;
+package webdriverScripts.webElements;
 
 import java.util.List;
 

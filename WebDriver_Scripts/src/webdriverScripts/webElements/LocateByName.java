@@ -1,11 +1,11 @@
 /*********************************
  
-Title  : Locate Element By Class
+Title  : Locate Element By Name
 Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts;
+package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,22 +13,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByClass {
+public class LocateByName {
 
-	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByClass() throws InterruptedException {
+	public void testlocateByName() throws InterruptedException {
 
 		//
 		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		WebElement textBox = webDriver.findElement(By.className("belowcenter"));
+		WebElement checkbox = webDriver.findElement(By.name("selected(1234)"));
 
 		//
-		textBox.clear();
+		checkbox.click();
 
 		//
 		Thread.sleep(5000);
@@ -37,4 +36,5 @@ public class LocateByClass {
 		webDriver.quit();
 
 	}
+
 }

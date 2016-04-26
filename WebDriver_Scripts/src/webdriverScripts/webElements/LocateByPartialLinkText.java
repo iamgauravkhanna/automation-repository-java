@@ -1,11 +1,11 @@
 /*********************************
  
-Title  : Locate Element By Xpath
+Title  : Locate Element By Partial Link Text
 Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts;
+package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,23 +13,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByXpath {
+public class LocateByPartialLinkText {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByXpath() throws InterruptedException {
+	public void testlocateByPartialLinkText() throws InterruptedException {
 
 		//
-		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
+		webDriver.get("http://book.theautomatedtester.co.uk/chapter2");
 
 		//
-		WebElement button = webDriver.findElement(By
-				.xpath("/html/body/div[2]/p[2]/input"));
+		WebElement link = webDriver.findElement(By.partialLinkText("In"));
 
 		//
-		button.click();
+		link.click();
 
 		//
 		Thread.sleep(5000);
@@ -38,4 +37,5 @@ public class LocateByXpath {
 		webDriver.quit();
 
 	}
+
 }

@@ -1,11 +1,11 @@
 /*********************************
  
-Title  : Locate Element By ID
+Title  : Locate Element By Class
 Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts;
+package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,22 +13,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByID {
+public class LocateByClass {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByID() throws InterruptedException {
+	public void testlocateByClass() throws InterruptedException {
 
 		//
 		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		WebElement button = webDriver.findElement(By.id("radiobutton"));
+		WebElement textBox = webDriver.findElement(By.className("belowcenter"));
 
 		//
-		button.click();
+		textBox.clear();
 
 		//
 		Thread.sleep(5000);
@@ -37,5 +37,4 @@ public class LocateByID {
 		webDriver.quit();
 
 	}
-
 }

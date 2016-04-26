@@ -5,7 +5,7 @@ Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts;
+package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

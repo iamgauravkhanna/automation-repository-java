@@ -1,11 +1,11 @@
 /*********************************
  
-Title  : Locate Element By Partial Link Text
+Title  : Locate Element By ID
 Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts;
+package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,22 +13,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByPartialLinkText {
+public class LocateByID {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByPartialLinkText() throws InterruptedException {
+	public void testlocateByID() throws InterruptedException {
 
 		//
-		webDriver.get("http://book.theautomatedtester.co.uk/chapter2");
+		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		WebElement link = webDriver.findElement(By.partialLinkText("In"));
+		WebElement button = webDriver.findElement(By.id("radiobutton"));
 
 		//
-		link.click();
+		button.click();
 
 		//
 		Thread.sleep(5000);

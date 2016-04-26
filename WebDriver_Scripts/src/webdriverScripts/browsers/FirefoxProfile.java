@@ -1,4 +1,4 @@
-package webdriverScripts;
+package webdriverScripts.browsers;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
