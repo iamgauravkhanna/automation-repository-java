@@ -5,7 +5,7 @@ Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts;
+package webdriverScripts.browsers.navigation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,17 +1,18 @@
 /*********************************
  
-Title  : Printing Page Title
+Title  : Printing Page Source
 Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts;
+package webdriverScripts.browsers.commands;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PrintingPageTitle {
+public class PrintingPageSource {
 
 	// Declaring variable 'webDriver' of WebDriver Type
 	WebDriver webDriver;
@@ -19,8 +20,11 @@ public class PrintingPageTitle {
 	// Declaring baseURL variable of String Type
 	String baseUrl;
 
+	// Declaring pageSource variable of String Type
+	String pageSource;
+
 	@Test
-	public void testprintingPageTitle() {
+	public void testprintingPageSource() {
 
 		// Initializing FireFox Driver
 		webDriver = new FirefoxDriver();
@@ -34,10 +38,17 @@ public class PrintingPageTitle {
 		// Maximize browser window
 		webDriver.manage().window().maximize();
 
-		// Print Page Title
-		System.out.println("Title is - " + webDriver.getTitle());
+		// Assigning Page Source content to variable 'pageSource'
+		pageSource = webDriver.getPageSource();
+
+		// Print Current Page Source
+		System.out.println("Page Source is - " + pageSource);
+
+		// Verify that page source contains text 'Gaurav Khanna'
+		Assert.assertTrue(pageSource.contains("Gaurav Khanna"));
 
 		// This will close the browser
 		webDriver.quit();
 	}
+
 }
