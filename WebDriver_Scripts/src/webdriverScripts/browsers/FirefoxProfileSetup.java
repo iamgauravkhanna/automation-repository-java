@@ -13,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.testng.annotations.Test;
 
-public class SettingFirefoxProfile {
+public class FirefoxProfileSetup {
 
 	@Test
 	public void testsettingFirefoxProfile() {

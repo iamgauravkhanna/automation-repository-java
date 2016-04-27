@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.testng.annotations.Test;
 
-public class BuildingChromeDriverService {
+public class GoogleChromeDriverServiceExample {
 
 	@Test
 	public void testBuildingChromeDriverService() {
