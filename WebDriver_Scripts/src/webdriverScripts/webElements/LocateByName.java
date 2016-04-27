@@ -1,10 +1,3 @@
-/*********************************
- 
-Title  : Locate Element By Name
-Author : Gaurav Khanna
-
- *********************************/
-
 package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;

@@ -1,10 +1,3 @@
-/*********************************
- 
-Title  : Locate Element By Tag Name
-Author : Gaurav Khanna
-
- *********************************/
-
 package webdriverScripts.webElements;
 
 import java.util.List;

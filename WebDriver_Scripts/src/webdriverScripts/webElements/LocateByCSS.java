@@ -1,10 +1,3 @@
-/*********************************
- 
-Title  : Locate Element By CSS
-Author : Gaurav Khanna
-
- *********************************/
-
 package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;
@@ -25,8 +18,7 @@ public class LocateByCSS {
 		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		WebElement button = webDriver.findElement(By
-				.cssSelector("html body div.mainbody p input#radiobutton"));
+		WebElement button = webDriver.findElement(By.cssSelector("html body div.mainbody p input#radiobutton"));
 
 		//
 		button.click();
