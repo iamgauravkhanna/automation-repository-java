@@ -1,10 +1,3 @@
-/*********************************
- 
-Title  : Internet Explorer Browser
-Author : Gaurav Khanna
-
- *********************************/
-
 package webdriverScripts.browsers;
 
 import org.openqa.selenium.By;
@@ -23,9 +16,10 @@ public class InternetExplorerBrowser {
 	@Test
 	public void testusingInternetExplorerBrowser() {
 
+		String exePath = System.getProperty("user.dir") + "\\drivers\\windows\\IEDriverServer.exe";
+
 		// Setting IE Driver Path
-		System.setProperty("webdriver.ie.driver",
-				"C:\\gk\\code\\selenium\\lib\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", exePath);
 
 		// Initializing IE Browser
 		webDriver = new InternetExplorerDriver();
