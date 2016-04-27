@@ -1,7 +1,3 @@
-/*
- * @Author : Gaurav Khanna 
- */
-
 package webdriverScripts;
 
 import org.openqa.selenium.By;
@@ -33,6 +29,9 @@ public class BasicScript {
 
 		// Maximize browser window
 		webDriver.manage().window().maximize();
+		
+		// Get Page Title
+		webDriver.getTitle();
 
 		// Click on link
 		webDriver.findElement(By.linkText("Chapter1")).click();
@@ -47,12 +46,12 @@ public class BasicScript {
 		dropdown.selectByVisibleText("Selenium Core");
 
 		// Verify Text Present
-		Assert.assertEquals("Assert that this text is on the page", webDriver
-				.findElement(By.id("divontheleft")).getText());
+		Assert.assertEquals("Assert that this text is on the page",
+				webDriver.findElement(By.id("divontheleft")).getText());
 
 		// Verify Button Present
-		Assert.assertEquals("Verify this button he here", webDriver
-				.findElement(By.id("verifybutton")).getAttribute("value"));
+		Assert.assertEquals("Verify this button he here",
+				webDriver.findElement(By.id("verifybutton")).getAttribute("value"));
 
 		// This will close the browser
 		webDriver.quit();
