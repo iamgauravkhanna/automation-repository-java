@@ -6,28 +6,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByLinkText {
+public class GetSize {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByLinkText() throws InterruptedException {
+	public void testgetSize() {
 
 		//
-		webDriver.get("http://book.theautomatedtester.co.uk/chapter2");
+		webDriver.get("http://www.google.com");
 
 		//
-		WebElement link = webDriver.findElement(By.linkText("Index"));
+		WebElement searchButton = webDriver.findElement(By.name("btnK"));
 
 		//
-		link.click();
-
-		//
-		Thread.sleep(5000);
-
-		//
-		webDriver.quit();
+		System.out.println(searchButton.getSize());
 
 	}
+
 }

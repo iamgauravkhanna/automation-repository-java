@@ -1,10 +1,3 @@
-/*********************************
- 
-Title  : Locate Element By Xpath
-Author : Gaurav Khanna
-
- *********************************/
-
 package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;
@@ -25,8 +18,7 @@ public class LocateByXpath {
 		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		WebElement button = webDriver.findElement(By
-				.xpath("/html/body/div[2]/p[2]/input"));
+		WebElement button = webDriver.findElement(By.xpath("/html/body/div[2]/p[2]/input"));
 
 		//
 		button.click();

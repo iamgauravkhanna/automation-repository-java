@@ -1,10 +1,3 @@
-/*********************************
- 
-Title  : Locate Element By Class
-Author : Gaurav Khanna
-
- *********************************/
-
 package webdriverScripts.webElements;
 
 import org.openqa.selenium.By;
