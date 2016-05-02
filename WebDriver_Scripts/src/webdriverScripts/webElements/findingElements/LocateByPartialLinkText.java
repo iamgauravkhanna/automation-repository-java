@@ -1,4 +1,4 @@
-package webdriverScripts.webElements;
+package webdriverScripts.webElements.findingElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,22 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByClass {
+public class LocateByPartialLinkText {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByClass() throws InterruptedException {
+	public void testlocateByPartialLinkText() throws InterruptedException {
 
 		//
-		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
+		webDriver.get("http://book.theautomatedtester.co.uk/chapter2");
 
 		//
-		WebElement textBox = webDriver.findElement(By.className("belowcenter"));
+		WebElement link = webDriver.findElement(By.partialLinkText("In"));
 
 		//
-		textBox.clear();
+		link.click();
 
 		//
 		Thread.sleep(5000);
@@ -30,4 +30,5 @@ public class LocateByClass {
 		webDriver.quit();
 
 	}
+
 }

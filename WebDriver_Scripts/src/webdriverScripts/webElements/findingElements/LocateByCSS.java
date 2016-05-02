@@ -1,4 +1,4 @@
-package webdriverScripts.webElements;
+package webdriverScripts.webElements.findingElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,22 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByLinkText {
+public class LocateByCSS {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByLinkText() throws InterruptedException {
+	public void testlocateByCSS() throws InterruptedException {
 
 		//
-		webDriver.get("http://book.theautomatedtester.co.uk/chapter2");
+		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		WebElement link = webDriver.findElement(By.linkText("Index"));
+		WebElement button = webDriver.findElement(By.cssSelector("html body div.mainbody p input#radiobutton"));
 
 		//
-		link.click();
+		button.click();
 
 		//
 		Thread.sleep(5000);
@@ -30,4 +30,5 @@ public class LocateByLinkText {
 		webDriver.quit();
 
 	}
+
 }

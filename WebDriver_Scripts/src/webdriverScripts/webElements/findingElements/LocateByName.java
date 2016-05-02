@@ -1,4 +1,4 @@
-package webdriverScripts.webElements;
+package webdriverScripts.webElements.findingElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,22 +6,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByXpath {
+public class LocateByName {
 
-	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByXpath() throws InterruptedException {
+	public void testlocateByName() throws InterruptedException {
 
 		//
 		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		WebElement button = webDriver.findElement(By.xpath("/html/body/div[2]/p[2]/input"));
+		WebElement checkbox = webDriver.findElement(By.name("selected(1234)"));
 
 		//
-		button.click();
+		checkbox.click();
 
 		//
 		Thread.sleep(5000);
@@ -30,4 +29,5 @@ public class LocateByXpath {
 		webDriver.quit();
 
 	}
+
 }

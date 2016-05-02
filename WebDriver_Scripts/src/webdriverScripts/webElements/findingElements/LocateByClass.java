@@ -1,6 +1,4 @@
-package webdriverScripts.webElements;
-
-import java.util.List;
+package webdriverScripts.webElements.findingElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,22 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByTagName {
+public class LocateByClass {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByTagName() throws InterruptedException {
+	public void testlocateByClass() throws InterruptedException {
 
 		//
-		webDriver.get("http://book.theautomatedtester.co.uk");
+		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		List<WebElement> buttons = webDriver.findElements(By.tagName("a"));
+		WebElement textBox = webDriver.findElement(By.className("belowcenter"));
 
 		//
-		System.out.println(buttons.size());
+		textBox.clear();
 
 		//
 		Thread.sleep(5000);
