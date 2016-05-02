@@ -1,12 +1,4 @@
 package webdriverScripts.others;
-/*********************************
- 
-Title  : Integration with SoapUI
-Author : Gaurav Khanna
-
- *********************************//*
-
-package webdriverScripts;
 
 import org.testng.annotations.Test;
 import com.eviware.soapui.tools.SoapUIMockServiceRunner;
@@ -37,5 +29,4 @@ public class IntegrationWithSoapUI {
 
 	}
 
-}
-*/
+}*/

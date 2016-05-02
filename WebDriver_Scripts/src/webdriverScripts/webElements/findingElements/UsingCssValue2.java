@@ -1,11 +1,11 @@
 /*********************************
  
-Title  : Using Css Value 1
+Title  : Using Css Value 2
 Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts.others;
+package webdriverScripts.webElements.findingElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,14 +13,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class UsingCssValue {
-
+public class UsingCssValue2 {
+	
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testcssValue() {
-
+	public void testcssValue2() {
+		
 		//
 		webDriver.get("http://www.google.com");
 		
@@ -28,7 +28,7 @@ public class UsingCssValue {
 		WebElement searchButton = webDriver.findElement(By.name("btnK"));
 		
 		//
-		System.out.println(searchButton.getCssValue("font-family"));
+		System.out.println(searchButton.getCssValue("background-color"));
 
 	}
 
