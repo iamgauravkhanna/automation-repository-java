@@ -9,14 +9,10 @@ public class Framework {
 
 		String a, b, c, d;
 
-		// String a = args[0];
-		// String b = args[1];
-
 		a = "Firefox";
 		b = "Test.Case.001";
-		c = "jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix";
-		//d = "local";
-		d = "http://192.168.49.19:4444/wd/hub";
+		c = "jdbc:oracle:thin:username/password@localhost:1521:xe";
+		d = "local";
 
 		TestManager.MyDataDicitonary.put("browser", a);
 		TestManager.MyDataDicitonary.put("testcaseid", b);
