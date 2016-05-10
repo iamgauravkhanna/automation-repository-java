@@ -18,11 +18,8 @@ public class TestwebServiceFinal {
 		HttpURLConnection httpConn = (HttpURLConnection) connection;
 		ByteArrayOutputStream bout = new ByteArrayOutputStream();
 		String xmlInput = "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" 				xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
-				+ "<soap:Body>\n"
-				+ "<CelsiusToFahrenheit xmlns=\"http://www.w3schools.com/webservices/\">\n"
-				+ "<Celsius>100</Celsius>\n"
-				+ "</CelsiusToFahrenheit>\n"
-				+ "</soap:Body>\n" + "</soap:Envelope>";
+				+ "<soap:Body>\n" + "<CelsiusToFahrenheit xmlns=\"http://www.w3schools.com/webservices/\">\n"
+				+ "<Celsius>100</Celsius>\n" + "</CelsiusToFahrenheit>\n" + "</soap:Body>\n" + "</soap:Envelope>";
 		System.out.println("Formatted SOAP Request : \n" + xmlInput);
 
 		byte[] buffer = new byte[xmlInput.length()];
