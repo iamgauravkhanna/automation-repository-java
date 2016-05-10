@@ -1,0 +1,3 @@
+2016-05-09 17:08:03,746 INFO  [Log4jExample1] New driver instantiated 
+2016-05-09 17:08:10,872 INFO  [Log4jExample1] Implicit wait applied on the driver for 10 seconds 
+2016-05-09 17:08:11,112 INFO  [Log4jExample1] Web application launched 
