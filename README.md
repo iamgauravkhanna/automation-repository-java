@@ -1,2 +1,3 @@
-# automationrepository
-Contains automation related code
+# automation-repository-java
+
+Contains automation related code in Java
