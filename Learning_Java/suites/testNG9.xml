@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="Suite9" verbose="1">
+	<test name="Regression9">
+		<groups>
+			<dependencies>
+				<group name="Car" depends-on="Bike" />
+			</dependencies>
+		</groups>
+		<classes>
+			<class name="com.gaurav.testNG.Sample" />
+		</classes>
+	</test>
+</suite>

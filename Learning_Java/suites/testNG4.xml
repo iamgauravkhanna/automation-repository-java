@@ -1,0 +1,14 @@
+<suite name="Suite4" verbose="1">
+	<test name="Regression1">
+		<groups>
+			<run>
+				<exclude name="Car" />
+				<include name="Bike" />
+				<include name="Colours" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.gaurav.testNG.simple" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,12 @@
+<suite name="Suite6" verbose="1">
+	<test name="Regression1">
+		<groups>
+			<run>
+				<include name="Car" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.gaurav.testNG.simple" />
+		</classes>
+	</test>
+</suite>

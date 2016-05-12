@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LoginTestSuite" thread-count="1" >
+ <parameter name="author" value="demo" />
+ <parameter name="searchKey" value="India" />
+ <test name="testGuru">
+ <groups>
+		<run>
+			<include name="B" />
+		</run>
+	</groups>
+    <classes>
+       <class name="parameters.ParameterByITestContextInDataprovider">
+       </class>
+    </classes>
+  </test>
+ </suite>
+
