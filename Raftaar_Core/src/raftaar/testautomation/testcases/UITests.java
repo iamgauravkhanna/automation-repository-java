@@ -57,6 +57,8 @@ public class UITests {
 		extentReport.flush();
 
 		WebPage.screenShotCounter = 0;
+		
+		System.out.println("Test Case Ends....");
 	}
 
 	@AfterClass
