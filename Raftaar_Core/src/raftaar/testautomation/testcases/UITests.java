@@ -32,8 +32,6 @@ public class UITests {
 	@Test
 	public void testCase() throws Exception {
 
-		// TestManager.MyDataDicitonary.putAll(arg0);
-
 		log.info("Running Test Case : " + TestManager.MyDataDicitonary.get("testcaseid") + " \n");
 
 		extentReportTestObject = extentReport.startTest(TestManager.MyDataDicitonary.get("testcaseid"));
