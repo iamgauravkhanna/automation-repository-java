@@ -75,7 +75,8 @@ public class UITests {
 		WebPage.screenShotCounter = 0;
 
 		System.out.println("Blah Blah Blah Test Case");
-
+		
+		
 	}
 
 	public void put(HashMap<String, String> parameters) {

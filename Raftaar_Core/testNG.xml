@@ -1,19 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Test Suite">
+<suite name="My Test Suite" parallel="tests" preserve-order="true"
+	thread-count="10" verbose="2">
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
-	<test name="Test Case">
-		<parameter name="browser" value="Firefox" />
-		<parameter name="testcaseid" value="Test.Case.040" />
-		<parameter name="DBConnection"
-			value="jdbc:oracle:thin:PHIX_QA08_001/pr1vate@phixdevproduct.cq66g54vnu5m.us-east-1.rds.amazonaws.com:1521:phix" />
+	<test name="My Test Case">
 		<classes>
-			<class name="raftaar.testautomation.testcases.UITests" />
+			<class name="raftaar.testautomation.testcases.RunTestCase" />
 		</classes>
 	</test>
 

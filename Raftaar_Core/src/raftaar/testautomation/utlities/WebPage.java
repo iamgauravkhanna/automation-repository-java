@@ -60,7 +60,7 @@ import raftaar.testautomation.testcases.UITests;
 
 public class WebPage {
 
-	public static WebDriver driver;
+	public WebDriver driver;
 	public String StepOutcome;
 	public WebElement element;
 	public WebElement e;
@@ -628,14 +628,14 @@ public class WebPage {
 
 		fnHighlightMe(driver, element);
 
-		getscreenshot();
+		getscreenshot(driver);
 
 		return element;
 
 	}
 
-	public static void getscreenshot() throws Exception {
-		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	public static void getscreenshot(WebDriver d) throws Exception {
+		File scrFile = ((TakesScreenshot) d).getScreenshotAs(OutputType.FILE);
 		// The below method will save the screen shot in d drive with name
 		// "screenshot.png"
 
