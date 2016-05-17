@@ -67,8 +67,9 @@ public class Framework {
 		TestManager.MyDataDicitonary.put("browser", a);
 		TestManager.MyDataDicitonary.put("DBConnection", c);
 		TestManager.MyDataDicitonary.put("RemoteURL", d);
-		System.out.println("Starting Test Case");
+		System.out.println("Starting Test Case : " + testCaseID);
 		UITests testObject = new UITests();
+		System.out.println("testObject Created");
 		testObject.testCase();
 	}
 
