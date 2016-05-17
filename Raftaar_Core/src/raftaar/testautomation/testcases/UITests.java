@@ -21,7 +21,7 @@ import raftaar.testautomation.utlities.WebPage;
 
 public class UITests {
 
-	public static TestDriver TestDriverObject = new TestDriver();
+	public TestDriver TestDriverObject = new TestDriver();
 	public static Logger log = Logger.getLogger(UITests.class);
 
 	public static String dateTime = new SimpleDateFormat("yyyyMMddhhmm").format(new Date());
