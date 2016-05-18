@@ -2,6 +2,7 @@ package raftaar.testautomation.manager;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -13,6 +14,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.ExcelUtils;
+import raftaar.testautomation.utlities.JavaUtils;
 
 public class TestDriver {
 
@@ -23,7 +25,7 @@ public class TestDriver {
 	// configure log4j properties file
 
 	public int SheetCount;
-	public static int stepNumber = 0 ;
+	public static int stepNumber = 0;
 	public String sheetName;
 	public String testcaseid;
 	public String summary;
@@ -66,7 +68,7 @@ public class TestDriver {
 
 	public void runTestCase(String testCaseId) throws Exception {
 
-		createTestDataMap("EmployeeInfo");
+		// createTestDataMap("EmployeeInfo");
 		createTestCaseMap();
 		executeTestCase(testCaseId);
 
@@ -76,17 +78,16 @@ public class TestDriver {
 
 		int slnumber = 0;
 
-		for (int rowVar = 1; rowVar <= dataFile.getRowCount(SheetName); rowVar++) {
-			for (int colVar = 0; colVar < dataFile.getColumnCount(SheetName); colVar++) {
+		System.out.println("Sheet name to work on : " + SheetName);
+		
+		for (int rowVar = 1; rowVar <= dataFile.getRowCount("CalculateInterest"); rowVar++) {
+			for (int colVar = 0; colVar < dataFile.getColumnCount("CalculateInterest"); colVar++) {
 
-				/*
-				 * System.out.println("Value of Cell (" + rowVar + "," + colVar
-				 * + ") is : " + dataFile.getCellData("EmployeeInfo", colVar,
-				 * rowVar));
-				 */
+				System.out.println("Value of Cell (" + rowVar + "," + colVar + ") is : "
+						+ dataFile.getCellData("EmployeeInfo", colVar, rowVar));
 
-				String key = dataFile.getCellData("EmployeeInfo", colVar, 1);
-				String value = dataFile.getCellData("EmployeeInfo", colVar, rowVar);
+				String key = dataFile.getCellData("CalculateInterest", colVar, 1);
+				String value = dataFile.getCellData("CalculateInterest", colVar, rowVar);
 
 				dataIterationStepDetails.put(key, value);
 			}
@@ -100,6 +101,14 @@ public class TestDriver {
 		 * Iterator<?> it = dataIterationDetails.entrySet().iterator(); while
 		 * (it.hasNext()){ Map.Entry pair = (Map.Entry)it.next();
 		 * System.out.println(pair.getKey() + " = " + pair.getValue()); }
+		 */
+
+		/*
+		 * Iterator iterator1 = dataIterationDetails.keySet().iterator(); while
+		 * (iterator1.hasNext()) { String key = iterator1.next().toString();
+		 * String value = dataIterationStepDetails.get(key).toString();
+		 * System.out.println("Key = " + key + " and  Value =  " + value + " \n"
+		 * ); }
 		 */
 
 		return dataIterationDetails;
@@ -257,29 +266,41 @@ public class TestDriver {
 			 * testCaseId, loc, value, testCaseId, testCaseId, testCaseId);
 			 */
 
-			if (!(i.contains("{skip}"))) {
+			System.out.println("Value Fetching Complete");
+
+			List<String> flagsList = JavaUtils.getFlagValues(i);
+
+			for (int items = 0; items < flagsList.size(); items++) {
+				if (flagsList.get(items).contains("testDataSheet")) {
+					String sheetName = flagsList.get(items);
+					System.out.println("Sheet Name " + sheetName);
+					String FinalSheetName = sheetName.substring(14);
+					System.out.println("Sheet Name " + FinalSheetName);
+					createTestDataMap(FinalSheetName);
+				}
+			}
+
+			if (!(i.contains("skip"))) {
 
 				UITests.log.info("Executing STEP : " + c + "\n");
 				stepNumber++;
-				Reporter.log("Executing STEP : " + c +  " and Step Number : " + stepNumber +"\n");
-				
-				UITests.extentReportTestObject.log(LogStatus.INFO,c);				
+				Reporter.log("Executing STEP : " + c + " and Step Number : " + stepNumber + "\n");
+
+				UITests.extentReportTestObject.log(LogStatus.INFO, c);
 				// System.out.println("Executing STEP : " + c + "\n");
 
 				if (i.contains("testdatasheet")) {
 					String getSheetName = i.substring(15);
 					getSheetName.replaceAll("[^a-zA-Z0-9]", "");
 					// getSheetName.trim();
-					//System.out.println("SheetName is : " + getSheetName);
+					// System.out.println("SheetName is : " + getSheetName);
 				}
 
-				
-				
 				if (f.contains(".")) {
-					//System.out.println("Test Case Found In Between");
+					// System.out.println("Test Case Found In Between");
 					this.executeTestCase(f);
 				} else {
-					//System.out.println("Running Test Step");
+					// System.out.println("Running Test Step");
 					tm.runTestStep(a, b, c, d, e1, f, g, h, i);
 				}
 			} else {

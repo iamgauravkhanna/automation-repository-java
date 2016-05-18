@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -342,6 +344,24 @@ public class JavaUtils {
 		String strArr[] = pattern.split("\\|");
 		List<String> list = Arrays.asList(strArr);
 		return list;
+	}
+
+	public static List<String> getFlagValues(String FlagValues) {
+
+		// String in = "{#Alpha}{Beta}{testSheet=James}{skip}{nowait}";
+
+		String in = FlagValues;
+		List<String> x = new ArrayList<String>();
+
+		Pattern p = Pattern.compile("\\{(.*?)\\}");
+		Matcher m = p.matcher(in);
+
+		while (m.find()) {
+			// System.out.println(m.group(1));
+			x.add(m.group(1));
+		}
+
+		return x;
 	}
 
 }

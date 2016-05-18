@@ -43,6 +43,7 @@ public class UITests {
 		System.out.println("Report Path : " + OutputDirectory);
 
 		Iterator iterator = TestManager.MyDataDicitonary.keySet().iterator();
+		
 
 		while (iterator.hasNext()) {
 			String key = iterator.next().toString();
@@ -52,12 +53,14 @@ public class UITests {
 					"Key = " + key + " and  Value =  " + value + " \n");
 		}
 
+		
+
 		extentReport.endTest(extentReportTestObject);
 
 		extentReport.flush();
 
 		WebPage.screenShotCounter = 0;
-		
+
 		System.out.println("Test Case Ends....");
 	}
 
@@ -75,8 +78,7 @@ public class UITests {
 		WebPage.screenShotCounter = 0;
 
 		System.out.println("Blah Blah Blah Test Case");
-		
-		
+
 	}
 
 	public void put(HashMap<String, String> parameters) {
