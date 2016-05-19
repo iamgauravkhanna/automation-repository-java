@@ -11,7 +11,7 @@ public class RunTestCase {
 	@Test
 	public void firstTC() throws Exception {
 
-		F1.runTestCase("Test.Case.001");
+		F1.runTestCase("Test.Case.002");
 	}
 
 }

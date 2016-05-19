@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -39,7 +40,9 @@ public class TestDriver {
 	public By loc;
 	public String baseTestCaseID;
 	public HashMap<Integer, HashMap<String, String>> TestDataMap;
+	public HashMap<Integer, HashMap<String, String>> TestDataMapInUse;
 	public HashMap<String, String> testDataRepo;
+	public HashMap<String, String> testDataRepoInUse;
 
 	TestManager tm = new TestManager();
 
@@ -79,37 +82,36 @@ public class TestDriver {
 		int slnumber = 0;
 
 		System.out.println("Sheet name to work on : " + SheetName);
-		
+		System.out.println("File to work on" + dataFile);
+
 		for (int rowVar = 1; rowVar <= dataFile.getRowCount("CalculateInterest"); rowVar++) {
 			for (int colVar = 0; colVar < dataFile.getColumnCount("CalculateInterest"); colVar++) {
 
-				System.out.println("Value of Cell (" + rowVar + "," + colVar + ") is : "
-						+ dataFile.getCellData("EmployeeInfo", colVar, rowVar));
+				System.out.println("Value of Cell ( Row = " + rowVar + ", Col = " + colVar + ") is : "
+						+ dataFile.getCellData("CalculateInterest", colVar, rowVar));
 
 				String key = dataFile.getCellData("CalculateInterest", colVar, 1);
 				String value = dataFile.getCellData("CalculateInterest", colVar, rowVar);
 
+				// dataIterationStepDetails.put(key+"["+rowVar+"]", value);
 				dataIterationStepDetails.put(key, value);
 			}
 			dataIterationDetails.put(slnumber, dataIterationStepDetails);
+
+			/*
+			 * for (Entry<Integer, HashMap<String, String>> entry :
+			 * dataIterationDetails.entrySet()) { String key =
+			 * entry.getKey().toString(); HashMap<String, String> value =
+			 * entry.getValue(); System.out.println("key, " + key + " value " +
+			 * value); }
+			 */
+
 			dataIterationStepDetails = new HashMap<>();
 
 			slnumber++;
 		}
 
-		/*
-		 * Iterator<?> it = dataIterationDetails.entrySet().iterator(); while
-		 * (it.hasNext()){ Map.Entry pair = (Map.Entry)it.next();
-		 * System.out.println(pair.getKey() + " = " + pair.getValue()); }
-		 */
-
-		/*
-		 * Iterator iterator1 = dataIterationDetails.keySet().iterator(); while
-		 * (iterator1.hasNext()) { String key = iterator1.next().toString();
-		 * String value = dataIterationStepDetails.get(key).toString();
-		 * System.out.println("Key = " + key + " and  Value =  " + value + " \n"
-		 * ); }
-		 */
+		System.out.println("Loop Complete");
 
 		return dataIterationDetails;
 
@@ -260,6 +262,9 @@ public class TestDriver {
 			String g = myHashMapObj.get("data");
 			String h = myHashMapObj.get("iterations");
 			String i = myHashMapObj.get("flags");
+			// double doo = Double.parseDouble(h);
+			
+
 			/*
 			 * if((e.getKey())=="testcaseid"); {a = testcaseid}
 			 * TestDriver.runTestStep(tsid, testid, testCaseId, keyword,
@@ -272,11 +277,16 @@ public class TestDriver {
 
 			for (int items = 0; items < flagsList.size(); items++) {
 				if (flagsList.get(items).contains("testDataSheet")) {
+					float iter = Float.valueOf(h);
+					int iterationValue = Math.round(iter);
 					String sheetName = flagsList.get(items);
 					System.out.println("Sheet Name " + sheetName);
 					String FinalSheetName = sheetName.substring(14);
 					System.out.println("Sheet Name " + FinalSheetName);
-					createTestDataMap(FinalSheetName);
+					TestDataMapInUse = createTestDataMap(FinalSheetName);
+					System.out.println("Final Value of Iteration " + iterationValue);
+					testDataRepoInUse = TestDataMapInUse.get(iterationValue);
+					TestManager.MyDataDicitonary.putAll(testDataRepoInUse);
 				}
 			}
 

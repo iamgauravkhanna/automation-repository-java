@@ -231,7 +231,8 @@ public class WebPage {
 
 		case "pause":
 			// System.out.println("Pause");
-			int num = Integer.parseInt(data);
+			int num = (int) Double.parseDouble(data);
+			// int num = Integer.parseInt(data);
 			driver.manage().timeouts().implicitlyWait(num, TimeUnit.SECONDS);
 			break;
 
