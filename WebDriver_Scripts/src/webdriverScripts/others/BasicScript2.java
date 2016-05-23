@@ -1,7 +1,3 @@
-/*
- * @Author : Gaurav Khanna 
- */
-
 package webdriverScripts.others;
 
 import java.util.concurrent.TimeUnit;
@@ -39,12 +35,10 @@ public class BasicScript2 {
 		webDriver.findElement(By.id("www-content-wrap")).click();
 
 		// Select `Simple Interest` option from dropdown
-		new Select(webDriver.findElement(By.id("topicItem")))
-				.selectByVisibleText("Interest, Simple");
+		new Select(webDriver.findElement(By.id("topicItem"))).selectByVisibleText("Interest, Simple");
 
 		// Click on element
-		webDriver.findElement(
-				By.cssSelector("option[value=\"simpinterest.html\"]")).click();
+		webDriver.findElement(By.cssSelector("option[value=\"simpinterest.html\"]")).click();
 
 		// Click on element
 		webDriver.findElement(By.name("principal")).clear();
@@ -65,9 +59,7 @@ public class BasicScript2 {
 		webDriver.findElement(By.name("desired_time")).sendKeys("5");
 
 		// Click on element
-		webDriver.findElement(
-				By.xpath("//input[@value='Find the amount of interest']"))
-				.click();
+		webDriver.findElement(By.xpath("//input[@value='Find the amount of interest']")).click();
 
 		webDriver.quit();
 	}

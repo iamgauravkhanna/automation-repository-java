@@ -16,7 +16,7 @@ public class BasicScript {
 	String baseUrl;
 
 	@Test
-	public void testbasicScript() {
+	public void basicScriptExample() {
 
 		// Initializing FireFox Driver
 		webDriver = new FirefoxDriver();
@@ -29,9 +29,12 @@ public class BasicScript {
 
 		// Maximize browser window
 		webDriver.manage().window().maximize();
-		
+
 		// Get Page Title
-		webDriver.getTitle();
+		String PageTitle = webDriver.getTitle();
+
+		// Printing Page Title
+		System.out.println("Page Title : " + PageTitle);
 
 		// Click on link
 		webDriver.findElement(By.linkText("Chapter1")).click();
