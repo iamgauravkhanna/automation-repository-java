@@ -1,5 +1,6 @@
 package raftaar.testautomation.testcases;
 
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
@@ -26,6 +27,7 @@ public class UITests {
 
 	public static String dateTime = new SimpleDateFormat("yyyyMMddhhmm").format(new Date());
 	public static String OutputDirectory = System.getProperty("user.dir") + "\\" + "test-output-" + dateTime + ".html";
+	public static Reporter reporterObject ;
 	public static ExtentReports extentReport = new ExtentReports(OutputDirectory, true);
 	public static ExtentTest extentReportTestObject;
 
