@@ -27,7 +27,7 @@
 	<classpathentry kind="lib" path="lib/apache/apache-xml-xerces.jar"/>
 	<classpathentry kind="lib" path="lib/apache/commons-io-2.4.jar"/>
 	<classpathentry kind="lib" path="lib/db/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="/framework/lib/selenium/selenium-server-standalone.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.53.1.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
