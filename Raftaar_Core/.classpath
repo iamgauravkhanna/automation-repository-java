@@ -18,7 +18,6 @@
 	<classpathentry kind="lib" path="lib/reportng/guice-4.0.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/reportng-1.1.4/reportng-1.1.4.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/reportng-1.1.4/velocity-dep-1.4.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.53.0.jar"/>
 	<classpathentry kind="lib" path="lib/extentReports/extentreports-java-2.40.2.jar"/>
 	<classpathentry kind="lib" path="lib/extentReports/freemarker-2.3.23.jar"/>
 	<classpathentry kind="lib" path="lib/extentReports/jsoup-1.8.3.jar"/>
@@ -29,5 +28,6 @@
 	<classpathentry kind="lib" path="lib/apache/commons-io-2.4.jar"/>
 	<classpathentry kind="lib" path="lib/db/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="/framework/lib/selenium/selenium-server-standalone.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.53.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
