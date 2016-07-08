@@ -1,11 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="My Test Suite" parallel="tests" preserve-order="true"
-	thread-count="10" verbose="2">
+	thread-count="10" verbose="1">
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="raftaar.testautomation.reporting.CustomReporter" />
 	</listeners>
 
 	<test name="My Test Case">
