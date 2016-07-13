@@ -54,7 +54,7 @@ public class Framework {
 		prop.load(input);
 
 		// get the property value and print it out
-		a = prop.getProperty("browser");		
+		a = prop.getProperty("browser");
 		c = prop.getProperty("database");
 		d = prop.getProperty("remortUrl");
 
@@ -63,7 +63,7 @@ public class Framework {
 		TestManager.MyDataDicitonary.put("RemoteURL", d);
 		System.out.println("Starting Test Case : " + testCaseID);
 		UITests testObject = new UITests();
-		//System.out.println("testObject Created");
+		// System.out.println("testObject Created");
 		testObject.testCase();
 	}
 

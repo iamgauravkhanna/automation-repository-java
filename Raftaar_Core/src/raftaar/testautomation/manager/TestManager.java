@@ -42,7 +42,7 @@ public class TestManager {
 	public String iterations;
 	public String flags;
 	public String parent;
-	//Logger log = Logger.getLogger("TestManager");
+	// Logger log = Logger.getLogger("TestManager");
 	WebPage d = new WebPage();
 	// static final Logger logger =
 	// LogManager.getLogger(TestRunner.class.getName());
@@ -61,9 +61,9 @@ public class TestManager {
 	public void runTestStep(String testcaseid, String summary, String description, String parent, String object,
 			String action, String data, String iterations, String flags) throws Exception {
 
-		//configure log4j properties file
-	    PropertyConfigurator.configure("Log4j.properties");
-		
+		// configure log4j properties file
+		PropertyConfigurator.configure("Log4j.properties");
+
 		// System.out.println(tsid);
 		// System.out.println(testid);
 		// System.out.println(description);
@@ -75,17 +75,17 @@ public class TestManager {
 		// System.out.println(flags);
 
 		if (data.contains("#")) {
-			//System.out.println("Parameterized value found");
+			// System.out.println("Parameterized value found");
 			data = JavaUtils.replaceVariablesInString(data, TestManager.MyDataDicitonary);
-			//System.out.println("Data is :" + data);
-			//logger.info("This is Logger Info");
+			// System.out.println("Data is :" + data);
+			// logger.info("This is Logger Info");
 		}
-		
+
 		if (object.contains("#")) {
-			//System.out.println("Parameterized value found");
+			// System.out.println("Parameterized value found");
 			object = JavaUtils.replaceVariablesInString(object, TestManager.MyDataDicitonary);
-			//System.out.println("Data is :" + data);
-			//logger.info("This is Logger Info");
+			// System.out.println("Data is :" + data);
+			// logger.info("This is Logger Info");
 		}
 
 		// locator = locatorValue(object);
@@ -113,7 +113,8 @@ public class TestManager {
 		// TestCase.put(1, stepJsonMetaInfo);
 
 		UITests.log.info("STEP Meta Info : " + stepJsonMetaInfo.toString() + "\n");
-		//System.out.println("STEP Meta Info : " + stepJsonMetaInfo.toString() + "\n");
+		// System.out.println("STEP Meta Info : " + stepJsonMetaInfo.toString()
+		// + "\n");
 		// System.out.println("Test Case Info : " + TestCase.toString() + "\n");
 
 		// Log.info("STEP Meta Info : " + stepJsonMetaInfo.toString() + "\n");
@@ -121,19 +122,30 @@ public class TestManager {
 		 * logger.error("This is error"); logger.info("This is my test case");
 		 */
 		// logger.info("# # # # # # # # # # # # # # # # # # # # # # # # # # #
-		 	// ");
+		// ");
 		// logger.info("STEP Meta Info : " + stepJsonMetaInfo.toString() +
 		// "\n");
 		/* logger.info("TEST Has Started"); */
 
 		StepOutcome = d.ExecuteKeyword(action, parent, object, data);
-		
-		UITests.log.info("Step Outcome : " + StepOutcome + "\n");		
-		Reporter.log("Step Outcome : " + StepOutcome + "\n");		
-		//Reporter.setEscapeHtml(""<HTML>);
-		//System.out.println("Step Outcome : " + StepOutcome + "\n");
+
+		UITests.log.info("Step Outcome : " + StepOutcome + "\n");
+		Reporter.log("Step Outcome : " + StepOutcome + "\n");
+
+		int depth = 1;
+
+		String visibility = "Abc";		
+		String stepOutputString = "<tr t='" + System.currentTimeMillis() + "' d=" + "#depth" + " name='" + "#htmlId"
+				+ "' class='" + "#status" + " testStep' " + visibility + " " + ((depth > 1) ? "hidden='true'" : "")
+				+ " >" + "<td class='stepAttach'>"
+				+ /* StringUtils.repeat(' ', depth) + */"$attach</td>" + "<td class='stepDescription'>$desc</td>"
+				+ "<td title='" + System.currentTimeMillis() + "' class='stepDuration' >" + System.currentTimeMillis()
+				+ "</td>" + "<td class='stepOutcome'>$result</td>" + "</tr>";
+
+		Reporter.log(stepOutputString);
+		// Reporter.setEscapeHtml(""<HTML>);
+		// System.out.println("Step Outcome : " + StepOutcome + "\n");
 
 	}
 
-	
 }
