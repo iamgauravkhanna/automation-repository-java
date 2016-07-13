@@ -17,7 +17,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
 
-public class CustomReporter implements IReporter {
+public class CustomReports implements IReporter {
 	private PrintWriter mOut;
 
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
