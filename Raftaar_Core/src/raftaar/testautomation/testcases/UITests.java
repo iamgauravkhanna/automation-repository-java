@@ -28,7 +28,7 @@ public class UITests {
 	public static String dateTime = new SimpleDateFormat("yyyyMMddhhmm").format(new Date());
 	public static String OutputDirectory = System.getProperty("user.dir") + "\\" + "test-output-" + dateTime + ".html";
 	public static Reporter reporterObject ;
-	public static ExtentReports extentReport = new ExtentReports(OutputDirectory, true);
+	public static ExtentReports extentReport = new ExtentReports(OutputDirectory, false);
 	public static ExtentTest extentReportTestObject;
 
 	@Test

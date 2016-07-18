@@ -19,7 +19,6 @@
 	<classpathentry kind="lib" path="lib/reportng/guice-4.0.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/reportng-1.1.4/reportng-1.1.4.jar"/>
 	<classpathentry kind="lib" path="lib/reportng/reportng-1.1.4/velocity-dep-1.4.jar"/>
-	<classpathentry kind="lib" path="lib/extentReports/extentreports-java-2.40.2.jar"/>
 	<classpathentry kind="lib" path="lib/extentReports/freemarker-2.3.23.jar"/>
 	<classpathentry kind="lib" path="lib/extentReports/jsoup-1.8.3.jar"/>
 	<classpathentry kind="lib" path="lib/extentReports/sqlite-jdbc-3.8.11.1.jar"/>
@@ -30,5 +29,17 @@
 	<classpathentry kind="lib" path="lib/db/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.53.1.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/ant-1.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/ant-launcher-1.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/bson-3.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/extentreports-java-2.41.1.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/hamcrest-core-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/jcommander-1.48.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/mongodb-driver-3.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/mongodb-driver-core-3.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/snakeyaml-1.15.jar"/>
+	<classpathentry kind="lib" path="lib/extentReports/testng-6.9.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

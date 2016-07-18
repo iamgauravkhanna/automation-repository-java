@@ -14,4 +14,22 @@ public class RunTestCase {
 		F1.runTestCase("RE.TC.001");
 	}
 
+	@Test
+	public void secondTC() throws Exception {
+
+		F1.runTestCase("RE.TC.001");
+	}
+
+	@Test
+	public void thirdTC() throws Exception {
+
+		F1.runTestCase("RE.TC.001");
+	}
+
+	@Test
+	public void fourthTC() throws Exception {
+
+		F1.runTestCase("RE.TC.001");
+	}
+
 }

@@ -80,7 +80,7 @@ public class WebPage {
 
 	public static Logger log = Logger.getLogger(WebPage.class);
 
-	public String ExecuteKeyword(String action, String parent, String object, String data) throws Exception {
+	public String ExecuteKeyword(String action, String parent, String object, String data, String description) throws Exception {
 
 		StepOutcome = "NULL";
 
@@ -126,6 +126,7 @@ public class WebPage {
 			driver.get(data);
 			driver.manage().window().maximize();
 			StepOutcome = "Opening Browser";
+			UITests.extentReportTestObject.log(LogStatus.PASS, description);
 			break;
 
 		case "assert=":
@@ -134,7 +135,7 @@ public class WebPage {
 					Float.parseFloat(JavaUtils.getNumbersFromString(data)));
 
 			StepOutcome = "Assertion Successfull";
-
+			UITests.extentReportTestObject.log(LogStatus.PASS, description);
 			break;
 
 		case "uploadFile":
