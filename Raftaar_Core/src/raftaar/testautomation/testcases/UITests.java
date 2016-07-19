@@ -26,10 +26,11 @@ public class UITests {
 	public static Logger log = Logger.getLogger(UITests.class);
 
 	public static String dateTime = new SimpleDateFormat("yyyyMMddhhmm").format(new Date());
-	public static String OutputDirectory = System.getProperty("user.dir") + "\\" + "test-output-" + dateTime + ".html";
+	public static String OutputDirectory = System.getProperty("user.dir") + "\\reports\\" + "test-output-" + dateTime + ".html";
 	public static Reporter reporterObject ;
 	public static ExtentReports extentReport = new ExtentReports(OutputDirectory, false);
 	public static ExtentTest extentReportTestObject;
+	public static ExtentTest extentReportTestChild;
 
 	@Test
 	public void testCase() throws Exception {
@@ -51,8 +52,10 @@ public class UITests {
 			String key = iterator.next().toString();
 			String value = TestManager.MyDataDicitonary.get(key).toString();
 			log.info("Key = " + key + " and  Value =  " + value + " \n");
-			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary",
+/*			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary",
 					"Key = " + key + " and  Value =  " + value + " \n");
+			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary","Step Name",
+					"Key = " + key + " and  Value =  " + value + " \n");*/
 		}
 
 		

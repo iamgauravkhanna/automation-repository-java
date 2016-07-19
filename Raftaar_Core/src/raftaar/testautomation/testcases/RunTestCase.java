@@ -14,7 +14,7 @@ public class RunTestCase {
 		F1.runTestCase("RE.TC.001");
 	}
 
-	@Test
+/*	@Test
 	public void secondTC() throws Exception {
 
 		F1.runTestCase("RE.TC.001");
@@ -30,6 +30,6 @@ public class RunTestCase {
 	public void fourthTC() throws Exception {
 
 		F1.runTestCase("RE.TC.001");
-	}
+	}*/
 
 }

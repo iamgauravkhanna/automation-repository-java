@@ -127,22 +127,22 @@ public class TestManager {
 		// "\n");
 		/* logger.info("TEST Has Started"); */
 
-		StepOutcome = d.ExecuteKeyword(action, parent, object, data,description);
+		StepOutcome = d.ExecuteKeyword(action, parent, object, data,description,testcaseid);
 
 		UITests.log.info("Step Outcome : " + StepOutcome + "\n");
 		Reporter.log("Step Outcome : " + StepOutcome + "\n");
 
-		int depth = 1;
+/*		int depth = 1;
 
 		String visibility = "Abc";		
 		String stepOutputString = "<tr t='" + System.currentTimeMillis() + "' d=" + "#depth" + " name='" + "#htmlId"
 				+ "' class='" + "#status" + " testStep' " + visibility + " " + ((depth > 1) ? "hidden='true'" : "")
 				+ " >" + "<td class='stepAttach'>"
-				+ /* StringUtils.repeat(' ', depth) + */"$attach</td>" + "<td class='stepDescription'>$desc</td>"
+				+  StringUtils.repeat(' ', depth) + "$attach</td>" + "<td class='stepDescription'>$desc</td>"
 				+ "<td title='" + System.currentTimeMillis() + "' class='stepDuration' >" + System.currentTimeMillis()
-				+ "</td>" + "<td class='stepOutcome'>$result</td>" + "</tr>";
+				+ "</td>" + "<td class='stepOutcome'>$result</td>" + "</tr>";*/
 
-		Reporter.log(stepOutputString);
+		//Reporter.log(stepOutputString);
 		// Reporter.setEscapeHtml(""<HTML>);
 		// System.out.println("Step Outcome : " + StepOutcome + "\n");
 

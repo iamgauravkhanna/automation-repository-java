@@ -232,6 +232,14 @@ public class TestDriver {
 
 	}
 
+	public void executeTestCase(String testCaseId, String parentTestId) throws Exception{
+		
+		this.executeTestCase(testCaseId);
+		
+		System.out.println("Test Case ID : " + testCaseId + " and Parent Test Case ID : " + parentTestId);
+		
+	}
+	
 	public void executeTestCase(String testCaseId) throws Exception {
 
 		// configure log4j properties file
@@ -296,7 +304,8 @@ public class TestDriver {
 				stepNumber++;
 				Reporter.log("Executing STEP : " + c + " and Step Number : " + stepNumber + "\n");
 
-				UITests.extentReportTestObject.log(LogStatus.INFO, c);
+				//UITests.extentReportTestObject.log(LogStatus.INFO, c);
+				UITests.extentReportTestObject.log(LogStatus.INFO, a, c);
 				// System.out.println("Executing STEP : " + c + "\n");
 
 				if (i.contains("testdatasheet")) {
@@ -308,7 +317,7 @@ public class TestDriver {
 
 				if (f.contains(".")) {
 					// System.out.println("Test Case Found In Between");
-					this.executeTestCase(f);
+					this.executeTestCase(f, a);									
 				} else {
 					// System.out.println("Running Test Step");
 					tm.runTestStep(a, b, c, d, e1, f, g, h, i);

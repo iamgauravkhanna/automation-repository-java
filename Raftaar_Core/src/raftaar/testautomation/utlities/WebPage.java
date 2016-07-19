@@ -77,12 +77,14 @@ public class WebPage {
 	public WebDriverWait wait;
 	public String alertText;
 	public static Alert alert;
+	public static String StepName ;
 
 	public static Logger log = Logger.getLogger(WebPage.class);
 
-	public String ExecuteKeyword(String action, String parent, String object, String data, String description) throws Exception {
+	public String ExecuteKeyword(String action, String parent, String object, String data, String description,String testcaseid) throws Exception {
 
 		StepOutcome = "NULL";
+		StepName = testcaseid;
 
 		value = null;
 
@@ -126,7 +128,7 @@ public class WebPage {
 			driver.get(data);
 			driver.manage().window().maximize();
 			StepOutcome = "Opening Browser";
-			UITests.extentReportTestObject.log(LogStatus.PASS, description);
+			//UITests.extentReportTestObject.log(LogStatus.PASS, description);
 			break;
 
 		case "assert=":
@@ -135,7 +137,7 @@ public class WebPage {
 					Float.parseFloat(JavaUtils.getNumbersFromString(data)));
 
 			StepOutcome = "Assertion Successfull";
-			UITests.extentReportTestObject.log(LogStatus.PASS, description);
+			//UITests.extentReportTestObject.log(LogStatus.PASS, description);
 			break;
 
 		case "uploadFile":
@@ -651,8 +653,12 @@ public class WebPage {
 		// UITests.extentReportTestObject.log(LogStatus.INFO, "Image", "Image
 		// example:", image.getAbsolutePath());
 		// UITests.extentReportTestObject.log(LogStatus.INFO,"Image",image.getAbsolutePath());
-		UITests.extentReportTestObject.log(LogStatus.INFO, "Image",
-				UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath()));
+		String ImgSource = image.getAbsolutePath() ;
+		/*UITests.extentReportTestObject.log(LogStatus.INFO, StepName,
+				UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath()));*/
+		//String HTMLCode = "<b><a href='" + ImgSource + "'><img src='./reports/logo/image.png' height='25' width='25' />Screenshot Link</a></b> | " + "<a href='" + ImgSource + "'>Defect Link</a>  | " + "<a href='" + ImgSource + "'>HTML Link</a>";
+		String HTMLCode = "<b><a href='" + ImgSource + "'>Screenshot</a></b> | " + "<a href='" + ImgSource + "'>Defect</a>  | " + "<a href='" + ImgSource + "'>HTML</a>";
+		UITests.extentReportTestObject.log(LogStatus.INFO, StepName,HTMLCode);
 		screenShotCounter++;
 	}
 
