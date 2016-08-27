@@ -23,7 +23,7 @@
       "register":true,
       "cleanUpCycle":2000,
       "timeout":30000,
-      "maxSession":5,
+      "maxSession":5
 
    }
 }

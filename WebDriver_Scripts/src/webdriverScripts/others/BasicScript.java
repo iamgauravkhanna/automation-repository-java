@@ -1,62 +1,69 @@
 package webdriverScripts.others;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.By;
+
+import webdriverScripts.utils.*;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BasicScript {
 
-	// Declaring variable 'webDriver' of WebDriver Type
-	WebDriver webDriver;
+	// Declaring variable 'myDriver' of WebDriver Type
+	WebDriver myDriver;
 
 	// Declaring variable 'baseUrl' of String Type
 	String baseUrl;
 
 	@Test
-	public void basicScriptExample() {
+	public void basicScriptExample() throws MalformedURLException {
 
 		// Initializing FireFox Driver
-		webDriver = new FirefoxDriver();
+		myDriver = Utils.initializeDriver("Firefox",
+				"http://192.168.1.103:4444/wd/hub", myDriver);
 
 		// Assigning URL to variable 'baseUrl'
 		baseUrl = "http://book.theautomatedtester.co.uk";
 
 		// Open the link
-		webDriver.get(baseUrl);
+		myDriver.get(baseUrl);
 
 		// Maximize browser window
-		webDriver.manage().window().maximize();
+		myDriver.manage().window().maximize();
 
 		// Get Page Title
-		String PageTitle = webDriver.getTitle();
+		String PageTitle = myDriver.getTitle();
 
 		// Printing Page Title
 		System.out.println("Page Title : " + PageTitle);
 
 		// Click on link
-		webDriver.findElement(By.linkText("Chapter1")).click();
+		myDriver.findElement(By.linkText("Chapter1")).click();
 
 		// Click on radio button
-		webDriver.findElement(By.id("radiobutton")).click();
+		myDriver.findElement(By.id("radiobutton")).click();
 
 		// Click on Dropdown
-		Select dropdown = new Select(webDriver.findElement(By.id("selecttype")));
+		Select dropdown = new Select(myDriver.findElement(By.id("selecttype")));
 
 		// Select option from dropdown
 		dropdown.selectByVisibleText("Selenium Core");
 
 		// Verify Text Present
-		Assert.assertEquals("Assert that this text is on the page",
-				webDriver.findElement(By.id("divontheleft")).getText());
+		Assert.assertEquals("Assert that this text is on the page", myDriver
+				.findElement(By.id("divontheleft")).getText());
 
 		// Verify Button Present
-		Assert.assertEquals("Verify this button he here",
-				webDriver.findElement(By.id("verifybutton")).getAttribute("value"));
+		Assert.assertEquals(
+				"Verify this button he here",
+				myDriver.findElement(By.id("verifybutton")).getAttribute(
+						"value"));
 
 		// This will close the browser
-		webDriver.quit();
+		myDriver.quit();
 	}
 }

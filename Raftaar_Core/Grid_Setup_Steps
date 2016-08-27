@@ -1,7 +1,7 @@
-cd C:\Code\Selenium\automationrepository\Raftaar\lib\selenium
+cd G:\code\automation-repository-java\Raftaar_Core\lib\selenium
 
-java -jar selenium-server-standalone-2.53.0.jar -role hub –hubConfig C:\Code\Selenium\automationrepository\Raftaar\grid_hub.json
+java -jar selenium-server-standalone-2.53.1.jar -role hub –hubConfig G:\code\automation-repository-java\Raftaar_Core\grid_hub.json
 
-cd C:\Code\Selenium\automationrepository\Raftaar\lib\selenium
+cd G:\code\automation-repository-java\Raftaar_Core\lib\selenium
 
-java -jar selenium-server-standalone-2.53.0.jar -role webdriver -hub http://192.168.49.19:4444/grid/register -port 5566
+java -jar selenium-server-standalone-2.53.1.jar -role webdriver -hub http://localhost:4444/grid/register -port 5566
