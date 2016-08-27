@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+/**
+* This is a basic script for using Selenium WebDriver
+*/
 public class BasicScript {
 
 	// Declaring variable 'myDriver' of WebDriver Type

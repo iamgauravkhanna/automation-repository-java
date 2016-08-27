@@ -11,6 +11,18 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Utils {
 
+	/**
+	 * This method is used to initialize WebDriver object
+	 * 
+	 * @param browserName
+	 *            This is name of browser to be used
+	 * @param hubURL
+	 *            This is URL of Selenium grid hub
+	 * @param myDriver
+	 *            This is object name of WebDriver
+	 * @return WebDriver object
+	 * @exception MalformedURLException
+	 */
 	public static WebDriver initializeDriver(String browserName, String hubURL,
 			WebDriver myDriver) throws MalformedURLException {
 
