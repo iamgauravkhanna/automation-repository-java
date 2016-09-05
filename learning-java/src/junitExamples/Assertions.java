@@ -1,4 +1,4 @@
-package junit;
+package junitExamples;
 
 import org.junit.Assert;
 import org.junit.Rule;

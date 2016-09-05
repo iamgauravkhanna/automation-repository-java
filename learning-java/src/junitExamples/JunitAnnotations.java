@@ -1,4 +1,4 @@
-package junit;
+package junitExamples;
 
 import org.junit.After;
 import org.junit.AfterClass;

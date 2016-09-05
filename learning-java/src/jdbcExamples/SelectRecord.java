@@ -1,28 +1,30 @@
 /*********************************
  
-Title  : Deleting Records
+Title  : Selecting Records
 Author : Gaurav Khanna
 
  *********************************/
 
-package jdbc;
+package jdbcExamples;
 
 import java.sql.*;
 import org.testng.annotations.Test;
 
-public class DeleteRecord {
+public class SelectRecord {
 
 	@Test
-	public void testdeleteRecord() throws SQLException, ClassNotFoundException {
+	public void testselectRecord() throws SQLException, ClassNotFoundException {
 
 		// Causes the class "oracle.jdbc.driver.OracleDriver" to be
-
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 
+		//
+		System.out.println("Oracle JDBC Driver Registered!");
+
 		// Declaring Connection type variable
+
 		Connection connection = null;
 
-		//
 		Statement stmt;
 
 		// Create Connection Object
@@ -41,20 +43,12 @@ public class DeleteRecord {
 			stmt = connection.createStatement();
 
 			//
-			String sql = "DELETE FROM Registration " + "WHERE id = 101";
+			String sql = "SELECT id, first, last, age FROM Registration";
 
-			//
-			String sql1 = "SELECT id, first, last, age FROM Registration";
-
-			//
-			stmt.executeQuery(sql);
-
-			//
-			ResultSet rs = stmt.executeQuery(sql1);
+			ResultSet rs = stmt.executeQuery(sql);
 
 			//
 			while (rs.next()) {
-
 				// Retrieve by column name
 				int id = rs.getInt("id");
 				int age = rs.getInt("age");
@@ -69,7 +63,8 @@ public class DeleteRecord {
 
 			}
 		}
+
+		// Closing Statement and Connection
 		connection.close();
 	}
-
 }

@@ -1,4 +1,4 @@
-package junit;
+package junitExamples;
 
 import java.util.Arrays;
 import java.util.Collection;
