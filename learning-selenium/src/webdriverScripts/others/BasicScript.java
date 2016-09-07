@@ -12,8 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
-* This is a basic script for using Selenium WebDriver
-*/
+ * This is a basic script for using Selenium WebDriver
+ */
 public class BasicScript {
 
 	// Declaring variable 'myDriver' of WebDriver Type
@@ -22,12 +22,16 @@ public class BasicScript {
 	// Declaring variable 'baseUrl' of String Type
 	String baseUrl;
 
+	// Declaring variable 'remoteTest' of String Type to determine if test needs
+	// to run locally or remotely
+	// String remoteTest = "http://192.168.49.40:4444/wd/hub";
+	String remoteTest = "local";
+
 	@Test
 	public void basicScriptExample() throws MalformedURLException {
 
 		// Initializing FireFox Driver
-		myDriver = Utils.initializeDriver("Firefox",
-				"http://192.168.1.103:4444/wd/hub", myDriver);
+		myDriver = Utils.initializeDriver("Firefox", remoteTest, myDriver);
 
 		// Assigning URL to variable 'baseUrl'
 		baseUrl = "http://book.theautomatedtester.co.uk";
@@ -57,14 +61,12 @@ public class BasicScript {
 		dropdown.selectByVisibleText("Selenium Core");
 
 		// Verify Text Present
-		Assert.assertEquals("Assert that this text is on the page", myDriver
-				.findElement(By.id("divontheleft")).getText());
+		Assert.assertEquals("Assert that this text is on the page",
+				myDriver.findElement(By.id("divontheleft")).getText());
 
 		// Verify Button Present
-		Assert.assertEquals(
-				"Verify this button he here",
-				myDriver.findElement(By.id("verifybutton")).getAttribute(
-						"value"));
+		Assert.assertEquals("Verify this button he here",
+				myDriver.findElement(By.id("verifybutton")).getAttribute("value"));
 
 		// This will close the browser
 		myDriver.quit();

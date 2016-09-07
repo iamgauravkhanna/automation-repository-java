@@ -3,7 +3,7 @@
 Contains automation related code in Java
 
 
-#### 1. Learning_Java - Java examples for beginner/advance users
+#### 1. learning-java - Java examples for beginner/advance users
 
 - Classes
 - Data Types
@@ -11,14 +11,15 @@ Contains automation related code in Java
 - Loops
 - Operators
  
-#### 2. Raftaar_Core - Development branch of Raftaar
+#### 2. raftaar-core - Development branch of Raftaar
 
 - TestDriver
 - TestManager
 - Utilities 
 
-#### 3. WebDriver_Scripts - Webdriver examples for beginner/advance users
+#### 3. learning-selenium - Webdriver examples for beginner/advance users
 
+- handling webelements
 - action
 - browser navigations
 - wait

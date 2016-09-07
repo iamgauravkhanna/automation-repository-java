@@ -1,67 +1,74 @@
 package webdriverScripts.others;
 
+import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import webdriverScripts.utils.Utils;
+
 public class BasicScript2 {
 
-	// Declaring variable 'webDriver' of WebDriver Type
-	WebDriver webDriver;
+	// Declaring variable 'myDriver' of myDriver Type
+	WebDriver myDriver;
 
 	// Declaring baseURL variable of String Type
 	String baseUrl;
 
+	// Declaring variable 'remoteTest' of String Type to determine if test needs
+	// to run locally or remotely
+	// String remoteTest = "http://192.168.49.40:4444/wd/hub";
+	String remoteTest = "local";
+
 	@Test
-	public void testbasicScript2() {
+	public void testbasicScript2() throws MalformedURLException {
 
 		// Initializing FireFox Driver
-		webDriver = new FirefoxDriver();
+		myDriver = Utils.initializeDriver("Firefox", remoteTest, myDriver);
 
 		// Assigning URL to variable 'baseUrl'
 		baseUrl = "http://www.webmath.com/";
 
 		// Wait for 30 seconds
-		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		myDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		// Open the link
-		webDriver.get(baseUrl);
+		myDriver.get(baseUrl);
 
 		// Click on element
-		webDriver.findElement(By.id("www-content-wrap")).click();
+		myDriver.findElement(By.id("www-content-wrap")).click();
 
 		// Select `Simple Interest` option from dropdown
-		new Select(webDriver.findElement(By.id("topicItem"))).selectByVisibleText("Interest, Simple");
+		new Select(myDriver.findElement(By.id("topicItem"))).selectByVisibleText("Interest, Simple");
 
 		// Click on element
-		webDriver.findElement(By.cssSelector("option[value=\"simpinterest.html\"]")).click();
+		myDriver.findElement(By.cssSelector("option[value=\"simpinterest.html\"]")).click();
 
 		// Click on element
-		webDriver.findElement(By.name("principal")).clear();
+		myDriver.findElement(By.name("principal")).clear();
 
 		// Click on element
-		webDriver.findElement(By.name("principal")).sendKeys("1000");
+		myDriver.findElement(By.name("principal")).sendKeys("1000");
 
 		// Click on element
-		webDriver.findElement(By.name("interest")).clear();
+		myDriver.findElement(By.name("interest")).clear();
 
 		// Click on element
-		webDriver.findElement(By.name("interest")).sendKeys("1");
+		myDriver.findElement(By.name("interest")).sendKeys("1");
 
 		// Click on element
-		webDriver.findElement(By.name("desired_time")).clear();
+		myDriver.findElement(By.name("desired_time")).clear();
 
 		// Click on element
-		webDriver.findElement(By.name("desired_time")).sendKeys("5");
+		myDriver.findElement(By.name("desired_time")).sendKeys("5");
 
 		// Click on element
-		webDriver.findElement(By.xpath("//input[@value='Find the amount of interest']")).click();
+		myDriver.findElement(By.xpath("//input[@value='Find the amount of interest']")).click();
 
-		webDriver.quit();
+		myDriver.quit();
 	}
 
 }

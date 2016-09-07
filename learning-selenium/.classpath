@@ -6,6 +6,7 @@
 	<classpathentry kind="lib" path="lib/ATUTestRecorder_2.1.jar"/>
 	<classpathentry kind="lib" path="lib/extentreports-java-2.05.jar"/>
 	<classpathentry kind="lib" path="lib/Fillo-1.12.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.53.0.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.53.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
