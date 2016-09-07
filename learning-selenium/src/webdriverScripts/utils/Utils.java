@@ -5,7 +5,9 @@ import java.net.URL;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.MarionetteDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -26,17 +28,39 @@ public class Utils {
 	public static WebDriver initializeDriver(String browserName, String hubURL, WebDriver myDriver)
 			throws MalformedURLException {
 
+		DesiredCapabilities capability = null;
+
 		if (!(hubURL.equalsIgnoreCase("local"))) {
 
 			System.out.println("Using Selenium Grid to run tests");
-			DesiredCapabilities capability = DesiredCapabilities.firefox();
-			capability.setBrowserName("firefox");
+
+			if (browserName.equalsIgnoreCase("firefox")) {
+				capability = DesiredCapabilities.firefox();
+				capability.setBrowserName("firefox");
+			} else if (browserName.equalsIgnoreCase("chrome")) {
+				capability = DesiredCapabilities.chrome();
+				capability.setBrowserName("chrome");
+			} else if (browserName.equalsIgnoreCase("ie")) {
+				capability = DesiredCapabilities.internetExplorer();
+				capability.setBrowserName("IE");
+			}
+
 			capability.setPlatform(Platform.WINDOWS);
+
 			myDriver = new RemoteWebDriver(new URL(hubURL), capability);
+
 		} else {
-			String marionetteDriverLocation = "c://selenium//wires.exe";
-			System.setProperty("webdriver.gecko.driver", marionetteDriverLocation);
-			myDriver = new MarionetteDriver();
+
+			if (browserName.equalsIgnoreCase("firefox")) {
+				myDriver = new FirefoxDriver();
+			} else if (browserName.equalsIgnoreCase("chrome")) {
+				myDriver = new ChromeDriver();
+
+			} else if (browserName.equalsIgnoreCase("ie")) {
+				myDriver = new InternetExplorerDriver();
+
+			}
+
 		}
 		return myDriver;
 	}
