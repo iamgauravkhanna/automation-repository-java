@@ -1,4 +1,4 @@
-package cucumber.test;
+package basicScript;
 
 import org.junit.runner.RunWith;
 import cucumber.junit.Cucumber;
