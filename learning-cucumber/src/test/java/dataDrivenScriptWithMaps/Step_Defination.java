@@ -1,6 +1,7 @@
 package dataDrivenScriptWithMaps;
 
 import java.awt.List;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.By;
@@ -13,6 +14,7 @@ import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
 import cucumber.table.DataTable;
+import gherkin.formatter.model.DataTableRow;
 import junit.framework.Assert;
 
 public class Step_Defination {
@@ -51,7 +53,13 @@ public class Step_Defination {
 	}
 
 	@When("^I select value in drop down$")
-	public void executeSteps(List DropDownValue) {
+	public void executeSteps(DataTable DropDownValue) {
+
+		Map<String, String> employeeMap;
+		employeeMap = new HashMap<String, String>();
+		for (DataTableRow row : DropDownValue.getGherkinRows()) {
+			employeeMap.put(row.getCells().get(0), row.getCells().get(0));
+		}
 
 	}
 
