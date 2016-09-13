@@ -1,4 +1,4 @@
-package basicScript;
+package dataDrivenScriptWithOutExampleKeyword;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
 import junit.framework.Assert;
 
-public class CucumberTest {
+public class Step_Defination {
 
 	public static WebDriver myDriver;
 	public String baseUrl;
@@ -22,8 +22,8 @@ public class CucumberTest {
 		myDriver = new FirefoxDriver();
 	}
 
-	@When("^I execute the steps$")
-	public void executeSteps() {
+	@When("^I click on \"([^\"]*)\"$")
+	public void clickOnLink(String LinkText) {
 
 		// Assigning URL to variable 'baseUrl'
 		baseUrl = "http://book.theautomatedtester.co.uk";
@@ -41,16 +41,18 @@ public class CucumberTest {
 		System.out.println("Page Title : " + PageTitle);
 
 		// Click on link
-		myDriver.findElement(By.linkText("Chapter1")).click();
+		myDriver.findElement(By.linkText(LinkText)).click();
 
-		// Click on radio button
-		myDriver.findElement(By.id("radiobutton")).click();
+	}
+
+	@When("^I select \"([^\"]*)\" in drop down$")
+	public void executeSteps(String DropDownValue) {
 
 		// Click on Dropdown
 		Select dropdown = new Select(myDriver.findElement(By.id("selecttype")));
 
 		// Select option from dropdown
-		dropdown.selectByVisibleText("Selenium Core");
+		dropdown.selectByVisibleText(DropDownValue);
 
 	}
 
@@ -64,6 +66,8 @@ public class CucumberTest {
 		// Verify Button Present
 		Assert.assertEquals("Verify this button he here",
 				myDriver.findElement(By.id("verifybutton")).getAttribute("value"));
+
+		System.out.println("All Good :-)");
 
 		// This will close the browser
 		myDriver.quit();
