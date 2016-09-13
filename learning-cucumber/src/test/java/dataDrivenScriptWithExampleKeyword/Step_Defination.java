@@ -1,7 +1,8 @@
-package basicScript;
+package dataDrivenScriptWithExampleKeyword;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -21,8 +22,8 @@ public class Step_Defination {
 		myDriver = new FirefoxDriver();
 	}
 
-	@When("^I execute the steps$")
-	public void executeSteps() {
+	@When("^I click on \"([^\"]*)\"$")
+	public void clickOnLink(String LinkText) {
 
 		// Assigning URL to variable 'baseUrl'
 		baseUrl = "http://book.theautomatedtester.co.uk";
@@ -40,16 +41,18 @@ public class Step_Defination {
 		System.out.println("Page Title : " + PageTitle);
 
 		// Click on link
-		myDriver.findElement(By.linkText("Chapter1")).click();
+		myDriver.findElement(By.linkText(LinkText)).click();
 
-		// Click on radio button
-		myDriver.findElement(By.id("radiobutton")).click();
+	}
+
+	@When("^I select \"([^\"]*)\" in drop down$")
+	public void executeSteps(String DropDownValue) {
 
 		// Click on Dropdown
 		Select dropdown = new Select(myDriver.findElement(By.id("selecttype")));
 
 		// Select option from dropdown
-		dropdown.selectByVisibleText("Selenium Core");
+		dropdown.selectByVisibleText(DropDownValue);
 
 	}
 

@@ -1,17 +1,23 @@
-package basicScript;
+package dataDrivenScriptWithMaps;
+
+import java.awt.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
+import cucumber.table.DataTable;
 import junit.framework.Assert;
 
 public class Step_Defination {
 
+	private static final boolean String = false;
 	public static WebDriver myDriver;
 	public String baseUrl;
 
@@ -21,8 +27,8 @@ public class Step_Defination {
 		myDriver = new FirefoxDriver();
 	}
 
-	@When("^I execute the steps$")
-	public void executeSteps() {
+	@When("^I click on \"([^\"]*)\"$")
+	public void clickOnLink(String LinkText) {
 
 		// Assigning URL to variable 'baseUrl'
 		baseUrl = "http://book.theautomatedtester.co.uk";
@@ -40,16 +46,12 @@ public class Step_Defination {
 		System.out.println("Page Title : " + PageTitle);
 
 		// Click on link
-		myDriver.findElement(By.linkText("Chapter1")).click();
+		myDriver.findElement(By.linkText(LinkText)).click();
 
-		// Click on radio button
-		myDriver.findElement(By.id("radiobutton")).click();
+	}
 
-		// Click on Dropdown
-		Select dropdown = new Select(myDriver.findElement(By.id("selecttype")));
-
-		// Select option from dropdown
-		dropdown.selectByVisibleText("Selenium Core");
+	@When("^I select value in drop down$")
+	public void executeSteps(List DropDownValue) {
 
 	}
 
