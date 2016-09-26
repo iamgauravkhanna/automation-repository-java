@@ -4,6 +4,11 @@ import org.testng.annotations.Test;
 
 import raftaar.testautomation.framework.Framework;
 
+
+/**
+ * This is the beginning point of Framework
+ * 
+ */
 public class RunTestCase {
 
 	Framework F1 = new Framework();
@@ -29,7 +34,7 @@ public class RunTestCase {
 	@Test
 	public void fourthTC() throws Exception {
 
-		F1.runTestCase("Broker.Employer.53602.013");
+		F1.runTestCase("Test.Case.001");
 	}
 
 }

@@ -537,7 +537,7 @@ public class WebPage {
 		while (iterator.hasNext()) {
 			String key = iterator.next().toString();
 			String value = TestManager.MyDataDicitonary.get(key).toString();
-			log.info("Key = " + key + " and  Value =  " + value + " \n");
+			System.out.println("Key = " + key + " and  Value =  " + value + " \n");
 /*			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary",
 					"Key = " + key + " and  Value =  " + value + " \n");
 			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary","Step Name",

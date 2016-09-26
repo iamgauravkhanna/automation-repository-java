@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -369,35 +370,54 @@ public class JavaUtils {
 	}
 
 	/**
-	 * Reads a "properties" file, and returns it as a Map 
-	 * (a collection of key/value pairs).
+	 * Reads a "properties" file, and returns it as a Map (a collection of
+	 * key/value pairs).
 	 * 
-	 * @param filename  The properties filename to read.
-	 * @param delimiter The string (or character) that separates the key 
-	 *                  from the value in the properties file.
+	 * @param filename
+	 *            The properties filename to read.
+	 * @param delimiter
+	 *            The string (or character) that separates the key from the
+	 *            value in the properties file.
 	 * @return The Map that contains the key/value pairs.
 	 * @throws Exception
 	 */
-	public static Map<String, String> readPropertiesFileAsMap(String filename, String delimiter)
-	throws Exception
-	{
-	  Map<String, String> map = new HashMap();
-	  BufferedReader reader = new BufferedReader(new FileReader(filename));
-	  String line;
-	  while ((line = reader.readLine()) != null)
-	  {
-	    if (line.trim().length()==0) continue;
-	    if (line.charAt(0)=='#') continue;
-	    // assumption here is that proper lines are like "String : http://xxx.yyy.zzz/foo/bar",
-	    // and the ":" is the delimiter
-	    int delimPosition = line.indexOf(delimiter);
-	    String key = line.substring(0, delimPosition-1).trim();
-	    String value = line.substring(delimPosition+1).trim();
-	    map.put(key, value);
-	  }
-	  reader.close();
-	  return map;
+	public static Map<String, String> readPropertiesFileAsMap(String filename, String delimiter) throws Exception {
+		System.out.println("In Method Read Properties File");
+
+		Map<String, String> map = new HashMap();
+		BufferedReader reader = new BufferedReader(new FileReader(filename));
+		String line;
+		while ((line = reader.readLine()) != null) {
+			if (line.trim().length() == 0)
+				continue;
+			if (line.charAt(0) == '#')
+				continue;
+			// assumption here is that proper lines are like "String :
+			// http://xxx.yyy.zzz/foo/bar",
+			// and the ":" is the delimiter
+			int delimPosition = line.indexOf(delimiter);
+			String key = line.substring(0, delimPosition - 1).trim();
+			String value = line.substring(delimPosition + 1).trim();
+			map.put(key, value);
+		}
+		reader.close();
+
+		printMapValues(map);
+
+		return map;
 	}
-	
-	
+
+	private static void printMapValues(Map<String, String> map) {
+
+		Iterator iterator = TestManager.MyDataDicitonary.keySet().iterator();
+
+		while (iterator.hasNext()) {
+			String key = iterator.next().toString();
+			String value = map.get(key).toString();
+			System.out.println("Key = " + key + " and  Value =  " + value + " \n");
+
+		}
+
+	}
+
 }
