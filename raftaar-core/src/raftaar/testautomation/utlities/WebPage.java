@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -529,8 +530,21 @@ public class WebPage {
 	}
 
 	public void openBrowser(String browserName) throws MalformedURLException {
+		
+		Iterator iterator = TestManager.MyDataDicitonary.keySet().iterator();
+		
 
-		if (!(TestManager.MyDataDicitonary.get("RemoteURL").equalsIgnoreCase("local"))) {
+		while (iterator.hasNext()) {
+			String key = iterator.next().toString();
+			String value = TestManager.MyDataDicitonary.get(key).toString();
+			log.info("Key = " + key + " and  Value =  " + value + " \n");
+/*			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary",
+					"Key = " + key + " and  Value =  " + value + " \n");
+			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary","Step Name",
+					"Key = " + key + " and  Value =  " + value + " \n");*/
+		}
+
+		if (!(TestManager.MyDataDicitonary.get("remoteURL").equalsIgnoreCase("local"))) {
 			System.out.println("Entering Remote URL section");
 
 			DesiredCapabilities capability = DesiredCapabilities.firefox();

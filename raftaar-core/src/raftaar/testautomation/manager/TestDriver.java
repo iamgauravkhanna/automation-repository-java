@@ -19,7 +19,7 @@ import raftaar.testautomation.utlities.JavaUtils;
 
 public class TestDriver {
 
-	public ExcelUtils excelFile = new ExcelUtils(System.getProperty("user.dir") + "\\assets\\testcase.xlsx");
+	public ExcelUtils excelFile = new ExcelUtils(System.getProperty("user.dir") + "\\assets\\testcase1.xlsx");
 	public ExcelUtils dataFile = new ExcelUtils(System.getProperty("user.dir") + "\\assets\\testdata.xlsx");
 
 	// Logger log = Logger.getLogger("TestDriver");
@@ -232,6 +232,21 @@ public class TestDriver {
 
 	}
 
+	public void executeTestCase(String testCaseId, String parentTestId, String[] items) throws Exception{
+		
+		if(items.length >=1){
+		for (int le = 0 ; le<items.length ; le ++){
+			String varName = "argument"+(le+1);
+			TestManager.MyDataDicitonary.put(varName, items[le]);
+			System.out.println("Value of Argument : " + varName + " => " + TestManager.MyDataDicitonary.get(varName));
+		}
+		}
+		this.executeTestCase(testCaseId);
+		
+		System.out.println("Test Case ID : " + testCaseId + " and Parent Test Case ID : " + parentTestId);
+		
+	}
+	
 	public void executeTestCase(String testCaseId, String parentTestId) throws Exception{
 		
 		this.executeTestCase(testCaseId);
@@ -247,7 +262,7 @@ public class TestDriver {
 
 		// HashMap<String, HashMap<Integer, HashMap<String, String>>> myHashMap
 		// = createTestCaseMap();
-
+		
 		HashMap<Integer, HashMap<String, String>> myHashMapObject = testCases.get(testCaseId);
 
 		// System.out.println("Printing Values of TestCase Hash Map : " +
@@ -317,7 +332,19 @@ public class TestDriver {
 
 				if (f.contains(".")) {
 					// System.out.println("Test Case Found In Between");
-					this.executeTestCase(f, a);									
+					
+					String[] items = g.split(",");
+					   int itemCount = items.length;
+					System.out.println("Length of Arguments : " + itemCount);
+					
+					if(items.length>=1)
+					{
+					this.executeTestCase(f, a, items);
+					}
+					else
+					{
+						this.executeTestCase(f,a);
+					}
 				} else {
 					// System.out.println("Running Test Step");
 					tm.runTestStep(a, b, c, d, e1, f, g, h, i);

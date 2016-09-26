@@ -1,5 +1,7 @@
 package raftaar.testautomation.utlities;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -8,12 +10,14 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import raftaar.testautomation.manager.TestManager;
 import raftaar.testautomation.testcases.UITests;
 
 public class JavaUtils {
@@ -364,4 +368,36 @@ public class JavaUtils {
 		return x;
 	}
 
+	/**
+	 * Reads a "properties" file, and returns it as a Map 
+	 * (a collection of key/value pairs).
+	 * 
+	 * @param filename  The properties filename to read.
+	 * @param delimiter The string (or character) that separates the key 
+	 *                  from the value in the properties file.
+	 * @return The Map that contains the key/value pairs.
+	 * @throws Exception
+	 */
+	public static Map<String, String> readPropertiesFileAsMap(String filename, String delimiter)
+	throws Exception
+	{
+	  Map<String, String> map = new HashMap();
+	  BufferedReader reader = new BufferedReader(new FileReader(filename));
+	  String line;
+	  while ((line = reader.readLine()) != null)
+	  {
+	    if (line.trim().length()==0) continue;
+	    if (line.charAt(0)=='#') continue;
+	    // assumption here is that proper lines are like "String : http://xxx.yyy.zzz/foo/bar",
+	    // and the ":" is the delimiter
+	    int delimPosition = line.indexOf(delimiter);
+	    String key = line.substring(0, delimPosition-1).trim();
+	    String value = line.substring(delimPosition+1).trim();
+	    map.put(key, value);
+	  }
+	  reader.close();
+	  return map;
+	}
+	
+	
 }
