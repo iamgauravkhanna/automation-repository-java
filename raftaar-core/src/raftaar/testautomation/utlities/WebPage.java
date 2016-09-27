@@ -126,6 +126,7 @@ public class WebPage {
 		case "openBrowser":
 
 			openBrowser(TestManager.MyDataDicitonary.get("browser"));
+			System.out.println("URL to Open : " + data);
 			driver.get(data);
 			driver.manage().window().maximize();
 			StepOutcome = "Opening Browser";
@@ -334,6 +335,8 @@ public class WebPage {
 		case "runJavaScript":
 			System.out.println("Run JavaScript");
 
+			
+			
 			ScriptEngineManager factory = new ScriptEngineManager();
 			ScriptEngine engine = factory.getEngineByName("JavaScript");
 			try {
@@ -531,26 +534,15 @@ public class WebPage {
 
 	public void openBrowser(String browserName) throws MalformedURLException {
 		
-		Iterator iterator = TestManager.MyDataDicitonary.keySet().iterator();
+		System.out.println("Remote Url = " + TestManager.MyDataDicitonary.get("remoteUrl"));
 		
-
-		while (iterator.hasNext()) {
-			String key = iterator.next().toString();
-			String value = TestManager.MyDataDicitonary.get(key).toString();
-			System.out.println("Key = " + key + " and  Value =  " + value + " \n");
-/*			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary",
-					"Key = " + key + " and  Value =  " + value + " \n");
-			extentReportTestObject.log(LogStatus.UNKNOWN, "DataDictionary","Step Name",
-					"Key = " + key + " and  Value =  " + value + " \n");*/
-		}
-
-		if (!(TestManager.MyDataDicitonary.get("remoteURL").equalsIgnoreCase("local"))) {
+		if (!(TestManager.MyDataDicitonary.get("remoteUrl").equalsIgnoreCase("local"))) {
 			System.out.println("Entering Remote URL section");
 
 			DesiredCapabilities capability = DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
 			capability.setPlatform(Platform.WINDOWS);
-			driver = new RemoteWebDriver(new URL(TestManager.MyDataDicitonary.get("RemoteURL")), capability);
+			driver = new RemoteWebDriver(new URL(TestManager.MyDataDicitonary.get("remoteUrl")), capability);
 		}
 
 		else {

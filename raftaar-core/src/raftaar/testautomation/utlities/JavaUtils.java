@@ -1,17 +1,23 @@
 package raftaar.testautomation.utlities;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -420,4 +426,25 @@ public class JavaUtils {
 
 	}
 
+	public static void readPropertyAndStoreinMap(String propertyFilePath, Map<String, String> map) {
+		try {
+			//File file = new File("test.properties");
+			FileInputStream fileInput = new FileInputStream(propertyFilePath);
+			Properties properties = new Properties();
+			properties.load(fileInput);
+			fileInput.close();
+
+			Enumeration enuKeys = properties.keys();
+			while (enuKeys.hasMoreElements()) {
+				String key = (String) enuKeys.nextElement();
+				String value = properties.getProperty(key);
+				System.out.println(key + ": " + value);
+				map.put(key, value);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

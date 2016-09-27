@@ -1,0 +1,144 @@
+2016-09-26 18:48:16 INFO  UITests:117 - STEP Meta Info : {testcaseid=Broker.provisionOnExchangeAdmin(), summary=Provision a new Broker through Exchange admin. Exchange details for specific version should have already been retrieved.
+argument1- excel template row no at which data will be inserted.
+argument2- iteration no to be used from Broker_Account sheet
+argument3- skip if no verification to be performed, parent=, data=2, flags=, description=Save excel row no, action=setVariable, iterations=, object=ExcelRowNo}
+
+2016-09-26 18:48:16 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:48:16 INFO  UITests:318 - Executing STEP : Save iteration
+
+2016-09-26 18:48:16 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=10, flags=, description=Save iteration, action=setVariable, iterations=, object=BrokerIteration}
+
+2016-09-26 18:48:16 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:48:16 INFO  UITests:318 - Executing STEP : Save skip verification
+
+2016-09-26 18:48:16 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=#argument3, flags=, description=Save skip verification, action=setVariable, iterations=, object=SkipVerification}
+
+2016-09-26 18:48:16 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:48:16 INFO  UITests:318 - Executing STEP : Open Exchange-admin portal
+
+2016-09-26 18:48:16 INFO  UITests:318 - Executing STEP : Launch exchange admin portal
+
+2016-09-26 18:48:16 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.launchPortal(), summary=Launch exchange admin portal, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin, flags=, description=Launch exchange admin portal, action=openBrowser, iterations=, object=}
+
+2016-09-26 18:48:25 INFO  UITests:134 - Step Outcome : Opening Browser
+
+2016-09-26 18:48:25 INFO  UITests:318 - Executing STEP : and log-in using valid credentials for exchange admin
+
+2016-09-26 18:48:25 INFO  UITests:318 - Executing STEP : 
+
+2016-09-26 18:48:25 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.login(), summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminUserId"; else "";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginUserId}
+
+2016-09-26 18:48:25 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:48:25 INFO  UITests:318 - Executing STEP : 
+
+2016-09-26 18:48:25 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminPassword"; else "10";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginPassword}
+
+2016-09-26 18:48:25 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:48:25 INFO  UITests:318 - Executing STEP : Enter username
+
+2016-09-26 18:48:25 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=super.admin@hcentive.com, flags=, description=Enter username, action=setText, iterations=, object=id=j_username}
+
+2016-09-26 18:48:27 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:48:27 INFO  UITests:318 - Executing STEP : Enter password
+
+2016-09-26 18:48:27 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=Qwerty12, flags=, description=Enter password, action=setText, iterations=, object=id=j_password}
+
+2016-09-26 18:48:29 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:48:29 INFO  UITests:318 - Executing STEP : Click SignIn button
+
+2016-09-26 18:48:29 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click SignIn button, action=click, iterations=, object=id=signInButton}
+
+2016-09-26 18:48:38 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:48:38 INFO  UITests:318 - Executing STEP : Call Method
+
+2016-09-26 18:48:38 INFO  UITests:318 - Executing STEP : Enter in #ex_name exchange
+
+2016-09-26 18:48:38 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.enterInExchange(), summary=Enter in specific exchange, or select exchange name from exchange drop down in top-left corner., parent=, data=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter'].click();, flags=, description=Enter in #ex_name exchange, action=runJavaScript, iterations=, object=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter']}
+
+2016-09-26 18:48:38 INFO  UITests:134 - Step Outcome : null
+
+2016-09-26 18:48:38 INFO  UITests:54 - Key = testcaseid and  Value =  Broker.Employer.53602.013 
+
+2016-09-26 18:48:38 INFO  UITests:54 - Key = ExchangeAdminUrl and  Value =  https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin 
+
+2016-09-26 18:48:38 INFO  UITests:54 - Key = ExchangeAdminLoginPassword and  Value =  Qwerty12 
+
+2016-09-26 18:48:38 INFO  UITests:54 - Key = SkipVerification and  Value =  #argument3 
+
+2016-09-26 18:48:38 INFO  UITests:54 - Key = ExchangeAdminLoginUserId and  Value =  super.admin@hcentive.com 
+
+2016-09-26 18:48:38 INFO  UITests:54 - Key = ExcelRowNo and  Value =  2 
+
+2016-09-26 18:51:35 INFO  UITests:117 - STEP Meta Info : {testcaseid=Broker.provisionOnExchangeAdmin(), summary=Provision a new Broker through Exchange admin. Exchange details for specific version should have already been retrieved.
+argument1- excel template row no at which data will be inserted.
+argument2- iteration no to be used from Broker_Account sheet
+argument3- skip if no verification to be performed, parent=, data=2, flags=, description=Save excel row no, action=setVariable, iterations=, object=ExcelRowNo}
+
+2016-09-26 18:51:35 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:51:35 INFO  UITests:318 - Executing STEP : Save iteration
+
+2016-09-26 18:51:35 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=10, flags=, description=Save iteration, action=setVariable, iterations=, object=BrokerIteration}
+
+2016-09-26 18:51:35 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:51:35 INFO  UITests:318 - Executing STEP : Save skip verification
+
+2016-09-26 18:51:35 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=#argument3, flags=, description=Save skip verification, action=setVariable, iterations=, object=SkipVerification}
+
+2016-09-26 18:51:35 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:51:35 INFO  UITests:318 - Executing STEP : Open Exchange-admin portal
+
+2016-09-26 18:51:35 INFO  UITests:318 - Executing STEP : Launch exchange admin portal
+
+2016-09-26 18:51:35 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.launchPortal(), summary=Launch exchange admin portal, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin, flags=, description=Launch exchange admin portal, action=openBrowser, iterations=, object=}
+
+2016-09-26 18:51:45 INFO  UITests:134 - Step Outcome : Opening Browser
+
+2016-09-26 18:51:45 INFO  UITests:318 - Executing STEP : and log-in using valid credentials for exchange admin
+
+2016-09-26 18:51:45 INFO  UITests:318 - Executing STEP : 
+
+2016-09-26 18:51:45 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.login(), summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminUserId"; else "";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginUserId}
+
+2016-09-26 18:51:45 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:51:45 INFO  UITests:318 - Executing STEP : 
+
+2016-09-26 18:51:45 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminPassword"; else "10";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginPassword}
+
+2016-09-26 18:51:45 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:51:45 INFO  UITests:318 - Executing STEP : Enter username
+
+2016-09-26 18:51:45 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=super.admin@hcentive.com, flags=, description=Enter username, action=setText, iterations=, object=id=j_username}
+
+2016-09-26 18:51:47 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:51:47 INFO  UITests:318 - Executing STEP : Enter password
+
+2016-09-26 18:51:47 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=Qwerty12, flags=, description=Enter password, action=setText, iterations=, object=id=j_password}
+
+2016-09-26 18:51:49 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:51:49 INFO  UITests:318 - Executing STEP : Click SignIn button
+
+2016-09-26 18:51:49 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click SignIn button, action=click, iterations=, object=id=signInButton}
+
+2016-09-26 18:51:58 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-26 18:51:58 INFO  UITests:318 - Executing STEP : Call Method
+
+2016-09-26 18:51:58 INFO  UITests:318 - Executing STEP : Enter in #ex_name exchange
+
+2016-09-26 18:51:58 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.enterInExchange(), summary=Enter in specific exchange, or select exchange name from exchange drop down in top-left corner., parent=, data=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter'].click();, flags=, description=Enter in #ex_name exchange, action=runJavaScript, iterations=, object=}
+
