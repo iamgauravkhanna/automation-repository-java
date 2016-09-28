@@ -105,9 +105,12 @@ public class WebPage {
 
 			loc = locatorValue(locatorType, value);
 		}
+		else {
+			loc = null;
+		}
 
 		if (loc == null) {
-			// System.out.println("Oops Locator Is Null");
+			System.out.println("Oops Locator Is Null");
 		} else if (!(action.equalsIgnoreCase("assertNotPresent"))) {
 			e = what(driver, loc);
 			// System.out.println("Got the Element : " + e);
@@ -351,6 +354,18 @@ public class WebPage {
 			// js.executeScript(data);
 			// System.out.println("Step Outcome : "+ StepOutcome);
 			// System.out.println("Java Script Executed");
+			break;
+			
+		case "runJavaScriptOnBrowser":
+			
+			System.out.println("Running JavaScript on Browser");
+			
+			if (driver instanceof JavascriptExecutor) {
+			    ((JavascriptExecutor)driver).executeScript(data);
+			} else {
+			    throw new IllegalStateException("This driver does not support JavaScript!");
+			}
+			
 			break;
 
 		case "check":
