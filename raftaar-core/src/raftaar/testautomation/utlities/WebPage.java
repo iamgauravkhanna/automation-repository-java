@@ -216,12 +216,20 @@ public class WebPage {
 			// Assert.assertEquals(var1, data);
 			JavaUtils.assertEqual(object, data, "dummy");
 			break;
+			
+		case "downloadFile":
+			// String var1 = TestManager.MyDataDicitonary.get(value);
+			// Assert.assertEquals(var1, data);
+			JavaUtils.downloadFile(TestManager.MyDataDicitonary.get("TemplateLink"), System.getProperty("user.dir") + "\\assets\\");
+			break;
 
 		case "getAttribute":
 			String var3 = e.getAttribute(data);
 			TestManager.MyDataDicitonary.put(parent, var3);
-			break;
-
+			StepOutcome = var3;
+			System.out.println("Value of Get Attribute : " + e.getAttribute(data));
+			break;			
+			
 		case "closeBrowser":
 			driver.quit();
 			// driver.close();

@@ -1,0 +1,768 @@
+2016-09-28 18:26:31 INFO  UITests:117 - STEP Meta Info : {testcaseid=Broker.provisionOnExchangeAdmin(), summary=Provision a new Broker through Exchange admin. Exchange details for specific version should have already been retrieved.
+argument1- excel template row no at which data will be inserted.
+argument2- iteration no to be used from Broker_Account sheet
+argument3- skip if no verification to be performed, parent=, data=2, flags=, description=Save excel row no, action=setVariable, iterations=, object=ExcelRowNo}
+
+2016-09-28 18:26:31 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:31 INFO  UITests:318 - Executing STEP : Save iteration
+
+2016-09-28 18:26:31 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=10, flags=, description=Save iteration, action=setVariable, iterations=, object=BrokerIteration}
+
+2016-09-28 18:26:31 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:31 INFO  UITests:318 - Executing STEP : Save skip verification
+
+2016-09-28 18:26:31 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=#argument3, flags=, description=Save skip verification, action=setVariable, iterations=, object=SkipVerification}
+
+2016-09-28 18:26:31 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:31 INFO  UITests:318 - Executing STEP : Open Exchange-admin portal
+
+2016-09-28 18:26:31 INFO  UITests:318 - Executing STEP : Launch exchange admin portal
+
+2016-09-28 18:26:31 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.launchPortal(), summary=Launch exchange admin portal, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin, flags=, description=Launch exchange admin portal, action=openBrowser, iterations=, object=}
+
+2016-09-28 18:26:43 INFO  UITests:134 - Step Outcome : Opening Browser
+
+2016-09-28 18:26:43 INFO  UITests:318 - Executing STEP : and log-in using valid credentials for exchange admin
+
+2016-09-28 18:26:43 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:26:43 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.login(), summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminUserId"; else "";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginUserId}
+
+2016-09-28 18:26:43 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:43 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:26:43 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminPassword"; else "10";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginPassword}
+
+2016-09-28 18:26:43 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:43 INFO  UITests:318 - Executing STEP : Enter username
+
+2016-09-28 18:26:43 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=super.admin@hcentive.com, flags=, description=Enter username, action=setText, iterations=, object=id=j_username}
+
+2016-09-28 18:26:46 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:46 INFO  UITests:318 - Executing STEP : Enter password
+
+2016-09-28 18:26:46 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=Qwerty12, flags=, description=Enter password, action=setText, iterations=, object=id=j_password}
+
+2016-09-28 18:26:48 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:48 INFO  UITests:318 - Executing STEP : Click SignIn button
+
+2016-09-28 18:26:48 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click SignIn button, action=click, iterations=, object=id=signInButton}
+
+2016-09-28 18:26:57 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:57 INFO  UITests:318 - Executing STEP : Call Method
+
+2016-09-28 18:26:57 INFO  UITests:318 - Executing STEP : Enter in #ex_name exchange
+
+2016-09-28 18:26:57 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.enterInExchange(), summary=Enter in specific exchange, or select exchange name from exchange drop down in top-left corner., parent=, data=, flags=, description=Enter in #ex_name exchange, action=click, iterations=, object=xpath=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter']}
+
+2016-09-28 18:26:58 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:26:58 INFO  UITests:318 - Executing STEP : From  user Management
+
+2016-09-28 18:26:58 INFO  UITests:318 - Executing STEP : Wait for user management  to appear
+
+2016-09-28 18:26:58 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.clickView&ApproveTab(), summary=Click on View & Approve tab, parent=, data=20, flags={nolog}{optional}, description=Wait for user management  to appear, action=waitFor, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:27:03 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:27:03 INFO  UITests:318 - Executing STEP : Click  user management
+
+2016-09-28 18:27:03 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click  user management, action=click, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:27:04 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:27:04 INFO  UITests:318 - Executing STEP : pause
+
+2016-09-28 18:27:04 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=3, flags=, description=pause, action=pause, iterations=, object=}
+
+2016-09-28 18:27:06 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:27:06 INFO  UITests:318 - Executing STEP : navigate to the 'Broker' tab.
+
+2016-09-28 18:27:06 INFO  UITests:318 - Executing STEP : Go to broker in view and approve section
+
+2016-09-28 18:27:06 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.LeftNav.clickBroker(), summary=Go to broker in view and approve section, parent=, data=, flags=, description=Go to broker in view and approve section, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:27:09 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:27:09 INFO  UITests:318 - Executing STEP : click on broker tab
+
+2016-09-28 18:27:09 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=click on broker tab, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:27:15 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:27:15 INFO  UITests:318 - Executing STEP : Using the 'Download Template' option, download the file 'WebInsure_Broker_Information_Excel_1.0.0.xls'.
+
+2016-09-28 18:27:15 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:27:15 INFO  UITests:318 - Executing STEP : Get download url
+
+2016-09-28 18:27:15 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=TemplateLink, data=href, flags=, description=Get download url, action=getAttribute, iterations=, object=//a[text()='Download Template']}
+
+2016-09-28 18:27:15 INFO  UITests:134 - Step Outcome : https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin/viewandapprove/manageBrokers?exchangeId=EX-26DCD22FAE8260B2E0530100007F04D0
+
+2016-09-28 18:27:15 INFO  UITests:318 - Executing STEP : Download template
+
+2016-09-28 18:27:15 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin/viewandapprove/manageBrokers?exchangeId=EX-26DCD22FAE8260B2E0530100007F04D0, flags=, description=Download template, action=downloadFile, iterations=, object=TemplateFile}
+
+2016-09-28 18:29:28 INFO  UITests:117 - STEP Meta Info : {testcaseid=Broker.provisionOnExchangeAdmin(), summary=Provision a new Broker through Exchange admin. Exchange details for specific version should have already been retrieved.
+argument1- excel template row no at which data will be inserted.
+argument2- iteration no to be used from Broker_Account sheet
+argument3- skip if no verification to be performed, parent=, data=2, flags=, description=Save excel row no, action=setVariable, iterations=, object=ExcelRowNo}
+
+2016-09-28 18:29:28 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:28 INFO  UITests:318 - Executing STEP : Save iteration
+
+2016-09-28 18:29:28 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=10, flags=, description=Save iteration, action=setVariable, iterations=, object=BrokerIteration}
+
+2016-09-28 18:29:28 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:28 INFO  UITests:318 - Executing STEP : Save skip verification
+
+2016-09-28 18:29:28 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=#argument3, flags=, description=Save skip verification, action=setVariable, iterations=, object=SkipVerification}
+
+2016-09-28 18:29:28 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:28 INFO  UITests:318 - Executing STEP : Open Exchange-admin portal
+
+2016-09-28 18:29:28 INFO  UITests:318 - Executing STEP : Launch exchange admin portal
+
+2016-09-28 18:29:28 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.launchPortal(), summary=Launch exchange admin portal, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin, flags=, description=Launch exchange admin portal, action=openBrowser, iterations=, object=}
+
+2016-09-28 18:29:41 INFO  UITests:134 - Step Outcome : Opening Browser
+
+2016-09-28 18:29:41 INFO  UITests:318 - Executing STEP : and log-in using valid credentials for exchange admin
+
+2016-09-28 18:29:41 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:29:41 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.login(), summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminUserId"; else "";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginUserId}
+
+2016-09-28 18:29:41 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:41 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:29:41 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminPassword"; else "10";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginPassword}
+
+2016-09-28 18:29:41 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:41 INFO  UITests:318 - Executing STEP : Enter username
+
+2016-09-28 18:29:41 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=super.admin@hcentive.com, flags=, description=Enter username, action=setText, iterations=, object=id=j_username}
+
+2016-09-28 18:29:44 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:44 INFO  UITests:318 - Executing STEP : Enter password
+
+2016-09-28 18:29:44 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=Qwerty12, flags=, description=Enter password, action=setText, iterations=, object=id=j_password}
+
+2016-09-28 18:29:47 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:47 INFO  UITests:318 - Executing STEP : Click SignIn button
+
+2016-09-28 18:29:47 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click SignIn button, action=click, iterations=, object=id=signInButton}
+
+2016-09-28 18:29:58 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:58 INFO  UITests:318 - Executing STEP : Call Method
+
+2016-09-28 18:29:58 INFO  UITests:318 - Executing STEP : Enter in #ex_name exchange
+
+2016-09-28 18:29:58 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.enterInExchange(), summary=Enter in specific exchange, or select exchange name from exchange drop down in top-left corner., parent=, data=, flags=, description=Enter in #ex_name exchange, action=click, iterations=, object=xpath=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter']}
+
+2016-09-28 18:29:59 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:29:59 INFO  UITests:318 - Executing STEP : From  user Management
+
+2016-09-28 18:29:59 INFO  UITests:318 - Executing STEP : Wait for user management  to appear
+
+2016-09-28 18:29:59 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.clickView&ApproveTab(), summary=Click on View & Approve tab, parent=, data=20, flags={nolog}{optional}, description=Wait for user management  to appear, action=waitFor, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:30:04 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:30:04 INFO  UITests:318 - Executing STEP : Click  user management
+
+2016-09-28 18:30:04 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click  user management, action=click, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:30:05 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:30:05 INFO  UITests:318 - Executing STEP : pause
+
+2016-09-28 18:30:05 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=3, flags=, description=pause, action=pause, iterations=, object=}
+
+2016-09-28 18:30:07 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:30:07 INFO  UITests:318 - Executing STEP : navigate to the 'Broker' tab.
+
+2016-09-28 18:30:07 INFO  UITests:318 - Executing STEP : Go to broker in view and approve section
+
+2016-09-28 18:30:07 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.LeftNav.clickBroker(), summary=Go to broker in view and approve section, parent=, data=, flags=, description=Go to broker in view and approve section, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:30:10 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:30:10 INFO  UITests:318 - Executing STEP : click on broker tab
+
+2016-09-28 18:30:10 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=click on broker tab, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:30:16 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:30:16 INFO  UITests:318 - Executing STEP : Using the 'Download Template' option, download the file 'WebInsure_Broker_Information_Excel_1.0.0.xls'.
+
+2016-09-28 18:30:16 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:30:16 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:30:16 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:30:16 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:30:16 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=, action=click, iterations=, object=//a[text()='Download Template']}
+
+2016-09-28 18:30:16 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = testcaseid and  Value =  Broker.Employer.53602.013 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = ExchangeAdminUrl and  Value =  https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = ExchangeAdminLoginPassword and  Value =  Qwerty12 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = SkipVerification and  Value =  #argument3 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = ExchangeAdminLoginUserId and  Value =  super.admin@hcentive.com 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = ExcelRowNo and  Value =  2 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = BrokerIteration and  Value =  10 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = database and  Value =  jdbc:oracle:thin:username/password@localhost:1521:xe 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = browser and  Value =  Firefox 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = argument1 and  Value =   
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = argument2 and  Value =  10 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = remoteUrl and  Value =  local 
+
+2016-09-28 18:30:16 INFO  UITests:54 - Key = ex_name and  Value =  automation 
+
+2016-09-28 18:34:00 INFO  UITests:117 - STEP Meta Info : {testcaseid=Broker.provisionOnExchangeAdmin(), summary=Provision a new Broker through Exchange admin. Exchange details for specific version should have already been retrieved.
+argument1- excel template row no at which data will be inserted.
+argument2- iteration no to be used from Broker_Account sheet
+argument3- skip if no verification to be performed, parent=, data=2, flags=, description=Save excel row no, action=setVariable, iterations=, object=ExcelRowNo}
+
+2016-09-28 18:34:00 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:00 INFO  UITests:318 - Executing STEP : Save iteration
+
+2016-09-28 18:34:00 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=10, flags=, description=Save iteration, action=setVariable, iterations=, object=BrokerIteration}
+
+2016-09-28 18:34:00 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:00 INFO  UITests:318 - Executing STEP : Save skip verification
+
+2016-09-28 18:34:00 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=#argument3, flags=, description=Save skip verification, action=setVariable, iterations=, object=SkipVerification}
+
+2016-09-28 18:34:00 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:00 INFO  UITests:318 - Executing STEP : Open Exchange-admin portal
+
+2016-09-28 18:34:00 INFO  UITests:318 - Executing STEP : Launch exchange admin portal
+
+2016-09-28 18:34:00 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.launchPortal(), summary=Launch exchange admin portal, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin, flags=, description=Launch exchange admin portal, action=openBrowser, iterations=, object=}
+
+2016-09-28 18:34:19 INFO  UITests:134 - Step Outcome : Opening Browser
+
+2016-09-28 18:34:19 INFO  UITests:318 - Executing STEP : and log-in using valid credentials for exchange admin
+
+2016-09-28 18:34:19 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:34:19 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.login(), summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminUserId"; else "";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginUserId}
+
+2016-09-28 18:34:19 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:19 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:34:19 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminPassword"; else "10";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginPassword}
+
+2016-09-28 18:34:19 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:19 INFO  UITests:318 - Executing STEP : Enter username
+
+2016-09-28 18:34:19 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=super.admin@hcentive.com, flags=, description=Enter username, action=setText, iterations=, object=id=j_username}
+
+2016-09-28 18:34:23 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:23 INFO  UITests:318 - Executing STEP : Enter password
+
+2016-09-28 18:34:23 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=Qwerty12, flags=, description=Enter password, action=setText, iterations=, object=id=j_password}
+
+2016-09-28 18:34:27 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:27 INFO  UITests:318 - Executing STEP : Click SignIn button
+
+2016-09-28 18:34:27 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click SignIn button, action=click, iterations=, object=id=signInButton}
+
+2016-09-28 18:34:45 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:45 INFO  UITests:318 - Executing STEP : Call Method
+
+2016-09-28 18:34:45 INFO  UITests:318 - Executing STEP : Enter in #ex_name exchange
+
+2016-09-28 18:34:45 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.enterInExchange(), summary=Enter in specific exchange, or select exchange name from exchange drop down in top-left corner., parent=, data=, flags=, description=Enter in #ex_name exchange, action=click, iterations=, object=xpath=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter']}
+
+2016-09-28 18:34:46 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:46 INFO  UITests:318 - Executing STEP : From  user Management
+
+2016-09-28 18:34:46 INFO  UITests:318 - Executing STEP : Wait for user management  to appear
+
+2016-09-28 18:34:46 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.clickView&ApproveTab(), summary=Click on View & Approve tab, parent=, data=20, flags={nolog}{optional}, description=Wait for user management  to appear, action=waitFor, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:34:53 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:53 INFO  UITests:318 - Executing STEP : Click  user management
+
+2016-09-28 18:34:53 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click  user management, action=click, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:34:55 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:34:55 INFO  UITests:318 - Executing STEP : pause
+
+2016-09-28 18:34:55 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=3, flags=, description=pause, action=pause, iterations=, object=}
+
+2016-09-28 18:35:03 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:35:03 INFO  UITests:318 - Executing STEP : navigate to the 'Broker' tab.
+
+2016-09-28 18:35:03 INFO  UITests:318 - Executing STEP : Go to broker in view and approve section
+
+2016-09-28 18:35:03 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.LeftNav.clickBroker(), summary=Go to broker in view and approve section, parent=, data=, flags=, description=Go to broker in view and approve section, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:35:04 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:35:04 INFO  UITests:318 - Executing STEP : click on broker tab
+
+2016-09-28 18:35:04 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=click on broker tab, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:35:13 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:35:13 INFO  UITests:318 - Executing STEP : Using the 'Download Template' option, download the file 'WebInsure_Broker_Information_Excel_1.0.0.xls'.
+
+2016-09-28 18:35:13 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:35:13 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:35:13 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:35:13 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:35:13 INFO  UITests:318 - Executing STEP : Using option 'Upload Broker List', browse and select the modified XLS file having data for new broker.Need to remove skip from verify upload sucess once issue is resolved
+
+2016-09-28 18:35:13 INFO  UITests:318 - Executing STEP : Click upload broker list button
+
+2016-09-28 18:35:13 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.manageBrokers.uploadBrokers(), summary=Upload broker xls file
+argument1- path of broker file to be uploaded. File should have already been prepared using ExchangeAdmin.prepareBrokerXlsFile(), parent=, data=, flags=, description=Click upload broker list button, action=click, iterations=, object=id=uploadBrokerList}
+
+2016-09-28 18:35:14 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:35:14 INFO  UITests:318 - Executing STEP : Upload broker file
+
+2016-09-28 18:35:14 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=System.getProperty("user.dir") + "\\assets\\brokerTemplate.xlsm, flags=, description=Upload broker file, action=uploadFile, iterations=, object=css=input[id='brokerList'][type='file']}
+
+2016-09-28 18:38:14 INFO  UITests:117 - STEP Meta Info : {testcaseid=Broker.provisionOnExchangeAdmin(), summary=Provision a new Broker through Exchange admin. Exchange details for specific version should have already been retrieved.
+argument1- excel template row no at which data will be inserted.
+argument2- iteration no to be used from Broker_Account sheet
+argument3- skip if no verification to be performed, parent=, data=2, flags=, description=Save excel row no, action=setVariable, iterations=, object=ExcelRowNo}
+
+2016-09-28 18:38:14 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:14 INFO  UITests:318 - Executing STEP : Save iteration
+
+2016-09-28 18:38:14 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=10, flags=, description=Save iteration, action=setVariable, iterations=, object=BrokerIteration}
+
+2016-09-28 18:38:14 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:14 INFO  UITests:318 - Executing STEP : Save skip verification
+
+2016-09-28 18:38:14 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=#argument3, flags=, description=Save skip verification, action=setVariable, iterations=, object=SkipVerification}
+
+2016-09-28 18:38:14 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:14 INFO  UITests:318 - Executing STEP : Open Exchange-admin portal
+
+2016-09-28 18:38:14 INFO  UITests:318 - Executing STEP : Launch exchange admin portal
+
+2016-09-28 18:38:14 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.launchPortal(), summary=Launch exchange admin portal, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin, flags=, description=Launch exchange admin portal, action=openBrowser, iterations=, object=}
+
+2016-09-28 18:38:30 INFO  UITests:134 - Step Outcome : Opening Browser
+
+2016-09-28 18:38:30 INFO  UITests:318 - Executing STEP : and log-in using valid credentials for exchange admin
+
+2016-09-28 18:38:30 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:38:30 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.login(), summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminUserId"; else "";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginUserId}
+
+2016-09-28 18:38:30 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:30 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:38:30 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminPassword"; else "10";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginPassword}
+
+2016-09-28 18:38:30 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:30 INFO  UITests:318 - Executing STEP : Enter username
+
+2016-09-28 18:38:30 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=super.admin@hcentive.com, flags=, description=Enter username, action=setText, iterations=, object=id=j_username}
+
+2016-09-28 18:38:33 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:33 INFO  UITests:318 - Executing STEP : Enter password
+
+2016-09-28 18:38:33 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=Qwerty12, flags=, description=Enter password, action=setText, iterations=, object=id=j_password}
+
+2016-09-28 18:38:36 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:36 INFO  UITests:318 - Executing STEP : Click SignIn button
+
+2016-09-28 18:38:36 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click SignIn button, action=click, iterations=, object=id=signInButton}
+
+2016-09-28 18:38:48 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:48 INFO  UITests:318 - Executing STEP : Call Method
+
+2016-09-28 18:38:48 INFO  UITests:318 - Executing STEP : Enter in #ex_name exchange
+
+2016-09-28 18:38:48 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.enterInExchange(), summary=Enter in specific exchange, or select exchange name from exchange drop down in top-left corner., parent=, data=, flags=, description=Enter in #ex_name exchange, action=click, iterations=, object=xpath=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter']}
+
+2016-09-28 18:38:49 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:49 INFO  UITests:318 - Executing STEP : From  user Management
+
+2016-09-28 18:38:49 INFO  UITests:318 - Executing STEP : Wait for user management  to appear
+
+2016-09-28 18:38:49 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.clickView&ApproveTab(), summary=Click on View & Approve tab, parent=, data=20, flags={nolog}{optional}, description=Wait for user management  to appear, action=waitFor, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:38:54 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:54 INFO  UITests:318 - Executing STEP : Click  user management
+
+2016-09-28 18:38:54 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click  user management, action=click, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:38:56 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:38:56 INFO  UITests:318 - Executing STEP : pause
+
+2016-09-28 18:38:56 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=3, flags=, description=pause, action=pause, iterations=, object=}
+
+2016-09-28 18:39:00 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:39:00 INFO  UITests:318 - Executing STEP : navigate to the 'Broker' tab.
+
+2016-09-28 18:39:00 INFO  UITests:318 - Executing STEP : Go to broker in view and approve section
+
+2016-09-28 18:39:00 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.LeftNav.clickBroker(), summary=Go to broker in view and approve section, parent=, data=, flags=, description=Go to broker in view and approve section, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:39:02 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:39:02 INFO  UITests:318 - Executing STEP : click on broker tab
+
+2016-09-28 18:39:02 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=click on broker tab, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:39:08 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:39:08 INFO  UITests:318 - Executing STEP : Using the 'Download Template' option, download the file 'WebInsure_Broker_Information_Excel_1.0.0.xls'.
+
+2016-09-28 18:39:08 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:39:08 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:39:08 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:39:08 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:39:08 INFO  UITests:318 - Executing STEP : Using option 'Upload Broker List', browse and select the modified XLS file having data for new broker.Need to remove skip from verify upload sucess once issue is resolved
+
+2016-09-28 18:39:08 INFO  UITests:318 - Executing STEP : Click upload broker list button
+
+2016-09-28 18:39:08 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.manageBrokers.uploadBrokers(), summary=Upload broker xls file
+argument1- path of broker file to be uploaded. File should have already been prepared using ExchangeAdmin.prepareBrokerXlsFile(), parent=, data=, flags=, description=Click upload broker list button, action=click, iterations=, object=id=uploadBrokerList}
+
+2016-09-28 18:39:10 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:39:10 INFO  UITests:318 - Executing STEP : Upload broker file
+
+2016-09-28 18:39:10 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=System.getProperty("user.dir") + "\\assets\\brokerTemplate.xlsm, flags=, description=Upload broker file, action=uploadFile, iterations=, object=id=brokerList}
+
+2016-09-28 18:39:11 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:39:11 INFO  UITests:318 - Executing STEP : Click 'Upload' button
+
+2016-09-28 18:39:11 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click 'Upload' button, action=click, iterations=, object=xpath=//input[@value='Upload']}
+
+2016-09-28 18:39:12 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:39:12 INFO  UITests:318 - Executing STEP : Wait for upload to finish. This include either an error or success msg.
+
+2016-09-28 18:39:12 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=400, flags=, description=Wait for upload to finish. This include either an error or success msg., action=waitFor, iterations=, object=//span[text()='Brokers uploaded successfully.']|//div[@id='uploadStatus'][contains(.,'Please contact on Toll Free No')]|//span[contains(.,'Upload successful. The file is available in the ')]}
+
+2016-09-28 18:42:57 INFO  UITests:117 - STEP Meta Info : {testcaseid=Broker.provisionOnExchangeAdmin(), summary=Provision a new Broker through Exchange admin. Exchange details for specific version should have already been retrieved.
+argument1- excel template row no at which data will be inserted.
+argument2- iteration no to be used from Broker_Account sheet
+argument3- skip if no verification to be performed, parent=, data=2, flags=, description=Save excel row no, action=setVariable, iterations=, object=ExcelRowNo}
+
+2016-09-28 18:42:57 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:42:57 INFO  UITests:318 - Executing STEP : Save iteration
+
+2016-09-28 18:42:57 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=10, flags=, description=Save iteration, action=setVariable, iterations=, object=BrokerIteration}
+
+2016-09-28 18:42:57 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:42:57 INFO  UITests:318 - Executing STEP : Save skip verification
+
+2016-09-28 18:42:57 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=#argument3, flags=, description=Save skip verification, action=setVariable, iterations=, object=SkipVerification}
+
+2016-09-28 18:42:57 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:42:57 INFO  UITests:318 - Executing STEP : Open Exchange-admin portal
+
+2016-09-28 18:42:57 INFO  UITests:318 - Executing STEP : Launch exchange admin portal
+
+2016-09-28 18:42:57 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.launchPortal(), summary=Launch exchange admin portal, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin, flags=, description=Launch exchange admin portal, action=openBrowser, iterations=, object=}
+
+2016-09-28 18:43:11 INFO  UITests:134 - Step Outcome : Opening Browser
+
+2016-09-28 18:43:11 INFO  UITests:318 - Executing STEP : and log-in using valid credentials for exchange admin
+
+2016-09-28 18:43:11 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:43:11 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.login(), summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminUserId"; else "";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginUserId}
+
+2016-09-28 18:43:11 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:11 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:43:11 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminPassword"; else "10";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginPassword}
+
+2016-09-28 18:43:11 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:11 INFO  UITests:318 - Executing STEP : Enter username
+
+2016-09-28 18:43:11 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=super.admin@hcentive.com, flags=, description=Enter username, action=setText, iterations=, object=id=j_username}
+
+2016-09-28 18:43:14 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:14 INFO  UITests:318 - Executing STEP : Enter password
+
+2016-09-28 18:43:14 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=Qwerty12, flags=, description=Enter password, action=setText, iterations=, object=id=j_password}
+
+2016-09-28 18:43:17 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:17 INFO  UITests:318 - Executing STEP : Click SignIn button
+
+2016-09-28 18:43:17 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click SignIn button, action=click, iterations=, object=id=signInButton}
+
+2016-09-28 18:43:30 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:30 INFO  UITests:318 - Executing STEP : Call Method
+
+2016-09-28 18:43:30 INFO  UITests:318 - Executing STEP : Enter in #ex_name exchange
+
+2016-09-28 18:43:30 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.enterInExchange(), summary=Enter in specific exchange, or select exchange name from exchange drop down in top-left corner., parent=, data=, flags=, description=Enter in #ex_name exchange, action=click, iterations=, object=xpath=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter']}
+
+2016-09-28 18:43:31 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:31 INFO  UITests:318 - Executing STEP : From  user Management
+
+2016-09-28 18:43:31 INFO  UITests:318 - Executing STEP : Wait for user management  to appear
+
+2016-09-28 18:43:31 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.clickView&ApproveTab(), summary=Click on View & Approve tab, parent=, data=20, flags={nolog}{optional}, description=Wait for user management  to appear, action=waitFor, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:43:39 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:39 INFO  UITests:318 - Executing STEP : Click  user management
+
+2016-09-28 18:43:39 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click  user management, action=click, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:43:40 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:40 INFO  UITests:318 - Executing STEP : pause
+
+2016-09-28 18:43:40 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=3, flags=, description=pause, action=pause, iterations=, object=}
+
+2016-09-28 18:43:43 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:43 INFO  UITests:318 - Executing STEP : navigate to the 'Broker' tab.
+
+2016-09-28 18:43:43 INFO  UITests:318 - Executing STEP : Go to broker in view and approve section
+
+2016-09-28 18:43:43 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.LeftNav.clickBroker(), summary=Go to broker in view and approve section, parent=, data=, flags=, description=Go to broker in view and approve section, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:43:46 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:46 INFO  UITests:318 - Executing STEP : click on broker tab
+
+2016-09-28 18:43:46 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=click on broker tab, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:43:53 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:53 INFO  UITests:318 - Executing STEP : Using the 'Download Template' option, download the file 'WebInsure_Broker_Information_Excel_1.0.0.xls'.
+
+2016-09-28 18:43:53 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:43:53 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:43:53 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:43:53 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:43:53 INFO  UITests:318 - Executing STEP : Using option 'Upload Broker List', browse and select the modified XLS file having data for new broker.Need to remove skip from verify upload sucess once issue is resolved
+
+2016-09-28 18:43:53 INFO  UITests:318 - Executing STEP : Click upload broker list button
+
+2016-09-28 18:43:53 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.manageBrokers.uploadBrokers(), summary=Upload broker xls file
+argument1- path of broker file to be uploaded. File should have already been prepared using ExchangeAdmin.prepareBrokerXlsFile(), parent=, data=, flags=, description=Click upload broker list button, action=click, iterations=, object=id=uploadBrokerList}
+
+2016-09-28 18:43:54 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:54 INFO  UITests:318 - Executing STEP : Upload broker file
+
+2016-09-28 18:43:54 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=System.getProperty("user.dir") + "\assets\brokerTemplate.xlsm, flags=, description=Upload broker file, action=uploadFile, iterations=, object=id=brokerList}
+
+2016-09-28 18:43:56 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:56 INFO  UITests:318 - Executing STEP : Click 'Upload' button
+
+2016-09-28 18:43:56 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click 'Upload' button, action=click, iterations=, object=xpath=//input[@value='Upload']}
+
+2016-09-28 18:43:57 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:43:57 INFO  UITests:318 - Executing STEP : Wait for upload to finish. This include either an error or success msg.
+
+2016-09-28 18:43:57 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=400, flags=, description=Wait for upload to finish. This include either an error or success msg., action=waitFor, iterations=, object=//span[text()='Brokers uploaded successfully.']|//div[@id='uploadStatus'][contains(.,'Please contact on Toll Free No')]|//span[contains(.,'Upload successful. The file is available in the ')]}
+
+2016-09-28 18:46:52 INFO  UITests:117 - STEP Meta Info : {testcaseid=Broker.provisionOnExchangeAdmin(), summary=Provision a new Broker through Exchange admin. Exchange details for specific version should have already been retrieved.
+argument1- excel template row no at which data will be inserted.
+argument2- iteration no to be used from Broker_Account sheet
+argument3- skip if no verification to be performed, parent=, data=2, flags=, description=Save excel row no, action=setVariable, iterations=, object=ExcelRowNo}
+
+2016-09-28 18:46:52 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:46:52 INFO  UITests:318 - Executing STEP : Save iteration
+
+2016-09-28 18:46:52 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=10, flags=, description=Save iteration, action=setVariable, iterations=, object=BrokerIteration}
+
+2016-09-28 18:46:52 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:46:52 INFO  UITests:318 - Executing STEP : Save skip verification
+
+2016-09-28 18:46:52 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=#argument3, flags=, description=Save skip verification, action=setVariable, iterations=, object=SkipVerification}
+
+2016-09-28 18:46:52 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:46:52 INFO  UITests:318 - Executing STEP : Open Exchange-admin portal
+
+2016-09-28 18:46:52 INFO  UITests:318 - Executing STEP : Launch exchange admin portal
+
+2016-09-28 18:46:52 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.launchPortal(), summary=Launch exchange admin portal, parent=, data=https://ex1.phix-qa08.demo.hcinternal.net/exchange-admin, flags=, description=Launch exchange admin portal, action=openBrowser, iterations=, object=}
+
+2016-09-28 18:47:06 INFO  UITests:134 - Step Outcome : Opening Browser
+
+2016-09-28 18:47:06 INFO  UITests:318 - Executing STEP : and log-in using valid credentials for exchange admin
+
+2016-09-28 18:47:06 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:47:06 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.login(), summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminUserId"; else "";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginUserId}
+
+2016-09-28 18:47:06 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:06 INFO  UITests:318 - Executing STEP : 
+
+2016-09-28 18:47:06 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=if("10".substr(0,1) == "#") "#ExchangeAdminPassword"; else "10";, flags=, description=, action=runjavascript, iterations=, object=ExchangeAdminLoginPassword}
+
+2016-09-28 18:47:06 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:06 INFO  UITests:318 - Executing STEP : Enter username
+
+2016-09-28 18:47:06 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=super.admin@hcentive.com, flags=, description=Enter username, action=setText, iterations=, object=id=j_username}
+
+2016-09-28 18:47:09 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:09 INFO  UITests:318 - Executing STEP : Enter password
+
+2016-09-28 18:47:09 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=Qwerty12, flags=, description=Enter password, action=setText, iterations=, object=id=j_password}
+
+2016-09-28 18:47:12 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:12 INFO  UITests:318 - Executing STEP : Click SignIn button
+
+2016-09-28 18:47:12 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click SignIn button, action=click, iterations=, object=id=signInButton}
+
+2016-09-28 18:47:23 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:23 INFO  UITests:318 - Executing STEP : Call Method
+
+2016-09-28 18:47:23 INFO  UITests:318 - Executing STEP : Enter in #ex_name exchange
+
+2016-09-28 18:47:23 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.enterInExchange(), summary=Enter in specific exchange, or select exchange name from exchange drop down in top-left corner., parent=, data=, flags=, description=Enter in #ex_name exchange, action=click, iterations=, object=xpath=//*[text()='automation']/ancestor::div[@class='exchange-box']//a[@class='btn-enter']}
+
+2016-09-28 18:47:24 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:24 INFO  UITests:318 - Executing STEP : From  user Management
+
+2016-09-28 18:47:24 INFO  UITests:318 - Executing STEP : Wait for user management  to appear
+
+2016-09-28 18:47:24 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.clickView&ApproveTab(), summary=Click on View & Approve tab, parent=, data=20, flags={nolog}{optional}, description=Wait for user management  to appear, action=waitFor, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:47:30 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:30 INFO  UITests:318 - Executing STEP : Click  user management
+
+2016-09-28 18:47:30 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click  user management, action=click, iterations=, object=css=li#userManagement i}
+
+2016-09-28 18:47:31 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:31 INFO  UITests:318 - Executing STEP : pause
+
+2016-09-28 18:47:31 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=3, flags=, description=pause, action=pause, iterations=, object=}
+
+2016-09-28 18:47:34 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:34 INFO  UITests:318 - Executing STEP : navigate to the 'Broker' tab.
+
+2016-09-28 18:47:34 INFO  UITests:318 - Executing STEP : Go to broker in view and approve section
+
+2016-09-28 18:47:34 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.LeftNav.clickBroker(), summary=Go to broker in view and approve section, parent=, data=, flags=, description=Go to broker in view and approve section, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:47:38 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:38 INFO  UITests:318 - Executing STEP : click on broker tab
+
+2016-09-28 18:47:38 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=click on broker tab, action=click, iterations=, object=xpath=//li[@id='broker']//a/i  | //a[contains(@href,'exchange-admin/viewandapprove/manageBrokers')]}
+
+2016-09-28 18:47:46 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:46 INFO  UITests:318 - Executing STEP : Using the 'Download Template' option, download the file 'WebInsure_Broker_Information_Excel_1.0.0.xls'.
+
+2016-09-28 18:47:46 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:47:46 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:47:46 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:47:46 INFO  UITests:353 - Skipping Test Step
+2016-09-28 18:47:46 INFO  UITests:318 - Executing STEP : Using option 'Upload Broker List', browse and select the modified XLS file having data for new broker.Need to remove skip from verify upload sucess once issue is resolved
+
+2016-09-28 18:47:46 INFO  UITests:318 - Executing STEP : Click upload broker list button
+
+2016-09-28 18:47:46 INFO  UITests:117 - STEP Meta Info : {testcaseid=ExchangeAdmin.manageBrokers.uploadBrokers(), summary=Upload broker xls file
+argument1- path of broker file to be uploaded. File should have already been prepared using ExchangeAdmin.prepareBrokerXlsFile(), parent=, data=, flags=, description=Click upload broker list button, action=click, iterations=, object=id=uploadBrokerList}
+
+2016-09-28 18:47:47 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:47 INFO  UITests:318 - Executing STEP : Upload broker file
+
+2016-09-28 18:47:47 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=C:\code\github\automation-repository-java\raftaar-core\assets\brokerTemplate.xlsm, flags=, description=Upload broker file, action=uploadFile, iterations=, object=id=brokerList}
+
+2016-09-28 18:47:48 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:48 INFO  UITests:318 - Executing STEP : Click 'Upload' button
+
+2016-09-28 18:47:48 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click 'Upload' button, action=click, iterations=, object=xpath=//input[@value='Upload']}
+
+2016-09-28 18:47:50 INFO  UITests:134 - Step Outcome : NULL
+
+2016-09-28 18:47:50 INFO  UITests:318 - Executing STEP : Wait for upload to finish. This include either an error or success msg.
+
+2016-09-28 18:47:50 INFO  UITests:117 - STEP Meta Info : {testcaseid=, summary=, parent=, data=400, flags=, description=Wait for upload to finish. This include either an error or success msg., action=waitFor, iterations=, object=//span[text()='Brokers uploaded successfully.']|//div[@id='uploadStatus'][contains(.,'Please contact on Toll Free No')]|//span[contains(.,'Upload successful. The file is available in the ')]}
+
