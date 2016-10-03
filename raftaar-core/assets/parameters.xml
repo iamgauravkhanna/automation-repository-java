@@ -6,7 +6,7 @@
 	</parameter>
 	<parameter>
 		<name>keyStore</name>
-		<value>assets/client.p12</value>
+		<value>assets/client.abc</value>
 	</parameter>
 	<parameter>
 		<name>keyStorePassword</name>
@@ -18,6 +18,6 @@
 	</parameter>
 	<parameter>
 		<name>u_zipCode</name>
-		<value>18017</value>
+		<value>00010</value>
 	</parameter>
 </config>
