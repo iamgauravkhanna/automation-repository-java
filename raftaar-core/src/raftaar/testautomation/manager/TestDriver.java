@@ -40,7 +40,7 @@ public class TestDriver {
 	public By loc;
 	public String baseTestCaseID;
 	public HashMap<Integer, HashMap<String, String>> TestDataMap;
-	public HashMap<Integer, HashMap<String, String>> TestDataMapInUse;
+	public HashMap<String, HashMap<Integer, HashMap<String, String>>> TestDataMapInUse;
 	public HashMap<String, String> testDataRepo;
 	public HashMap<String, String> testDataRepoInUse;
 
@@ -57,6 +57,8 @@ public class TestDriver {
 	public HashMap<String, String> dataIterationStepDetails = new HashMap<>();
 
 	public HashMap<Integer, HashMap<String, String>> dataIterationDetails = new HashMap<>();
+
+	public HashMap<String, HashMap<Integer, HashMap<String, String>>> testDataMap = new HashMap<>();
 
 	/**
 	 * This is a Javadoc example. It explains the working of Javadoc comments.
@@ -77,43 +79,57 @@ public class TestDriver {
 
 	}
 
-	public HashMap<Integer, HashMap<String, String>> createTestDataMap(String SheetName) throws Exception {
+	public HashMap<String, HashMap<Integer, HashMap<String, String>>> createTestDataMap() throws Exception {
 
-		int slnumber = 0;
+		int dataSheetCount = dataFile.getSheetCount();
+		
+		System.out.println("Data Sheet Count : " + dataSheetCount);
 
-		System.out.println("Sheet name to work on : " + SheetName);
-		System.out.println("File to work on" + dataFile);
+		for (int sheetCountVar = 0; sheetCountVar < dataSheetCount; sheetCountVar++) {
 
-		for (int rowVar = 1; rowVar <= dataFile.getRowCount("CalculateInterest"); rowVar++) {
-			for (int colVar = 0; colVar < dataFile.getColumnCount("CalculateInterest"); colVar++) {
+			String dataSheetName = dataFile.getSheetName(sheetCountVar);
+			
+			System.out.println("Sheet Name :" + dataSheetName);
 
-				System.out.println("Value of Cell ( Row = " + rowVar + ", Col = " + colVar + ") is : "
-						+ dataFile.getCellData("CalculateInterest", colVar, rowVar));
+			int slnumber = 0;
 
-				String key = dataFile.getCellData("CalculateInterest", colVar, 1);
-				String value = dataFile.getCellData("CalculateInterest", colVar, rowVar);
+			for (int rowVar = 1; rowVar <= dataFile.getRowCount(dataSheetName); rowVar++) {
 
-				// dataIterationStepDetails.put(key+"["+rowVar+"]", value);
-				dataIterationStepDetails.put(key, value);
+				for (int colVar = 0; colVar < dataFile.getColumnCount(dataSheetName); colVar++) {
+					
+					System.out.println("Entered into Loop");
+
+					System.out.println("Value of Cell ( Row = " + rowVar + ", Col = " + colVar + ") is : "
+							+ dataFile.getCellData(dataSheetName, colVar, rowVar));
+
+					String key = dataFile.getCellData(dataSheetName, colVar, 1);
+
+					String value = dataFile.getCellData(dataSheetName, colVar, rowVar);
+
+					dataIterationStepDetails.put(key, value);
+				}
+				dataIterationDetails.put(slnumber, dataIterationStepDetails);
+				
+				testDataMap.put(dataSheetName, dataIterationDetails);
+				
+				slnumber++;
+
+				/*
+				 * for (Entry<Integer, HashMap<String, String>> entry :
+				 * dataIterationDetails.entrySet()) { String key =
+				 * entry.getKey().toString(); HashMap<String, String> value =
+				 * entry.getValue(); System.out.println("key, " + key +
+				 * " value " + value); }
+				 */
+
+				dataIterationStepDetails = new HashMap<>();				
+
+				//testDataMap = new HashMap<>();
 			}
-			dataIterationDetails.put(slnumber, dataIterationStepDetails);
-
-			/*
-			 * for (Entry<Integer, HashMap<String, String>> entry :
-			 * dataIterationDetails.entrySet()) { String key =
-			 * entry.getKey().toString(); HashMap<String, String> value =
-			 * entry.getValue(); System.out.println("key, " + key + " value " +
-			 * value); }
-			 */
-
-			dataIterationStepDetails = new HashMap<>();
-
-			slnumber++;
 		}
-
 		System.out.println("Loop Complete");
 
-		return dataIterationDetails;
+		return testDataMap;
 
 	}
 
@@ -133,86 +149,85 @@ public class TestDriver {
 
 			// System.out.println("Sheet Name : " + sheetName);
 
-			if (sheetName.equals("Sheet4")) {
+			// if (sheetName.equals("RealCases1")) {
 
-				// System.out.println("Test Sheet Found");
+			// System.out.println("Test Sheet Found");
 
-				// System.out.println("Total Number of Rows in Excel : " +
-				// excelFile.getRowCount(sheetName));
+			// System.out.println("Total Number of Rows in Excel : " +
+			// excelFile.getRowCount(sheetName));
 
-				int o = 0;
+			int o = 0;
 
-				for (int j = 2; j <= excelFile.getRowCount(sheetName); j++) {
+			for (int j = 2; j <= excelFile.getRowCount(sheetName); j++) {
 
-					testcaseid = excelFile.getCellData(sheetName, 0, j);
+				testcaseid = excelFile.getCellData(sheetName, 0, j);
 
-					summary = excelFile.getCellData(sheetName, 1, j);
+				summary = excelFile.getCellData(sheetName, 1, j);
 
-					description = excelFile.getCellData(sheetName, 2, j);
+				description = excelFile.getCellData(sheetName, 2, j);
 
-					parent = excelFile.getCellData(sheetName, 3, j);
+				parent = excelFile.getCellData(sheetName, 3, j);
 
-					object = excelFile.getCellData(sheetName, 4, j);
+				object = excelFile.getCellData(sheetName, 4, j);
 
-					action = excelFile.getCellData(sheetName, 5, j);
+				action = excelFile.getCellData(sheetName, 5, j);
 
-					data = excelFile.getCellData(sheetName, 6, j);
+				data = excelFile.getCellData(sheetName, 6, j);
 
-					iterations = excelFile.getCellData(sheetName, 7, j);
+				iterations = excelFile.getCellData(sheetName, 7, j);
 
-					flags = excelFile.getCellData(sheetName, 8, j);
+				flags = excelFile.getCellData(sheetName, 8, j);
 
-					if (j == 2) {
-						baseTestCaseID = testcaseid;
-					}
-
-					if ((!(j == 2))) {
-						if ((!(testcaseid.isEmpty()))) {
-							baseTestCaseID = testcaseid;
-							// System.out.println("New Test Case Found at row
-							// number : " + j);
-							o = 0;
-							testCaseDetails = new HashMap<>();
-
-						}
-
-					}
-
-					testStepDetails.put("testcaseid", testcaseid);
-					testStepDetails.put("summary", summary);
-					testStepDetails.put("description", description);
-					testStepDetails.put("parent", parent);
-					testStepDetails.put("object", object);
-					testStepDetails.put("action", action);
-					testStepDetails.put("data", data);
-					testStepDetails.put("iterations", iterations);
-					testStepDetails.put("flags", flags);
-
-					// System.out.println("Row Number : " + j);
-
-					// System.out.println("TEST STEP Details Info : " +
-					// testStepDetails.toString() + "\n");
-
-					// System.out.println("Putting Value in HashMap");
-
-					// System.out.println("Value of Step Number : " + o);
-
-					testCaseDetails.put(o, testStepDetails);
-
-					testCases.put(baseTestCaseID, testCaseDetails);
-
-					testStepDetails = new HashMap<>();
-
-					// testCaseDetails = new HashMap<>();
-
-					o++;
+				if (j == 2) {
+					baseTestCaseID = testcaseid;
 				}
-				// System.out.println("Inner For Loop is Complete");
+
+				if ((!(j == 2))) {
+					if ((!(testcaseid.isEmpty()))) {
+						baseTestCaseID = testcaseid;
+						// System.out.println("New Test Case Found at row
+						// number : " + j);
+						o = 0;
+						testCaseDetails = new HashMap<>();
+
+					}
+
+				}
+
+				testStepDetails.put("testcaseid", testcaseid);
+				testStepDetails.put("summary", summary);
+				testStepDetails.put("description", description);
+				testStepDetails.put("parent", parent);
+				testStepDetails.put("object", object);
+				testStepDetails.put("action", action);
+				testStepDetails.put("data", data);
+				testStepDetails.put("iterations", iterations);
+				testStepDetails.put("flags", flags);
+
+				// System.out.println("Row Number : " + j);
+
+				// System.out.println("TEST STEP Details Info : " +
+				// testStepDetails.toString() + "\n");
+
+				// System.out.println("Putting Value in HashMap");
+
+				// System.out.println("Value of Step Number : " + o);
+
+				testCaseDetails.put(o, testStepDetails);
+
+				testCases.put(baseTestCaseID, testCaseDetails);
+
+				testStepDetails = new HashMap<>();
+
+				// testCaseDetails = new HashMap<>();
+
+				o++;
 			}
-
-			// System.out.println("Outer For Loop is Complete");
-
+			// System.out.println("Inner For Loop is Complete");
 		}
+
+		// System.out.println("Outer For Loop is Complete");
+
 		// System.out.println("TEST CASE Details Info : " +
 		// testCaseDetails.toString() + "\n");
 
@@ -232,29 +247,30 @@ public class TestDriver {
 
 	}
 
-	public void executeTestCase(String testCaseId, String parentTestId, String[] items) throws Exception{
-		
-		if(items.length >=1){
-		for (int le = 0 ; le<items.length ; le ++){
-			String varName = "argument"+(le+1);
-			TestManager.MyDataDicitonary.put(varName, items[le]);
-			System.out.println("Value of Argument : " + varName + " => " + TestManager.MyDataDicitonary.get(varName));
-		}
+	public void executeTestCase(String testCaseId, String parentTestId, String[] items) throws Exception {
+
+		if (items.length >= 1) {
+			for (int le = 0; le < items.length; le++) {
+				String varName = "argument" + (le + 1);
+				TestManager.MyDataDicitonary.put(varName, items[le]);
+				System.out
+						.println("Value of Argument : " + varName + " => " + TestManager.MyDataDicitonary.get(varName));
+			}
 		}
 		this.executeTestCase(testCaseId);
-		
+
 		System.out.println("Test Case ID : " + testCaseId + " and Parent Test Case ID : " + parentTestId);
-		
+
 	}
-	
-	public void executeTestCase(String testCaseId, String parentTestId) throws Exception{
-		
+
+	public void executeTestCase(String testCaseId, String parentTestId) throws Exception {
+
 		this.executeTestCase(testCaseId);
-		
+
 		System.out.println("Test Case ID : " + testCaseId + " and Parent Test Case ID : " + parentTestId);
-		
+
 	}
-	
+
 	public void executeTestCase(String testCaseId) throws Exception {
 
 		// configure log4j properties file
@@ -262,7 +278,7 @@ public class TestDriver {
 
 		// HashMap<String, HashMap<Integer, HashMap<String, String>>> myHashMap
 		// = createTestCaseMap();
-		
+
 		HashMap<Integer, HashMap<String, String>> myHashMapObject = testCases.get(testCaseId);
 
 		// System.out.println("Printing Values of TestCase Hash Map : " +
@@ -286,7 +302,6 @@ public class TestDriver {
 			String h = myHashMapObj.get("iterations");
 			String i = myHashMapObj.get("flags");
 			// double doo = Double.parseDouble(h);
-			
 
 			/*
 			 * if((e.getKey())=="testcaseid"); {a = testcaseid}
@@ -294,7 +309,7 @@ public class TestDriver {
 			 * testCaseId, loc, value, testCaseId, testCaseId, testCaseId);
 			 */
 
-			System.out.println("Value Fetching Complete");
+			// System.out.println("Value Fetching Complete");
 
 			List<String> flagsList = JavaUtils.getFlagValues(i);
 
@@ -306,9 +321,9 @@ public class TestDriver {
 					System.out.println("Sheet Name " + sheetName);
 					String FinalSheetName = sheetName.substring(14);
 					System.out.println("Sheet Name " + FinalSheetName);
-					TestDataMapInUse = createTestDataMap(FinalSheetName);
-					System.out.println("Final Value of Iteration " + iterationValue);
-					testDataRepoInUse = TestDataMapInUse.get(iterationValue);
+					TestDataMapInUse = createTestDataMap();
+					System.out.println(TestDataMapInUse);
+					testDataRepoInUse = TestDataMapInUse.get(FinalSheetName).get(iterationValue);
 					TestManager.MyDataDicitonary.putAll(testDataRepoInUse);
 				}
 			}
@@ -319,7 +334,7 @@ public class TestDriver {
 				stepNumber++;
 				Reporter.log("Executing STEP : " + c + " and Step Number : " + stepNumber + "\n");
 
-				//UITests.extentReportTestObject.log(LogStatus.INFO, c);
+				// UITests.extentReportTestObject.log(LogStatus.INFO, c);
 				UITests.extentReportTestObject.log(LogStatus.INFO, a, c);
 				// System.out.println("Executing STEP : " + c + "\n");
 
@@ -332,18 +347,15 @@ public class TestDriver {
 
 				if (f.contains(".")) {
 					// System.out.println("Test Case Found In Between");
-					
+
 					String[] items = g.split(",");
-					   int itemCount = items.length;
+					int itemCount = items.length;
 					System.out.println("Length of Arguments : " + itemCount);
-					
-					if(items.length>=1)
-					{
-					this.executeTestCase(f, a, items);
-					}
-					else
-					{
-						this.executeTestCase(f,a);
+
+					if (items.length >= 1) {
+						this.executeTestCase(f, a, items);
+					} else {
+						this.executeTestCase(f, a);
 					}
 				} else {
 					// System.out.println("Running Test Step");

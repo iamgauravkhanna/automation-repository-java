@@ -78,11 +78,12 @@ public class WebPage {
 	public WebDriverWait wait;
 	public String alertText;
 	public static Alert alert;
-	public static String StepName ;
+	public static String StepName;
 
 	public static Logger log = Logger.getLogger(WebPage.class);
 
-	public String ExecuteKeyword(String action, String parent, String object, String data, String description,String testcaseid) throws Exception {
+	public String ExecuteKeyword(String action, String parent, String object, String data, String description,
+			String testcaseid) throws Exception {
 
 		StepOutcome = "NULL";
 		StepName = testcaseid;
@@ -104,8 +105,7 @@ public class WebPage {
 			}
 
 			loc = locatorValue(locatorType, value);
-		}
-		else {
+		} else {
 			loc = null;
 		}
 
@@ -133,7 +133,7 @@ public class WebPage {
 			driver.get(data);
 			driver.manage().window().maximize();
 			StepOutcome = "Opening Browser";
-			//UITests.extentReportTestObject.log(LogStatus.PASS, description);
+			// UITests.extentReportTestObject.log(LogStatus.PASS, description);
 			break;
 
 		case "assert=":
@@ -142,7 +142,7 @@ public class WebPage {
 					Float.parseFloat(JavaUtils.getNumbersFromString(data)));
 
 			StepOutcome = "Assertion Successfull";
-			//UITests.extentReportTestObject.log(LogStatus.PASS, description);
+			// UITests.extentReportTestObject.log(LogStatus.PASS, description);
 			break;
 
 		case "uploadFile":
@@ -216,11 +216,12 @@ public class WebPage {
 			// Assert.assertEquals(var1, data);
 			JavaUtils.assertEqual(object, data, "dummy");
 			break;
-			
+
 		case "downloadFile":
 			// String var1 = TestManager.MyDataDicitonary.get(value);
 			// Assert.assertEquals(var1, data);
-			JavaUtils.downloadFile(TestManager.MyDataDicitonary.get("TemplateLink"), System.getProperty("user.dir") + "\\assets\\");
+			JavaUtils.downloadFile(TestManager.MyDataDicitonary.get("TemplateLink"),
+					System.getProperty("user.dir") + "\\assets\\");
 			break;
 
 		case "getAttribute":
@@ -228,8 +229,8 @@ public class WebPage {
 			TestManager.MyDataDicitonary.put(parent, var3);
 			StepOutcome = var3;
 			System.out.println("Value of Get Attribute : " + e.getAttribute(data));
-			break;			
-			
+			break;
+
 		case "closeBrowser":
 			driver.quit();
 			// driver.close();
@@ -346,8 +347,6 @@ public class WebPage {
 		case "runJavaScript":
 			System.out.println("Run JavaScript");
 
-			
-			
 			ScriptEngineManager factory = new ScriptEngineManager();
 			ScriptEngine engine = factory.getEngineByName("JavaScript");
 			try {
@@ -363,17 +362,30 @@ public class WebPage {
 			// System.out.println("Step Outcome : "+ StepOutcome);
 			// System.out.println("Java Script Executed");
 			break;
-			
+
 		case "runJavaScriptOnBrowser":
-			
+
 			System.out.println("Running JavaScript on Browser");
-			
+
 			if (driver instanceof JavascriptExecutor) {
-			    ((JavascriptExecutor)driver).executeScript(data);
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				
+				System.out.println("Parent : " + parent);				
+				System.out.println("Object : " + object);
+				
+				if (object.isEmpty()) {
+					System.out.println("Oops...! Parent is Empty");
+					js.executeScript(data);
+				} else if (!(object.isEmpty())) {
+					System.out.println("Parent Found");
+					WebElement ele = driver.findElement(loc);
+					js.executeScript(data, ele);
+				}
+
 			} else {
-			    throw new IllegalStateException("This driver does not support JavaScript!");
+				throw new IllegalStateException("This driver does not support JavaScript!");
 			}
-			
+
 			break;
 
 		case "check":
@@ -441,10 +453,10 @@ public class WebPage {
 			break;
 
 		case "type":
-			// System.out.println("Type Keys");
+			System.out.println("Type Keys");
 			for (Character c : data.toCharArray()) {
 				driver.findElement(loc).sendKeys(c.toString());
-				// System.out.println("Character " + c);
+				System.out.println("Character " + c);
 			}
 			break;
 
@@ -556,9 +568,9 @@ public class WebPage {
 	}
 
 	public void openBrowser(String browserName) throws MalformedURLException {
-		
+
 		System.out.println("Remote Url = " + TestManager.MyDataDicitonary.get("remoteUrl"));
-		
+
 		if (!(TestManager.MyDataDicitonary.get("remoteUrl").equalsIgnoreCase("local"))) {
 			System.out.println("Entering Remote URL section");
 
@@ -682,12 +694,19 @@ public class WebPage {
 		// UITests.extentReportTestObject.log(LogStatus.INFO, "Image", "Image
 		// example:", image.getAbsolutePath());
 		// UITests.extentReportTestObject.log(LogStatus.INFO,"Image",image.getAbsolutePath());
-		String ImgSource = image.getAbsolutePath() ;
-		/*UITests.extentReportTestObject.log(LogStatus.INFO, StepName,
-				UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath()));*/
-		//String HTMLCode = "<b><a href='" + ImgSource + "'><img src='./reports/logo/image.png' height='25' width='25' />Screenshot Link</a></b> | " + "<a href='" + ImgSource + "'>Defect Link</a>  | " + "<a href='" + ImgSource + "'>HTML Link</a>";
-		String HTMLCode = "<b><a href='" + ImgSource + "'>Screenshot</a></b> | " + "<a href='" + ImgSource + "'>Defect</a>  | " + "<a href='" + ImgSource + "'>HTML</a>";
-		UITests.extentReportTestObject.log(LogStatus.INFO, StepName,HTMLCode);
+		String ImgSource = image.getAbsolutePath();
+		/*
+		 * UITests.extentReportTestObject.log(LogStatus.INFO, StepName,
+		 * UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath
+		 * ()));
+		 */
+		// String HTMLCode = "<b><a href='" + ImgSource + "'><img
+		// src='./reports/logo/image.png' height='25' width='25' />Screenshot
+		// Link</a></b> | " + "<a href='" + ImgSource + "'>Defect Link</a> | " +
+		// "<a href='" + ImgSource + "'>HTML Link</a>";
+		String HTMLCode = "<b><a href='" + ImgSource + "'>Screenshot</a></b> | " + "<a href='" + ImgSource
+				+ "'>Defect</a>  | " + "<a href='" + ImgSource + "'>HTML</a>";
+		UITests.extentReportTestObject.log(LogStatus.INFO, StepName, HTMLCode);
 		screenShotCounter++;
 	}
 

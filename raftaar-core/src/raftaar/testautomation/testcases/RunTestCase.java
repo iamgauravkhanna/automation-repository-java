@@ -13,9 +13,9 @@ public class RunTestCase {
 	Framework F1 = new Framework();
 
 	@Test
-	public void fourthTC() throws Exception {
+	public void firstTest() throws Exception {
 
-		F1.runTestCase("Regression.Workflow.001");
+		F1.runTestCase("Regression.Workflow.002");
 	}
 
 }
