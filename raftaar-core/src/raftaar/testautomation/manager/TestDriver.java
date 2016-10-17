@@ -73,7 +73,6 @@ public class TestDriver {
 
 	public void runTestCase(String testCaseId) throws Exception {
 
-		// createTestDataMap("EmployeeInfo");
 		createTestCaseMap();
 		executeTestCase(testCaseId);
 

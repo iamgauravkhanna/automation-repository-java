@@ -445,7 +445,6 @@ public class JavaUtils {
 			while (enuKeys.hasMoreElements()) {
 				String key = (String) enuKeys.nextElement();
 				String value = properties.getProperty(key);
-				System.out.println(key + ": " + value);
 				map.put(key, value);
 			}
 		} catch (FileNotFoundException e) {

@@ -75,10 +75,10 @@ public class TestManager {
 		// System.out.println(flags);
 
 		if (data.contains("#")) {
-			System.out.println("Parameterized value found");
-			System.out.println("Value of Data Before Replacement : " + data);
+			//System.out.println("Parameterized value found");
+			//System.out.println("Value of Data Before Replacement : " + data);
 			data = JavaUtils.replaceVariablesInString(data, TestManager.MyDataDicitonary);
-			System.out.println("Value of Data Before Replacement : " + data);
+			//System.out.println("Value of Data Before Replacement : " + data);
 			// System.out.println("Data is :" + data);
 			// logger.info("This is Logger Info");
 		}

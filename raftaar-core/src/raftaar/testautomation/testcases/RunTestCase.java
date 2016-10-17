@@ -15,7 +15,7 @@ public class RunTestCase {
 	@Test
 	public void firstTest() throws Exception {
 
-		F1.runTestCase("Regression.Workflow.002");
+		F1.runTestCase("Test.Case.001");
 	}
 
 }
