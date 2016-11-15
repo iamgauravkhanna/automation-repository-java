@@ -110,7 +110,7 @@ public class WebPage {
 		}
 
 		if (loc == null) {
-			//System.out.println("Oops Locator Is Null");
+			
 		} else if (!(action.equalsIgnoreCase("assertNotPresent"))) {
 			e = what(driver, loc);
 			// System.out.println("Got the Element : " + e);
@@ -129,7 +129,7 @@ public class WebPage {
 		case "openBrowser":
 
 			openBrowser(TestManager.MyDataDicitonary.get("browser"));
-			//System.out.println("URL to Open : " + data);
+			// System.out.println("URL to Open : " + data);
 			driver.get(data);
 			driver.manage().window().maximize();
 			StepOutcome = "Opening Browser";
@@ -369,10 +369,10 @@ public class WebPage {
 
 			if (driver instanceof JavascriptExecutor) {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
-				
-				System.out.println("Parent : " + parent);				
+
+				System.out.println("Parent : " + parent);
 				System.out.println("Object : " + object);
-				
+
 				if (object.isEmpty()) {
 					System.out.println("Oops...! Parent is Empty");
 					js.executeScript(data);
@@ -569,10 +569,11 @@ public class WebPage {
 
 	public void openBrowser(String browserName) throws MalformedURLException {
 
-		//System.out.println("Remote Url = " + TestManager.MyDataDicitonary.get("remoteUrl"));
+		// System.out.println("Remote Url = " +
+		// TestManager.MyDataDicitonary.get("remoteUrl"));
 
 		if (!(TestManager.MyDataDicitonary.get("remoteUrl").equalsIgnoreCase("local"))) {
-			//System.out.println("Entering Remote URL section");
+			// System.out.println("Entering Remote URL section");
 
 			DesiredCapabilities capability = DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
@@ -660,11 +661,6 @@ public class WebPage {
 
 	public WebElement what(WebDriver driver, By locator) throws Exception {
 
-		// System.out.println("WTF");
-
-		// System.out.println("locator is : " + locator);
-
-		// WebElement data = By.linkText("Chapter1");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
 		element = driver.findElement(locator);

@@ -441,7 +441,7 @@ public class JavaUtils {
 			properties.load(fileInput);
 			fileInput.close();
 
-			Enumeration enuKeys = properties.keys();
+			Enumeration<?> enuKeys = properties.keys();
 			while (enuKeys.hasMoreElements()) {
 				String key = (String) enuKeys.nextElement();
 				String value = properties.getProperty(key);
