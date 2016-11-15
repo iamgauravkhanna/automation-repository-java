@@ -2,8 +2,12 @@ package raftaar.testautomation.framework;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+
+import org.testng.TestNG;
+import org.testng.collections.Lists;
 
 import raftaar.testautomation.manager.TestManager;
 import raftaar.testautomation.testcases.UITests;
@@ -16,9 +20,9 @@ public class Framework {
 	public static void main(String[] args) throws Exception {
 
 		Properties prop = new Properties();
-		
+
 		InputStream input = null;
-		
+
 		String a;
 
 		input = new FileInputStream(System.getProperty("user.dir") + "\\" + "config.properties");
@@ -26,14 +30,19 @@ public class Framework {
 		// load a properties file
 		prop.load(input);
 
-		// get the property value and print it out
-		a = prop.getProperty("testcaseid");
+		a = prop.getProperty("testngSuiteFiles");
+
+		UITests.log.info(a);
 		
-		UITests.log.debug(a);
-
-		Framework F = new Framework();
-
-		F.runTestCase(a);
+		TestNG tng = new TestNG();
+		
+		List<String> suites = Lists.newArrayList();
+		
+		suites.add(a);
+		
+		tng.setTestSuites(suites);
+		
+		tng.run();
 
 	}
 
@@ -53,7 +62,7 @@ public class Framework {
 		JavaUtils.readPropertyAndStoreinMap(System.getProperty("user.dir") + "\\" + "config.properties",
 				TestManager.MyDataDicitonary);
 
-		UITests.log.debug("Starting Test Case : " + TestManager.MyDataDicitonary.get("testcaseid"));
+		UITests.log.info("Starting Test Case : " + TestManager.MyDataDicitonary.get("testcaseid"));
 
 		UITests testObject = new UITests();
 

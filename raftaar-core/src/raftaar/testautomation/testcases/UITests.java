@@ -41,11 +41,9 @@ public class UITests {
 
 		TestDriverObject.runTestCase(TestManager.MyDataDicitonary.get("testcaseid"));
 
-		System.out.println("Test Case Finish");
+		System.out.println("\n Report Path : " + OutputDirectory);
 
-		System.out.println("Report Path : " + OutputDirectory);
-
-		Iterator iterator = TestManager.MyDataDicitonary.keySet().iterator();
+		Iterator<String> iterator = TestManager.MyDataDicitonary.keySet().iterator();
 
 		while (iterator.hasNext()) {
 			String key = iterator.next().toString();
@@ -65,13 +63,13 @@ public class UITests {
 
 		WebPage.screenShotCounter = 0;
 
-		System.out.println("Test Case Ends....");
+		log.info("Test Case Ends....");
 	}
 
 	@AfterClass
 	public void afterMethod() throws IOException {
 
-		Iterator iterator = TestManager.MyDataDicitonary.keySet().iterator();
+		Iterator<String> iterator = TestManager.MyDataDicitonary.keySet().iterator();
 
 		while (iterator.hasNext()) {
 			String key = iterator.next().toString();
@@ -79,9 +77,7 @@ public class UITests {
 			log.info("Key = " + key + " and  Value =  " + value + " \n");
 		}
 
-		WebPage.screenShotCounter = 0;
-
-		System.out.println("Blah Blah Blah Test Case");
+		WebPage.screenShotCounter = 0;		
 
 	}
 
