@@ -1,0 +1,71 @@
+STEP Meta Info : {testcaseid=Test.Case.001, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+Step Outcome : Opening Browser
+
+Executing STEP : Go to URL
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=http://book.theautomatedtester.co.uk, flags=, description=Go to URL, action=getUrl, iterations=, object=}
+
+Step Outcome : http://book.theautomatedtester.co.uk
+
+Executing STEP : Maximize Window
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Maximize Window, action=maximizeWindow, iterations=, object=}
+
+Step Outcome : Maximize Window
+
+Executing STEP : Click on Link Text
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click on Link Text, action=click, iterations=, object=linkText=Chapter1}
+
+Step Outcome : NULL
+
+Executing STEP : Click on Radio Button
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click on Radio Button, action=click, iterations=, object=id=radiobutton}
+
+Step Outcome : NULL
+
+Executing STEP : Set Variable
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=Selenium Core, flags=, description=Set Variable, action=setVariable, iterations=, object=dropDownValue}
+
+Step Outcome : NULL
+
+Executing STEP : Select option from dropdown
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=Selenium Core, flags=, description=Select option from dropdown, action=selectByVisibleText, iterations=, object=id=selecttype}
+
+Step Outcome : NULL
+
+Executing STEP : Get Text
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=text1, flags=, description=Get Text, action=getText, iterations=, object=id=divontheleft}
+
+Step Outcome : NULL
+
+Executing STEP : Close Browser
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Close Browser, action=closeBrowser, iterations=, object=}
+
+Step Outcome : NULL
+
+Key = testcaseid and  Value =  Test.Case.001 
+
+Key = testCasePath and  Value =  C:\code\github\automation-repository-java\raftaar-core\assets\testcase.xlsx 
+
+Key = testDataPath and  Value =  C:\code\github\automation-repository-java\raftaar-core\assets\testdata.xlsx 
+
+Key = testngSuiteFiles and  Value =  C:\code\github\automation-repository-java\raftaar-core\mySuitTestNG.xml 
+
+Key = text1 and  Value =  Assert that this text is on the page 
+
+Key = browser and  Value =  firefox 
+
+Key = dropDownValue and  Value =  Selenium Core 
+
+Key = remoteUrl and  Value =  local 
+
+Key = databaseUrl and  Value =  jdbc:oracle:thin:username/password@localhost:1521:xe 
+
+Test Case Ends....
