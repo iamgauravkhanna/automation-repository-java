@@ -13,9 +13,15 @@ public class TestSuite1 {
 	Framework F1 = new Framework();
 
 	@Test
-	public void firstTest() throws Exception {
+	public void Test3() throws Exception {
 
-		F1.runTestCase("Test.Case.001");
+		F1.runTestCase("Test.Case.003");
+	}
+
+	@Test
+	public void Test4() throws Exception {
+
+		F1.runTestCase("Test.Case.004");
 	}
 
 }
