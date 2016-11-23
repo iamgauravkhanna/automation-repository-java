@@ -10,7 +10,7 @@ import org.testng.TestNG;
 import org.testng.collections.Lists;
 
 import raftaar.testautomation.manager.TestManager;
-import raftaar.testautomation.testcases.UITests;
+import raftaar.testautomation.manager.UITests;
 import raftaar.testautomation.utlities.JavaUtils;
 
 public class Framework {

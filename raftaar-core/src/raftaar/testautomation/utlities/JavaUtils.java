@@ -31,7 +31,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import raftaar.testautomation.manager.TestManager;
-import raftaar.testautomation.testcases.UITests;
+import raftaar.testautomation.manager.UITests;
 
 public class JavaUtils {
 

@@ -19,7 +19,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.Reporter;
 import org.uncommons.reportng.ReportNGUtils;
 
-import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.JavaUtils;
 import raftaar.testautomation.utlities.WebPage;
 

@@ -8,7 +8,7 @@ import raftaar.testautomation.framework.Framework;
  * This is the beginning point of Framework
  * 
  */
-public class RunTestCase {
+public class TestSuite1 {
 
 	Framework F1 = new Framework();
 

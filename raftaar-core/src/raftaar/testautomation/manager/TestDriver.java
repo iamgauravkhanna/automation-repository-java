@@ -13,7 +13,6 @@ import org.testng.Reporter;
 
 import com.relevantcodes.extentreports.LogStatus;
 
-import raftaar.testautomation.testcases.UITests;
 import raftaar.testautomation.utlities.ExcelUtils;
 import raftaar.testautomation.utlities.JavaUtils;
 

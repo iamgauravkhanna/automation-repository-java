@@ -57,7 +57,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import raftaar.testautomation.utlities.JavaUtils;
 import raftaar.testautomation.manager.TestManager;
-import raftaar.testautomation.testcases.UITests;
+import raftaar.testautomation.manager.UITests;
 
 public class WebPage {
 

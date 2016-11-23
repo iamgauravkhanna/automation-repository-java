@@ -16,7 +16,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.annotations.Test;
 
 import raftaar.testautomation.manager.TestManager;
-import raftaar.testautomation.testcases.UITests;
+import raftaar.testautomation.manager.UITests;
 
 public class DBUtils {
 

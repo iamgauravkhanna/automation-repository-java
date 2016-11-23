@@ -1,4 +1,4 @@
-package raftaar.testautomation.testcases;
+package raftaar.testautomation.manager;
 
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -15,8 +15,6 @@ import java.util.Iterator;
 
 import org.apache.log4j.Logger;
 
-import raftaar.testautomation.manager.TestDriver;
-import raftaar.testautomation.manager.TestManager;
 import raftaar.testautomation.utlities.WebPage;
 
 public class UITests {
