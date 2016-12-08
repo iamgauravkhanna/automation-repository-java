@@ -1,23 +1,11 @@
 <?xml version="1.0"?>
 <config>
 	<parameter>
-		<name>trustStoreType</name>
-		<value>JKS</value>
+		<name>browser</name>
+		<value>firefox</value>
 	</parameter>
-	<parameter>
-		<name>keyStore</name>
-		<value>assets/client.abc</value>
-	</parameter>
-	<parameter>
-		<name>keyStorePassword</name>
-		<value>TEST</value>
-	</parameter>
-	<parameter>
-		<name>keyStoreType</name>
-		<value>PKCS12</value>
-	</parameter>
-	<parameter>
-		<name>u_zipCode</name>
-		<value>00010</value>
+		<parameter>
+		<name>remoteUrl</name>
+		<value>local</value>
 	</parameter>
 </config>

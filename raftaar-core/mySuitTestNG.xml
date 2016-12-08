@@ -10,7 +10,7 @@
 
 	<test name="My Test Cases">
 		<classes>
-			<class name="raftaar.testautomation.testcases.TestSuite2" />
+			<class name="raftaar.testautomation.testcases.TestSuite3" />
 		</classes>
 	</test>
 
