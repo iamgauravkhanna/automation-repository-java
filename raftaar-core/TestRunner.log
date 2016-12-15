@@ -15,3 +15,76 @@ STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #
 
 STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
 
+STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+STEP Meta Info : {testcaseid=Test.Case.030, summary=Verify End to End Workflow #1, parent=, data=, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+Step Outcome : Opening Browser
+
+Executing STEP : Go to URL
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=http://localhost:8080/bodgeit/, flags=, description=Go to URL, action=getUrl, iterations=, object=}
+
+Step Outcome : http://localhost:8080/bodgeit/
+
+Executing STEP : Maximize Window
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Maximize Window, action=maximizeWindow, iterations=, object=}
+
+Step Outcome : Maximize Window
+
+Executing STEP : Click on Link Text
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=, flags=, description=Click on Link Text, action=click, iterations=, object=linkText=Home}
+
+STEP Meta Info : {testcaseid=Test.Case.003, summary=My Test Case Number Three, parent=, data=Firefox, flags=, description=Open Browser, action=openBrowser, iterations=, object=}
+
+Step Outcome : Opening Browser
+
+Executing STEP : Launch Portal
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=https://www.google.com, flags=, description=Launch Portal, action=getUrl, iterations=, object=}
+
+Step Outcome : https://www.google.com
+
+Executing STEP : Set Variable
+
+STEP Meta Info : {testcaseid=, summary=, parent=, data=gaurav.khanna@yipee.com, flags=, description=Set Variable, action=setVariable, iterations=, object=name}
+
+Step Outcome : NULL
+
+Key = testcaseid and  Value =  Test.Case.003 
+
+Key = testCasePath and  Value =  C:\code\github\automation-repository-java\raftaar-impl\assets\testcase.xlsx 
+
+Key = testDataPath and  Value =  C:\code\github\automation-repository-java\raftaar-impl\assets\testdata.xlsx 
+
+Key = testngSuiteFiles and  Value =  C:\code\github\automation-repository-java\raftaar-impl\mySuitTestNG.xml 
+
+Key = browser and  Value =  ie 
+
+Key = name and  Value =  gaurav.khanna@yipee.com 
+
+Key = remoteUrl and  Value =  local 
+
+Key = databaseUrl and  Value =  jdbc:oracle:thin:username/password@localhost:1521:xe 
+
+Test Case Ends....
+Starting Test Case : Test.Case.004
+Running Test Case : Test.Case.004 
+
+Executing STEP : Get ON/ OFF status for SSO
+
+STEP Meta Info : {testcaseid=Test.Case.004, summary=DB Query Test, parent=, data=assets/sql/GetConfigElementKeyStatus.sql, flags=, description=Get ON/ OFF status for SSO, action=runSelectQuery, iterations=, object=}
+
+assets/sql/GetConfigElementKeyStatus.sql
