@@ -30,7 +30,7 @@ public class UITests {
 	public static ExtentTest extentReportTestObject;
 	public static ExtentTest extentReportTestChild;
 
-	@Test
+	
 	public void testCase() throws Exception {
 
 		log.info("Running Test Case : " + TestManager.MyDataDicitonary.get("testcaseid") + " \n");

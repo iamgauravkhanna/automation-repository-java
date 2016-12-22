@@ -1,6 +1,8 @@
 package raftaar.testautomation.framework;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +19,7 @@ public class Framework {
 
 	public Map<String, String> hashMapObj;
 
-	public static void main(String args[]) throws Exception {
+	public Framework() throws Exception {
 
 		System.out.println("Framework Constructor Called");
 
@@ -32,9 +34,9 @@ public class Framework {
 		// load a properties file
 		prop.load(input);
 
+		// a = testngFilePath;
+		
 		a = prop.getProperty("testngSuiteFiles");
-
-		UITests.log.info(a);
 
 		TestNG tng = new TestNG();
 
@@ -46,9 +48,15 @@ public class Framework {
 
 		tng.run();
 
+		a = prop.getProperty("testngSuiteFiles");
+
+		UITests.log.info(a);
+
+		// runTestCase("testCaseID");
+
 	}
 
-	public void runTestCase(String testCaseID) throws Exception {
+	public static void runTestCase(String testCaseID) throws Exception {
 
 		System.out.println("Test Case ID " + testCaseID);
 
