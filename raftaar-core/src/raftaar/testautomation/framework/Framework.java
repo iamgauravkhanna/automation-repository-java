@@ -17,7 +17,9 @@ public class Framework {
 
 	public Map<String, String> hashMapObj;
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String args[]) throws Exception {
+
+		System.out.println("Framework Constructor Called");
 
 		Properties prop = new Properties();
 
@@ -33,20 +35,22 @@ public class Framework {
 		a = prop.getProperty("testngSuiteFiles");
 
 		UITests.log.info(a);
-		
+
 		TestNG tng = new TestNG();
-		
+
 		List<String> suites = Lists.newArrayList();
-		
+
 		suites.add(a);
-		
+
 		tng.setTestSuites(suites);
-		
+
 		tng.run();
 
 	}
 
 	public void runTestCase(String testCaseID) throws Exception {
+
+		System.out.println("Test Case ID " + testCaseID);
 
 		TestManager.MyDataDicitonary.put("testcaseid", testCaseID);
 

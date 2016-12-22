@@ -2,7 +2,7 @@ package raftaar.testautomation.testcases;
 
 import org.testng.annotations.Test;
 
-import raftaar.testautomation.impl.TestDriver;
+import raftaar.testautomation.framework.Framework;
 
 /**
  * This is the beginning point of Framework
@@ -10,18 +10,12 @@ import raftaar.testautomation.impl.TestDriver;
  */
 public class TestSuite1 {
 
-	TestDriver F1 = new TestDriver();
-
 	@Test
 	public void Test3() throws Exception {
 
+		Framework F1 = new Framework();
+
 		F1.runTestCase("Test.Case.003");
-	}
-
-	@Test
-	public void Test4() throws Exception {
-
-		F1.runTestCase("Test.Case.004");
 	}
 
 }
