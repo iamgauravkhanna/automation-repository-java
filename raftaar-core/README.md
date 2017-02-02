@@ -35,6 +35,10 @@ RAFTAAR (REGRESSION AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open 
 - Phone
 - Contacts
 - IMDB
+- Speed Test
+- Internet Speed Meter Lite
+- Money Control
+- Twitter
 
 #Changelog
 
