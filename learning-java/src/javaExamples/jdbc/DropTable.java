@@ -5,7 +5,7 @@ Author : Gaurav Khanna
 
  *********************************/
 
-package jdbcExamples;
+package javaExamples.jdbc;
 
 import java.sql.*;
 import org.testng.annotations.Test;
