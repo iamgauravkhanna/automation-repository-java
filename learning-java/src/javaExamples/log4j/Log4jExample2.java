@@ -1,4 +1,4 @@
-package log4jExamples;
+package javaExamples.log4j;
 
 import java.util.Enumeration;
 

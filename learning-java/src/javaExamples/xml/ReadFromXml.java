@@ -1,4 +1,4 @@
-package xmlExamples;
+package javaExamples.xml;
 
 import java.io.File;
 import java.io.IOException;
