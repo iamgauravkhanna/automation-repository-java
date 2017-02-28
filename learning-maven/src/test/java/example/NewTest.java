@@ -19,8 +19,8 @@ public class NewTest {
 
 	// Declaring variable 'remoteTest' of String Type to determine if test needs
 	// to run locally or remotely
-	String remoteTest = "http://192.168.49.40:4444/wd/hub";
-	// String remoteTest = "local";
+	// String remoteTest = "http://192.168.49.40:4444/wd/hub";
+	String remoteTest = "local";
 
 	@Test
 	public void basicScriptExample() throws MalformedURLException {
