@@ -78,11 +78,11 @@ public class DragAndDropAction {
 		// Created object of TouchAction class.
 		TouchAction action = new TouchAction((MobileDriver) driver);
 
-		System.out.println("It Is dragging element.");
+		System.out.println("Dragging element");
 		// It will hold tap on 3rd element and move to 6th position and then
 		// release tap.
 		action.longPress(ele1).moveTo(ele2).release().perform();
-		System.out.println("Element has been droped at destination successfully.");
+		System.out.println("Element dropped at destination successfully");
 	}
 
 	@AfterTest
