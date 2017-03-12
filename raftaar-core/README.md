@@ -31,13 +31,23 @@ RAFTAAR (REGRESSION AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open 
 
 #List of Android Apps Automated
 
+- Amazon
+- Battery Bot
+- BookMyShow
 - Calculator
-- Phone
 - Contacts
+- Cricbuzz
+- Flipkart
+- Hdfc
 - IMDB
-- Speed Test
 - Internet Speed Meter Lite
 - Money Control
+- Naukri
+- Opera Mini
+- Phone
+- Quora
+- Speed Test
+- TripAdvisor
 - Twitter
 
 #Changelog
