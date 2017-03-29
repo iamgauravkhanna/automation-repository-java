@@ -35,8 +35,7 @@ public class Addition {
 		// This package name of your app (you can get it from apk info app)
 		capabilities.setCapability("appPackage", "com.android.calculator2");
 
-		// This is Launcher activity of your app (you can get it from apk info
-		// app)
+		// This is Launcher activity of your app (you can get it from apk info app)
 		capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
 
 		// Create RemoteWebDriver instance and connect to the Appium server
