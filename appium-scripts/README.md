@@ -3,12 +3,21 @@
 Contains automation related code in Java for Android Mobile Apps using Appium
 
 
-- Basic Script with Calculator
+1. Basic Script
+- Working with Different Element Locators
 - Drag and Drop action
 - Swipe Horizontal and Vertical
 
 ## Apps Used
 
-- Flipkart
+1. Amazon
+-  Bookmyshow
 - Calculator
+- Calendar
+- Clock
+- Cricbuzz
+- Flipkart
+- IMDB
+- Money Control
+- Quora
 - Speed Test
