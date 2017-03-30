@@ -1,5 +1,6 @@
 package speedtest;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -18,6 +19,16 @@ public class checkSpeed {
 	@BeforeClass
 	public void setUp() throws MalformedURLException {
 
+		// Set Drag-Sort Demos app folder path. This statement will refer
+		// project's folder path.
+		File classpathRoot = new File(System.getProperty("user.dir"));
+
+		// Set folder name "Apps" where .apk file is stored.
+		File appDir = new File(classpathRoot, "/apps");
+
+		// Set Drag-Sort Demos .apk file name.
+		File app = new File(appDir, "org.zwanoo.android.speedtest-3.2.12.apk");
+
 		// Created object of DesiredCapabilities class
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -34,7 +45,7 @@ public class checkSpeed {
 		capabilities.setCapability("platformName", "Android");
 
 		// This package name of your app (you can get it from apk info app)
-		capabilities.setCapability("appPackage", "com.ookla.speedtest");
+		capabilities.setCapability("appPackage", "org.zwanoo.android.speedtest-1");
 
 		// This is Launcher activity of your app (you can get it from apk info
 		// app)
