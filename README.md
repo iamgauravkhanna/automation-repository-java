@@ -9,7 +9,7 @@ Repository for automation stuff in Java
 - browser navigations
 - wait
 
-#### 1. learning-java - Java examples for beginner/advance users
+#### 2. learning-java - Java examples for beginner/advance users
 
 1. Classes
 - Data Types
@@ -17,13 +17,13 @@ Repository for automation stuff in Java
 - Loops
 - Operators
  
-#### 2. raftaar-core - Development branch of Raftaar
+#### 3. raftaar-core - Development branch of Raftaar
 
 1. TestDriver
 - TestManager
 - Utilities 
 
-#### 3. learning-selenium - Webdriver examples for beginner/advance users
+#### 4. learning-selenium - Webdriver examples for beginner/advance users
 
 1. handling webelements
 - action
