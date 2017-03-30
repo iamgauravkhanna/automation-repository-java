@@ -55,7 +55,8 @@ public class Subraction {
 		two.click();
 
 		//
-		WebElement plus = driver.findElement(By.name("-"));
+		WebElement plus = driver.findElement(
+				By.xpath("//android.widget.Button[contains(@resource-id,'com.android.calculator2:id/op_sub')]"));
 
 		//
 		plus.click();
