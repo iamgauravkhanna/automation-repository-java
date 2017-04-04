@@ -20,11 +20,8 @@ public class BasicScript {
 		// Created object of DesiredCapabilities class
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		// Set BROWSER_NAME desired capability
-		capabilities.setCapability("BROWSER_NAME", "Android");
-
 		// Set android VERSION desired capability
-		capabilities.setCapability("VERSION", "5.0.1");
+		capabilities.setCapability("VERSION", "5.0.2");
 
 		// Set android deviceName desired capability
 		capabilities.setCapability("deviceName", "Emulator");
@@ -48,27 +45,28 @@ public class BasicScript {
 	@Test
 	public void testCal() throws Exception {
 
-		// locate the Text on the calculator by using By.name()
+		// locate the Text '2' on the calculator by using By.name()
 		WebElement two = driver.findElement(By.name("2"));
 
-		//
+		// click on webelement
 		two.click();
 
 		//
 		WebElement plus = driver.findElement(By.name("+"));
 
-		//
+		// click on webelement
 		plus.click();
 
 		//
 		WebElement four = driver.findElement(By.name("4"));
 
-		//
+		// click on webelement
 		four.click();
 
 		//
 		WebElement equalTo = driver.findElement(By.name("="));
 
+		// click on webelement
 		equalTo.click();
 
 		// Get result from result text box.

@@ -42,7 +42,7 @@ public class DragAndDropAction {
 
 		// Set android VERSION desired capability. Set your mobile device's OS
 		// version.
-		capabilities.setCapability("platformVersion", "5.0.1");
+		capabilities.setCapability("platformVersion", "5.0.2");
 
 		// Set android platformName desired capability. It's Android in our case
 		// here.
@@ -66,11 +66,13 @@ public class DragAndDropAction {
 
 	@Test
 	public void dragDrop() {
+
 		// Tap on Basic usage Playground.
 		driver.findElementByName("Basic usage playground").click();
 
 		// Locate 3rd element(Chick Corea) from list to drag.
 		WebElement ele1 = (WebElement) driver.findElementsById("com.mobeta.android.demodslv:id/drag_handle").get(2);
+
 		// Locate 6th element to drop dragged element.
 		WebElement ele2 = (WebElement) driver.findElementsById("com.mobeta.android.demodslv:id/drag_handle").get(5);
 
@@ -78,10 +80,14 @@ public class DragAndDropAction {
 		// Created object of TouchAction class.
 		TouchAction action = new TouchAction((MobileDriver) driver);
 
+		//
 		System.out.println("Dragging element");
+
 		// It will hold tap on 3rd element and move to 6th position and then
 		// release tap.
 		action.longPress(ele1).moveTo(ele2).release().perform();
+
+		//
 		System.out.println("Element dropped at destination successfully");
 	}
 

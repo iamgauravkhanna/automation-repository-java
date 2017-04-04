@@ -23,12 +23,9 @@ public class DifferentElementLocators {
 		// Set android deviceName desired capability. Set your device name.
 		capabilities.setCapability("deviceName", "Emulator");
 
-		// Set BROWSER_NAME desired capability. It's Android in our case here.
-		capabilities.setCapability("browserName", "Android");
-
 		// Set android VERSION desired capability. Set your mobile device's OS
 		// version.
-		capabilities.setCapability("platformVersion", "5.0.1");
+		capabilities.setCapability("platformVersion", "5.0.2");
 
 		// Set android platformName desired capability. It's Android in our case
 		// here.
