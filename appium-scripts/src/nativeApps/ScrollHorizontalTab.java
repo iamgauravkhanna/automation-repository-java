@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
@@ -48,6 +49,11 @@ public class ScrollHorizontalTab {
 
 		System.out.println("Horizontal scrolling has been started to find tab -> Tab 11.");
 
+		Point A = driver.findElement(By.name("Tab 1")).getLocation();
+
+		System.out.println("X Location : " + A.x);
+		System.out.println("Y Location : " + A.y);
+
 		// Used for loop to scroll tabs until Tab 11 displayed.
 		for (int i = 0; i <= 10; i++) {
 			// Set implicit wait to 2 seconds for fast horizontal scrolling.
@@ -63,7 +69,7 @@ public class ScrollHorizontalTab {
 			} else {
 				// If Tab 11 Is not displayed then scroll tabs from right to
 				// left direction by calling ScrollTabs() method.
-				ScrollTabs();
+				ScrollTabs(A.y);
 			}
 		}
 
@@ -81,7 +87,7 @@ public class ScrollHorizontalTab {
 	}
 
 	// To scroll tabs right to left In horizontal direction.
-	public void ScrollTabs() {
+	public void ScrollTabs(int y) {
 
 		// Get the size of screen.
 		size = driver.manage().window().getSize();
@@ -95,7 +101,8 @@ public class ScrollHorizontalTab {
 
 		// Set Y Coordinates of screen where tabs display.
 		// int YCoordinates = 150;
-		int YCoordinates = (int) (size.height * 0.10);
+		// int YCoordinates = (int) (size.height * 0.10);
+		int YCoordinates = y;
 
 		// Swipe tabs from Right to Left.
 		driver.swipe(startx, YCoordinates, endx, YCoordinates, 3000);
