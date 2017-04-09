@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import io.appium.java_client.android.AndroidDriver;
+
 public class CommonUtils {
 
 	WebDriver webDriverObject;
@@ -36,6 +38,15 @@ public class CommonUtils {
 		// It will launch the Calculator App in Android Device using the
 		// configurations specified in Desired Capabilities
 		webDriverObject = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+
+	}
+
+	public static void scrollToElementAndClick(AndroidDriver driver, String Value) {
+
+		// Scroll till element which contains Tabs text.
+		driver.findElementByAndroidUIAutomator(
+				"new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"" + Value + "\"));")
+				.click();
 
 	}
 
