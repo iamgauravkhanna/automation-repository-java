@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="lib/android.jar"/>
 	<classpathentry kind="lib" path="lib/uiautomator.jar"/>
 	<classpathentry kind="lib" path="lib/java-client-5.0.0-BETA5.jar"/>
+	<classpathentry kind="lib" path="lib/ATUTestRecorder_2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
