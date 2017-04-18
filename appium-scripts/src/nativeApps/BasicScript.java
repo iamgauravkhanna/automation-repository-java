@@ -10,12 +10,15 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
 public class BasicScript {
-
+	
 	//
 	WebDriver driver;
 
 	@BeforeClass
 	public void setUp() throws MalformedURLException {
+		
+		// Start Appium Server
+		
 
 		// Created object of DesiredCapabilities class
 		DesiredCapabilities capabilities = new DesiredCapabilities();
