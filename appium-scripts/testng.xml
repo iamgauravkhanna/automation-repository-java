@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Appium Test Suite - ANDROID 5.X" verbose="2">
-	<test name="Native Apps Tests">
+<suite name="AppiumTestSuite" verbose="2" allow-return-values="true">
+	<test name="NativeAppsTests">
 		<classes>
 			<class name="nativeApps.BasicScript" />
 		</classes>

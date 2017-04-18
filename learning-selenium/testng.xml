@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="SuiteName">
-	<test name="TestName" allow-return-values="true" verbose="10">
+	<test name="TestName" allow-return-values="true" verbose="2">
 		<classes>
 			<class name="webdriverScripts.others.BasicScript" />
 		</classes>
