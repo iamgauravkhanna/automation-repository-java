@@ -56,7 +56,7 @@ public class Framework {
 
 	}
 
-	public static void runTestCase(String testCaseID) throws Exception {
+	public static void runTestCase(String testCaseID, String PlatformType) throws Exception {
 
 		System.out.println("Test Case ID " + testCaseID);
 
