@@ -6,13 +6,15 @@ public class CountOccurrence
 
 {
 
+	private static Scanner s;
+
 	public static void main(String[] args)
 
 	{
 
 		int n, x, count = 0, i = 0;
 
-		Scanner s = new Scanner(System.in);
+		s = new Scanner(System.in);
 
 		System.out.print("Enter no. of elements you want in array:");
 
