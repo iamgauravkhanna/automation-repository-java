@@ -43,7 +43,7 @@ public class ScreenOrientation {
 
 		System.out.println("*--*--*-- Changing screen Orientation to LANDSCAPE.");
 		// Changing screen Orientation to LANDSCAPE
-		driver.rotate(org.openqa.selenium.ScreenOrientation.LANDSCAPE);
+		//driver.rotate(org.openqa.selenium.ScreenOrientation.LANDSCAPE);
 
 		// Get and print screen orientation after changing It.
 		System.out.println("*--*--*-- Now screen orientation Is : " + driver.getOrientation());
@@ -56,7 +56,7 @@ public class ScreenOrientation {
 		System.out.println("*--*--*-- Changing screen Orientation to PORTRAIT.");
 		// Changing screen Orientation to PORTRAIT.
 
-		driver.rotate(org.openqa.selenium.ScreenOrientation.PORTRAIT);
+		//driver.rotate(org.openqa.selenium.ScreenOrientation.PORTRAIT);
 
 		// Get and print screen orientation after changing It.
 		System.out.println("*--*--*-- Now screen orientation Is : " + driver.getOrientation());
