@@ -1,8 +1,6 @@
 package raftaar.testautomation.framework;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -29,13 +27,14 @@ public class Framework {
 
 		String a;
 
-		input = new FileInputStream(System.getProperty("user.dir") + "\\" + "config.properties");
+		input = new FileInputStream(System.getProperty("user.dir") + "\\"
+				+ "config.properties");
 
 		// load a properties file
 		prop.load(input);
 
 		// a = testngFilePath;
-		
+
 		a = prop.getProperty("testngSuiteFiles");
 
 		TestNG tng = new TestNG();
@@ -56,7 +55,8 @@ public class Framework {
 
 	}
 
-	public static void runTestCase(String testCaseID, String PlatformType) throws Exception {
+	public static void runTestCase(String testCaseID, String PlatformType)
+			throws Exception {
 
 		System.out.println("Test Case ID " + testCaseID);
 
@@ -66,15 +66,17 @@ public class Framework {
 
 		FileInputStream input = null;
 
-		input = new FileInputStream(System.getProperty("user.dir") + "\\" + "config.properties");
+		input = new FileInputStream(System.getProperty("user.dir") + "\\"
+				+ "config.properties");
 
 		// load a properties file
 		prop.load(input);
 
-		JavaUtils.readPropertyAndStoreinMap(System.getProperty("user.dir") + "\\" + "config.properties",
-				TestManager.MyDataDicitonary);
+		JavaUtils.readPropertyAndStoreinMap(System.getProperty("user.dir")
+				+ "\\" + "config.properties", TestManager.MyDataDicitonary);
 
-		UITests.log.info("Starting Test Case : " + TestManager.MyDataDicitonary.get("testcaseid"));
+		UITests.log.info("Starting Test Case : "
+				+ TestManager.MyDataDicitonary.get("testcaseid"));
 
 		UITests testObject = new UITests();
 
