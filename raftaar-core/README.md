@@ -8,7 +8,7 @@ RAFTAAR (REGRESSION AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open 
  - Cross-browser testing on Chrome, Firefox, IE and Safari
  - TestNG, ReportNG & Extent Report integrated for better reporting
  - Interaction with Databases (Oracle,MySQL,MongoDB)
- - Interaction with Excel (xlsx,xls) files
+ - Interaction with Excel (xls,xlsx,xlsm) files
  - Interaction with CSV files
  - Interaction with XML files
  - Interaction with Properties files
@@ -18,7 +18,7 @@ RAFTAAR (REGRESSION AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open 
  - Comparing Images
  - Customized HTML Email with Test Results
  
-#List of Website Automated
+#List of Websites Automated
 
 - [Book - The Automated Tester](http://book.theautomatedtester.co.uk/)
 - [Webmath](http://www.webmath.com/)
@@ -29,7 +29,7 @@ RAFTAAR (REGRESSION AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open 
 - [Paytm](https://paytm.com/)
 - [Policy Bazar](https://www.policybazaar.com/)
 
-#List of Android Apps Automated
+#List of Android/iOS Apps Automated
 
 - Amazon
 - Battery Bot
