@@ -1,7 +1,9 @@
-package javaExamples.miscellaneous;
+package javaExamples.collections;
 
 import java.util.Arrays;
 import java.util.List;
+
+// Program to convert string to list
 
 public class ConvertStringToList {
 

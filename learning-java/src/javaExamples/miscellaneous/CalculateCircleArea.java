@@ -2,7 +2,7 @@ package javaExamples.miscellaneous;
 
 /**
  * 
- * This Calculate Circle Area using Java Example shows how to calculate area of circle using it's radius.
+ * Program to Calculate Circle Area using it's radius
  * 
 */
 

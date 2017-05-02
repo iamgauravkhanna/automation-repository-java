@@ -2,6 +2,8 @@ package javaExamples.miscellaneous;
 
 import java.util.Scanner;
 
+// Program to count occurence of element in array
+
 public class CountOccurrence
 
 {
