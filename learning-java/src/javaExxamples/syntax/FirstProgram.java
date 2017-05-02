@@ -1,4 +1,4 @@
-package javaExamples.miscellaneous;
+package javaExxamples.syntax;
 
 class FirstProgram {
 
