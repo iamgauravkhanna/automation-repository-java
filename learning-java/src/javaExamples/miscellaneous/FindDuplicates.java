@@ -14,12 +14,12 @@ public class FindDuplicates {
 		ArrayList<String> list = new ArrayList<String>();
 
 		// Form a list of numbers from 0-9.
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 19; i++) {
 			list.add(String.valueOf(i));
 		}
 
 		// Insert a new set of numbers from 0-5.
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i += 2) {
 			list.add(String.valueOf(i));
 		}
 

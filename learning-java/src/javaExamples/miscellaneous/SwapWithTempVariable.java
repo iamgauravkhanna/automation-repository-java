@@ -2,7 +2,7 @@ package javaExamples.miscellaneous;
 
 // Program to swap two numbers
 
-class Swap1 {
+class SwapWithTempVariable {
 	public static void main(String args[]) {
 		int a, b, temp;
 		a = Integer.parseInt("5");

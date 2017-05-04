@@ -2,7 +2,7 @@ package javaExamples.miscellaneous;
 
 // Program to swap two numbers without using temp variable
 
-class Swap2 {
+class SwapWithoutTempVariable {
 	public static void main(String args[]) {
 		int a, b;
 		a = 4;
