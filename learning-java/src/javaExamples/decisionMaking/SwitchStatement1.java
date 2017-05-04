@@ -1,4 +1,4 @@
-package javaExamples.miscellaneous;
+package javaExamples.decisionMaking;
 
 public class SwitchStatement1 {
 
