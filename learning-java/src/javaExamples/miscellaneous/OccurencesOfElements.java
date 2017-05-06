@@ -6,50 +6,64 @@ import java.util.Scanner;
 
 public class OccurencesOfElements {
 
+	private static Scanner input, sizeOfArray;
+
 	public static void main(String[] args) {
 
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 
-		int[] num = new int[100];
+		sizeOfArray = new Scanner(System.in);
 
-		int[] count = new int[100];
+		System.out.println("Please enter size of array");
+
+		int size = sizeOfArray.nextInt();
+
+		int[] userInputArrayObj = new int[size];
+
+		int[] elementsCountArrayObj = new int[size + 1];
 
 		// Declare counter variable i
 		// and temp variable that will
 		// temporarily hold the value
-		// at a certain index of num[] array
+		// at a certain index of userInputArrayObj[] array
 		int i, temp = 0;
 
-		System.out.println("Enter the integers between 1 and 100: ");
+		System.out.println("Enter the integers between 1 and " + size);
 
-		// Initialize num[] array with user input
-		for (i = 0; i < num.length; i++) {
-			num[i] = input.nextInt();
-			// expected input will end when user enters zero
-			if (num[i] == 0) {
-				break;
-			}
+		// Initialize userInputArrayObj[] array with user input
+		for (i = 0; i < userInputArrayObj.length; i++) {
+
+			userInputArrayObj[i] = input.nextInt();
+
 		} // end of for loop
 
-		// value at a given index of num array
+		// Value at a given index of userInputArrayObj array
 		// will be stored in temp variable
 		// temp variable will act as an index value
-		// for count array and keep track of number
+		// for elementsCountArrayObj array and keep track of number
 		// of occurences of each number
-		for (i = 0; i < num.length; i++) {
-			temp = num[i];
-			count[temp]++;
-		} // end of for looop
+		for (i = 0; i < userInputArrayObj.length; i++) {
 
-		for (i = 1; i < count.length; i++) {
+			temp = userInputArrayObj[i];
 
-			if (count[i] > 0 && count[i] == 1) {
-				System.out.printf("%d occurs %d time\n", i, count[i]);
-			} else if (count[i] >= 2) {
-				System.out.printf("%d occurs %d times\n", i, count[i]);
+			elementsCountArrayObj[temp]++;
+
+		} // end of for loop
+
+		for (i = 1; i < elementsCountArrayObj.length; i++) {
+
+			if (elementsCountArrayObj[i] > 0 && elementsCountArrayObj[i] == 1) {
+
+				System.out.printf("%d occurs %d time\n", i, elementsCountArrayObj[i]);
+
+			} else if (elementsCountArrayObj[i] >= 2) {
+
+				System.out.printf("%d occurs %d times\n", i, elementsCountArrayObj[i]);
+
 			}
 
 		} // end of for loop
 
 	}// end of main
+
 }// end of CountOccurrenceOfNumbers
