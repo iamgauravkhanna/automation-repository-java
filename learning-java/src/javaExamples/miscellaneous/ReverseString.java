@@ -1,5 +1,7 @@
 package javaExamples.miscellaneous;
 
+// Program to Reverse a string
+
 public class ReverseString {
 
 	public String invertWithStringBuffer(String str) {
@@ -20,6 +22,16 @@ public class ReverseString {
 		return invert;
 	}
 
+	public void reverse(String str) {
+
+		int i = str.length();
+		StringBuffer strb = new StringBuffer();
+		for (int j = i - 1; j >= 0; j--) {
+			strb = strb.append(str.charAt(j));
+		}
+		System.out.println(strb);
+	}
+
 	public static void main(String[] args) {
 
 		ReverseString invertStr = new ReverseString();
@@ -30,6 +42,8 @@ public class ReverseString {
 
 		System.out.println(
 				"Reversed String without StringBuffer class: " + invertStr.invertWithoutStringBuffer("kjihgfedcba"));
+
+		invertStr.reverse("I use selenium webdriver. selenium is a tool for web applications automation");
 	}
 
 }
