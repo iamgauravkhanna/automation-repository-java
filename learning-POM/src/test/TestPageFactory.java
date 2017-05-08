@@ -8,9 +8,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pages.HomePage;
+import pageFactoryDesignPattern.*;
 
-public class testPOM {
+public class TestPageFactory {
 
 	WebDriver myDriver;
 

@@ -1,4 +1,4 @@
-package pageFactory;
+package pageFactoryDesignPattern;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
