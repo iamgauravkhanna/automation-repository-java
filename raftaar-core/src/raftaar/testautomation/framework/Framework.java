@@ -12,6 +12,7 @@ import org.testng.collections.Lists;
 import raftaar.testautomation.manager.TestManager;
 import raftaar.testautomation.manager.UITests;
 import raftaar.testautomation.utlities.JavaUtils;
+import raftaar.testautomation.utlities.LoadProperties;
 
 public class Framework {
 
@@ -27,15 +28,11 @@ public class Framework {
 
 		String a;
 
-		input = new FileInputStream(System.getProperty("user.dir") + "\\"
-				+ "config.properties");
+		Map m = LoadProperties.getProperties();
 
-		// load a properties file
-		prop.load(input);
-
-		// a = testngFilePath;
-
-		a = prop.getProperty("testngSuiteFiles");
+		a = (String) m.get("testngSuiteFiles");
+		
+		System.out.println("Testng Suite File ==> "+a);
 
 		TestNG tng = new TestNG();
 
@@ -55,8 +52,7 @@ public class Framework {
 
 	}
 
-	public static void runTestCase(String testCaseID, String PlatformType)
-			throws Exception {
+	public static void runTestCase(String testCaseID, String PlatformType) throws Exception {
 
 		System.out.println("Test Case ID " + testCaseID);
 
@@ -66,17 +62,15 @@ public class Framework {
 
 		FileInputStream input = null;
 
-		input = new FileInputStream(System.getProperty("user.dir") + "\\"
-				+ "config.properties");
+		input = new FileInputStream(System.getProperty("user.dir") + "\\" + "config.properties");
 
 		// load a properties file
 		prop.load(input);
 
-		JavaUtils.readPropertyAndStoreinMap(System.getProperty("user.dir")
-				+ "\\" + "config.properties", TestManager.MyDataDicitonary);
+		JavaUtils.readPropertyAndStoreinMap(System.getProperty("user.dir") + "\\" + "config.properties",
+				TestManager.MyDataDicitonary);
 
-		UITests.log.info("Starting Test Case : "
-				+ TestManager.MyDataDicitonary.get("testcaseid"));
+		UITests.log.info("Starting Test Case : " + TestManager.MyDataDicitonary.get("testcaseid"));
 
 		UITests testObject = new UITests();
 

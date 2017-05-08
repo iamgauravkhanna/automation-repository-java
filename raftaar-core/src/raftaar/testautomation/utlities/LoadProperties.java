@@ -8,42 +8,55 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * This class will read the properties file which holds the data in key,value pair
+ * This class will read the properties file which holds the data in key,value
+ * pair
  * 
  * @author unknown
  */
-public class LoadProperties
-{
+public class LoadProperties {
 
 	/**
-	 * Loads all the properties from service.properties file and store them in Map
+	 * Loads all the properties from service.properties file and store them in
+	 * Map
 	 * 
 	 * @return map that contains the properties as key/value pairs
+	 * 
 	 * @throws Exception
 	 */
-	public static Map<String, String> getProperties() throws Exception
-	{
+	public static Map<String, String> getProperties() throws Exception {
+
 		Properties properties = new Properties();
-		FileInputStream resourceStream = new FileInputStream("./resources/service.properties");
-		try
-		{
+
+		FileInputStream resourceStream = new FileInputStream("./config.properties");
+
+		try {
+
 			properties.load(resourceStream);
-		} catch (IOException e)
-		{
+
+		} catch (IOException e) {
+
 			e.printStackTrace();
-		} finally
-		{
+
+		} finally {
+
 			resourceStream.close();
+
 		}
 
 		Map<String, String> propertiesMap = new HashMap<>();
-		System.out.println("reading contents of property file");
-		for (String key : properties.stringPropertyNames())
-		{
+
+		System.out.println("Reading Contents of Property File");
+
+		for (String key : properties.stringPropertyNames()) {
+
 			String value = properties.getProperty(key);
+
 			System.out.println(key + " => " + value);
+
 			propertiesMap.put(key, value);
+
 		}
+
 		return Collections.unmodifiableMap(propertiesMap);
 	}
 }
