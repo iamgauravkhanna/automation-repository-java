@@ -29,8 +29,11 @@ public class HomePage {
 	WebElement HomeTitle;
 
 	public HomePage(WebDriver myDriver) {
+
 		this.myDriver = myDriver;
+
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(myDriver, 30);
+
 		PageFactory.initElements(factory, this);
 	}
 
