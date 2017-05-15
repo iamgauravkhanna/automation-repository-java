@@ -28,6 +28,7 @@ public class HomePage {
 	@FindBy(xpath = "//div[text()='Selenium: Beginners Guide']")
 	WebElement HomeTitle;
 
+	// Constructor to initialize elements
 	public HomePage(WebDriver myDriver) {
 
 		this.myDriver = myDriver;
@@ -37,14 +38,23 @@ public class HomePage {
 		PageFactory.initElements(factory, this);
 	}
 
+	//
 	public void clickOnLinkChapter1() {
 
 		Chapter1.click();
 	}
 
+	//
 	public void verifyHomePageText() {
 
 		HomeTitle.isDisplayed();
+	}
+
+	public void clickOnLinkChapter2() {
+
+		//
+		Chapter2.click();
+
 	}
 
 }

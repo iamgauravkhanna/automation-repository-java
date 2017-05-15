@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class TestNGAnnotations {
@@ -31,6 +32,9 @@ public class TestNGAnnotations {
 		collection = new ArrayList<String>();
 		System.out.println("@BeforeMethod - setUp");
 	}
+	
+	@BeforeTest
+	
 
 	@AfterMethod
 	public void tearDown() {

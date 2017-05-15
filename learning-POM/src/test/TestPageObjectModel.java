@@ -23,12 +23,12 @@ public class TestPageObjectModel {
 
 		myDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		myDriver.get("http://book.theautomatedtester.co.uk/");
-
 	}
 
 	@Test
 	public void FirstTestCase() {
+		
+		myDriver.get("http://book.theautomatedtester.co.uk/");
 
 		// Create Home Page Object
 		objHomePage = new HomePage(myDriver);

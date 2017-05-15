@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Regression Suite" parallel="tests" preserve-order="true"
+	thread-count="10" verbose="2">
+	<test name="Test Case 1" parallel="methods" thread-count="10">
+		<parameter name="dbconfig" value="aaa" />
+		<parameter name="poolsize" value="chrome" />
+		<classes>
+			<class name="testngExamples.testNG.TestParameterXML" />
+			<methods>
+				<include name="createConnection1" />
+			</methods>
+		</classes>
+	</test>
+	<test name="Test Case 2" parallel="methods" thread-count="10">
+		<parameter name="dbconfig" value="bbb" />
+		<parameter name="poolsize" value="firefox" />
+		<classes>
+			<class name="testngExamples.testNG.TestParameterXML" />
+			<methods>
+				<include name="createConnection2" />
+			</methods>
+		</classes>
+	</test>
+</suite>
