@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="My Test Suite" parallel="tests" preserve-order="true"
+	thread-count="1" verbose="1">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<test name="Mobile Tests">
+		<classes>
+			<class name="mobileTests.TestSuite1" />
+		</classes>
+	</test>
+
+	<test name="Web Tests">
+		<classes>
+			<class name="webTests.TestSuite1" />
+		</classes>
+	</test>
+
+</suite>

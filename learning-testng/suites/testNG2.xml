@@ -3,7 +3,7 @@
 <suite name="Suite2" verbose="1">
 	<test name="Regression2">
 		<packages>
-			<package name="com.gaurav.testNG" />
+			<package name="testngExamples.testNG" />
 		</packages>
 	</test>
 </suite>

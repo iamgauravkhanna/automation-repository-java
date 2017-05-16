@@ -8,9 +8,15 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
-	<test name="My Test Cases">
+	<test name="Mobile Tests">
 		<classes>
-			<class name="raftaar.testautomation.testcases.TestSuite1" />
+			<class name="mobileTests.TestSuite1" />
+		</classes>
+	</test>
+
+	<test name="Web Tests">
+		<classes>
+			<class name="webTests.TestSuite1" />
 		</classes>
 	</test>
 

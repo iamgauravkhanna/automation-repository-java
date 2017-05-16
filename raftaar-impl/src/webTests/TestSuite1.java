@@ -1,4 +1,4 @@
-package raftaar.testautomation.testcases;
+package webTests;
 
 import org.testng.annotations.Test;
 
@@ -14,7 +14,7 @@ public class TestSuite1 {
 	@Test
 	public void Test1() throws Exception {
 
-		Framework.runTestCase("Test.Case.001", "NativeApp");
+		Framework.runTestCase("Test.Case.001");
 	}
 
 }

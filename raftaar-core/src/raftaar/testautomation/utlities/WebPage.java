@@ -63,7 +63,7 @@ public class WebPage {
 
 	public WebDriver driver;
 	public String StepOutcome;
-	public WebElement element;
+	public static WebElement element;
 	public WebElement e;
 	public String value;
 	public String locatorType;
@@ -75,7 +75,7 @@ public class WebPage {
 	public boolean elementNotFound;
 	public int elementWaitTime = 10; // timeout value in second while waiting
 										// for an element to appear DISPLAYED
-	public WebDriverWait wait;
+	public static WebDriverWait wait;
 	public String alertText;
 	public static Alert alert;
 	public static String StepName;
@@ -110,7 +110,7 @@ public class WebPage {
 		}
 
 		if (loc == null) {
-			
+
 		} else if (!(action.equalsIgnoreCase("assertNotPresent"))) {
 			e = what(driver, loc);
 			// System.out.println("Got the Element : " + e);
@@ -124,7 +124,9 @@ public class WebPage {
 
 		// System.out.println("Action is : " + action);
 
-		switch (action) {
+		switch (action)
+
+		{
 
 		case "openBrowser":
 
@@ -536,7 +538,7 @@ public class WebPage {
 		return StepOutcome;
 	}
 
-	public By locatorValue(String locatorType, String value) {
+	public static By locatorValue(String locatorType, String value) {
 		By by;
 
 		switch (locatorType) {
@@ -659,7 +661,7 @@ public class WebPage {
 		}
 	}
 
-	public WebElement what(WebDriver driver, By locator) throws Exception {
+	public static WebElement what(WebDriver driver, By locator) throws Exception {
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
@@ -670,6 +672,24 @@ public class WebPage {
 		fnHighlightMe(driver, element);
 
 		getscreenshot(driver);
+
+		return element;
+
+	}
+
+	public static WebElement what(WebDriver driver, By locator, WebDriver webDriver) throws Exception {
+
+		wait = new WebDriverWait(webDriver, 30);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+		element = driver.findElement(locator);
+
+		// System.out.println("Element is : " + element);
+
+		// fnHighlightMe(driver, element);
+
+		// getscreenshot(driver);
 
 		return element;
 

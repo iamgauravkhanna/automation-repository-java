@@ -2,15 +2,12 @@
 	<test name="Regression1">
 		<groups>
 			<run>
-				<exclude name="Car" />
-				<include name="Bike" />
+				<exclude name="method1" />
+				<include name="method2" />
 			</run>
 		</groups>
 		<classes>
-			<class name="com.gaurav.testNG.simple">
-				<methods>
-					<include name="Bajaj" />
-				</methods>
+			<class name="testngExamples.testNG.GroupTest">
 			</class>
 		</classes>
 	</test>

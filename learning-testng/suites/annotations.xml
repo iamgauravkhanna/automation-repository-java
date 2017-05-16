@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="Annotation Suite" verbose="1">
+	<test name="Annotations">
+		<classes>
+			<class name="testNGExamples.testNG.Annotations" />
+		</classes>
+	</test>
+</suite>

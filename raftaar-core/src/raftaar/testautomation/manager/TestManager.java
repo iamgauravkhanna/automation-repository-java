@@ -20,6 +20,7 @@ import org.testng.Reporter;
 import org.uncommons.reportng.ReportNGUtils;
 
 import raftaar.testautomation.utlities.JavaUtils;
+import raftaar.testautomation.utlities.MobilePage;
 import raftaar.testautomation.utlities.WebPage;
 
 public class TestManager {
@@ -43,6 +44,7 @@ public class TestManager {
 	public String parent;
 	// Logger log = Logger.getLogger("TestManager");
 	WebPage d = new WebPage();
+	MobilePage m = new MobilePage();
 	// static final Logger logger =
 	// LogManager.getLogger(TestRunner.class.getName());
 
@@ -74,10 +76,10 @@ public class TestManager {
 		// System.out.println(flags);
 
 		if (data.contains("#")) {
-			//System.out.println("Parameterized value found");
-			//System.out.println("Value of Data Before Replacement : " + data);
+			// System.out.println("Parameterized value found");
+			// System.out.println("Value of Data Before Replacement : " + data);
 			data = JavaUtils.replaceVariablesInString(data, TestManager.MyDataDicitonary);
-			//System.out.println("Value of Data Before Replacement : " + data);
+			// System.out.println("Value of Data Before Replacement : " + data);
 			// System.out.println("Data is :" + data);
 			// logger.info("This is Logger Info");
 		}
@@ -128,22 +130,31 @@ public class TestManager {
 		// "\n");
 		/* logger.info("TEST Has Started"); */
 
-		StepOutcome = d.ExecuteKeyword(action, parent, object, data,description,testcaseid);
+		if (TestManager.MyDataDicitonary.get("platformType").toString().equalsIgnoreCase("Mobile")) {
+			System.out.println("Its A Mobile Test");
+			StepOutcome = m.ExecuteKeyword(action, parent, object, data, description, testcaseid);
+		} else {
+			StepOutcome = d.ExecuteKeyword(action, parent, object, data, description, testcaseid);
+		}
 
 		UITests.log.info("Step Outcome : " + StepOutcome + "\n");
 		Reporter.log("Step Outcome : " + StepOutcome + "\n");
 
-/*		int depth = 1;
+		/*
+		 * int depth = 1;
+		 * 
+		 * String visibility = "Abc"; String stepOutputString = "<tr t='" +
+		 * System.currentTimeMillis() + "' d=" + "#depth" + " name='" +
+		 * "#htmlId" + "' class='" + "#status" + " testStep' " + visibility +
+		 * " " + ((depth > 1) ? "hidden='true'" : "") + " >" +
+		 * "<td class='stepAttach'>" + StringUtils.repeat(' ', depth) +
+		 * "$attach</td>" + "<td class='stepDescription'>$desc</td>" +
+		 * "<td title='" + System.currentTimeMillis() +
+		 * "' class='stepDuration' >" + System.currentTimeMillis() + "</td>" +
+		 * "<td class='stepOutcome'>$result</td>" + "</tr>";
+		 */
 
-		String visibility = "Abc";		
-		String stepOutputString = "<tr t='" + System.currentTimeMillis() + "' d=" + "#depth" + " name='" + "#htmlId"
-				+ "' class='" + "#status" + " testStep' " + visibility + " " + ((depth > 1) ? "hidden='true'" : "")
-				+ " >" + "<td class='stepAttach'>"
-				+  StringUtils.repeat(' ', depth) + "$attach</td>" + "<td class='stepDescription'>$desc</td>"
-				+ "<td title='" + System.currentTimeMillis() + "' class='stepDuration' >" + System.currentTimeMillis()
-				+ "</td>" + "<td class='stepOutcome'>$result</td>" + "</tr>";*/
-
-		//Reporter.log(stepOutputString);
+		// Reporter.log(stepOutputString);
 		// Reporter.setEscapeHtml(""<HTML>);
 		// System.out.println("Step Outcome : " + StepOutcome + "\n");
 
