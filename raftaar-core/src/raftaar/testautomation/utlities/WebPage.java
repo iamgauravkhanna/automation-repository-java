@@ -560,6 +560,9 @@ public class WebPage {
 		case "partialLinkText":
 			by = By.partialLinkText(value);
 			break;
+		case "className":
+			by = By.className(value);
+			break;
 		default:
 			by = null;
 			// System.out.println("Blank Locator");

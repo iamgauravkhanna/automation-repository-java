@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Regression Suite" parallel="methods" preserve-order="false"
+	thread-count="1" verbose="1">
+	<test name="Test A">
+		<classes>
+			<class name="testngExamples.testNG.ClassA" />
+			<class name="testngExamples.testNG.ClassB" />
+		</classes>
+	</test>
+
+	<test name="Test B">
+		<classes>
+			<class name="testngExamples.testNG.ClassC" />
+		</classes>
+	</test>
+</suite>

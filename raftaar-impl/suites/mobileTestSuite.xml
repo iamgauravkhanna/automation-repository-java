@@ -14,10 +14,4 @@
 		</classes>
 	</test>
 
-	<test name="Web Tests">
-		<classes>
-			<class name="webTests.TestSuite1" />
-		</classes>
-	</test>
-
 </suite>

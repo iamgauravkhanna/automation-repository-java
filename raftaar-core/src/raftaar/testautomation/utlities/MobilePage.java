@@ -52,7 +52,7 @@ public class MobilePage {
 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
+
 			System.out.println("Unable to Initialize Obj of mobileWebDriver");
 
 		}
@@ -88,8 +88,15 @@ public class MobilePage {
 		if (object.contains("=") && !(object.isEmpty())) {
 			locatorType = object.split("=")[0].toLowerCase().trim();
 
+			System.out.println("locatorType = " + locatorType);
+
+			System.out.println("Value = " + value);
+
 			if (locatorType.contains("xpath")) {
 				value = object.substring(6);
+
+			} else if (object.contains("==")) {
+				value = "=";
 
 			} else {
 				value = object.split("=")[1].trim();
