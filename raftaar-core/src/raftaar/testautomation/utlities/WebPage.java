@@ -155,8 +155,8 @@ public class WebPage {
 
 		case "getUrl":
 
-			// System.out.println("getUrl");
-			// System.out.println("Data is " + data);
+			System.out.println("getUrl");
+			System.out.println("Data is " + data);
 			driver.get(data);
 			StepOutcome = data;
 			break;

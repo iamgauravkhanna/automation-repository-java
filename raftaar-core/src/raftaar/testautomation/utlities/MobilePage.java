@@ -20,19 +20,19 @@ public class MobilePage {
 	public String value;
 	public By loc;
 
-	public MobilePage() {
+	public MobilePage() throws MalformedURLException {
 
 		// Created object of DesiredCapabilities class
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		// Set android VERSION desired capability
-		capabilities.setCapability("VERSION", "5.0.2");
+		capabilities.setCapability("VERSION", TestManager.MyDataDicitonary.get("version"));
 
 		// Set android deviceName desired capability
-		capabilities.setCapability("deviceName", "Emulator");
+		capabilities.setCapability("deviceName", TestManager.MyDataDicitonary.get("deviceName"));
 
 		// Set platformName desired capability.
-		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("platformName", TestManager.MyDataDicitonary.get("platformName"));
 
 		// This package name of your app (you can get it from apk info app)
 		capabilities.setCapability("appPackage", TestManager.MyDataDicitonary.get("appPackage"));
@@ -44,20 +44,34 @@ public class MobilePage {
 		// Create RemoteWebDriver instance and connect to the Appium server
 		// It will launch the Calculator App in Android Device using the
 		// configurations specified in Desired Capabilities
-		try {
-
-			mobileWebDriver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-
-		} catch (MalformedURLException e) {
-
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-
-			System.out.println("Unable to Initialize Obj of mobileWebDriver");
-
-		}
 
 		System.out.println("MobilePage() Constructor Called");
+
+		/*
+		 * try {
+		 * 
+		 * System.out.println("Entering into Mobile Page Constructor");
+		 * 
+		 * mobileWebDriver = new RemoteWebDriver(new
+		 * URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		 * 
+		 * } catch (MalformedURLException e) {
+		 * 
+		 * // TODO Auto-generated catch block e.printStackTrace();
+		 * 
+		 * System.out.println("Unable to Initialize Obj of mobileWebDriver");
+		 * 
+		 * }
+		 */
+
+		if (mobileWebDriver == null) {
+
+			System.out.println("Entering into Mobile Page Constructor");
+
+			mobileWebDriver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		} else {
+			System.out.println("Unable to Initialize Obj of mobileWebDriver");
+		}
 
 	}
 

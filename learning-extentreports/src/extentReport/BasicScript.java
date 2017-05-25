@@ -36,6 +36,8 @@ public class BasicScript {
 	@BeforeTest
 	public void beforeTest() {
 
+		htmlReporter.config().setDocumentTitle(extent.getClass().getName());		
+
 		// Attach HTML Report path to extent object
 		extent.attachReporter(htmlReporter);
 
@@ -97,8 +99,8 @@ public class BasicScript {
 
 		// test with snapshot
 		test.addScreenCaptureFromPath("screenshot.png");
-		test.pass("Assertion Passed", MediaEntityBuilder
-				.createScreenCaptureFromPath("screenshots\\2.jpg", "Title of Screenshot").build());
+		test.pass("Assertion Passed",
+				MediaEntityBuilder.createScreenCaptureFromPath("screenshots\\2.jpg", "Title of Screenshot").build());
 
 		// This will close the browser
 		myDriver.quit();

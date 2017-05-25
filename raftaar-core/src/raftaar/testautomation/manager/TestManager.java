@@ -44,7 +44,7 @@ public class TestManager {
 	public String parent;
 	// Logger log = Logger.getLogger("TestManager");
 	WebPage d = new WebPage();
-	MobilePage m = new MobilePage();
+	MobilePage m;
 	// static final Logger logger =
 	// LogManager.getLogger(TestRunner.class.getName());
 
@@ -131,9 +131,11 @@ public class TestManager {
 		/* logger.info("TEST Has Started"); */
 
 		if (TestManager.MyDataDicitonary.get("platformType").toString().equalsIgnoreCase("Mobile")) {
+			m = new MobilePage();
 			System.out.println("Its A Mobile Test");
 			StepOutcome = m.ExecuteKeyword(action, parent, object, data, description, testcaseid);
 		} else {
+			
 			StepOutcome = d.ExecuteKeyword(action, parent, object, data, description, testcaseid);
 		}
 

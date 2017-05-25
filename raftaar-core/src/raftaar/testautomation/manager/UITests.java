@@ -2,6 +2,7 @@ package raftaar.testautomation.manager;
 
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -64,7 +65,7 @@ public class UITests {
 		log.info("Test Case Ends....");
 	}
 
-	@AfterClass
+	@AfterTest
 	public void afterMethod() throws IOException {
 
 		Iterator<String> iterator = TestManager.MyDataDicitonary.keySet().iterator();
