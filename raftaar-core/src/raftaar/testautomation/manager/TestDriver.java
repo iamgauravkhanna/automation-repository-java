@@ -11,6 +11,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 
+import com.aventstack.extentreports.Status;
 import com.relevantcodes.extentreports.LogStatus;
 
 import raftaar.testautomation.utlities.ExcelUtils;
@@ -336,7 +337,8 @@ public class TestDriver {
 				Reporter.log("Executing STEP : " + c + " and Step Number : " + stepNumber + "\n");
 
 				// UITests.extentReportTestObject.log(LogStatus.INFO, c);
-				UITests.extentReportTestObject.log(LogStatus.INFO, a, c);
+				//UITests.extentReportsObj.log(LogStatus.INFO, a, c);
+				UITests.extentTestObj.log(Status.INFO, c);
 				// System.out.println("Executing STEP : " + c + "\n");
 
 				if (i.contains("testdatasheet")) {

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="My Test Suite" parallel="tests" preserve-order="true"
+	thread-count="1" verbose="1">
+
+	<test name="Web Tests">
+		<classes>
+			<class name="raftaar.testautomation.webTests.ClassA" />
+		</classes>
+	</test>
+
+</suite>

@@ -31,8 +31,8 @@ public class Framework {
 		Map m = LoadProperties.getProperties();
 
 		a = (String) m.get("testngSuiteFiles");
-		
-		System.out.println("Testng Suite File ==> "+a);
+
+		System.out.println("Testng Suite File ==> " + a);
 
 		TestNG tng = new TestNG();
 

@@ -53,6 +53,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import com.relevantcodes.extentreports.LogStatus;
 
 import raftaar.testautomation.utlities.JavaUtils;
@@ -184,6 +186,9 @@ public class WebPage {
 			// (elapsed % 3600) / 60, (elapsed % 60));
 
 			// StepOutcome = display;
+			String screenShotPath = WebPage.getscreenshot(driver);
+			
+			UITests.extentTestObj.log(Status.PASS, "Click Successful", MediaEntityBuilder.createScreenCaptureFromPath(screenShotPath, "Title of the screenshot").build());
 			break;
 
 		case "selectByVisibleText":
@@ -698,7 +703,7 @@ public class WebPage {
 
 	}
 
-	public static void getscreenshot(WebDriver d) throws Exception {
+	public static String getscreenshot(WebDriver d) throws Exception {
 		File scrFile = ((TakesScreenshot) d).getScreenshotAs(OutputType.FILE);
 		// The below method will save the screen shot in d drive with name
 		// "screenshot.png"
@@ -713,7 +718,7 @@ public class WebPage {
 		// UITests.extentReportTestObject.log(LogStatus.INFO, "Image", "Image
 		// example:", image.getAbsolutePath());
 		// UITests.extentReportTestObject.log(LogStatus.INFO,"Image",image.getAbsolutePath());
-		String ImgSource = image.getAbsolutePath();
+		String ImgSource = "./screenshots/" + out;
 		/*
 		 * UITests.extentReportTestObject.log(LogStatus.INFO, StepName,
 		 * UITests.extentReportTestObject.addScreenCapture(image.getAbsolutePath
@@ -725,8 +730,10 @@ public class WebPage {
 		// "<a href='" + ImgSource + "'>HTML Link</a>";
 		String HTMLCode = "<b><a href='" + ImgSource + "'>Screenshot</a></b> | " + "<a href='" + ImgSource
 				+ "'>Defect</a>  | " + "<a href='" + ImgSource + "'>HTML</a>";
-		UITests.extentReportTestObject.log(LogStatus.INFO, StepName, HTMLCode);
+		//UITests.extentReportTestObject.log(LogStatus.INFO, StepName, HTMLCode);
+		UITests.extentTestObj.log(Status.INFO, StepName);
 		screenShotCounter++;
+		return ImgSource;		
 	}
 
 }

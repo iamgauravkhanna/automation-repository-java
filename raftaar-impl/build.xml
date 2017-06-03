@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project raftaar-impl with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR file Export Wizard-->
+    <!--ANT 1.7 is required-->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="C:/office/code/grv-workspace"/>
+    <property name="dir.jarfile" value="${dir.buildfile}"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/RaftaarTestRunner.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="others.RaftaarTestRunner"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ testng.jar jcommander.jar bsh-2.0b4.jar snakeyaml.jar java-mail-1.4.4.jar log4j-1.2.17.jar ATUReporter_Selenium_testNG_5.5_BETA.jar ATUTestRecorder_2.1.jar Fillo-1.12.jar poi-3.13-20150929.jar poi-examples-3.13-20150929.jar poi-excelant-3.13-20150929.jar poi-ooxml-3.13-20150929.jar poi-ooxml-schemas-3.13-20150929.jar poi-scratchpad-3.13-20150929.jar xmlbeans-2.6.0.jar guice-4.0.jar velocity-dep-1.4.jar reportng-1.1.4.jar freemarker-2.3.23.jar extentreports-java-2.05.jar testng-6.9.6.jar apache-xml-xerces.jar commons-io-2.4.jar ojdbc6.jar selenium-server-standalone-2.53.1.jar selenium-server-standalone.jar bsh-2.0b4.jar jcommander-1.48.jar bson-3.3.0.jar commons-codec-1.9.jar commons-logging-1.2.jar extentreports-3.0.6.jar httpclient-4.5.2.jar httpcore-4.4.4.jar httpmime-4.5.2.jar jsoup-1.9.2.jar mongodb-driver-3.3.0.jar mongodb-driver-core-3.3.0.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="${dir.jarfile}/bin"/>
+            <fileset dir="C:/office/code/github/automation-repository-java/raftaar-core/bin"/>
+            <zipfileset dir="C:/office/soft/eclipse/plugins/org.testng.eclipse_6.11.0.201703011520/lib" includes="testng.jar"/>
+            <zipfileset dir="C:/office/soft/eclipse/plugins/org.testng.eclipse_6.11.0.201703011520/lib" includes="jcommander.jar"/>
+            <zipfileset dir="C:/office/soft/eclipse/plugins/org.testng.eclipse_6.11.0.201703011520/lib" includes="bsh-2.0b4.jar"/>
+            <zipfileset dir="C:/office/soft/eclipse/plugins/org.testng.eclipse_6.11.0.201703011520/lib" includes="snakeyaml.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/email" includes="java-mail-1.4.4.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/logs" includes="log4j-1.2.17.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/others" includes="ATUReporter_Selenium_testNG_5.5_BETA.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/others" includes="ATUTestRecorder_2.1.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/others" includes="Fillo-1.12.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/poi" includes="poi-3.13-20150929.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/poi" includes="poi-examples-3.13-20150929.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/poi" includes="poi-excelant-3.13-20150929.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/poi" includes="poi-ooxml-3.13-20150929.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/poi" includes="poi-ooxml-schemas-3.13-20150929.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/poi" includes="poi-scratchpad-3.13-20150929.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/poi" includes="xmlbeans-2.6.0.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/reportng" includes="guice-4.0.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/reportng/reportng-1.1.4" includes="velocity-dep-1.4.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/reportng/reportng-1.1.4" includes="reportng-1.1.4.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="freemarker-2.3.23.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/others" includes="extentreports-java-2.05.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/testng" includes="testng-6.9.6.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/apache" includes="apache-xml-xerces.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/apache" includes="commons-io-2.4.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/db" includes="ojdbc6.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/selenium" includes="selenium-server-standalone-2.53.1.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/selenium" includes="selenium-server-standalone.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="bsh-2.0b4.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="jcommander-1.48.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="bson-3.3.0.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="commons-codec-1.9.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="commons-logging-1.2.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="extentreports-3.0.6.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="httpclient-4.5.2.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="httpcore-4.4.4.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="httpmime-4.5.2.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="jsoup-1.9.2.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="mongodb-driver-3.3.0.jar"/>
+            <zipfileset dir="C:/office/code/github/automation-repository-java/raftaar-core/lib/extentReports" includes="mongodb-driver-core-3.3.0.jar"/>
+        </jar>
+    </target>
+</project>

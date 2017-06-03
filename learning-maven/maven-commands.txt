@@ -1,0 +1,6 @@
+mvn validate
+mvn clean
+mvn compile
+mvn test
+mvn test-compile
+mvn install

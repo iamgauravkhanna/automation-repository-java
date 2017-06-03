@@ -4,11 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.MediaEntityModelProvider;
+import com.aventstack.extentreports.Status;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import raftaar.testautomation.manager.TestManager;
+import raftaar.testautomation.manager.UITests;
 
 public class MobilePage {
 
@@ -88,6 +93,10 @@ public class MobilePage {
 		case "click":
 
 			element.click();
+			
+			String screenShotPath = WebPage.getscreenshot(mobileWebDriver);
+			
+			UITests.extentTestObj.log(Status.PASS, "Click Successful", MediaEntityBuilder.createScreenCaptureFromPath(screenShotPath, "Title of the screenshot").build());
 
 			break;
 
