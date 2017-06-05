@@ -1,0 +1,12 @@
+Java=1.8.0_60
+Framework=POM
+TestNG=6.11
+ReportNG=1.1.4
+Extent_Report=3.0.6
+Maven=3.3.3
+Jenkins=2.56
+Grid=2.53.1
+Rest_Assured=3.0.3
+Selenium=2.53.1
+Appium=1.5.3
+poi=3.13
