@@ -1,23 +1,37 @@
 package raftaar.testautomation.webTests;
 
+import java.net.MalformedURLException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import raftaar.testautomation.pageObjects.bookTheAutomatedTester.*;
+import raftaar.testautomation.pageObjects.bookTheAutomatedTester.Chapter1Page;
+import raftaar.testautomation.pageObjects.bookTheAutomatedTester.HomePage;
+import raftaar.testautomation.utils.WebPage;
 
 public class ClassA {
 
 	HomePage homePageObj;
 	Chapter1Page chapterOneObj;
+	WebDriver webDriverObj;
+	WebPage webPageObj;
 
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws MalformedURLException {
+
+		//
+		webPageObj = new WebPage();
+
+		// Passing WebDriver Object
+		webDriverObj = webPageObj.initializeDriverObj();
 
 		// Create Home Page Object
-		homePageObj = new HomePage();
+		homePageObj = new HomePage(webDriverObj);
 
 		// Create Chapter One Page Object
-		chapterOneObj = new Chapter1Page();
+		chapterOneObj = new Chapter1Page(webDriverObj);
 
 	}
 
@@ -51,4 +65,10 @@ public class ClassA {
 		homePageObj.clickOnLinkChapter2();
 	}
 
+	@AfterMethod
+	public void tearDown() {
+
+		webDriverObj.quit();
+
+	}
 }

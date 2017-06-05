@@ -38,9 +38,9 @@ public class HomePage {
 	 * @param driver
 	 *            an instance of WebDriver
 	 */
-	public HomePage() {
+	public HomePage(WebDriver driver) {
 
-		webDriverObj = webPageObj.initializeDriverObj(webDriverObj);
+		webDriverObj = driver;
 
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(webDriverObj, 30);
 

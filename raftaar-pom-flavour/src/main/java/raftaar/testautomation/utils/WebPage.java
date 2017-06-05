@@ -1,8 +1,14 @@
 package raftaar.testautomation.utils;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * 
@@ -40,11 +46,21 @@ public class WebPage {
 		driverObj.get(url);
 	}
 
-	public WebDriver initializeDriverObj(WebDriver webDriverObj) {
+	public WebDriver initializeDriverObj() throws MalformedURLException {
 
-		webDriverObj = new FirefoxDriver();
+		// myDriver = new FirefoxDriver();
 
-		return webDriverObj;
+		// System.out.println("Entering Remote URL section");
+
+		DesiredCapabilities capability = DesiredCapabilities.firefox();
+
+		capability.setBrowserName("firefox");
+
+		capability.setPlatform(Platform.WINDOWS);
+
+		myDriver = new RemoteWebDriver(new URL("http://192.168.49.72:4444/wd/hub"), capability);
+
+		return myDriver;
 
 	}
 }

@@ -23,9 +23,9 @@ public class Chapter1Page {
 	 * @param driver
 	 *            an instance of WebDriver
 	 */
-	public Chapter1Page() {
-
-		webDriverObj = webPageObj.initializeDriverObj(webDriverObj);
+	public Chapter1Page(WebDriver driver) {
+		
+		webDriverObj = driver;
 
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(webDriverObj, 30);
 
