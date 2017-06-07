@@ -6,9 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
+import raftaar.testautomation.utils.BaseTest;
+import raftaar.testautomation.utils.LogManager;
 import raftaar.testautomation.utils.WebPage;
 
-public class HomePage {
+public class HomePage extends BaseTest {
 
 	private WebDriver webDriverObj;
 
@@ -47,6 +49,8 @@ public class HomePage {
 		PageFactory.initElements(factory, this);
 
 		System.out.println("Home Page Elements Page Initialized");
+		
+		LogManager.info("Home Page Elements Page Initialized");
 	}
 
 	//
@@ -70,7 +74,7 @@ public class HomePage {
 
 	public void openHomePage() {
 
-		webPageObj.get(webDriverObj, "http://book.theautomatedtester.co.uk/");
+		webPageObj.get(webDriverObj, "http://book.theautomatedtester.co.uk/");		
 
 	}
 

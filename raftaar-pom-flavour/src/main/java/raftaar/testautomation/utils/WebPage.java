@@ -10,6 +10,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 /**
  * 
  * This class represents handling all possible methods on web page in a browser
@@ -23,6 +26,7 @@ public class WebPage {
 	WebDriver myDriver;
 
 	public WebPage() {
+
 	}
 
 	public void clickSimple(WebElement chapter1) {
@@ -59,6 +63,8 @@ public class WebPage {
 		capability.setPlatform(Platform.WINDOWS);
 
 		myDriver = new RemoteWebDriver(new URL("http://192.168.49.72:4444/wd/hub"), capability);
+
+		LogManager.info("Browser Initialized");
 
 		return myDriver;
 

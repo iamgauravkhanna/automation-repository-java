@@ -2,7 +2,6 @@
 
 <suite name="My Test Suite" parallel="methods" preserve-order="true"
 	thread-count="2" verbose="1">
-
 	<test name="Web Tests">
 		<classes>
 			<class name="raftaar.testautomation.webTests.ClassA" />

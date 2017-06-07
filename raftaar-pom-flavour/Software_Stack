@@ -10,3 +10,4 @@ Rest_Assured=3.0.3
 Selenium=2.53.1
 Appium=1.5.3
 poi=3.13
+Log4j=1.2.17

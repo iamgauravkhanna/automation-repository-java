@@ -6,9 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
+import raftaar.testautomation.utils.BaseTest;
 import raftaar.testautomation.utils.WebPage;
 
-public class Chapter1Page {
+public class Chapter1Page extends BaseTest {
 
 	private WebDriver webDriverObj;
 
@@ -24,7 +25,7 @@ public class Chapter1Page {
 	 *            an instance of WebDriver
 	 */
 	public Chapter1Page(WebDriver driver) {
-		
+
 		webDriverObj = driver;
 
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(webDriverObj, 30);
