@@ -1,4 +1,4 @@
-package raftaar.testautomation.webTests;
+package raftaar.testautomation.webTests.bookTheAutomatedTester;
 
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
