@@ -1,22 +1,16 @@
 package raftaar.testautomation.utils;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * 
- * This class represents handling all possible methods on web page in a browser
+ * This class represents methods to be executed on web page in browser
  * 
  * @author Gaurav Khanna
  * 
@@ -32,15 +26,19 @@ public class WebPage extends BaseTest {
 	private String originalColor = "none";
 	private int elementWaitTime = 10;
 
-	public WebPage() {
+	public WebPage(WebDriver driver) {
+
+		myDriver = driver;
 
 	}
 
-	public void clickSimple(WebElement chapter1) {
+	public void clickSimple(By locator) {
 
-		LogManager.info("Value of Webelement " + chapter1);
+		WebElement e = findElement(locator);
 
-		chapter1.click();
+		LogManager.info("Value of Webelement " + e);
+
+		e.click();
 	}
 
 	public WebDriver openBrowser(WebDriver webDriverObj, String browserName) {
@@ -48,51 +46,36 @@ public class WebPage extends BaseTest {
 		this.myDriver = webDriverObj;
 
 		if (browserName.contains("Firefox")) {
+
 			myDriver = new FirefoxDriver();
 		}
 
 		return myDriver;
 	}
 
-	public void get(WebDriver driverObj, String url) {
+	public void get(String url) {
 
-		driverObj.get(url);
+		myDriver.get(url);
 
-		driverObj.manage().window().maximize();
+		myDriver.manage().window().maximize();
 	}
 
-	public WebDriver initializeDriverObj() throws MalformedURLException {
+	public WebElement findElement(By locator) {
 
-		// myDriver = new FirefoxDriver();
-
-		// System.out.println("Entering Remote URL section");
-
-		DesiredCapabilities capability = DesiredCapabilities.firefox();
-
-		capability.setBrowserName("firefox");
-
-		capability.setPlatform(Platform.WINDOWS);
-
-		myDriver = new RemoteWebDriver(new URL("http://192.168.49.72:4444/wd/hub"), capability);
-
-		LogManager.info("Browser Initialized");
-
-		return myDriver;
-
-	}
-
-	public WebElement findElement(WebDriver webDriverObj, By locator) {
-
-		wait = new WebDriverWait(webDriverObj, elementWaitTime);
+		wait = new WebDriverWait(myDriver, elementWaitTime);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
-		element = webDriverObj.findElement(locator);
+		element = myDriver.findElement(locator);
 
 		try {
-			fnHighlightMe(driver, element);
+
+			fnHighlightMe(myDriver, element);
+
+			LogManager.info("Element Highlighted");
+
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
@@ -105,13 +88,6 @@ public class WebPage extends BaseTest {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		for (int iCnt = 0; iCnt < 3; iCnt++) {
-			/*
-			 * // Execute javascript js.executeScript(
-			 * "arguments[0].style.border='4px groove green'", element);
-			 * Thread.sleep(1000); js.executeScript(
-			 * "arguments[0].style.border='outline|#00ff00 solid 3px'",
-			 * element);
-			 */
 
 			js.executeScript("arguments[0].style." + highLightPropertyName + " = '" + highlightColor + "'", element);
 			Thread.sleep(50);
@@ -124,6 +100,35 @@ public class WebPage extends BaseTest {
 
 			js.executeScript("arguments[0].style." + highLightPropertyName + " = '" + originalColor + "'", element);
 
+		}
+
+	}
+
+	public void assertPresent(By homeFrontEndText) {
+
+		findElement(homeFrontEndText);
+		LogManager.info("Element is Visible on UI");
+
+	}
+
+	public void setText(By email, String emailID) {
+
+		findElement(email).sendKeys(emailID);
+
+	}
+
+	public void switchToWindow(String your_title) {
+
+		String currentWindow = myDriver.getWindowHandle(); // will keep current
+															// window to switch
+															// back
+		for (String winHandle : myDriver.getWindowHandles()) {
+			if (myDriver.switchTo().window(winHandle).getTitle().equals(your_title)) {
+				// This is the one you're looking for
+				break;
+			} else {
+				myDriver.switchTo().window(currentWindow);
+			}
 		}
 
 	}

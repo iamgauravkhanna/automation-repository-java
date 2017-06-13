@@ -1,17 +1,12 @@
 package raftaar.testautomation.utils;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 public class LogManager {
 
 	// Initialize Log4j logs
 
-	private static Logger Log = Logger.getLogger(LogManager.class.getName());
-	
-	public LogManager(){
-		PropertyConfigurator.configure("log4j.properties");
-	}
+	private static Logger Log = Logger.getLogger("MyLogger");
 
 	// This is to print log for the beginning of the test case, as we usually
 	// run so many test cases as a test suite

@@ -4,7 +4,7 @@
 	thread-count="2" verbose="1">
 	<test name="Web Tests">
 		<classes>
-			<class name="raftaar.testautomation.webTests.ClassA" />
+			<class name="raftaar.testautomation.webTests.phpTravels.FrontEndTests" />
 		</classes>
 	</test>
 
