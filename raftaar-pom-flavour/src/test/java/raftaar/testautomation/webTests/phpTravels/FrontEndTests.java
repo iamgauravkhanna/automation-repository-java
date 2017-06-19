@@ -9,7 +9,6 @@ import raftaar.testautomation.pageObjects.phpTravels.AdminPage;
 import raftaar.testautomation.pageObjects.phpTravels.DashBoardPage;
 import raftaar.testautomation.pageObjects.phpTravels.HomePage;
 import raftaar.testautomation.utils.DriverUtil;
-import raftaar.testautomation.utils.LogManager;
 
 public class FrontEndTests {
 

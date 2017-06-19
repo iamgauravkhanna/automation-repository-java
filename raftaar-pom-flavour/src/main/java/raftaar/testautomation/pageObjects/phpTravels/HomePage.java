@@ -19,25 +19,25 @@ public class HomePage extends WebPage {
 
 	public void verifyHomeFrontEndPresent() {
 
-		super.assertPresent(homeFrontEndText);
+		assertPresent(homeFrontEndText);
 
 	}
 
 	public void openBrowser() {
 
-		super.get("http://phptravels.com/demo/");
+		get("http://phptravels.com/demo/");
 
 	}
 
 	public void clickAdminLink() {
 
-		super.clickSimple(AdminLink);
+		clickSimple(AdminLink);
 
 	}
 
 	public void switchToAdminPage() {
 
-		super.switchToWindow("Administator Login");
+		switchToWindow("Administator Login");
 
 	}
 

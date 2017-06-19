@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
-public class Addition {
+public class Addition  {
 
 	// Create Object of WebDriver
 	WebDriver driver;
