@@ -1,19 +1,19 @@
-package raftaar.testautomation.mobileTests.calculator;
+package raftaar.testautomation.mobileTests.apiDemo;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
-import raftaar.testautomation.pageObjects.calculator.HomeActivity;
+import raftaar.testautomation.pageObjects.apiDemo.MainActivity;
 import raftaar.testautomation.utils.BaseTest;
 import raftaar.testautomation.utils.DriverUtil;
 
-public class MathOperationsTests extends BaseTest {
+public class TestSuite1 extends BaseTest {
 
 	AndroidDriver<?> androidDriverObj;
 	DriverUtil iDriverUtil;
-	HomeActivity homeActivityObj;
+	MainActivity mainActivityObj;
 
 	@BeforeTest
 	public void setUp() {
@@ -25,29 +25,20 @@ public class MathOperationsTests extends BaseTest {
 		androidDriverObj = iDriverUtil.initializeAndroidDriverObj();
 
 		//
-		homeActivityObj = new HomeActivity(androidDriverObj);
+		mainActivityObj = new MainActivity(androidDriverObj);
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void AdditionTest() {
 
 		//
-		homeActivityObj.clickDigit2();
+		mainActivityObj.clickViews();
 
 		//
-		homeActivityObj.clickSymbolPlus();
+		mainActivityObj.clickSeekBar();
 
 		//
-		homeActivityObj.clickDigit4();
-
-		//
-		homeActivityObj.clickEqualsTo();
-
-		//
-		homeActivityObj.printResult();
-
-		//
-		homeActivityObj.takeScreenShot();
+		mainActivityObj.dragSeekBarToRight(60);
 
 	}
 

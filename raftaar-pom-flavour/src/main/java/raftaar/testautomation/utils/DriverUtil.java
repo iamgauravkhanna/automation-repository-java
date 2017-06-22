@@ -49,23 +49,32 @@ public class DriverUtil {
 		capabilities.setCapability("VERSION", "5.0.1");
 
 		// Set android deviceName desired capability
-		capabilities.setCapability("deviceName", "Emulator");
+		capabilities.setCapability("deviceName", "emulator-5554");
 
 		// Set platformName desired capability.
 		capabilities.setCapability("platformName", "Android");
 
 		// This package name of your app (you can get it from apk info app)
-		capabilities.setCapability("appPackage", "com.android.calculator2");
+		// capabilities.setCapability("appPackage", "com.android.calculator2");
 
 		// This is Launcher activity of your app (you can get it from apk info
 		// app)
-		capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
+		// capabilities.setCapability("appActivity",
+		// "com.android.calculator2.Calculator");
+		
+		capabilities.setCapability("applicationName", "API Demos");
+		
+		capabilities.setCapability("noReset", true);
+
+		capabilities.setCapability("appPackage", "io.appium.android.apis");
+
+		capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
 
 		// Create RemoteWebDriver instance and connect to the Appium server
 		// It will launch the Calculator App in Android Device using the
 		// configurations specified in Desired Capabilities
 		try {
-			androidDriverObj = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			androidDriverObj = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4444/wd/hub"), capabilities);
 		} catch (MalformedURLException e) {
 
 			e.printStackTrace();

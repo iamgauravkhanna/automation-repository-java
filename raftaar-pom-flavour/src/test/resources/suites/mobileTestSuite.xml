@@ -3,9 +3,9 @@
 <suite name="My Test Suite" parallel="methods" preserve-order="true"
 	thread-count="2" verbose="1">
 
-	<test name="Web Tests">
+	<test name="Mobile Tests">
 		<classes>
-			<class name="raftaar.testautomation.webTests.phpTravels.FrontEndTests" />
+			<class name="raftaar.testautomation.mobileTests.calculator.MathOperationsTests" />
 		</classes>
 	</test>
 
