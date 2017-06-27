@@ -1,4 +1,4 @@
-package raftaar.testautomation.pageObjects.calculator;
+package raftaar.testautomation.mobile.pageObjects.calculator;
 
 import org.openqa.selenium.By;
 

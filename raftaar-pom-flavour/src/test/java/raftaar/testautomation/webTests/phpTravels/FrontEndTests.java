@@ -5,10 +5,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import raftaar.testautomation.pageObjects.phpTravels.AdminPage;
-import raftaar.testautomation.pageObjects.phpTravels.DashBoardPage;
-import raftaar.testautomation.pageObjects.phpTravels.HomePage;
 import raftaar.testautomation.utils.DriverUtil;
+import raftaar.testautomation.web.pageObjects.phpTravels.AdminPage;
+import raftaar.testautomation.web.pageObjects.phpTravels.DashBoardPage;
+import raftaar.testautomation.web.pageObjects.phpTravels.HomePage;
 
 public class FrontEndTests {
 

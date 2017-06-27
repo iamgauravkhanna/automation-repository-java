@@ -5,7 +5,7 @@
 
 	<test name="Mobile Tests">
 		<classes>
-			<class name="raftaar.testautomation.mobileTests.calculator.MathOperationsTests" />
+			<class name="raftaar.testautomation.mobileTests.apiDemo.TestSuite1" />
 		</classes>
 	</test>
 

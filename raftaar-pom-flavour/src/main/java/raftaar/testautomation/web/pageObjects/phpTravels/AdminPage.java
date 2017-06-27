@@ -1,4 +1,4 @@
-package raftaar.testautomation.pageObjects.phpTravels;
+package raftaar.testautomation.web.pageObjects.phpTravels;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package raftaar.testautomation.pageObjects.apiDemo;
+package raftaar.testautomation.mobile.pageObjects.apiDemo;
 
 import org.openqa.selenium.By;
 

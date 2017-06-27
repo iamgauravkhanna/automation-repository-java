@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
-import raftaar.testautomation.pageObjects.apiDemo.MainActivity;
+import raftaar.testautomation.mobile.pageObjects.apiDemo.MainActivity;
 import raftaar.testautomation.utils.BaseTest;
 import raftaar.testautomation.utils.DriverUtil;
 
