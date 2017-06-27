@@ -58,7 +58,7 @@
 					<version>2.16</version>
 					<configuration>
 						<suiteXmlFiles>
-							<suiteXmlFile>src/test/resources/suites/webTestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
