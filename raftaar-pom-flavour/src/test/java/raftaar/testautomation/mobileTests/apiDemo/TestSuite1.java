@@ -26,6 +26,14 @@ public class TestSuite1 extends BaseTest {
 
 		//
 		mainActivityObj = new MainActivity(androidDriverObj);
+		
+		String URL=System.getProperty("url");
+		
+		String BROWSER=System.getProperty("browser");
+		
+		System.out.println("BROWSER : " + BROWSER);
+		
+		System.out.println("URL : " + URL);
 	}
 
 	@Test(enabled = true)

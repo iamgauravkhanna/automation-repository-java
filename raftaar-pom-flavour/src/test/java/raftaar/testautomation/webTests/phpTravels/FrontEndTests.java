@@ -1,5 +1,7 @@
 package raftaar.testautomation.webTests.phpTravels;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,7 +21,7 @@ public class FrontEndTests {
 	DashBoardPage dashBoardObj;
 
 	@BeforeMethod
-	void setup() {
+	void setup() throws Exception {
 
 		iWebDriver = new DriverUtil();
 

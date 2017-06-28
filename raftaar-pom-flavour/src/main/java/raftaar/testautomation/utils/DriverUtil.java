@@ -4,10 +4,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -17,22 +24,55 @@ public class DriverUtil {
 	WebDriver webDriverObj;
 	AndroidDriver<?> androidDriverObj;
 	IOSDriver<?> iOSDriverObj;
+	DesiredCapabilities capability;
+	WebDriverWait wait;
 
-	public WebDriver initializeDriverObj() {
+	public WebDriver initializeDriverObj() throws Exception {
 
-		DesiredCapabilities capability = DesiredCapabilities.firefox();
+		if ((LoadProperties.getProperties().get("IsRemote").equalsIgnoreCase("Yes"))) {
 
-		capability.setBrowserName("firefox");
+			if (System.getProperty("Browser").equalsIgnoreCase("Firefox")) {
+				capability = DesiredCapabilities.firefox();
+				capability.setBrowserName("firefox");
+			}
 
-		capability.setPlatform(Platform.WINDOWS);
+			if (System.getProperty("Platform").equalsIgnoreCase("Windows")) {
 
-		try {
-			webDriverObj = new RemoteWebDriver(new URL("http://192.168.49.72:4444/wd/hub"), capability);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
+				capability.setPlatform(Platform.WINDOWS);
+			}
+
+			webDriverObj = new RemoteWebDriver(new URL(System.getProperty("RemoteURL")), capability);
 		}
 
-		LogManager.info("Browser Initialized");
+		else {
+
+			String browserName = System.getProperty("Browser");
+
+			try {
+				DesiredCapabilities dc = new DesiredCapabilities();
+				dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+
+				if (browserName.equalsIgnoreCase("firefox")) {
+					webDriverObj = new FirefoxDriver();
+				} else if (browserName.equalsIgnoreCase("chrome")) {
+					String chromepath = System.getProperty("user.dir") + "\\lib\\drivers\\chromedriver.exe";
+					System.setProperty("webdriver.chrome.driver", chromepath);
+					webDriverObj = new ChromeDriver();
+				} else if (browserName.equalsIgnoreCase("ie")) {
+					// String iepath = System.getProperty("user.dir") +
+					// "\\drivers\\IEDriverServer.exe";
+					String iepath = System.getProperty("user.dir") + "\\lib\\drivers\\IEDriverServer.exe";
+					System.setProperty("webdriver.ie.driver", iepath);
+					// driver = new InternetExplorerDriver();
+					DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+					caps.setCapability("ignoreZoomSetting", true);
+					webDriverObj = new InternetExplorerDriver(caps);
+				}
+				wait = new WebDriverWait(webDriverObj, 30);
+			} catch (WebDriverException e) {
+				System.out.println(e.getMessage());
+			}
+		}
 
 		return webDriverObj;
 
@@ -61,9 +101,9 @@ public class DriverUtil {
 		// app)
 		// capabilities.setCapability("appActivity",
 		// "com.android.calculator2.Calculator");
-		
+
 		capabilities.setCapability("applicationName", "API Demos");
-		
+
 		capabilities.setCapability("noReset", true);
 
 		capabilities.setCapability("appPackage", "io.appium.android.apis");

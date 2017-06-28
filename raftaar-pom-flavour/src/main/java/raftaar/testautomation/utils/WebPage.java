@@ -32,6 +32,22 @@ public class WebPage extends BaseTest {
 
 	}
 
+	/**
+	 * This method clicks on element using webdriver's click command
+	 *
+	 * @author Gaurav Khanna
+	 *
+	 * @since 1st Jan 2017
+	 *
+	 * @version 1.0
+	 *
+	 * @param By element
+	 *
+	 * @return Nothing
+	 *
+	 * @throws Nothing
+	 *             
+	 */
 	public void clickSimple(By locator) {
 
 		WebElement e = findElement(locator);
