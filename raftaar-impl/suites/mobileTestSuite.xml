@@ -10,7 +10,11 @@
 
 	<test name="Mobile Tests">
 		<classes>
-			<class name="mobileTests.TestSuite1" />
+			<class name="mobileTests.TestSuite1">
+				<methods>
+					<include name="Test1001" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 

@@ -52,6 +52,11 @@ public class Framework {
 
 	}
 
+	/**
+	 * This method will run test case 
+	 * @param testCaseID
+	 * @throws Exception
+	 */
 	public static void runTestCase(String testCaseID) throws Exception {
 
 		System.out.println("Test Case ID " + testCaseID);

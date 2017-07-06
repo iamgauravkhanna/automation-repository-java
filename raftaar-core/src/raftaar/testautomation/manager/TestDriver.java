@@ -19,8 +19,8 @@ import raftaar.testautomation.utlities.JavaUtils;
 
 public class TestDriver {
 
-	public ExcelUtils excelFile = new ExcelUtils(TestManager.MyDataDicitonary.get("testCasePath"));
-	public ExcelUtils dataFile = new ExcelUtils(TestManager.MyDataDicitonary.get("testDataPath"));
+	public ExcelUtils excelFile = new ExcelUtils(System.getProperty("user.dir") + TestManager.MyDataDicitonary.get("testCasePath"));
+	public ExcelUtils dataFile = new ExcelUtils(System.getProperty("user.dir") + TestManager.MyDataDicitonary.get("testDataPath"));
 
 	// Logger log = Logger.getLogger("TestDriver");
 	// configure log4j properties file

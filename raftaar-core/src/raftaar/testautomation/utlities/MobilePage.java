@@ -8,8 +8,12 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.Status;
 
+import io.appium.java_client.android.AndroidDriver;
+
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import org.apache.log4j.helpers.UtilLoggingLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import raftaar.testautomation.manager.TestManager;
@@ -17,7 +21,7 @@ import raftaar.testautomation.manager.UITests;
 
 public class MobilePage {
 
-	public static WebDriver mobileWebDriver;
+	public static AndroidDriver mobileWebDriver;
 	public String StepOutCome;
 	public By Locator;
 	public static WebElement element;
@@ -27,56 +31,7 @@ public class MobilePage {
 
 	public MobilePage() throws MalformedURLException {
 
-		// Created object of DesiredCapabilities class
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-
-		// Set android VERSION desired capability
-		capabilities.setCapability("VERSION", TestManager.MyDataDicitonary.get("version"));
-
-		// Set android deviceName desired capability
-		capabilities.setCapability("deviceName", TestManager.MyDataDicitonary.get("deviceName"));
-
-		// Set platformName desired capability.
-		capabilities.setCapability("platformName", TestManager.MyDataDicitonary.get("platformName"));
-
-		// This package name of your app (you can get it from apk info app)
-		capabilities.setCapability("appPackage", TestManager.MyDataDicitonary.get("appPackage"));
-
-		// This is Launcher activity of your app (you can get it from apk info
-		// app)
-		capabilities.setCapability("appActivity", TestManager.MyDataDicitonary.get("appActivity"));
-
-		// Create RemoteWebDriver instance and connect to the Appium server
-		// It will launch the Calculator App in Android Device using the
-		// configurations specified in Desired Capabilities
-
-		System.out.println("MobilePage() Constructor Called");
-
-		/*
-		 * try {
-		 * 
-		 * System.out.println("Entering into Mobile Page Constructor");
-		 * 
-		 * mobileWebDriver = new RemoteWebDriver(new
-		 * URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		 * 
-		 * } catch (MalformedURLException e) {
-		 * 
-		 * // TODO Auto-generated catch block e.printStackTrace();
-		 * 
-		 * System.out.println("Unable to Initialize Obj of mobileWebDriver");
-		 * 
-		 * }
-		 */
-
-		if (mobileWebDriver == null) {
-
-			System.out.println("Entering into Mobile Page Constructor");
-
-			mobileWebDriver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		} else {
-			System.out.println("Unable to Initialize Obj of mobileWebDriver");
-		}
+		UITests.log.debug("MobilePage() constructor called");
 
 	}
 
@@ -84,22 +39,69 @@ public class MobilePage {
 
 			String testcaseid) throws Exception {
 
-		System.out.println("Executing Mobile Keywords");
-
-		element = findLocator(object);
+		System.out.println("Executing Mobile Keywords");		
 
 		switch (action) {
 
-		case "click":
+		case "launchApp":
 
-			element.click();
-			
-			String screenShotPath = WebPage.getscreenshot(mobileWebDriver);
-			
-			UITests.extentTestObj.log(Status.PASS, "Click Successful", MediaEntityBuilder.createScreenCaptureFromPath(screenShotPath, "Title of the screenshot").build());
+			// Created object of DesiredCapabilities class
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+
+			// Set android VERSION desired capability
+			capabilities.setCapability("VERSION", TestManager.MyDataDicitonary.get("version"));
+
+			// Set android deviceName desired capability
+			capabilities.setCapability("deviceName", TestManager.MyDataDicitonary.get("deviceName"));
+
+			// Set platformName desired capability.
+			capabilities.setCapability("platformName", TestManager.MyDataDicitonary.get("platformName"));
+
+			// This package name of your app (you can get it from apk info app)
+			capabilities.setCapability("appPackage", TestManager.MyDataDicitonary.get("appPackage"));
+
+			// This is Launcher activity of your app (you can get it from apk
+			// info
+			// app)
+			capabilities.setCapability("appActivity", TestManager.MyDataDicitonary.get("appActivity"));
+
+			if (mobileWebDriver == null) {
+
+				System.out.println("Entering into Mobile Page Constructor");
+
+				mobileWebDriver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			} else {
+				System.out.println("Unable to Initialize Obj of mobileWebDriver");
+			}
 
 			break;
 
+		case "click":
+			
+			element = findLocator(object);
+
+			element.click();
+
+			String screenShotPath = WebPage.getscreenshot(mobileWebDriver);
+
+			UITests.extentTestObj.log(Status.PASS, "Click Successful",
+					MediaEntityBuilder.createScreenCaptureFromPath(screenShotPath, "Title of the screenshot").build());
+
+			break;
+
+		case "closeApp":
+
+			mobileWebDriver.closeApp();
+
+			break;
+
+		case "setVariable":
+
+			System.out.println("Set Variable : ");
+			TestManager.MyDataDicitonary.put(object, data);
+			System.out.println("Value : " + TestManager.MyDataDicitonary.get(object));				
+
+			break;
 		}
 
 		return (StepOutCome = "Its StepName");

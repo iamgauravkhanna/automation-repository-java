@@ -10,8 +10,11 @@
 
 	<test name="Web Tests">
 		<classes>
-			<class name="webTests.TestSuite1" />
+			<class name="webTests.TestSuite1">
+				<methods>
+					<include name="Test001" />
+				</methods>
+			</class>
 		</classes>
 	</test>
-
 </suite>

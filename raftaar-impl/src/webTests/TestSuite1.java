@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import raftaar.testautomation.framework.Framework;
 
 /**
- * This is the beginning point of Framework
- * 
+ * This class contain test cases to be run
+ *
+ * @author Gaurav Khanna
  */
 
 public class TestSuite1 {
