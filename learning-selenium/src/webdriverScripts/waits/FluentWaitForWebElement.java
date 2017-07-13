@@ -50,7 +50,7 @@ public class FluentWaitForWebElement {
 				});
 	}
 
-	@Test
+/*	@Test
 	public void waitForWebElementFluentlyPredicate() {
 
 		new FluentWait<WebElement>(countdown).withTimeout(10, TimeUnit.SECONDS).pollingEvery(100, TimeUnit.MILLISECONDS)
@@ -60,7 +60,7 @@ public class FluentWaitForWebElement {
 						return element.getText().endsWith("04");
 					}
 				});
-	}
+	}*/
 
 	@AfterClass
 	public static void tearDown() {
