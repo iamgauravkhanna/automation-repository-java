@@ -2,9 +2,7 @@
 <suite name="Parallel tests" parallel="tests" thread-count="1">
 	<test name="Test One">
 		<classes>
-			<!-- <class name="com.gtg.raftaar_implementation.webApp.phix.TestSuite1" /> -->
-			<class name="com.gtg.raftaar_implementation.webApp.phix.TestSuite2" />
-			<!-- <class name="com.gtg.raftaar_implementation.webApp.phix.TestSuite3" /> -->
+			<class name="org.gtg.raftaar_implementation.webApp.phix.TestSuite2" />
 		</classes>
 	</test>
 </suite>
