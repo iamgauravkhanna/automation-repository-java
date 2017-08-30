@@ -40,7 +40,7 @@ public class FindMiddleIndexWhenSumOfBothSidesEqual {
 
 	public static void main(String[] args) {
 
-		int[] arrayObj = { 2, 4, 6, 7, 3, 9, 4, 6 };
+		int[] arrayObj = { 2, 6, 8, 0 };
 
 		int middleIndexObj = findMiddleIndexMethod(arrayObj);
 
