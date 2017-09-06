@@ -25,6 +25,7 @@ public class JavaUtils {
 	}
 
 	public static String generateEmail() {
+
 		return RandomStringUtils.random(10, "abcdefghijklmnopqrstuvwxyz") + "@" + "mailinator.com";
 	}
 

@@ -5,12 +5,13 @@ import java.util.HashMap;
 import org.gtg.raftaar.utils.BasePage;
 import org.gtg.raftaar.utils.DriverUtil;
 import org.gtg.raftaar.utils.JavaUtils;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.Broker;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.Employer;
+import org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker.Broker;
+import org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker.Employer;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.gtg.raftaar.utils.*;
 
 /**
  * Test Suite containing Tests
@@ -20,9 +21,7 @@ public class TestSuite1 extends BasePage {
 	DriverUtil driverUtilObj;
 
 	@BeforeMethod
-	public void setUp() {
-
-		System.out.println("Calling setUp() ");
+	public void setUp() {		
 
 		driverUtilObj = new DriverUtil();
 		webDriverObj = driverUtilObj.intializeDriver();

@@ -68,8 +68,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.gtg</groupId>
-			<artifactId>raftaar_framework</artifactId>
-			<version>version_2.0</version>
+			<artifactId>RAFTAAR_FRAMEWORK</artifactId>
+			<version>2.0</version>
 		</dependency>
 
 	</dependencies>

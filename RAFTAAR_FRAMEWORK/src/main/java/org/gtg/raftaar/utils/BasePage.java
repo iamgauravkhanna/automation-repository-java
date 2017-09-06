@@ -53,20 +53,20 @@ public class BasePage {
 	public HashMap<String, HashMap<String, HashMap<String, HashMap<String, String>>>> testDataMap;
 
 	//
-	public int defaultTimeOut = 60;
+	public int defaultTimeOut = 60;	
 
 	/**
 	 * Constructor of this class
 	 */
 	public BasePage() {
 
-		try {
+		try {						
+			
+			LogUtils.info("Calling BasePage Constructor");					
 
 			testCaseMap = getProperties();
 
-			createTestDataMap();
-
-			System.out.println("Calling BasePage Constructor");
+			createTestDataMap();			
 
 		} catch (Exception e) {
 
