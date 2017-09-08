@@ -1,5 +1,7 @@
 package org.gtg.raftaar_implementation.webApp.phix;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.HashMap;
 
 import org.gtg.raftaar.utils.BasePage;
@@ -19,8 +21,6 @@ public class TestSuite2 extends BasePage {
 
 	@BeforeMethod
 	public void setUp() {
-
-		System.out.println("Calling setUp() ");
 
 		driverUtilObj = new DriverUtil();
 
@@ -43,6 +43,10 @@ public class TestSuite2 extends BasePage {
 		click(By.id("radiobutton"));
 
 		selectByValue(By.id("selecttype"), "Selenium Core");
+
+		assertEquals("Assert that this text is on the page", findElement(By.id("divontheleft")).getText());
+
+		assertEquals("Verify this button he here", findElement(By.id("verifybutton")).getAttribute("value"));
 
 	}
 

@@ -7,7 +7,7 @@ public class Employer {
 	/**
 	 * Home
 	 */
-	public static final String HOME__EMPLOYER_URL = "https://newauth.phix-qa07.demo.hcinternal.net/employer";
+	public static final String HOME__EMPLOYER_URL = "abcd";
 
 	/**
 	 * Login

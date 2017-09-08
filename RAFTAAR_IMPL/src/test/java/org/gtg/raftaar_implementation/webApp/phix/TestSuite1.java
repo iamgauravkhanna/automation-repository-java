@@ -11,7 +11,6 @@ import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.gtg.raftaar.utils.*;
 
 /**
  * Test Suite containing Tests
@@ -31,17 +30,15 @@ public class TestSuite1 extends BasePage {
 	@Test
 	public void TestCase1() {
 
-		setVariable("Portal", "https://hc.phix-dev18.demo.hcinternal.net/broker/broker/homePage");
-
-		// getUrl(testCaseMap.get("Portal"));
+		setVariable("Portal", "abcd");
 
 		openBrowser(Broker.HOME__BROKER_URL);
 
 		click(Broker.HOME__LOGIN_LINK);
 
-		setText(Broker.LOGIN__USERNAME, "phix.agencyadmin01@qa05.org");
+		setText(Broker.LOGIN__USERNAME, "xxx");
 
-		setText(Broker.LOGIN__PASSWORD, "Qwerty@12");
+		setText(Broker.LOGIN__PASSWORD, "yyy");
 
 		click(Broker.LOGIN__LOG_IN);
 
@@ -60,7 +57,7 @@ public class TestSuite1 extends BasePage {
 	@Test
 	public void TestCase2() {
 
-		setVariable("EmployerPortal", "https://newauth.phix-qa07.demo.hcinternal.net/employer");
+		setVariable("EmployerPortal", "abcd");
 
 		openBrowser(Employer.HOME__EMPLOYER_URL);
 
