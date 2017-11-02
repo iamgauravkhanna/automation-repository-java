@@ -6,7 +6,10 @@ public class BaseTest {
 
 	protected BaseTest() {
 
+		LogUtils.info("Initalizing Log4j Properties File");
+		
 		PropertyConfigurator.configure("log4j.properties");
+		
 	}
 
 }

@@ -125,11 +125,11 @@ public class DriverUtil {
 			//
 			String browserName = configPropertiesMap.get("Browser");
 
-			//
-			System.out.println("Running Tests on Remote Browsers");
+			//			
+			LogUtils.info("Running Tests on Remote Browsers");
 
 			//
-			System.out.println("Browser Name => " + browserName);
+			LogUtils.info("Browser Name => " + browserName);
 
 			//
 			if (browserName.equalsIgnoreCase("chrome")) {//
@@ -221,12 +221,12 @@ public class DriverUtil {
 		if (element != null) {
 
 			//
-			System.out.println("Element Found");
+			LogUtils.info("Element Found");
 
 		} else {
 
 			//
-			System.out.println("Element not found");
+			LogUtils.info("Element not found");
 
 		}
 
@@ -296,7 +296,7 @@ public class DriverUtil {
 		}
 
 		//
-		System.out.println("Reading Contents of Property File");
+		LogUtils.info("Reading Contents of Property File");
 
 		//
 		for (String key : properties.stringPropertyNames()) {

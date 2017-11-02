@@ -10,6 +10,7 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -53,20 +54,20 @@ public class BasePage {
 	public HashMap<String, HashMap<String, HashMap<String, HashMap<String, String>>>> testDataMap;
 
 	//
-	public int defaultTimeOut = 60;	
+	public int defaultTimeOut = 60;
 
 	/**
 	 * Constructor of this class
 	 */
 	public BasePage() {
 
-		try {						
-			
-			LogUtils.info("Calling BasePage Constructor");					
+		try {
+
+			LogUtils.info("Calling BasePage Constructor");
 
 			testCaseMap = getProperties();
 
-			createTestDataMap();			
+			createTestDataMap();
 
 		} catch (Exception e) {
 
@@ -86,13 +87,11 @@ public class BasePage {
 
 			if (listOfFiles[i].isFile()) {
 
-				System.out.println("File " + listOfFiles[i].getName());
-				
-				
+				LogUtils.info("File " + listOfFiles[i].getName());
 
 			} else if (listOfFiles[i].isDirectory()) {
 
-				System.out.println("Directory " + listOfFiles[i].getName());
+				LogUtils.info("Directory " + listOfFiles[i].getName());
 
 			}
 
@@ -108,7 +107,7 @@ public class BasePage {
 	public void click(By by) {
 
 		//
-		System.out.println("Using click()");
+		LogUtils.info("Using click()");
 
 		//
 		findElement(by).click();
@@ -117,7 +116,7 @@ public class BasePage {
 
 	public void clickLiElement(By by, String text) {
 
-		System.out.println("Starting Quick Fix.....");
+		LogUtils.info("Starting Quick Fix.....");
 
 		List<WebElement> options = webDriverObj.findElements(by);
 
@@ -127,7 +126,7 @@ public class BasePage {
 
 			if (opt.getText().contains(text)) {
 
-				System.out.println("Quick Fix Found");
+				LogUtils.info("Quick Fix Found");
 
 				opt.click();
 
@@ -143,9 +142,9 @@ public class BasePage {
 		boolean what = wait.until(ExpectedConditions.elementToBeClickable(findElement(by))) != null;
 
 		if (what)
-			System.out.println("Element is clickable");
+			LogUtils.info("Element is clickable");
 		else
-			System.out.println("Element not clickable");
+			LogUtils.info("Element not clickable");
 	}
 
 	/**
@@ -156,13 +155,13 @@ public class BasePage {
 	public void clickUsingJavaScript(By by) {
 
 		//
-		System.out.println("Using clickUsingJavaScript()");
+		LogUtils.info("Using clickUsingJavaScript()");
 
 		WebElement e = findElement(by);
 
 		JavascriptExecutor jse = (JavascriptExecutor) webDriverObj;
 
-		jse.executeScript("arguments[0].scrollIntoView()", e);
+		//jse.executeScript("arguments[0].scrollIntoView()", e);
 
 		jse.executeScript("arguments[0].click()", e);
 
@@ -180,10 +179,10 @@ public class BasePage {
 	public void getTagName(By locator) {
 
 		//
-		System.out.println("Using getTagName()");
+		LogUtils.info("Using getTagName()");
 
 		//
-		System.out.println("Tag Value is : " + findElement(locator).getTagName());
+		LogUtils.info("Tag Value is : " + findElement(locator).getTagName());
 
 	}
 
@@ -195,7 +194,7 @@ public class BasePage {
 	public void openBrowser(String link) {
 
 		//
-		System.out.println("Using getUrl()");
+		LogUtils.info("Using getUrl()");
 
 		//
 		webDriverObj.get(link);
@@ -212,10 +211,10 @@ public class BasePage {
 			String browserName = propertiesMap.get("Browser");
 
 			//
-			System.out.println("Running Tests on Remote Browsers");
+			LogUtils.info("Running Tests on Remote Browsers");
 
 			//
-			System.out.println("Browser Name => " + browserName);
+			LogUtils.info("Browser Name => " + browserName);
 
 			//
 			if (browserName.equalsIgnoreCase("chrome")) {//
@@ -326,7 +325,7 @@ public class BasePage {
 		} else {
 
 			//
-			System.out.println("Element not found");
+			LogUtils.info("Element not found");
 
 		}
 
@@ -358,6 +357,41 @@ public class BasePage {
 		//
 		findElement(locator).sendKeys(value);
 
+	}
+
+	public void type(String str, By locator) {
+
+		LogUtils.info("Using type() method");
+
+		char[] charArray = str.toCharArray();
+
+		for (Character c : charArray) {
+
+			findElement(locator).sendKeys(c.toString());
+
+		}
+
+	}
+
+	/**
+	 * Sends a special keystroke to element
+	 * 
+	 * @return
+	 */
+	public Keys pressKey(By locator, String key) throws Exception {
+
+		Keys KEY = null;
+
+		try {
+			KEY = Keys.valueOf(key.toUpperCase());
+
+			findElement(locator).sendKeys(KEY);
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return KEY;
 	}
 
 	/**
@@ -398,7 +432,7 @@ public class BasePage {
 		}
 
 		//
-		System.out.println("Reading Contents of Property File");
+		LogUtils.info("Reading Contents of Property File");
 
 		//
 		for (String key : properties.stringPropertyNames()) {
@@ -407,7 +441,7 @@ public class BasePage {
 			String value = properties.getProperty(key);
 
 			//
-			System.out.println(key + " => " + value);
+			LogUtils.info(key + " => " + value);
 
 			//
 			propertiesMap.put(key, value);
@@ -424,7 +458,7 @@ public class BasePage {
 
 		if (wait.until(ExpectedConditions.visibilityOfElementLocated(locator)) != null) {
 
-			System.out.println("Element Visible on UI");
+			LogUtils.info("Element Visible on UI");
 
 		}
 
@@ -544,6 +578,14 @@ public class BasePage {
 	 * 
 	 */
 	public void pause() {
+
+		try {
+			Thread.sleep(10000);
+			LogUtils.info("Pausing for 10 Secs");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

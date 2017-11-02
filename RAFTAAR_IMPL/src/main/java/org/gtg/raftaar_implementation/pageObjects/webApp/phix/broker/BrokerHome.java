@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BrokerHome extends BasePage {
 
-	public static final String BROKER_URL = "xxxx";
+	public static final String BROKER_URL = "https://fhm.phix-dev18.demo.hcinternal.net/broker/";
 
 	public static final By LOGIN_LINK = By.linkText("Log In");
 

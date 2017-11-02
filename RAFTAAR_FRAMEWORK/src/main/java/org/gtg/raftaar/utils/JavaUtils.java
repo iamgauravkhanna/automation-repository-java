@@ -10,13 +10,13 @@ public class JavaUtils {
 
 	public static void printHashMapValues(HashMap<String, String> mapObj) {
 
-		System.out.println("Calling Method : printHashMapValues() ");
+		LogUtils.info("Calling Method : printHashMapValues() ");
 
 		int counter = 1;
 
 		for (Entry<String, String> entry : mapObj.entrySet()) {
 
-			System.out.println("Entry #" + counter + " : " + entry.getKey() + " => " + entry.getValue());
+			LogUtils.info("Entry #" + counter + " : " + entry.getKey() + " => " + entry.getValue());
 
 			counter++;
 
@@ -27,6 +27,18 @@ public class JavaUtils {
 	public static String generateEmail() {
 
 		return RandomStringUtils.random(10, "abcdefghijklmnopqrstuvwxyz") + "@" + "mailinator.com";
+	}
+
+	public static String generateRandomString() {
+
+		return RandomStringUtils.randomAlphabetic(10);
+
+	}
+	
+	public static String generateRandomNumber(int i) {
+
+		return RandomStringUtils.randomNumeric(i);
+
 	}
 
 	public static String replaceVariable(String templateString) {

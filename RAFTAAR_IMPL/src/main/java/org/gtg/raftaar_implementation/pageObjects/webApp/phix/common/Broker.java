@@ -1,4 +1,4 @@
-package org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker;
+package org.gtg.raftaar_implementation.pageObjects.webApp.phix.common;
 
 import org.openqa.selenium.By;
 
@@ -7,7 +7,7 @@ public class Broker {
 	/**
 	 * Home Page
 	 */
-	public static final String HOME__BROKER_URL = "abcd";
+	public static final String HOME__BROKER_URL = "https://hc.phix-dev18.demo.hcinternal.net/broker/";
 
 	public static final By HOME__LOGIN_LINK = By.linkText("Log In");
 

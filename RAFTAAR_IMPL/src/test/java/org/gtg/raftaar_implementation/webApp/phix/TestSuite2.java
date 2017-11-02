@@ -7,6 +7,7 @@ import java.util.HashMap;
 import org.gtg.raftaar.utils.BasePage;
 import org.gtg.raftaar.utils.DriverUtil;
 import org.gtg.raftaar.utils.JavaUtils;
+import org.gtg.raftaar.utils.LogUtils;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -36,7 +37,7 @@ public class TestSuite2 extends BasePage {
 
 		maximizeBrowser();
 
-		System.out.println("Page Title : " + getPageTitle());
+		LogUtils.info("Page Title : " + getPageTitle());
 
 		click(By.linkText("Chapter1"));
 

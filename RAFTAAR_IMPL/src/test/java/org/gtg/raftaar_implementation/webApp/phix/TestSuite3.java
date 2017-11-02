@@ -1,13 +1,11 @@
 package org.gtg.raftaar_implementation.webApp.phix;
 
 import org.gtg.raftaar.utils.*;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker.BrokerHome;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.employer.Auth0LogIn;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.employer.Home;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.employer.SignUp;
+import org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker.*;
+import org.gtg.raftaar_implementation.pageObjects.webApp.phix.common.Auth0LogIn;
+import org.gtg.raftaar_implementation.pageObjects.webApp.phix.employer.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,17 +18,15 @@ public class TestSuite3 extends BaseTest {
 
 		super();
 	}
-	
+
 	WebDriver webDriverObj;
 	Home employerHomeObj;
 	Auth0LogIn auth0LogInObj;
 	SignUp signUpObj;
 	BrokerHome brokerHomePageObj;
-
-	@BeforeClass
-	public void setUp1() {
-
-	}
+	TopLinks topLinksObj;
+	ManageEmployer manageEmployerPageObj;
+	AddEmployer addEmployerPageObj;
 
 	@BeforeMethod
 	public void setUp() {
@@ -44,11 +40,12 @@ public class TestSuite3 extends BaseTest {
 	@AfterMethod
 	public void tearDown() {
 
-		webDriverObj.close();
+		LogUtils.info("Calling tearDown() Method");
+		//webDriverObj.close();
 
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void TC001() {
 
 		employerHomeObj = new Home(webDriverObj);
@@ -58,7 +55,24 @@ public class TestSuite3 extends BaseTest {
 		auth0LogInObj.clickSignUp();
 		signUpObj = new SignUp(webDriverObj);
 		signUpObj.startSignUp();
-		auth0LogInObj.login();
+		auth0LogInObj.employerLogin();
+	}
+
+	@Test
+	public void TC002() {
+
+		brokerHomePageObj = new BrokerHome(webDriverObj);
+		brokerHomePageObj.openHomePage();
+		auth0LogInObj = new Auth0LogIn(webDriverObj);
+		auth0LogInObj.brokerLogin();
+		topLinksObj = new TopLinks(webDriverObj);
+		topLinksObj.clickClientsTab();
+		manageEmployerPageObj = new ManageEmployer(webDriverObj);
+		manageEmployerPageObj.clickAddEmployer();
+		manageEmployerPageObj.clickEnterManually();
+		addEmployerPageObj = new AddEmployer(webDriverObj);
+		addEmployerPageObj.fillEmployerDetails();
+
 	}
 
 }

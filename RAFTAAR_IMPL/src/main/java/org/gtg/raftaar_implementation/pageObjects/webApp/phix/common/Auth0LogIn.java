@@ -1,4 +1,4 @@
-package org.gtg.raftaar_implementation.pageObjects.webApp.phix.employer;
+package org.gtg.raftaar_implementation.pageObjects.webApp.phix.common;
 
 import org.gtg.raftaar.utils.BasePage;
 import org.openqa.selenium.By;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Auth0LogIn extends BasePage {
 
-	public static final By LOGIN_WELCOME_TEXT = By.xpath("//h1[text()='Welcome to hCentive Benefits Marketplace!']");
+	public static final By LOGIN_WELCOME_TEXT = By.xpath("//h1[text()='Welcome to Fidelity Health Marketplace!']");
 
 	public static final By USERNAME = By.name("emailId");
 
@@ -26,15 +26,27 @@ public class Auth0LogIn extends BasePage {
 
 	}
 
-	public void login() {
+	public void login(String userName, String password) {
 
 		waitFor(LOGIN_WELCOME_TEXT);
 
-		setText(USERNAME, BasePage.testCaseMap.get("EmployerEmail"));
+		setText(USERNAME, userName);
 
-		setText(PASSWORD, BasePage.testCaseMap.get("EmployerPassword"));
+		setText(PASSWORD, password);
 
 		click(LOG_IN);
+
+	}
+
+	public void employerLogin() {
+
+		login(BasePage.testCaseMap.get("EmployerEmail"), BasePage.testCaseMap.get("EmployerPassword"));
+
+	}
+
+	public void brokerLogin() {
+
+		login("fhm.agencyadmin01@dev18.cc", "Qwerty@12");
 
 	}
 

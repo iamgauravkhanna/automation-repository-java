@@ -1,4 +1,4 @@
-package org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker;
+package org.gtg.raftaar_implementation.pageObjects.webApp.phix.employer;
 
 import org.openqa.selenium.By;
 
@@ -7,7 +7,7 @@ public class Employer {
 	/**
 	 * Home
 	 */
-	public static final String HOME__EMPLOYER_URL = "abcd";
+	public static final String HOME__EMPLOYER_URL = "https://hc.phix-dev18.demo.hcinternal.net/employer";
 
 	/**
 	 * Login

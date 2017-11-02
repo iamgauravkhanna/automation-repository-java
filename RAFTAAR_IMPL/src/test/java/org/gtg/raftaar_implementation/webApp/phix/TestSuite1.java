@@ -5,8 +5,8 @@ import java.util.HashMap;
 import org.gtg.raftaar.utils.BasePage;
 import org.gtg.raftaar.utils.DriverUtil;
 import org.gtg.raftaar.utils.JavaUtils;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker.Broker;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker.Employer;
+import org.gtg.raftaar_implementation.pageObjects.webApp.phix.common.Broker;
+import org.gtg.raftaar_implementation.pageObjects.webApp.phix.employer.Employer;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -30,7 +30,7 @@ public class TestSuite1 extends BasePage {
 	@Test
 	public void TestCase1() {
 
-		setVariable("Portal", "abcd");
+		setVariable("Portal", Broker.HOME__BROKER_URL);
 
 		openBrowser(Broker.HOME__BROKER_URL);
 
@@ -57,7 +57,7 @@ public class TestSuite1 extends BasePage {
 	@Test
 	public void TestCase2() {
 
-		setVariable("EmployerPortal", "abcd");
+		setVariable("EmployerPortal", Employer.HOME__EMPLOYER_URL);
 
 		openBrowser(Employer.HOME__EMPLOYER_URL);
 
