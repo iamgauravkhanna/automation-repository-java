@@ -14,7 +14,7 @@ public class GoogleChromeBrowser {
 	String baseUrl;
 
 	@Test
-	public void testusingGoogleChromeBrowser() {
+	public void testGoogleChromeBrowser() {
 
 		// Store Chrome Driver Path
 		String exePath = System.getProperty("user.dir") + "\\drivers\\windows\\chromedriver.exe";
@@ -35,7 +35,7 @@ public class GoogleChromeBrowser {
 		webDriver.manage().window().maximize();
 
 		// Click on Selenium link
-		webDriver.findElement(By.linkText("Selenium")).click();
+		webDriver.findElement(By.linkText("Automation")).click();
 
 		// This will close the browser
 		webDriver.quit();
