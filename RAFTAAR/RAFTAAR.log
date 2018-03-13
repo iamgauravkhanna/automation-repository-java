@@ -1,0 +1,15 @@
+2018-03-10 23:19:08 INFO  :48 - Calling setUp() Method
+2018-03-10 23:20:03 INFO  :48 - Calling setUp() Method
+2018-03-10 23:20:03 INFO  :48 - Reading Contents of Property File
+2018-03-10 23:20:03 INFO  :48 - Running Tests on Remote Browsers
+2018-03-10 23:20:03 INFO  :48 - Browser Name => Firefox
+2018-03-10 23:20:12 INFO  :48 - Calling BasePage Constructor
+2018-03-10 23:20:12 INFO  :48 - Reading Contents of Property File
+2018-03-10 23:20:12 INFO  :48 - Platform => Windows
+2018-03-10 23:20:12 INFO  :48 - RemoteURL => http://localhost:4444/wd/hub
+2018-03-10 23:20:12 INFO  :48 - IsRemote => Yes
+2018-03-10 23:20:12 INFO  :48 - Browser => Firefox
+2018-03-10 23:20:12 INFO  :48 - File test-data.xlsx
+2018-03-10 23:20:12 INFO  :48 - Using getUrl()
+2018-03-10 23:20:28 INFO  :48 - Using click()
+2018-03-10 23:20:33 INFO  :48 - Calling tearDown() Method
