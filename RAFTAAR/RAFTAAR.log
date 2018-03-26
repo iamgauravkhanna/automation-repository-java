@@ -13,3 +13,18 @@
 2018-03-19 22:52:27 INFO  :48 - Using getUrl()
 2018-03-19 22:52:36 INFO  :48 - Using click()
 2018-03-19 22:52:39 INFO  :48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 1
+2018-03-26 18:34:22 INFO  :48 - onStart ISuite : About to begin executing Suite Regression Suite - Project 1
+2018-03-26 18:34:22 INFO  :48 - onStart ITestContext : About to begin executing Test Test One
+2018-03-26 18:34:22 INFO  :48 - Reading Contents of Property File
+2018-03-26 18:34:22 INFO  :48 - Running Tests on Remote Browsers
+2018-03-26 18:34:22 INFO  :48 - Browser Name => Firefox
+2018-03-26 18:34:29 INFO  :48 - Calling BasePage Constructor
+2018-03-26 18:34:29 INFO  :48 - Reading Contents of Property File
+2018-03-26 18:34:29 INFO  :48 - Platform => Windows
+2018-03-26 18:34:29 INFO  :48 - RemoteURL => http://localhost:4444/wd/hub
+2018-03-26 18:34:29 INFO  :48 - IsRemote => Yes
+2018-03-26 18:34:29 INFO  :48 - Browser => Firefox
+2018-03-26 18:34:29 INFO  :48 - File test-data.xlsx
+2018-03-26 18:34:29 INFO  :48 - Using getUrl()
+2018-03-26 18:34:39 INFO  :48 - Using click()
+2018-03-26 18:34:42 INFO  :48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 1
