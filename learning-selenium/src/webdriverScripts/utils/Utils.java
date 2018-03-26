@@ -50,7 +50,7 @@ public class Utils {
 				capability.setBrowserName("IE");
 			}
 
-			capability.setPlatform(Platform.WINDOWS);
+			capability.setPlatform(Platform.LINUX);
 
 			myDriver = new RemoteWebDriver(new URL(hubURL), capability);
 

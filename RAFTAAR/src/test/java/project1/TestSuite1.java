@@ -8,18 +8,11 @@ import org.testng.annotations.Test;
 import pageObject.project1.Home;
 import utils.BaseTest;
 import utils.DriverUtil;
-import utils.LogUtils;
 
 /**
  * Test Suite containing Tests using POM Model
  */
 public class TestSuite1 extends BaseTest {
-
-	// Calling Constructor
-	TestSuite1() {
-
-		super();
-	}
 
 	WebDriver webDriverObj;
 	Home homePageObj;
@@ -27,7 +20,6 @@ public class TestSuite1 extends BaseTest {
 	@BeforeMethod
 	public void setUp() {
 
-		LogUtils.info("Calling setUp() Method");
 		DriverUtil driverUtilObj = new DriverUtil();
 		webDriverObj = driverUtilObj.intializeDriver();
 
@@ -36,7 +28,6 @@ public class TestSuite1 extends BaseTest {
 	@AfterMethod
 	public void tearDown() {
 
-		LogUtils.info("Calling tearDown() Method");
 		webDriverObj.close();
 
 	}

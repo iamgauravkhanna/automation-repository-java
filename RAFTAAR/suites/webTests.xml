@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Parallel tests" parallel="tests" thread-count="1">
+<suite name="Regression Suite - Project 1" parallel="tests" thread-count="1">
+	<listeners>
+		<listener class-name="utils.Listener" />
+	</listeners>
 	<test name="Test One">
 		<classes>
 			<class name="project1.TestSuite1" />
