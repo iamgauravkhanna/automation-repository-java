@@ -3,7 +3,7 @@ package pageObject.project08;
 import org.openqa.selenium.By;
 
 import io.appium.java_client.android.AndroidDriver;
-import raftaar.testautomation.utils.MobilePage;
+import utils.MobilePage;
 
 public class MainActivity extends MobilePage {
 	

@@ -1,7 +1,7 @@
 package pageObject.project02.employer;
 
-import org.gtg.raftaar.utils.BasePage;
-import org.gtg.raftaar.utils.JavaUtils;
+import utils.BasePage;
+import utils.JavaUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

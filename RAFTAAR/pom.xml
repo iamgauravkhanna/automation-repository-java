@@ -30,7 +30,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<!-- TestNG suite XML files -->
-						<suiteXmlFile>suites\webTests.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\resources\suites\project01.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

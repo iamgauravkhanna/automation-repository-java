@@ -12,7 +12,7 @@ import utils.DriverUtil;
 /**
  * Test Suite containing Tests using POM Model
  */
-public class TestSuite1 extends BaseTest {
+public class TestSuite01 extends BaseTest {
 
 	WebDriver webDriverObj;
 	Home homePageObj;

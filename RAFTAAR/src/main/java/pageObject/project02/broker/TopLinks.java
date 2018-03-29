@@ -1,6 +1,6 @@
 package pageObject.project02.broker;
 
-import org.gtg.raftaar.utils.BasePage;
+import utils.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

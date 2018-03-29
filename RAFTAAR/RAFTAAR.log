@@ -28,3 +28,33 @@
 2018-03-26 18:34:29 INFO  :48 - Using getUrl()
 2018-03-26 18:34:39 INFO  :48 - Using click()
 2018-03-26 18:34:42 INFO  :48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 1
+2018-03-29 19:05:26 INFO  :48 - onStart ISuite : About to begin executing Suite Regression Suite - Project 01
+2018-03-29 19:05:26 INFO  :48 - onStart ITestContext : About to begin executing Test Project 01 - Test 01
+2018-03-29 19:05:26 INFO  :48 - Reading Contents of Property File
+2018-03-29 19:05:26 INFO  :48 - Running Tests on Remote Browsers
+2018-03-29 19:05:26 INFO  :48 - Browser Name => Firefox
+2018-03-29 19:05:32 INFO  :48 - Calling BasePage Constructor
+2018-03-29 19:05:32 INFO  :48 - Reading Contents of Property File
+2018-03-29 19:05:32 INFO  :48 - Platform => Windows
+2018-03-29 19:05:32 INFO  :48 - RemoteURL => http://localhost:4444/wd/hub
+2018-03-29 19:05:32 INFO  :48 - IsRemote => Yes
+2018-03-29 19:05:32 INFO  :48 - Browser => Firefox
+2018-03-29 19:05:32 INFO  :48 - File test-data.xlsx
+2018-03-29 19:05:32 INFO  :48 - Using getUrl()
+2018-03-29 19:05:39 INFO  :48 - Using click()
+2018-03-29 19:05:42 INFO  :48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 01
+2018-03-29 19:06:37 INFO  :48 - onStart ISuite : About to begin executing Suite Regression Suite - Project 01
+2018-03-29 19:06:37 INFO  :48 - onStart ITestContext : About to begin executing Test Project 01 - Test 01
+2018-03-29 19:06:37 INFO  :48 - Reading Contents of Property File
+2018-03-29 19:06:37 INFO  :48 - Running Tests on Remote Browsers
+2018-03-29 19:06:37 INFO  :48 - Browser Name => Firefox
+2018-03-29 19:06:42 INFO  :48 - Calling BasePage Constructor
+2018-03-29 19:06:42 INFO  :48 - Reading Contents of Property File
+2018-03-29 19:06:42 INFO  :48 - Platform => Windows
+2018-03-29 19:06:42 INFO  :48 - RemoteURL => http://localhost:4444/wd/hub
+2018-03-29 19:06:42 INFO  :48 - IsRemote => Yes
+2018-03-29 19:06:42 INFO  :48 - Browser => Firefox
+2018-03-29 19:06:42 INFO  :48 - File test-data.xlsx
+2018-03-29 19:06:42 INFO  :48 - Using getUrl()
+2018-03-29 19:06:52 INFO  :48 - Using click()
+2018-03-29 19:06:55 INFO  :48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 01

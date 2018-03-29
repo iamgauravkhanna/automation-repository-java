@@ -1,6 +1,6 @@
 package pageObject.project02.employer;
 
-import org.gtg.raftaar.utils.BasePage;
+import utils.BasePage;
 import org.openqa.selenium.WebDriver;
 
 public class Home extends BasePage {
