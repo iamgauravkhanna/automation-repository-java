@@ -1,4 +1,4 @@
-package project1;
+package project01;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
