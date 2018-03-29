@@ -5,7 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import pageObject.project1.Home;
+import pageObject.project01.Home;
 import utils.BaseTest;
 import utils.DriverUtil;
 

@@ -1,4 +1,4 @@
-package pageObject.project6;
+package pageObject.project01;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,7 @@ import utils.BasePage;
 
 public class Home extends BasePage {
 
-	public static final String HOME_URL = "http://book.theautomatedtester.co.uk/";
+	public static final String HOME_URL = "http://automationpractice.com";
 
 	public Home(WebDriver driverObj) {
 
