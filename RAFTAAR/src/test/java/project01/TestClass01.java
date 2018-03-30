@@ -12,7 +12,7 @@ import utils.DriverUtil;
 /**
  * Test Suite containing Tests using POM Model
  */
-public class TestSuite01 extends BaseTest {
+public class TestClass01 extends BaseTest {
 
 	WebDriver webDriverObj;
 	Home homePageObj;
@@ -25,19 +25,19 @@ public class TestSuite01 extends BaseTest {
 
 	}
 
-	@AfterMethod
-	public void tearDown() {
-
-		webDriverObj.close();
-
-	}
-
 	@Test
 	public void TC001() {
 
 		homePageObj = new Home(webDriverObj);
 		homePageObj.openHomePage();
 		homePageObj.clickContactUs();
+
+	}
+
+	@AfterMethod
+	public void tearDown() {
+
+		webDriverObj.close();
 
 	}
 
