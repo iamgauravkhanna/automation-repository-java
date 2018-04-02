@@ -7,7 +7,7 @@ public class Broker {
 	/**
 	 * Home Page
 	 */
-	public static final String HOME__BROKER_URL = "https://fidelity.phix-dev18.demo.hcinternal.net/broker/";
+	public static final String HOME__BROKER_URL = "https://fidelity.phix-staging.demo.hcinternal.net/broker";
 
 	public static final By HOME__LOGIN_LINK = By.linkText("Log In");
 

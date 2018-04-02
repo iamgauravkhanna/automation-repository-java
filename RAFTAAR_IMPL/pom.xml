@@ -5,11 +5,11 @@
 
 
 	<groupId>com.gtg</groupId>
-	<artifactId>RAFTAAR_IMPL</artifactId>
+	<artifactId>learning-raftaar-impl</artifactId>
 	<version>2.0</version>
 	<packaging>jar</packaging>
 
-	<name>RAFTAAR_IMPL</name>
+	<name>learning-raftaar-impl</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

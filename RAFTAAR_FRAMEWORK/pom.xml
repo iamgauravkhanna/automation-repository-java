@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.gtg</groupId>
-	<artifactId>RAFTAAR_FRAMEWORK</artifactId>
+	<artifactId>learning-raftaar-framework</artifactId>
 	<version>2.0</version>
 	<packaging>jar</packaging>
 
-	<name>RAFTAAR_FRAMEWORK</name>
+	<name>learning-raftaar-framework</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
