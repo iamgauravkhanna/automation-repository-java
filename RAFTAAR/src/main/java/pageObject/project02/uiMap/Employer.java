@@ -1,4 +1,4 @@
-package pageObject.project02.employee;
+package pageObject.project02.uiMap;
 
 import org.openqa.selenium.By;
 
@@ -7,7 +7,7 @@ public class Employer {
 	/**
 	 * Home
 	 */
-	public static final String HOME__EMPLOYER_URL = "https://hc.phix-dev18.demo.hcinternal.net/employer";
+	public static final String HOME__EMPLOYER_URL = "https://qa07form1.product-phix-all-qa2.demo.hcinternal.net/employer";
 
 	/**
 	 * Login

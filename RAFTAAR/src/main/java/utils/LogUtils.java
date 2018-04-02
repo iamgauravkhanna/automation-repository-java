@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 public class LogUtils {
 
 	// Initialize Log4j logs
-	private static Logger Log = Logger.getLogger("");
+	private static Logger Log = Logger.getLogger("LogUtils");
 	
 	
 
@@ -46,6 +46,8 @@ public class LogUtils {
 	public static void info(String message) {
 
 		Log.info(message);
+		
+		System.out.println(message);
 
 	}
 

@@ -3,21 +3,23 @@ package pageObject.project03;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import raftaar.testautomation.utils.WebPage;
+import utils.BasePage;
 
-public class DashBoardPage extends WebPage {
+public class DashBoardPage extends BasePage {
 
 	By quickBookingButton = By.xpath("//button/div[contains(text(),' Quick Booking')]");
 
-	public DashBoardPage(WebDriver driver) {
-		super(driver);
+	public DashBoardPage(WebDriver driverObj) {
+
+		webDriverObj = driverObj;
+
 	}
 
 	public void validateHomeTiles() {
 
-		super.assertPresent(quickBookingButton);
+		assertPresent(quickBookingButton);
 
-		super.clickSimple(quickBookingButton);
+		click(quickBookingButton);
 
 	}
 

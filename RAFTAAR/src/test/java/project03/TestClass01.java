@@ -12,7 +12,6 @@ import pageObject.project03.HomePage;
 
 public class TestClass01 {
 
-	DriverUtil iWebDriver;
 	WebDriver webDriverObj;
 	HomePage homePageObj;
 	AdminPage adminPageObj;
@@ -27,7 +26,7 @@ public class TestClass01 {
 	}
 
 	@Test
-	public void firstTest() {
+	public void TestMethod001() {
 
 		homePageObj = new HomePage(webDriverObj);
 

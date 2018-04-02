@@ -5,8 +5,9 @@ import java.util.HashMap;
 import utils.BasePage;
 import utils.DriverUtil;
 import utils.JavaUtils;
-import pageObject.project02.common.Broker;
-import pageObject.project02.employer.Employer;
+import pageObject.project02.uiMap.Broker;
+import pageObject.project02.uiMap.Employer;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -28,13 +29,13 @@ public class TestClass01 extends BasePage {
 	}
 
 	@Test
-	public void TestCase1() {
+	public void TestMethod001() {
 
 		setVariable("Portal", Broker.HOME__BROKER_URL);
 
 		openBrowser(Broker.HOME__BROKER_URL);
 
-		click(Broker.HOME__LOGIN_LINK);
+		//click(Broker.HOME__LOGIN_LINK);
 
 		setText(Broker.LOGIN__USERNAME, "xxx");
 
@@ -55,7 +56,7 @@ public class TestClass01 extends BasePage {
 	}
 
 	@Test
-	public void TestCase2() {
+	public void TestMethod002() {
 
 		setVariable("EmployerPortal", Employer.HOME__EMPLOYER_URL);
 

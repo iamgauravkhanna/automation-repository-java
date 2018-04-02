@@ -1,9 +1,11 @@
 package project02;
 
-import org.gtg.raftaar.utils.*;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.broker.*;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.common.Auth0LogIn;
-import org.gtg.raftaar_implementation.pageObjects.webApp.phix.employer.*;
+import utils.*;
+import pageObject.project01.Home;
+import pageObject.project02.broker.*;
+import pageObject.project02.employer.*;
+import pageObject.project02.uiMap.Auth0LogIn;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

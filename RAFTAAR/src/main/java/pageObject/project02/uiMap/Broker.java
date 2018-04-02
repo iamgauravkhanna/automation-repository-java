@@ -1,4 +1,4 @@
-package pageObject.project02.common;
+package pageObject.project02.uiMap;
 
 import org.openqa.selenium.By;
 
@@ -7,7 +7,7 @@ public class Broker {
 	/**
 	 * Home Page
 	 */
-	public static final String HOME__BROKER_URL = "https://fidelity.phix-staging.demo.hcinternal.net/broker";
+	public static final String HOME__BROKER_URL = "https://qa07form1.product-phix-all-qa2.demo.hcinternal.net/broker";
 
 	public static final By HOME__LOGIN_LINK = By.linkText("Log In");
 

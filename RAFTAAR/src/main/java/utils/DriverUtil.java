@@ -11,14 +11,11 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Platform;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,10 +26,19 @@ import io.appium.java_client.ios.IOSDriver;
 
 public class DriverUtil {
 
+	//
 	WebDriver webDriverObj;
+
+	//
 	AndroidDriver<?> androidDriverObj;
+
+	//
 	IOSDriver<?> iOSDriverObj;
-	DesiredCapabilities capability;
+
+	//
+	DesiredCapabilities capabilities;
+
+	//
 	WebDriverWait wait;
 
 	//
@@ -44,164 +50,131 @@ public class DriverUtil {
 	//
 	String originalColor = "none";
 
-
 	//
 	public static Map<String, String> configPropertiesMap = new HashMap<String, String>();
-	
-	public DriverUtil(){
-		
+
+	public DriverUtil() {
+
+		LogUtils.info("Calling Constructor : DriverUtil()");
+
 		try {
+
+			// Get Properties File
 			getProperties();
+
 		} catch (Exception e) {
+
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	}
-
-	public WebDriver oldinitializeWebDriver() {
-
-		if ((BasePage.propertiesMap.get("IsRemote").equalsIgnoreCase("Yes"))) {
-
-			if (System.getProperty("Browser").equalsIgnoreCase("Firefox")) {
-				capability = DesiredCapabilities.firefox();
-				capability.setBrowserName("firefox");
-			}
-
-			if (System.getProperty("Platform").equalsIgnoreCase("Windows")) {
-
-				capability.setPlatform(Platform.WINDOWS);
-			}
-
-			try {
-				webDriverObj = new RemoteWebDriver(new URL(System.getProperty("RemoteURL")), capability);
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		else {
-
-			String browserName = System.getProperty("Browser");
-
-			try {
-				DesiredCapabilities dc = new DesiredCapabilities();
-				dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-
-				if (browserName.equalsIgnoreCase("firefox")) {
-					webDriverObj = new FirefoxDriver();
-				} else if (browserName.equalsIgnoreCase("chrome")) {
-					String chromepath = System.getProperty("user.dir") + "\\lib\\drivers\\chromedriver.exe";
-					System.setProperty("webdriver.chrome.driver", chromepath);
-					webDriverObj = new ChromeDriver();
-				} else if (browserName.equalsIgnoreCase("ie")) {
-					// String iepath = System.getProperty("user.dir") +
-					// "\\drivers\\IEDriverServer.exe";
-					String iepath = System.getProperty("user.dir") + "\\lib\\drivers\\IEDriverServer.exe";
-					System.setProperty("webdriver.ie.driver", iepath);
-					// driver = new InternetExplorerDriver();
-					DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
-					caps.setCapability("ignoreZoomSetting", true);
-					webDriverObj = new InternetExplorerDriver(caps);
-				}
-				wait = new WebDriverWait(webDriverObj, 30);
-			} catch (WebDriverException e) {
-				System.out.println(e.getMessage());
-			}
-		}
-
-		return webDriverObj;
 
 	}
 
 	/**
 	 * Initialize Browser & WebDriver
+	 * 
+	 * @throws MalformedURLException
 	 */
 	public WebDriver intializeDriver() {
 
 		if ((configPropertiesMap.get("IsRemote").equalsIgnoreCase("Yes"))) {
 
-			//
-			String browserName = configPropertiesMap.get("Browser");
+			LogUtils.info("Entering Method : intializeDriver");
 
-			//			
-			LogUtils.info("Running Tests on Remote Browsers");
+			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Firefox")) {
 
-			//
-			LogUtils.info("Browser Name => " + browserName);
-
-			//
-			if (browserName.equalsIgnoreCase("chrome")) {//
-
-				//
-				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "/resources/drivers/chromedriver.exe");
-
-				//
-				webDriverObj = new ChromeDriver();
-
-			} else if (browserName.equalsIgnoreCase("firefox")) {
+				LogUtils.info("Using Browser Firefox");
 
 				//
 				System.setProperty("webdriver.gecko.driver",
 						System.getProperty("user.dir") + "/resources/drivers/geckodriver.exe");
 
 				//
-				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+				capabilities = DesiredCapabilities.firefox();
+
+				//
+				capabilities.setBrowserName("firefox");
 
 				//
 				capabilities.setCapability("marionette", true);
+			}
 
-				//
-				webDriverObj = new FirefoxDriver(capabilities);
+			if (configPropertiesMap.get("Platform").equalsIgnoreCase("Windows")) {
 
-			} else if (browserName.equalsIgnoreCase("IE")) {
+				capabilities.setPlatform(Platform.WINDOWS);
+			}
 
-				//
-				System.setProperty("webdriver.ie.driver",
-						System.getProperty("user.dir") + "/resources/drivers/IEDriverServer.exe");
+			LogUtils.info("Entering Block to run test on Remote Environment");
 
-				//
-				DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+			try {
 
-				//
-				capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-						true);
+				webDriverObj = new RemoteWebDriver(new URL(configPropertiesMap.get("RemoteURL")), capabilities);
 
-				//
-				webDriverObj = new InternetExplorerDriver(capabilities);
+			} catch (MalformedURLException e) {
 
-				//
-				webDriverObj.manage().window().maximize();
+				LogUtils.info("Oops Error Occured");
+
+				e.printStackTrace();
 
 			}
 
 		} else {
 
-			//
-			DesiredCapabilities dc = new DesiredCapabilities();
+			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Chrome")) {
+				//
+				DesiredCapabilities dc = new DesiredCapabilities();
 
-			//
-			dc = DesiredCapabilities.chrome();
+				//
+				dc = DesiredCapabilities.chrome();
 
-			//
-			dc.setBrowserName("chrome");
+				//
+				dc.setBrowserName("chrome");
 
-			//
-			dc.setPlatform(Platform.WINDOWS);
+				//
+				dc.setPlatform(Platform.WINDOWS);
 
-			//
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "/resources/drivers/chromedriver.exe");
+				//
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "/resources/drivers/chromedriver.exe");
 
-			webDriverObj = new ChromeDriver(dc);
+				webDriverObj = new ChromeDriver(dc);
 
-			// Maximize browser window
-			webDriverObj.manage().window().maximize();
+				// Maximize browser window
+				webDriverObj.manage().window().maximize();
+			}
+
+			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Firefox")) {
+
+				System.setProperty("webdriver.gecko.driver",
+						System.getProperty("user.dir") + "/resources/drivers/geckodriver.exe");
+
+				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+
+				capabilities.setCapability("marionette", true);
+
+				webDriverObj = new FirefoxDriver(capabilities);
+			}
+
+			if (configPropertiesMap.get("Browser").equalsIgnoreCase("IE")) {
+
+				System.setProperty("webdriver.ie.driver",
+						System.getProperty("user.dir") + "/resources/drivers/IEDriverServer.exe");
+
+				DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+
+				capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+						true);
+
+				webDriverObj = new InternetExplorerDriver(capabilities);
+
+				webDriverObj.manage().window().maximize();
+
+			}
 
 		}
+
 		return webDriverObj;
+
 	}
 
 	/**
@@ -275,8 +248,8 @@ public class DriverUtil {
 		Properties properties = new Properties();
 
 		//
-		FileInputStream resourceStream = new FileInputStream(
-				System.getProperty("user.dir") + "/resources/config/config.properties");
+		FileInputStream resourceStream = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\"
+				+ System.getProperty("EnvironmentFilePath"));
 
 		try {
 
@@ -305,12 +278,17 @@ public class DriverUtil {
 			String value = properties.getProperty(key);
 
 			//
-			//System.out.println(key + " => " + value);
+			// System.out.println(key + " => " + value);
 
 			//
 			configPropertiesMap.put(key, value);
 
 		}
+
+		LogUtils.info(configPropertiesMap.get("Platform"));
+		LogUtils.info(configPropertiesMap.get("Browser"));
+		LogUtils.info(configPropertiesMap.get("IsRemote"));
+		LogUtils.info(configPropertiesMap.get("RemoteURL"));
 
 	}
 
@@ -357,7 +335,7 @@ public class DriverUtil {
 		}
 		return androidDriverObj;
 	}
-	
+
 	/**
 	 * Highlight Web Element in Browser
 	 * 

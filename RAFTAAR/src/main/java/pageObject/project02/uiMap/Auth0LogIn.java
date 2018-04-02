@@ -1,4 +1,4 @@
-package pageObject.project02.common;
+package pageObject.project02.uiMap;
 
 import utils.BasePage;
 import org.openqa.selenium.By;
