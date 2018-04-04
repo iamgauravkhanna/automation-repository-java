@@ -1,0 +1,70 @@
+2018-04-03 20:31:44 INFO  LogUtils:48 - onStart ISuite : About to begin executing Suite Regression Suite - Project 01
+2018-04-03 20:31:44 INFO  LogUtils:48 - onStart ITestContext : About to begin executing Test Project 01 - Test 01
+2018-04-03 20:31:44 INFO  LogUtils:48 - Calling Constructor : DriverUtil()
+2018-04-03 20:31:44 INFO  LogUtils:48 - Reading Contents of Property File
+2018-04-03 20:31:44 INFO  LogUtils:48 - Windows
+2018-04-03 20:31:44 INFO  LogUtils:48 - Firefox
+2018-04-03 20:31:44 INFO  LogUtils:48 - No
+2018-04-03 20:31:44 INFO  LogUtils:48 - http://localhost:4444/wd/hub
+2018-04-03 20:31:49 INFO  LogUtils:48 - Calling BasePage Constructor
+2018-04-03 20:31:49 INFO  LogUtils:48 - Reading Contents of Property File
+2018-04-03 20:31:49 INFO  LogUtils:48 - Platform => Windows
+2018-04-03 20:31:49 INFO  LogUtils:48 - RemoteURL => http://localhost:4444/wd/hub
+2018-04-03 20:31:49 INFO  LogUtils:48 - IsRemote => Yes
+2018-04-03 20:31:49 INFO  LogUtils:48 - Browser => Firefox
+2018-04-03 20:31:49 INFO  LogUtils:48 - File test-data.xlsx
+2018-04-03 20:31:49 INFO  LogUtils:48 - Using getUrl()
+2018-04-03 20:31:58 INFO  LogUtils:48 - Using click()
+2018-04-03 20:32:01 INFO  LogUtils:48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 01
+2018-04-04 15:58:47 INFO  LogUtils:48 - onStart ISuite : About to begin executing Suite Regression Suite - Project 01
+2018-04-04 15:58:47 INFO  LogUtils:48 - onStart ITestContext : About to begin executing Test Project 01 - Test 01
+2018-04-04 15:58:47 INFO  LogUtils:48 - Calling Constructor : DriverUtil()
+2018-04-04 15:58:47 INFO  LogUtils:48 - Reading Contents of Property File
+2018-04-04 15:58:47 INFO  LogUtils:48 - Windows
+2018-04-04 15:58:47 INFO  LogUtils:48 - Firefox
+2018-04-04 15:58:47 INFO  LogUtils:48 - Yes
+2018-04-04 15:58:47 INFO  LogUtils:48 - http://localhost:4444/wd/hub
+2018-04-04 15:58:47 INFO  LogUtils:48 - Entering Method : intializeDriver
+2018-04-04 15:58:47 INFO  LogUtils:48 - Using Browser Firefox
+2018-04-04 15:58:47 INFO  LogUtils:48 - Entering Block to run test on Remote Environment
+2018-04-04 15:58:53 INFO  LogUtils:48 - Calling BasePage Constructor
+2018-04-04 15:58:53 INFO  LogUtils:48 - Reading Contents of Property File
+2018-04-04 15:58:53 INFO  LogUtils:48 - Platform => Windows
+2018-04-04 15:58:53 INFO  LogUtils:48 - RemoteURL => http://localhost:4444/wd/hub
+2018-04-04 15:58:53 INFO  LogUtils:48 - IsRemote => Yes
+2018-04-04 15:58:53 INFO  LogUtils:48 - Browser => Firefox
+2018-04-04 15:58:53 INFO  LogUtils:48 - File test-data.xlsx
+2018-04-04 15:58:53 INFO  LogUtils:48 - Using getUrl()
+2018-04-04 15:59:01 INFO  LogUtils:48 - Using click()
+2018-04-04 15:59:05 INFO  LogUtils:48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 01
+2018-04-04 16:00:06 INFO  LogUtils:48 - onStart ISuite : About to begin executing Suite Regression Suite - Project 01
+2018-04-04 16:00:06 INFO  LogUtils:48 - onStart ITestContext : About to begin executing Test Project 01 - Test 01
+2018-04-04 16:00:06 INFO  LogUtils:48 - Calling Constructor : DriverUtil()
+2018-04-04 16:00:06 INFO  LogUtils:48 - Reading Contents of Property File
+2018-04-04 16:00:06 INFO  LogUtils:48 - Windows
+2018-04-04 16:00:06 INFO  LogUtils:48 - Chrome
+2018-04-04 16:00:06 INFO  LogUtils:48 - Yes
+2018-04-04 16:00:06 INFO  LogUtils:48 - http://localhost:4444/wd/hub
+2018-04-04 16:00:06 INFO  LogUtils:48 - Entering Method : intializeDriver
+2018-04-04 16:00:06 INFO  LogUtils:48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 01
+2018-04-04 16:01:28 INFO  LogUtils:48 - onStart ISuite : About to begin executing Suite Regression Suite - Project 01
+2018-04-04 16:01:28 INFO  LogUtils:48 - onStart ITestContext : About to begin executing Test Project 01 - Test 01
+2018-04-04 16:01:28 INFO  LogUtils:48 - Calling Constructor : DriverUtil()
+2018-04-04 16:01:28 INFO  LogUtils:48 - Reading Contents of Property File
+2018-04-04 16:01:28 INFO  LogUtils:48 - Windows
+2018-04-04 16:01:28 INFO  LogUtils:48 - Firefox
+2018-04-04 16:01:28 INFO  LogUtils:48 - Yes
+2018-04-04 16:01:28 INFO  LogUtils:48 - http://localhost:4444/wd/hub
+2018-04-04 16:01:28 INFO  LogUtils:48 - Entering Method : intializeDriver
+2018-04-04 16:01:28 INFO  LogUtils:48 - Using Browser Firefox
+2018-04-04 16:01:28 INFO  LogUtils:48 - Entering Block to run test on Remote Environment
+2018-04-04 16:01:33 INFO  LogUtils:48 - Calling BasePage Constructor
+2018-04-04 16:01:33 INFO  LogUtils:48 - Reading Contents of Property File
+2018-04-04 16:01:33 INFO  LogUtils:48 - Platform => Windows
+2018-04-04 16:01:33 INFO  LogUtils:48 - RemoteURL => http://localhost:4444/wd/hub
+2018-04-04 16:01:33 INFO  LogUtils:48 - IsRemote => Yes
+2018-04-04 16:01:33 INFO  LogUtils:48 - Browser => Firefox
+2018-04-04 16:01:33 INFO  LogUtils:48 - File test-data.xlsx
+2018-04-04 16:01:33 INFO  LogUtils:48 - Using getUrl()
+2018-04-04 16:01:42 INFO  LogUtils:48 - Using click()
+2018-04-04 16:01:46 INFO  LogUtils:48 - onFinish ISuite : About to end executing Suite Regression Suite - Project 01

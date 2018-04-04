@@ -13,3 +13,5 @@ http://www.vimalselvam.com/2016/05/15/selenium-grid-for-appium-mobile-automation
 https://eltestor.wordpress.com/2015/09/13/pass-parameters-from-command-line-to-a-selenium-project-using-maven-command/
 
 http://www.seleniumeasy.com/maven-tutorials/choose-selected-testng-xml-files-to-execute-using-maven
+
+While Upgrading Selenium to 3.11, apache library was explicitly added in pom.xml. Reference - https://github.com/seleniumhq/selenium/issues/2362

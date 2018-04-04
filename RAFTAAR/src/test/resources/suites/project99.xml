@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Suite - Project 99" parallel="tests"
+	thread-count="1">
+	<listeners>
+		<listener class-name="utils.Listener" />
+	</listeners>
+	<test name="Project 99 - Test 01">
+		<classes>
+			<class name="project99.TestClass01" />
+		</classes>
+	</test>
+</suite>

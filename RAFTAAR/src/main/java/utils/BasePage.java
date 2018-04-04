@@ -161,7 +161,7 @@ public class BasePage {
 
 		JavascriptExecutor jse = (JavascriptExecutor) webDriverObj;
 
-		//jse.executeScript("arguments[0].scrollIntoView()", e);
+		// jse.executeScript("arguments[0].scrollIntoView()", e);
 
 		jse.executeScript("arguments[0].click()", e);
 
@@ -343,6 +343,25 @@ public class BasePage {
 
 		// Return web element
 		return element;
+
+	}
+
+	/**
+	 * Method to find web element
+	 * 
+	 * @param locator
+	 * 
+	 * @return List of Web Elements
+	 * 
+	 */
+	public List<WebElement> findElements(By locator) {
+
+		List<WebElement> elements = null;
+
+		elements = webDriverObj.findElements(locator);
+
+		// Return web element
+		return elements;
 
 	}
 
@@ -624,6 +643,18 @@ public class BasePage {
 	public String getPageTitle() {
 
 		return webDriverObj.getTitle();
+
+	}
+
+	public void quitBrowser() {
+
+		webDriverObj.quit();
+
+	}
+
+	public void closeBrowser() {
+
+		webDriverObj.close();
 
 	}
 
