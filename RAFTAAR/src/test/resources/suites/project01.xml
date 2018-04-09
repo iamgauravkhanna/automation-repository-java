@@ -3,6 +3,7 @@
 	thread-count="1">
 	<listeners>
 		<listener class-name="utils.Listener" />
+		<listener class-name="utils.ExtentXListener" />
 	</listeners>
 	<test name="Project 01 - Test 01">
 		<classes>
