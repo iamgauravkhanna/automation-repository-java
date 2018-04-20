@@ -2,8 +2,11 @@
 <suite name="Regression Suite - Project 01" parallel="tests"
 	thread-count="1">
 	<listeners>
-		<listener class-name="utils.Listener" />
-		<listener class-name="utils.ExtentXListener" />
+		<listener class-name="utils.CustomListener01" />
+		<listener class-name="utils.CustomListener02" />
+		<listener class-name="utils.CustomListener03" />
+		<listener class-name="utils.CustomListener04" />
+		<listener class-name="utils.CustomListener10" />
 	</listeners>
 	<test name="Project 01 - Test 01">
 		<classes>

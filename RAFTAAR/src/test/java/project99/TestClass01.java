@@ -12,6 +12,7 @@ import utils.DriverUtil;
 public class TestClass01 extends BasePage {
 
 	DriverUtil driverUtilObj;
+
 	List<WebElement> links;
 
 	@Test(timeOut = 120000)
@@ -38,6 +39,11 @@ public class TestClass01 extends BasePage {
 		}
 
 		quitBrowser();
+
+	}
+
+	@Test
+	public void TestMethod002() {
 
 	}
 

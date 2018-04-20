@@ -47,6 +47,8 @@ public class LogManager {
 
 		Log.info(message);
 
+		System.out.println(message);
+
 	}
 
 	public static void warn(String message) {
