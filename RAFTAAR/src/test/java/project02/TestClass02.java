@@ -16,11 +16,6 @@ import org.testng.annotations.Test;
  */
 public class TestClass02 extends BaseTest {
 
-	TestClass02() {
-
-		super();
-	}
-
 	WebDriver webDriverObj;
 	Home employerHomeObj;
 	Auth0LogIn auth0LogInObj;
@@ -29,6 +24,7 @@ public class TestClass02 extends BaseTest {
 	TopLinks topLinksObj;
 	ManageEmployer manageEmployerPageObj;
 	AddEmployer addEmployerPageObj;
+	Reusables employerReusableObj;
 
 	@BeforeMethod
 	public void setUp() {
@@ -36,6 +32,25 @@ public class TestClass02 extends BaseTest {
 		LogUtils.info("Calling setUp() Method");
 		DriverUtil driverUtilObj = new DriverUtil();
 		webDriverObj = driverUtilObj.intializeDriver();
+		employerHomeObj = new Home(webDriverObj);
+		auth0LogInObj = new Auth0LogIn(webDriverObj);
+		signUpObj = new SignUp(webDriverObj);
+		topLinksObj = new TopLinks(webDriverObj);
+		manageEmployerPageObj = new ManageEmployer(webDriverObj);
+		addEmployerPageObj = new AddEmployer(webDriverObj);
+		brokerHomePageObj = new BrokerHome(webDriverObj);
+		employerReusableObj = new Reusables(webDriverObj);
+	}
+
+	@Test(description = "Workflow #1")
+	public void TC001() {
+
+		brokerHomePageObj.openHomePage();
+		auth0LogInObj.brokerLogin();
+		topLinksObj.clickClientsTab();
+		manageEmployerPageObj.clickAddEmployer();
+		manageEmployerPageObj.clickEnterManually();
+		employerReusableObj.fillEmployerDetails();
 
 	}
 
@@ -43,37 +58,7 @@ public class TestClass02 extends BaseTest {
 	public void tearDown() {
 
 		LogUtils.info("Calling tearDown() Method");
-		//webDriverObj.close();
-
-	}
-
-	@Test(enabled = false)
-	public void TC001() {
-
-		employerHomeObj = new Home(webDriverObj);
-		employerHomeObj.openHomePage();
-		employerHomeObj.maximizeBrowser();
-		auth0LogInObj = new Auth0LogIn(webDriverObj);
-		auth0LogInObj.clickSignUp();
-		signUpObj = new SignUp(webDriverObj);
-		signUpObj.startSignUp();
-		auth0LogInObj.employerLogin();
-	}
-
-	@Test
-	public void TC002() {
-
-		brokerHomePageObj = new BrokerHome(webDriverObj);
-		brokerHomePageObj.openHomePage();
-		auth0LogInObj = new Auth0LogIn(webDriverObj);
-		auth0LogInObj.brokerLogin();
-		topLinksObj = new TopLinks(webDriverObj);
-		topLinksObj.clickClientsTab();
-		manageEmployerPageObj = new ManageEmployer(webDriverObj);
-		manageEmployerPageObj.clickAddEmployer();
-		manageEmployerPageObj.clickEnterManually();
-		addEmployerPageObj = new AddEmployer(webDriverObj);
-		addEmployerPageObj.fillEmployerDetails();
+		webDriverObj.close();
 
 	}
 

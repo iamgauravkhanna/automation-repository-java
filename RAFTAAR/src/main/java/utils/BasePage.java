@@ -19,9 +19,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 /**
  * This is base class for web tests containing all the methods possible on UI.
@@ -65,7 +67,7 @@ public class BasePage {
 
 			LogUtils.info("Calling BasePage Constructor");
 
-			testCaseMap = getProperties();
+			// testCaseMap = getProperties();
 
 			createTestDataMap();
 
@@ -320,7 +322,7 @@ public class BasePage {
 		if (element != null) {
 
 			//
-			System.out.println("Element Found");
+			LogUtils.info("Element Found");
 
 		} else {
 
@@ -431,12 +433,15 @@ public class BasePage {
 
 		//
 		FileInputStream resourceStream = new FileInputStream(
-				System.getProperty("user.dir") + "/resources/config/config.properties");
+				System.getProperty("user.dir") + "\\src\\main\\resources\\common.properties");
 
 		try {
 
 			//
 			properties.load(resourceStream);
+
+			//
+			LogUtils.info("Common Properties Loaded Successfully");
 
 		} catch (IOException e) {
 
@@ -656,6 +661,23 @@ public class BasePage {
 
 		webDriverObj.close();
 
+	}
+
+	public void waitForPageLoaded() {
+		ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
+			public Boolean apply(WebDriver driver) {
+				return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString()
+						.equals("complete");
+			}
+		};
+		try {
+			Thread.sleep(1000);
+			WebDriverWait wait = new WebDriverWait(webDriverObj, 90);
+			wait.until(expectation);
+			LogUtils.info("In Try Block of waitForPageLoaded() Method");
+		} catch (Throwable error) {
+			Assert.fail("Timeout waiting for Page Load Request to complete.");
+		}
 	}
 
 }

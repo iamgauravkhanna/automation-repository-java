@@ -53,7 +53,7 @@ public class MobilePage extends BaseTest {
 
 		WebElement e = findElement(locator);
 
-		LogManager.info("Value of Webelement " + e);
+		LogUtils.info("Value of Webelement " + e);
 
 		e.click();
 	}
@@ -73,7 +73,7 @@ public class MobilePage extends BaseTest {
 
 		WebElement e = findElement(locator);
 
-		LogManager.info("Value of Webelement " + e);
+		LogUtils.info("Value of Webelement " + e);
 
 		return e.getText();
 
@@ -144,7 +144,7 @@ public class MobilePage extends BaseTest {
 
 		double percantageObj = percantage / 100;
 
-		LogManager.info("Value of percantageObj : " + percantageObj);
+		LogUtils.info("Value of percantageObj : " + percantageObj);
 
 		// endX * 0.6 means at 60% of seek bar width.
 		int moveToXDirectionAt = (int) (endX * percantageObj);

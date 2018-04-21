@@ -26,12 +26,18 @@ public class ManageEmployer extends BasePage {
 
 	public void clickAddEmployer() {
 
+		//waitForPageLoaded();
+		
+		isClickable(ADD_EMPLOYER);
+		
 		click(ADD_EMPLOYER);
 
 	}
 
 	public void clickEnterManually() {
 
+		//waitForPageLoaded();
+		
 		click(ENTER_MANUALLY);
 
 	}

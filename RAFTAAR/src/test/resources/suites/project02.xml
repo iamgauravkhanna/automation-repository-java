@@ -1,17 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
 <suite name="Regression Suite - Project 02" parallel="tests"
-	thread-count="1">
+	thread-count="10">
+
 	<listeners>
-		<listener class-name="utils.Listener" />
+		<listener class-name="utils.CustomListener01" />
+		<listener class-name="utils.CustomListener02" />
+		<listener class-name="utils.CustomListener03" />
+		<listener class-name="utils.CustomListener04" />
+		
 	</listeners>
-	<test name="Project 02 - Test 01">
-		<classes>
-			<class name="project02.TestClass01" />
-		</classes>
-	</test>
-<!-- 	<test name="Project 02 - Test 02">
+
+	<test name="Project 02 - Test 02">
 		<classes>
 			<class name="project02.TestClass02" />
 		</classes>
-	</test> -->
+	</test>
+
 </suite>

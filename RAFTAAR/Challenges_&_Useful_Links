@@ -14,4 +14,11 @@ https://eltestor.wordpress.com/2015/09/13/pass-parameters-from-command-line-to-a
 
 http://www.seleniumeasy.com/maven-tutorials/choose-selected-testng-xml-files-to-execute-using-maven
 
-While Upgrading Selenium to 3.11, apache library was explicitly added in pom.xml. Reference - https://github.com/seleniumhq/selenium/issues/2362
+Problem - While Upgrading Selenium to 3.11, apache library was explicitly added in pom.xml.
+Solution - https://github.com/seleniumhq/selenium/issues/2362
+
+Problem - In order to create log4j file with different name every time, there is not direct property. 
+Solution - https://www.codeproject.com/Tips/1094802/Configure-Log-j-to-Generate-New-Log-File-for-Every
+
+Problem - While clicking on link, when page was not fully loaded, exception was appearing - element is not clickable because other element is obscuring it.
+Solution - IsElementClickable method was created for same.

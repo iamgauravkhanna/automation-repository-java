@@ -16,8 +16,7 @@ import java.util.Properties;
 public class LoadProperties {
 
 	/**
-	 * Loads all the properties from property file and store them in
-	 * Map
+	 * Loads all the properties from property file and store them in Map
 	 * 
 	 * @return map that contains the properties as key/value pairs
 	 * 
@@ -27,7 +26,7 @@ public class LoadProperties {
 
 		Properties properties = new Properties();
 
-		FileInputStream resourceStream = new FileInputStream("./src/main/resources/qa.properties");
+		FileInputStream resourceStream = new FileInputStream("./src/main/resources/common.properties");
 
 		try {
 
@@ -45,13 +44,13 @@ public class LoadProperties {
 
 		Map<String, String> propertiesMap = new HashMap<String, String>();
 
-		System.out.println("Reading Contents of Property File");
+		LogUtils.info("Reading Contents of Property File");
 
 		for (String key : properties.stringPropertyNames()) {
 
 			String value = properties.getProperty(key);
 
-			System.out.println(key + " => " + value);
+			LogUtils.info("Key : " + key + " => " + "Value : " + value);
 
 			propertiesMap.put(key, value);
 

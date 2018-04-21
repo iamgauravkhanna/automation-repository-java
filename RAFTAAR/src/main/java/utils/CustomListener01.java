@@ -4,15 +4,24 @@ import org.testng.IExecutionListener;
 
 public class CustomListener01 implements IExecutionListener {
 
+	long startTime;
+	long endTime;
+
 	public void onExecutionFinish() {
 
-		LogManager.info("Running Method : onExecutionFinish");
+		startTime = System.currentTimeMillis();
+
+		LogUtils.info("Running Method : onExecutionFinish with Start Time : " + startTime);
 
 	}
 
 	public void onExecutionStart() {
 
-		LogManager.info("Running Method : onExecutionStart");
+		endTime = System.currentTimeMillis();
+
+		LogUtils.info("Running Method : onExecutionStart with End Time :  " + endTime);
+
+		LogUtils.info("Total Time Taken by Test Case : " + (endTime - startTime));
 
 	}
 

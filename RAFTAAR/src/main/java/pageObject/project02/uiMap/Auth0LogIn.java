@@ -6,13 +6,13 @@ import org.openqa.selenium.WebDriver;
 
 public class Auth0LogIn extends BasePage {
 
-	public static final By LOGIN_WELCOME_TEXT = By.xpath("//h1[text()='Welcome to Fidelity Health Marketplace!']");
+	public static final By LOGIN_WELCOME_TEXT = By.xpath("//h3[text()='Sign in for Returning User']");
 
-	public static final By USERNAME = By.name("emailId");
+	public static final By USERNAME = By.name("username");
 
 	public static final By PASSWORD = By.name("password");
 
-	public static final By LOG_IN = By.xpath("//input[@value='Log In']");
+	public static final By LOG_IN = By.xpath("//input[@value='Sign In']");
 
 	public static final By SIGN_UP_LINK = By.linkText("Sign Up");
 
@@ -46,7 +46,7 @@ public class Auth0LogIn extends BasePage {
 
 	public void brokerLogin() {
 
-		login("fhm.agencyadmin01@dev18.cc", "Qwerty@12");
+		login("1008714343@agencyadmin.com", "Testing@123");
 
 	}
 

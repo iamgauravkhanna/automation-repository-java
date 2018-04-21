@@ -11,15 +11,16 @@ public class BaseTest {
 
 	protected BaseTest() {
 
-		LogUtils.info("Initalizing Log4j Properties File...");
+		SimpleDateFormat dateFormat1 = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
 
-		PropertyConfigurator.configure("log4j.properties");
+		System.setProperty("current.date.time", dateFormat1.format(new Date()));
 
-		// String out = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(new Date());
+		String outputDirectory = System.getProperty("user.dir") + "\\results\\test-output_"
+				+ dateFormat1.format(new Date());
 
-		DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
+		System.setProperty("logsDirectory", outputDirectory);
 
-		String outputDirectory = "//test-output///html///screenshots///" + dateFormat.format(new Date());
+		LogUtils.info(outputDirectory);
 
 		File dir = new File(outputDirectory);
 
@@ -27,12 +28,20 @@ public class BaseTest {
 		boolean successful = dir.mkdir();
 
 		if (successful) {
+
 			// creating the directory succeeded
-			System.out.println("directory was created successfully");
+			LogUtils.info("directory was created successfully");
+
 		} else {
+
 			// creating the directory failed
-			System.out.println("failed trying to create the directory");
+			LogUtils.info("failed trying to create the directory");
 		}
+
+		LogUtils.info("Initalizing Log4j Properties File...");
+
+		PropertyConfigurator.configure("log4j.properties");
+
 	}
 
 }

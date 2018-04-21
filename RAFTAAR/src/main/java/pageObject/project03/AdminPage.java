@@ -3,7 +3,7 @@ package pageObject.project03;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import utils.LogManager;
+import utils.LogUtils;
 import utils.BasePage;
 
 public class AdminPage extends BasePage {
@@ -20,7 +20,7 @@ public class AdminPage extends BasePage {
 
 	public void login() {
 
-		LogManager.info("Running login() method");
+		LogUtils.info("Running login() method");
 
 		setText(email, "admin@phptravels.com");
 		setText(password, "demoadmin");

@@ -251,10 +251,23 @@ public class DriverUtil {
 		FileInputStream resourceStream = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\"
 				+ System.getProperty("EnvironmentFilePath"));
 
+		//
+		FileInputStream resourceStream2 = new FileInputStream(
+				System.getProperty("user.dir") + "\\src\\main\\resources\\common.properties");
+
 		try {
 
 			//
 			properties.load(resourceStream);
+
+			//
+			LogUtils.info("Environment Level Properties Loaded Successfully");
+
+			//
+			properties.load(resourceStream2);
+
+			//
+			LogUtils.info("Common Properties Loaded Successfully");
 
 		} catch (IOException e) {
 
