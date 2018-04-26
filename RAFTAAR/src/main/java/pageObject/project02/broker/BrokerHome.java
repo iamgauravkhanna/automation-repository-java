@@ -23,6 +23,8 @@ public class BrokerHome extends BasePage {
 	public void openHomePage() {
 
 		openBrowser(BrokerHome.BROKER_URL);
+		
+		maximizeBrowser();
 
 	}	
 

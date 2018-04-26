@@ -52,4 +52,77 @@ public class AddEmployer extends BasePage {
 		setText(By.name("employer.currentFullTimeEmployees"), JavaUtils.generateRandomNumber(2));
 
 	}
+
+	public void enterZipCode() {
+
+		setText(By.name("employer.address.zip"), "18017");
+
+		try {
+
+			pressKey(By.name("employer.address.zip"), "TAB");
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public void setFirstName() {
+
+		setText(By.name("employer.firstName"), JavaUtils.generateRandomString());
+
+	}
+
+	public void setLastName() {
+
+		setText(By.name("employer.lastName"), JavaUtils.generateRandomString());
+
+	}
+
+	public void setAddressLine1() {
+
+		setText(By.name("employer.address.streetAddressLine1"), JavaUtils.generateRandomString());
+
+	}
+
+	public void selectCounty() {
+
+		click(By.xpath("//label[text()='County']/..//span[text()='Select']/.."));
+		
+		pause();
+		
+		// clickLiElement(By.xpath("//ul//li"), "LEHIGH");		
+		
+		click(By.xpath("//ul//li[text()='LEHIGH']"));
+		
+		//clickUsingJavaScript(By.xpath("//ul//li[text()='LEHIGH']"));
+		
+		pause();
+
+	}
+
+	public void setCity() {
+
+		setText(By.id("address.city"), JavaUtils.generateRandomString());
+
+	}
+
+	public void setEmailID() {
+
+		setText(By.name("employer.emailId"), JavaUtils.generateEmail());
+
+	}
+
+	public void clickAdd() {
+
+		click(By.xpath("//button[text()='Add to Client List']"));
+
+	}
+
+	public void clickOk() {
+
+		click(By.xpath("//button[text()='Ok']"));
+
+	}
 }

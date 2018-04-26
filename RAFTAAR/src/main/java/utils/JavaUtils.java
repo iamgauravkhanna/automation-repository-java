@@ -34,13 +34,22 @@ public class JavaUtils {
 		return RandomStringUtils.randomAlphabetic(10);
 
 	}
-	
+
 	public static String generateRandomNumber(int i) {
 
 		return RandomStringUtils.randomNumeric(i);
 
 	}
 
+	/**
+	 * 
+	 * Replace variable provided
+	 * 
+	 * @param templateString
+	 * 
+	 * @return
+	 * 
+	 */
 	public static String replaceVariable(String templateString) {
 
 		StrSubstitutor sub = new StrSubstitutor(BasePage.propertiesMap);

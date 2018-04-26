@@ -71,15 +71,18 @@ public class DriverUtil {
 	}
 
 	/**
+	 * 
 	 * Initialize Browser & WebDriver
 	 * 
 	 * @throws MalformedURLException
+	 * 
 	 */
 	public WebDriver intializeDriver() {
+		
+		LogUtils.info("Entering Method : intializeDriver()");
 
 		if ((configPropertiesMap.get("IsRemote").equalsIgnoreCase("Yes"))) {
 
-			LogUtils.info("Entering Method : intializeDriver");
 
 			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Firefox")) {
 
@@ -97,6 +100,33 @@ public class DriverUtil {
 
 				//
 				capabilities.setCapability("marionette", true);
+			}
+			
+			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Chrome")) {
+				
+				//
+				DesiredCapabilities dc = new DesiredCapabilities();
+
+				//
+				dc = DesiredCapabilities.chrome();
+
+				//
+				dc.setBrowserName("chrome");
+
+				//
+				dc.setPlatform(Platform.WINDOWS);
+				
+				String chromeDriverPath = System.getProperty("user.dir") + "/resources/drivers/chromedriver.exe" ;
+				
+				LogUtils.info("Path of Chrome Driver : " + chromeDriverPath);
+
+				//
+				System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+
+				webDriverObj = new ChromeDriver(dc);
+
+				// Maximize browser window
+				webDriverObj.manage().window().maximize();
 			}
 
 			if (configPropertiesMap.get("Platform").equalsIgnoreCase("Windows")) {
@@ -132,10 +162,13 @@ public class DriverUtil {
 
 				//
 				dc.setPlatform(Platform.WINDOWS);
+				
+				String chromeDriverPath = System.getProperty("user.dir") + "/resources/drivers/chromedriver.exe" ;
+				
+				LogUtils.info("Path of Chrome Driver : " + chromeDriverPath);
 
 				//
-				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "/resources/drivers/chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
 				webDriverObj = new ChromeDriver(dc);
 

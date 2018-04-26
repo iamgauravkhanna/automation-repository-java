@@ -8,15 +8,15 @@ import utils.BasePage;
 import utils.JavaUtils;
 
 public class Reusables extends BasePage {
-	
-	AddEmployer AddEmployerObj ;
+
+	AddEmployer AddEmployerObj;
 
 	public Reusables(WebDriver driverObj) {
 
 		webDriverObj = driverObj;
 
 	}
-	
+
 	public void EmployerSignUp() {
 
 		waitFor(By.xpath(
@@ -72,7 +72,7 @@ public class Reusables extends BasePage {
 
 	public void fillEmployerDetails() {
 
-		AddEmployerObj = new AddEmployer(webDriverObj);		
+		AddEmployerObj = new AddEmployer(webDriverObj);
 		waitForPageLoaded();
 		AddEmployerObj.waitForEmployerPageToAppear();
 		AddEmployerObj.setCompanyName();
@@ -80,32 +80,15 @@ public class Reusables extends BasePage {
 		AddEmployerObj.setSIC();
 		AddEmployerObj.setEIN();
 		AddEmployerObj.setFullTimeEEs();
-		
-		/*setText(By.name("employer.firstName"), JavaUtils.generateRandomString());
-		setText(By.name("employer.lastName"), JavaUtils.generateRandomString());
-		setText(By.name("employer.address.streetAddressLine1"), JavaUtils.generateRandomString());
-		setText(By.name("employer.address.zip"), "18017");
-
-		try {
-
-			pressKey(By.name("employer.address.zip"), "TAB");
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-
-		click(By.xpath("//label[text()='County']/..//span[text()='Select']"));
-		pause();
-		// click(By.xpath("//ul//li[text()='LEHIGH']"));
-		// clickUsingJavaScript(By.xpath("//ul//li[text()='LEHIGH']"));
-		clickLiElement(By.xpath("//ul//li"), "LEHIGH");
-		pause();
-		setText(By.id("address.city"), JavaUtils.generateRandomString());
-		setText(By.name("employer.emailId"), JavaUtils.generateEmail());
-		setText(By.name("employer.workPhoneNumber"), JavaUtils.generateRandomNumber(10));
-		clickUsingJavaScript(By.xpath("//button[text()='Add to Client List and Notify']"));
-		click(By.xpath("//button[text()='Ok']"));*/
+		AddEmployerObj.setFirstName();
+		AddEmployerObj.setLastName();
+		AddEmployerObj.setAddressLine1();
+		AddEmployerObj.enterZipCode();
+		AddEmployerObj.selectCounty();
+		AddEmployerObj.setCity();
+		AddEmployerObj.setEmailID();
+		AddEmployerObj.clickAdd();
+		AddEmployerObj.clickOk();
 
 	}
 

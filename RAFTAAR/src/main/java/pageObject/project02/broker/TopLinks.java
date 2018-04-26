@@ -16,7 +16,9 @@ public class TopLinks extends BasePage {
 
 	public void clickClientsTab() {
 
-		waitForPageLoaded();
+		// waitForPageLoaded();
+		
+		isClickable(CLIENTS_TAB);
 		
 		click(CLIENTS_TAB);
 

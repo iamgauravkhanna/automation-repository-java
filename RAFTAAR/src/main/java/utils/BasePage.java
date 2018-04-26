@@ -131,6 +131,8 @@ public class BasePage {
 				LogUtils.info("Quick Fix Found");
 
 				opt.click();
+				
+				LogUtils.info("Element clicked successfully");
 
 			}
 		}
