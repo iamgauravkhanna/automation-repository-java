@@ -55,7 +55,7 @@ public class AddEmployer extends BasePage {
 
 	public void enterZipCode() {
 
-		setText(By.name("employer.address.zip"), "18017");
+		setText(By.name("employer.address.zip"), "80001");
 
 		try {
 
@@ -88,15 +88,15 @@ public class AddEmployer extends BasePage {
 
 	public void selectCounty() {
 
-		click(By.xpath("//label[text()='County']/..//span[text()='Select']/.."));
+		click(By.xpath("//label[text()='County']/..//span[text()='Select']"));
 		
-		pause();
-		
-		// clickLiElement(By.xpath("//ul//li"), "LEHIGH");		
+		pause();		
 		
 		click(By.xpath("//ul//li[text()='LEHIGH']"));
 		
-		//clickUsingJavaScript(By.xpath("//ul//li[text()='LEHIGH']"));
+		clickUsingJavaScript(By.xpath("//ul//li[text()='LEHIGH']"));
+		
+		// clickLiElement(By.xpath("//ul//li"), "LEHIGH");
 		
 		pause();
 

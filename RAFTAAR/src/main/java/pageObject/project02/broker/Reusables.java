@@ -84,7 +84,7 @@ public class Reusables extends BasePage {
 		AddEmployerObj.setLastName();
 		AddEmployerObj.setAddressLine1();
 		AddEmployerObj.enterZipCode();
-		AddEmployerObj.selectCounty();
+		//AddEmployerObj.selectCounty();
 		AddEmployerObj.setCity();
 		AddEmployerObj.setEmailID();
 		AddEmployerObj.clickAdd();
