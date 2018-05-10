@@ -7,7 +7,7 @@ public class Broker {
 	/**
 	 * Home Page
 	 */
-	public static final String HOME__BROKER_URL = "https://qa07form1.product-phix-all-qa2.demo.hcinternal.net/broker";
+	public static final String HOME__BROKER_URL = "https://qa07form1.product-phix-all-qa-01.internal.hcphix.com/broker";
 
 	public static final By HOME__LOGIN_LINK = By.linkText("Log In");
 
