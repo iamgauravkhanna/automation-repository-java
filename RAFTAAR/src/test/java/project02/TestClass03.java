@@ -45,12 +45,7 @@ public class TestClass03 extends BaseTest {
 	@Test(description = "Workflow #1")
 	public void TC001() {
 
-		brokerHomePageObj.openHomePage();		
-		auth0LogInObj.brokerLogin();
-		topLinksObj.clickClientsTab();
-		manageEmployerPageObj.clickAddEmployer();
-		manageEmployerPageObj.clickEnterManually();
-		employerReusableObj.fillEmployerDetails();
+		brokerHomePageObj.myTest();
 
 	}
 
