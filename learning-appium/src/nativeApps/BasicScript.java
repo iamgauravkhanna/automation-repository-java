@@ -12,7 +12,7 @@ import org.testng.annotations.*;
 public class BasicScript {
 
 	//
-	WebDriver driver;
+	WebDriver webDriverObj;
 
 	@BeforeClass
 	public void setUp() throws MalformedURLException {
@@ -21,7 +21,7 @@ public class BasicScript {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		// Set android VERSION desired capability
-		capabilities.setCapability("VERSION", "5.0.2");
+		capabilities.setCapability("VERSION", "7.1.1");
 
 		// Set android deviceName desired capability
 		capabilities.setCapability("deviceName", "Emulator");
@@ -39,38 +39,38 @@ public class BasicScript {
 		// Create RemoteWebDriver instance and connect to the Appium server
 		// It will launch the Calculator App in Android Device using the
 		// configurations specified in Desired Capabilities
-		driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		webDriverObj = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 	}
 
 	@Test
 	public void testCal() throws Exception {
 
 		// locate the Text '2' on the calculator by using By.name()
-		WebElement two = driver.findElement(By.name("2"));
+		WebElement two = webDriverObj.findElement(By.id("digit_2"));
 
 		// click on webelement
 		two.click();
 
 		//
-		WebElement plus = driver.findElement(By.name("+"));
+		WebElement plus = webDriverObj.findElement(By.id("op_add"));
 
 		// click on webelement
 		plus.click();
 
 		//
-		WebElement four = driver.findElement(By.name("4"));
+		WebElement four = webDriverObj.findElement(By.id("digit_4"));
 
 		// click on webelement
 		four.click();
 
 		//
-		WebElement equalTo = driver.findElement(By.name("="));
+		WebElement equalTo = webDriverObj.findElement(By.id("eq"));
 
 		// click on webelement
 		equalTo.click();
 
 		// Get result from result text box.
-		String result = driver.findElement(By.className("android.widget.EditText")).getText();
+		String result = webDriverObj.findElement(By.id("result")).getText();
 
 		//
 		System.out.println("Number sum result is : " + result + "\n");
@@ -80,6 +80,6 @@ public class BasicScript {
 	@AfterClass
 	public void teardown() {
 		// close the app
-		driver.quit();
+		webDriverObj.quit();
 	}
 }
