@@ -154,7 +154,7 @@ public class MobilePage extends BaseTest {
 		// Moving seekbar using TouchAction class.
 		TouchAction act = new TouchAction(androidDriverObj);
 
-		act.press(startX, yAxis).moveTo(moveToXDirectionAt, yAxis).release().perform();
+		//act.press(startX, yAxis).moveTo(moveToXDirectionAt, yAxis).release().perform();
 	}
 
 }

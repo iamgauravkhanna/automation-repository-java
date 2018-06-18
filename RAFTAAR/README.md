@@ -2,9 +2,11 @@
 
 RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open source automation framework for Web & Mobile Applications alongwith with WebServices/Testing 
 
-##Capabilities
+# Capabilities
 
  - Automate Web Applications
+ - Automate Mobile Applications - Android, iOS
+ - Automate Web Services
  - Cross-browser testing on Chrome, Firefox, IE and Safari
  - TestNG, ReportNG & Extent Report integrated for better reporting
  - Interaction with Databases (Oracle,MySQL,MongoDB)
@@ -18,7 +20,7 @@ RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open sour
  - Comparing Images
  - Customized HTML Email with Test Results
  
-##List of Websites Automated
+# List of Websites Automated
 
 - [Book - The Automated Tester](http://book.theautomatedtester.co.uk/)
 - [Webmath](http://www.webmath.com/)
@@ -31,7 +33,7 @@ RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open sour
 - [Automation Practice](http://automationpractice.com/)
 - [PHP Travels](https://phptravels.com/demo/)
 
-##List of Android/iOS Apps Automated
+# List of Android/iOS Apps Automated
 
 - Amazon
 - Battery Bot
@@ -52,4 +54,4 @@ RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open sour
 - TripAdvisor
 - Twitter
 
-##List of Web Services Automated
+# List of Web Services Automated

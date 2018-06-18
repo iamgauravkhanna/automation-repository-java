@@ -45,7 +45,7 @@ public class TestClass03 extends BaseTest {
 	@Test(description = "Workflow #1")
 	public void TC001() {
 
-		brokerHomePageObj.myTest();
+		
 
 	}
 
