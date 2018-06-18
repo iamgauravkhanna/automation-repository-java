@@ -8,14 +8,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import com.android.uiautomator.core.UiObjectNotFoundException;
-
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 
 public class ApiDemoTests {
 
-	AndroidDriver<?> androidDriverObj;
+	AndroidDriver<AndroidElement> androidDriverObj;
 
 	@BeforeTest
 	public void setUp() throws Exception {
@@ -23,11 +21,11 @@ public class ApiDemoTests {
 		//
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		//
-		capabilities.setCapability("deviceName", "Emulator");
+		// Set android deviceName desired capability
+		capabilities.setCapability("deviceName", "Real Device");
 
-		//
-		capabilities.setCapability("platformVersion", "5.0.2");
+		// Set android VERSION desired capability
+		capabilities.setCapability("platformVersion", "7.1.1");
 
 		//
 		capabilities.setCapability("platformName", "Android");
@@ -46,7 +44,7 @@ public class ApiDemoTests {
 	}
 
 	@Test
-	public void ScrollToText() throws InterruptedException, UiObjectNotFoundException {
+	public void ScrollToText() throws InterruptedException {
 
 		// Click on Views
 		androidDriverObj.findElement(By.name("Views")).click();
@@ -54,8 +52,10 @@ public class ApiDemoTests {
 		System.out.println("Scrolling has been started to find text -> Tabs");
 
 		// Scroll till element which contains Tabs text.
-		androidDriverObj.findElementByAndroidUIAutomator(
-				"new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"Tabs\"));").click();
+		androidDriverObj
+				.findElementByAndroidUIAutomator(
+						"new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"Tabs\"));")
+				.click();
 
 	}
 
@@ -66,5 +66,4 @@ public class ApiDemoTests {
 		androidDriverObj.quit();
 	}
 
-	
 }

@@ -21,10 +21,10 @@ public class BasicScript {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		// Set android VERSION desired capability
-		capabilities.setCapability("VERSION", "7.1.1");
+		capabilities.setCapability("platformVersion", "7.1.1");
 
 		// Set android deviceName desired capability
-		capabilities.setCapability("deviceName", "Emulator");
+		capabilities.setCapability("deviceName", "Real Device");
 
 		// Set platformName desired capability.
 		capabilities.setCapability("platformName", "Android");
