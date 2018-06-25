@@ -10,7 +10,9 @@ import utils.BaseTest;
 import utils.DriverUtil;
 
 /**
- * Test Suite containing Tests using POM Model
+ * 
+ * Test Scripts using POM Model
+ * 
  */
 public class TestClass01 extends BaseTest {
 

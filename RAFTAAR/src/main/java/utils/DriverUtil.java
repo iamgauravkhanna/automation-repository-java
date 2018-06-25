@@ -21,6 +21,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
@@ -30,7 +31,7 @@ public class DriverUtil {
 	WebDriver webDriverObj;
 
 	//
-	AndroidDriver<?> androidDriverObj;
+	AndroidDriver<MobileElement> androidDriverObj;
 
 	//
 	IOSDriver<?> iOSDriverObj;
@@ -338,11 +339,11 @@ public class DriverUtil {
 
 	}
 
-	public AndroidDriver<?> initializeAndroidDriverObj() {
+	public AndroidDriver<MobileElement> initializeAndroidDriverObj() {
 		// Created object of DesiredCapabilities class
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		// Set BROWSER_NAME desired capability
+/*		// Set BROWSER_NAME desired capability
 		capabilities.setCapability("BROWSER_NAME", "Android");
 
 		// Set android VERSION desired capability
@@ -368,13 +369,33 @@ public class DriverUtil {
 
 		capabilities.setCapability("appPackage", "io.appium.android.apis");
 
-		capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
+		capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");*/
+		
+		// Set android VERSION desired capability
+		capabilities.setCapability("platformVersion", "7.1.1");
+
+		// Set android deviceName desired capability
+		capabilities.setCapability("deviceName", "Real Device");
+
+		// Set platformName desired capability.
+		capabilities.setCapability("platformName", "Android");
+
+		// This package name of your app (you can get it from apk info app)
+		capabilities.setCapability("appPackage", "com.android.calculator2");
+
+		// This is Launcher activity of your app (you can get it from apk info
+		// app)
+		capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
 
 		// Create RemoteWebDriver instance and connect to the Appium server
 		// It will launch the Calculator App in Android Device using the
 		// configurations specified in Desired Capabilities
 		try {
-			androidDriverObj = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4444/wd/hub"), capabilities);
+		
+			androidDriverObj = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			
+			System.out.println("Android Driver Intialized Successfully");
+		
 		} catch (MalformedURLException e) {
 
 			e.printStackTrace();

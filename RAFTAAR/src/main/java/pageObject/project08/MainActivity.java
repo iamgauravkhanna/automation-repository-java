@@ -10,7 +10,7 @@ public class MainActivity extends MobilePage {
 	By seekBar = By.id("io.appium.android.apis:id/seek");
 
 	public MainActivity(AndroidDriver<?> androidDriverObj) {
-		super(androidDriverObj);
+		//super(androidDriverObj);
 	}
 
 	public void clickOption(String optionValue) {

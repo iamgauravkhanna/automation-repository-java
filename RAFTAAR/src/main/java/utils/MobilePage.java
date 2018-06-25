@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -34,24 +35,39 @@ import io.appium.java_client.android.AndroidDriver;
  *             kind of exception does this method throw
  */
 
-public class MobilePage extends BaseTest {
+public class MobilePage {
 
-	AndroidDriver<?> androidDriverObj;
+	//AndroidDriver<Mo> androidDriverObj;
+	protected AndroidDriver<MobileElement> androidDriverObj;
 	private WebElement element;
+	private MobileElement mobileElement ;
 	private WebDriverWait wait;
 	private int elementWaitTime = 10;
 	private String destDir;
 	private SimpleDateFormat dateFormat;
 
-	public MobilePage(AndroidDriver<?> driver) {
+	/**
+	 * Constructor of this class
+	 */
+	public MobilePage() {
 
-		androidDriverObj = driver;
+		try {
+
+			LogUtils.info("Calling MobilePage Constructor");
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
 
 	}
 
 	public void clickSimple(By locator) {
 
-		WebElement e = findElement(locator);
+		//WebElement e = findElement(locator);
+		
+		MobileElement e = findMobileElement(locator);
 
 		LogUtils.info("Value of Webelement " + e);
 
@@ -67,6 +83,17 @@ public class MobilePage extends BaseTest {
 		element = androidDriverObj.findElement(locator);
 
 		return element;
+	}
+	
+	public MobileElement findMobileElement(By locator) {
+
+		//wait = new WebDriverWait(androidDriverObj, elementWaitTime);
+
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+		mobileElement = androidDriverObj.findElement(locator);
+
+		return mobileElement;
 	}
 
 	public String getText(By locator) {
