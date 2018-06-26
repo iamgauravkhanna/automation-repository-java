@@ -14,7 +14,7 @@ https://eltestor.wordpress.com/2015/09/13/pass-parameters-from-command-line-to-a
 
 http://www.seleniumeasy.com/maven-tutorials/choose-selected-testng-xml-files-to-execute-using-maven
 
-Problem - While Upgrading Selenium to 3.11, apache library was explicitly added in pom.xml.
+Problem - While Upgrading Selenium to 3.12, apache library was explicitly added in pom.xml.
 Solution - https://github.com/seleniumhq/selenium/issues/2362
 
 Problem - In order to create log4j file with different name every time, there is not direct property. 

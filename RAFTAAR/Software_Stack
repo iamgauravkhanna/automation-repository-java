@@ -1,6 +1,6 @@
 Java=1.8.0_60
-Selenium=3.11.0
-Appium-Desktop=1.6.1
+Selenium=3.12.0
+Appium-Desktop=1.8.0
 Appium-Java-Client=6.0
 Framework=POM
 TestNG=6.11
