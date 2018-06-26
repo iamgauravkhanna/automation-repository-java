@@ -106,32 +106,6 @@ public class MobilePage {
 
 	}
 
-	public void takeScreenShot() {
-
-		// Set folder name to store screenshots.
-		destDir = "screenshots";
-
-		// Capture screenshot.
-		File scrFile = ((TakesScreenshot) androidDriverObj).getScreenshotAs(OutputType.FILE);
-
-		// Set date format to set It as screenshot file name.
-		dateFormat = new SimpleDateFormat("dd-MMM-yyyy__hh_mm_ssaa");
-
-		// Create folder under project with name "screenshots" provided to
-		// destDir.
-		new File(destDir).mkdirs();
-
-		// Set file name using current date time.
-		String destFile = dateFormat.format(new Date()) + ".png";
-
-		try {
-			// Copy paste file at destination folder location
-			FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 	public WebElement getElementUsingUIAutomator(String optionValue) {
 
 		String selectOption = String.format(
