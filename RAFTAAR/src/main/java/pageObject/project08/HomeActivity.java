@@ -2,11 +2,11 @@ package pageObject.project08;
 
 import org.openqa.selenium.By;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import utils.MobilePage;
+import io.appium.java_client.android.AndroidElement;
+import utils.BaseActivity;
 
-public class HomeActivity extends MobilePage {
+public class HomeActivity extends BaseActivity {
 	
 	By seekBar = By.id("io.appium.android.apis:id/seek");
 

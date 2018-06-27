@@ -2,7 +2,7 @@
 <suite name="Regression Suite - Project 03" parallel="tests"
 	thread-count="1">
 	<listeners>
-		<listener class-name="utils.Listener" />
+		<listener class-name="utils.CustomListener01" />
 	</listeners>
 	<test name="Project 03 - Test 01">
 		<classes>
