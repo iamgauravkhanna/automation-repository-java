@@ -23,7 +23,7 @@ public class TestClass01 {
 	public void setUp() {
 
 		DriverUtil driverUtilObj = new DriverUtil();
-		androidDriverObj = driverUtilObj.initializeAndroidDriverObj();
+		androidDriverObj = driverUtilObj.initializeAndroidDriverObj("abc","efg");
 
 	}
 

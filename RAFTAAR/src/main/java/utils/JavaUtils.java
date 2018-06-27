@@ -109,7 +109,7 @@ public class JavaUtils {
 		File scrFile = ((TakesScreenshot) webDriverObj).getScreenshotAs(OutputType.FILE);
 
 		// Set date format to set It as screenshot file name.
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy__hh_mm_ssaa");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy_hh-mm-ss-aa");
 
 		// Create folder under project with name "screenshots" provided to
 		// destDir.
