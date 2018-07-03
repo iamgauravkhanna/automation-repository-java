@@ -1,6 +1,5 @@
 package android.nativeApps.apiDemo;
 
-import java.io.File;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -18,16 +17,6 @@ public class ApiDemoTests {
 
 	@BeforeTest
 	public void setUp() throws Exception {
-		
-		// Set Drag-Sort Demos app folder path. This statement will refer
-		// project's folder path.
-		File classpathRoot = new File(System.getProperty("user.dir"));
-
-		// Set folder name "Apps" where .apk file is stored.
-		File appDir = new File(classpathRoot, "/apps");
-
-		// Set Drag-Sort Demos .apk file name.
-		File app = new File(appDir, "apidemos.apk");
 
 		//
 		DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -48,7 +37,7 @@ public class ApiDemoTests {
 		capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
 
 		//
-		androidDriverObj = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		androidDriverObj = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		//
 		androidDriverObj.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -58,8 +47,9 @@ public class ApiDemoTests {
 	public void ScrollToText() throws InterruptedException {
 
 		// Click on Views
-		androidDriverObj.findElement(By.name("Views")).click();
+		androidDriverObj.findElement(By.id("Views")).click();
 
+		//
 		System.out.println("Scrolling has been started to find text -> Tabs");
 
 		// Scroll till element which contains Tabs text.
