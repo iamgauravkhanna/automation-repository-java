@@ -1,10 +1,12 @@
-package android.nativeApps;
+package android.nativeApps.calculator;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import io.appium.java_client.android.AndroidDriver;
+import utils.ScreenshotUtility;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;

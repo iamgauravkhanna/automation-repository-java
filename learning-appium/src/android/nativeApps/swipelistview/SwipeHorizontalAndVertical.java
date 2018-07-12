@@ -1,4 +1,4 @@
-package android.nativeApps;
+package android.nativeApps.swipelistview;
 
 import io.appium.java_client.android.AndroidDriver;
 

@@ -1,4 +1,4 @@
-package android.nativeApps;
+package android.nativeApps.apiDemo;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;

@@ -1,10 +1,7 @@
-package android.nativeApps;
+package android.nativeApps.apiDemo;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-
 import java.net.URL;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -12,7 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class GetDropDownList {
+public class SelectingCheckBox {
 	AndroidDriver driver;
 
 	@BeforeTest
@@ -39,19 +36,9 @@ public class GetDropDownList {
 
 		// Click on 2. Dark Theme.
 		driver.findElement(By.name("2. Dark Theme")).click();
-		// Typing in text box using sendKeys command.
-		driver.findElement(By.id("io.appium.android.apis:id/edit")).sendKeys("Test");
-		// To hide keyboard
-		driver.hideKeyboard();
-		// Click on dropdown to open list.
-		driver.findElement(By.id("android:id/text1")).click();
-		// Locate all drop down list elements
-		List dropList = driver.findElements(By.id("android:id/text1"));
-		// Extract text from each element of drop down list one by one.
-		for (int i = 0; i < dropList.size(); i++) {
-			MobileElement listItem = (MobileElement) dropList.get(i);
-			System.out.println(listItem.getText());
-		}
+
+		// Click on check-box to select it.
+		driver.findElement(By.name("Checkbox 2")).click();
 	}
 
 	@AfterTest

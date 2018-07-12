@@ -1,4 +1,4 @@
-package android.nativeApps;
+package android.nativeApps.MultiTouchTester;
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MultiTouchAction;

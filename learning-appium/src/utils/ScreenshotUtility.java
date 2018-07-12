@@ -1,4 +1,4 @@
-package android.nativeApps;
+package utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import android.nativeApps.calculator.ScreenShotOnPassFail;
 
 public class ScreenshotUtility implements ITestListener {
 	// This method will execute before starting of Test suite.

@@ -1,4 +1,4 @@
-package android.nativeApps;
+package android.nativeApps.calculator;
 
 import java.net.MalformedURLException;
 import java.net.URL;

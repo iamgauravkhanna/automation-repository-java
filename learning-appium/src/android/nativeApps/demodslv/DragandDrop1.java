@@ -1,4 +1,4 @@
-package android.nativeApps;
+package android.nativeApps.demodslv;
 
 import java.net.MalformedURLException;
 import java.net.URI;

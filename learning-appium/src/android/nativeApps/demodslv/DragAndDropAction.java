@@ -1,4 +1,4 @@
-package android.nativeApps;
+package android.nativeApps.demodslv;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;

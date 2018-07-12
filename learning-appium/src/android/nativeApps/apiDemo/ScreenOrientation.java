@@ -1,4 +1,4 @@
-package android.nativeApps;
+package android.nativeApps.apiDemo;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;

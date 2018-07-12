@@ -1,18 +1,17 @@
-package android.nativeApps;
+package android.nativeApps.apiDemo;
 
 import io.appium.java_client.android.AndroidDriver;
+
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.android.uiautomator.core.UiObjectNotFoundException;
-
-public class ScrollToTextExample {
-
+public class HandleAlertExample {
 	AndroidDriver driver;
 
 	@BeforeTest
@@ -23,6 +22,9 @@ public class ScrollToTextExample {
 
 		//
 		capabilities.setCapability("deviceName", "Emulator");
+
+		//
+		capabilities.setCapability("browserName", "Android");
 
 		//
 		capabilities.setCapability("platformVersion", "5.0.2");
@@ -44,24 +46,31 @@ public class ScrollToTextExample {
 	}
 
 	@Test
-	public void ScrollToText() throws InterruptedException, UiObjectNotFoundException {
+	public void okOnAlert() {
 
-		// Click on Views
-		driver.findElement(By.name("Views")).click();
+		// Click on App.
+		driver.findElement(By.name("App")).click();
 
-		System.out.println("Scrolling has been started to find text -> Tabs");
+		// Click on Alert Dialogs.
+		driver.findElement(By.name("Alert Dialogs")).click();
 
-		// Scroll till element which contains Tabs text.
-		driver.findElementByAndroidUIAutomator(
-				"new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"Tabs\"));").click();
+		// Click on "OK Cancel dialog with a message" button.
+		driver.findElement(By.name("OK Cancel dialog with a message")).click();
 
+		// Get the text from alert dialog.
+		String result = driver.findElementById("android:id/alertTitle").getText();
+
+		System.out.println("Alert text Is -> " + result);
+
+		// Click on OK button of alert dialog.
+		driver.findElement(By.name("OK")).click();
+
+		// Click on Cancel button of alert dialog.
+		// driver.findElement(By.name("Cancel")).click();
 	}
 
 	@AfterTest
 	public void End() {
-
-		//
 		driver.quit();
 	}
-
 }
