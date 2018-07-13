@@ -1,6 +1,5 @@
 package android.nativeApps.demodslv;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -10,8 +9,9 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.touch.TouchActions;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -80,36 +80,34 @@ public class DragAndDropAction {
 		// Locate 3rd element(Chick Corea) from list to drag.
 		AndroidElement webElement1 = driver.findElementsById("com.mobeta.android.demodslv:id/drag_handle").get(2);
 
+		//
+		Point pointElement1 = webElement1.getLocation();
+
+		//
+		Dimension dimElement1 = webElement1.getSize();
+
+		//
+		int x = pointElement1.getX() + dimElement1.getWidth() / 2;
+
+		//
+		int y = pointElement1.getY() + dimElement1.getHeight() / 2;
+
 		System.out.println(webElement1);
 
 		// Locate 6th element to drop dragged element.
 		AndroidElement webElement2 = driver.findElementsById("com.mobeta.android.demodslv:id/drag_handle").get(5);
 
+		//
 		System.out.println(webElement2);
 
-		// Perform drag and drop operation using TouchAction class.
 		// Created object of TouchAction class.
-		//TouchActions touchActionsObj = new TouchActions(driver);
-
-		//TouchAction touchActionsObj = new TouchAction( driver);
-		
-		//TouchAction touchActionObj = new TouchAction(driver);
-		
-		new TouchAction<>(driver).longPress(webElement1).
+		TouchAction touchActionObj = new TouchAction(driver);
 
 		//
 		System.out.println("Dragging element");
-		
-		//TouchAction<TouchAction<T>>
-		
-		//TouchAction action0 = TouchAction().
 
-		// It will hold tap on 3rd element and move to 6th position and then release
-		// tap.
-		// touchActionsObj.longPress((MobileElement)webElement1).moveToElement((MobileElement)webElement2).release().perform();
-		//touchActionsObj.longPress(10).
-		
-		//touchActionObj.press((PointOption) webElement1).moveTo((PointOption) webElement2).release().perform();
+		//
+		touchActionObj.press(PointOption.point(x, y));
 
 		//
 		System.out.println("Element dropped at destination successfully");
