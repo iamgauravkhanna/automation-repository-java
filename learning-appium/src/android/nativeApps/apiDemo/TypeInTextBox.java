@@ -48,6 +48,9 @@ public class TypeInTextBox {
 
 		// Typing in text box using sendKeys command.
 		androidDriverObj.findElement(By.id("io.appium.android.apis:id/edit")).sendKeys("People who feel good about others..");
+		
+		//
+		androidDriverObj.hideKeyboard();
 	}
 
 	@AfterTest

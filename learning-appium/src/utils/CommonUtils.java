@@ -11,7 +11,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class CommonUtils {
 
-	WebDriver webDriverObject;
+	AndroidDriver androidDriverObject;
 
 	public void DesiredCapiblitiesMethod() throws MalformedURLException {
 
@@ -19,10 +19,10 @@ public class CommonUtils {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		// Set android VERSION desired capability
-		capabilities.setCapability("VERSION", "5.0.2");
+		capabilities.setCapability("VERSION", "7.1.1");
 
 		// Set android deviceName desired capability
-		capabilities.setCapability("deviceName", "Emulator");
+		capabilities.setCapability("deviceName", "Real Device");
 
 		// Set platformName desired capability.
 		capabilities.setCapability("platformName", "Android");
@@ -37,7 +37,7 @@ public class CommonUtils {
 		// Create RemoteWebDriver instance and connect to the Appium server
 		// It will launch the Calculator App in Android Device using the
 		// configurations specified in Desired Capabilities
-		webDriverObject = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		androidDriverObject = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 	}
 

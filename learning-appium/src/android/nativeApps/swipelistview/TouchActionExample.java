@@ -1,8 +1,11 @@
 package android.nativeApps.swipelistview;
 
 import io.appium.java_client.MobileDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -16,8 +19,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class TouchActionExample {
-	AndroidDriver driver;
+
+	AndroidDriver<AndroidElement> androidDriverObj;
+
 	Dimension size;
+
 	WebDriverWait wait;
 
 	@BeforeTest
@@ -27,10 +33,10 @@ public class TouchActionExample {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		//
-		capabilities.setCapability("deviceName", "Emulator");
+		capabilities.setCapability("deviceName", "Real Device");
 
 		//
-		capabilities.setCapability("platformVersion", "5.0.2");
+		capabilities.setCapability("platformVersion", "7.1.1");
 
 		//
 		capabilities.setCapability("platformName", "Android");
@@ -43,13 +49,13 @@ public class TouchActionExample {
 				"com.fortysevendeg.android.swipelistview.sample.activities.SwipeListViewExampleActivity");
 
 		//
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		androidDriverObj = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		//
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		androidDriverObj.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		//
-		wait = new WebDriverWait(driver, 300);
+		wait = new WebDriverWait(androidDriverObj, 300);
 
 		//
 		wait.until(ExpectedConditions.elementToBeClickable(By.className("android.widget.RelativeLayout")));
@@ -59,7 +65,7 @@ public class TouchActionExample {
 	public void swipingHorizontal() throws InterruptedException {
 
 		// Get the size of screen.
-		size = driver.manage().window().getSize();
+		size = androidDriverObj.manage().window().getSize();
 
 		//
 		System.out.println(size);
@@ -72,10 +78,10 @@ public class TouchActionExample {
 		int x2 = (int) (size.width * 0.80);
 
 		// Create object of TouchAction class.
-		TouchAction action = new TouchAction((MobileDriver) driver);
+		TouchAction action = new TouchAction((MobileDriver) androidDriverObj);
 
 		// Find element to swipe from right to left.
-		WebElement ele1 = (WebElement) driver.findElementsById("com.fortysevendeg.android.swipelistview:id/front")
+		AndroidElement ele1 = androidDriverObj.findElementsById("com.fortysevendeg.android.swipelistview:id/front")
 				.get(3);
 
 		System.out.println(ele1.getText());
@@ -84,22 +90,24 @@ public class TouchActionExample {
 		// swipe.
 		// Here swipe to point x1 Is at left side of screen. So It will swipe
 		// element from right to left.
-		action.longPress(ele1).moveTo(x1, 580).release().perform();
+		//action.longPress(ele1).moveTo(x1, 580).release().perform();
+		
+		//action.longPress();
 
 		// Find element to swipe from left to right.
-		WebElement ele2 = (WebElement) driver.findElementsById("com.fortysevendeg.android.swipelistview:id/back")
-				.get(3);
+		AndroidElement ele2 = androidDriverObj
+				.findElementsById("com.fortysevendeg.android.swipelistview:id/back").get(3);
 
 		// Create swipe action chain and perform horizontal(left to right)
 		// swipe.
 		// Here swipe to point x2 Is at right side of screen. So It will swipe
 		// element from left to right.
-		action.longPress(ele2).moveTo(x2, 580).release().perform();
+		//action.longPress(ele2).moveTo(x2, 580).release().perform();
 	}
 
 	@AfterTest
 	public void End() {
-		driver.quit();
+		androidDriverObj.quit();
 	}
 
 }
