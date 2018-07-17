@@ -27,7 +27,7 @@ public class HandleAlertExample {
 		capabilities.setCapability("browserName", "Android");
 
 		//
-		capabilities.setCapability("platformVersion", "5.0.2");
+		capabilities.setCapability("platformVersion", "7.1.1");
 
 		//
 		capabilities.setCapability("platformName", "Android");
@@ -41,8 +41,6 @@ public class HandleAlertExample {
 		//
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
-		//
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
 	@Test

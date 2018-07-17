@@ -20,7 +20,7 @@ public class Test001 {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability("deviceName", "Moto X Play");
+		capabilities.setCapability("deviceName", "emulator-5554");
 
 		capabilities.setCapability("platformVersion", "7.1.1");
 

@@ -22,9 +22,9 @@ public class CheckElementPresent {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability("deviceName", "Real Device");
+		capabilities.setCapability("deviceName", "emulator-5554");
 
-		capabilities.setCapability("browserName", "Android");
+		capabilities.setCapability("browserName", "Chrome");
 
 		capabilities.setCapability("platformVersion", "7.1.1");
 
@@ -34,12 +34,13 @@ public class CheckElementPresent {
 
 		capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
 
+		capabilities.setCapability("noReset", "true");
+
 		androidDriverObj = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		androidDriverObj.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
-	// Check element App is present or not on page.
 	@Test
 	public void checkAppElementPresent() {
 
@@ -54,7 +55,6 @@ public class CheckElementPresent {
 		System.out.println("Targeted element App is present on screen.");
 	}
 
-	// Check element Loader is present or not on page.
 	@Test
 	public void checkLoaderElementPresent() {
 
@@ -64,7 +64,6 @@ public class CheckElementPresent {
 
 		// iselementpresent will be false so assertion will fail and so test
 		// method will fail too.
-
 		Assert.assertTrue(iselementpresent, "Targeted element Loader is not present on screen");
 
 		System.out.println("Targeted element Loader is present on screen.");
