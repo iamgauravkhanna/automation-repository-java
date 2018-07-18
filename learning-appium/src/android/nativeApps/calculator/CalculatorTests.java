@@ -2,6 +2,7 @@ package android.nativeApps.calculator;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -9,6 +10,7 @@ import org.testng.annotations.*;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import utils.CommonUtils;
 
 public class CalculatorTests {
 
@@ -45,6 +47,8 @@ public class CalculatorTests {
 
 	@Test
 	public void addition() throws Exception {
+
+		CommonUtils.printContextName(androidDriverObj);
 
 		// locate the Text '2' on the calculator by using By.name()
 		AndroidElement two = androidDriverObj.findElement(By.id("digit_2"));

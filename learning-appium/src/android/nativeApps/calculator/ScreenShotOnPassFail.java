@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 
 @Listeners({ ScreenshotUtility.class })
 public class ScreenShotOnPassFail {
-	static AndroidDriver driver;
+	public static AndroidDriver driver;
 
 	@BeforeClass
 	public void initialize() throws MalformedURLException {

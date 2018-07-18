@@ -2,6 +2,7 @@ package utils;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -48,6 +49,18 @@ public class CommonUtils {
 				"new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"" + Value + "\"));")
 				.click();
 
+	}
+
+	public static void printContextName(AndroidDriver androidDriverObj) {
+
+		Set<String> contextNames = androidDriverObj.getContextHandles();
+
+		for (String contextName : contextNames) {
+
+			System.out.println("Context is : " + contextName);
+
+		}
+		
 	}
 
 }
