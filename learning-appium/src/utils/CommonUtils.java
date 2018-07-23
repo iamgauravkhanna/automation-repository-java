@@ -4,11 +4,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 
 public class CommonUtils {
 
@@ -60,7 +65,27 @@ public class CommonUtils {
 			System.out.println("Context is : " + contextName);
 
 		}
-		
+
+	}
+
+	public static void waitForElementPresent(AndroidDriver driverObj, AndroidElement ele, int secondsToWait) {
+
+		try {
+
+			WebDriverWait wait = new WebDriverWait(driverObj, secondsToWait);
+
+			wait.until(ExpectedConditions.visibilityOf(ele));
+
+			System.out.println("Great! Element Found");
+
+		} catch (Exception e) {
+
+			System.out.println("Oops !! Element was not visible on UI");
+
+			System.out.println(e.getMessage());
+
+		}
+
 	}
 
 }
