@@ -12,34 +12,27 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class HandleAlertExample {
-	AndroidDriver driver;
+
+	AndroidDriver androidDriverObj;
 
 	@BeforeTest
 	public void setUp() throws Exception {
 
-		//
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		//
-		capabilities.setCapability("deviceName", "Emulator");
+		capabilities.setCapability("deviceName", "emulator-5554");
 
-		//
-		capabilities.setCapability("browserName", "Android");
-
-		//
 		capabilities.setCapability("platformVersion", "7.1.1");
 
-		//
 		capabilities.setCapability("platformName", "Android");
 
-		//
 		capabilities.setCapability("appPackage", "io.appium.android.apis");
 
-		//
 		capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
 
-		//
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		capabilities.setCapability("noReset", "true");
+
+		androidDriverObj = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 	}
 
@@ -47,28 +40,29 @@ public class HandleAlertExample {
 	public void okOnAlert() {
 
 		// Click on App.
-		driver.findElement(By.name("App")).click();
+		androidDriverObj.findElement(By.id("App")).click();
 
 		// Click on Alert Dialogs.
-		driver.findElement(By.name("Alert Dialogs")).click();
+		androidDriverObj.findElement(By.id("Alert Dialogs")).click();
 
 		// Click on "OK Cancel dialog with a message" button.
-		driver.findElement(By.name("OK Cancel dialog with a message")).click();
+		androidDriverObj.findElement(By.id("OK Cancel dialog with a message")).click();
 
 		// Get the text from alert dialog.
-		String result = driver.findElementById("android:id/alertTitle").getText();
+		String result = androidDriverObj.findElementById("android:id/alertTitle").getText();
 
 		System.out.println("Alert text Is -> " + result);
 
 		// Click on OK button of alert dialog.
-		driver.findElement(By.name("OK")).click();
+		androidDriverObj.findElement(By.id("android:id/button1")).click();
 
 		// Click on Cancel button of alert dialog.
-		// driver.findElement(By.name("Cancel")).click();
+		// androidDriverObj.findElement(By.id("android:id/button1")).click();
 	}
 
 	@AfterTest
 	public void End() {
-		driver.quit();
+
+		androidDriverObj.quit();
 	}
 }
