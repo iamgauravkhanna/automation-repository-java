@@ -2,7 +2,7 @@ package javaExamples.dataTypes;
 
 public class BooleanTestExercise {
 
-	public static void main(String[] args) {
+	public static void main(String args[]) {
 		// Use the boolean keyword to declare boolean variable
 		boolean testResult;
 

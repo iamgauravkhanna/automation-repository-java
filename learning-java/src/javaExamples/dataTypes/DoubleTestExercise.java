@@ -2,7 +2,8 @@ package javaExamples.dataTypes;
 
 public class DoubleTestExercise {
 
-	public static void main(String[] args) {
+	public static void main(String args[]) {
+
 		// Use the double keyword to declare decimal variable
 		double PI;
 
