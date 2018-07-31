@@ -2,13 +2,13 @@ package pageObject.project10;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import utils.BaseActivity;
 import utils.JavaUtils;
-import utils.MobilePage;
 
 public class HomeActivity extends BaseActivity {
 
-	public HomeActivity(AndroidDriver<MobileElement> driverObj) {
+	public HomeActivity(AndroidDriver<AndroidElement> driverObj) {
 
 		androidDriverObj = driverObj;
 		

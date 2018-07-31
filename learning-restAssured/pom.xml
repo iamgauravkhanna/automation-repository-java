@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.examples</groupId>
 	<artifactId>learning-restAssured</artifactId>
-	<version>v1.0</version>
+	<version>1.0</version>
 	<dependencies>
 		<dependency>
 			<groupId>io.rest-assured</groupId>
