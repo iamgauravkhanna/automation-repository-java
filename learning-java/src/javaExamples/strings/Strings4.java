@@ -1,6 +1,6 @@
 package javaExamples.strings;
 
-public class StringTestExercise3 {
+public class Strings4 {
 
 	public static void main(String[] args) {
 		// Declaring the String
