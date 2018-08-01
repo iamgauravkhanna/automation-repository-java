@@ -85,4 +85,24 @@ public class ValidateResponseBody {
 				true /* Actual Value */, "Response body contains Hyderabad");
 	}
 
+	@Test
+	public void validateResponseBody5() {
+
+		RestAssured.baseURI = "https://reqres.in/api";
+
+		RequestSpecification httpRequest = RestAssured.given();
+
+		Response response = httpRequest.get("/users");
+
+		// Retrieve the body of the Response
+		ResponseBody body = response.getBody();
+
+		// To check for sub string presence get the Response body as a String.
+		// Do a String.contains
+		String bodyAsString = body.asString();
+
+		System.out.println(bodyAsString);
+
+	}
+
 }
