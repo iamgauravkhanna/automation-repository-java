@@ -131,7 +131,7 @@ public class BasePage {
 				LogUtils.info("Quick Fix Found");
 
 				opt.click();
-				
+
 				LogUtils.info("Element clicked successfully");
 
 			}
@@ -198,7 +198,7 @@ public class BasePage {
 	public void openBrowser(String link) {
 
 		//
-		LogUtils.info("Using getUrl()");
+		LogUtils.info("Using get()");
 
 		//
 		webDriverObj.get(link);

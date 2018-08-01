@@ -22,3 +22,17 @@ Solution - https://www.codeproject.com/Tips/1094802/Configure-Log-j-to-Generate-
 
 Problem - While clicking on link, when page was not fully loaded, exception was appearing - element is not clickable because other element is obscuring it.
 Solution - IsElementClickable method was created for same.
+
+http://restapi.demoqa.com/utilities/weather/city/Pune
+
+https://medium.com/@eliasnogueira/how-to-deal-with-network-connection-in-appium-4-0-0-2134021fac25
+
+http://tutorial-testing-software.blogspot.com/2017/09/pefrorm-multitouch-action-using-appium.html
+
+https://github.com/Abhilash04/SeleniumPythonHybridFramework
+
+https://reqres.in/api/users
+
+https://seleniumjava.com/2017/12/23/you-dont-need-static-driver-or-static-methods/
+
+https://www.testingexcellence.com/cookies-selenium-webdriver-rest-assured/

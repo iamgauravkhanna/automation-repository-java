@@ -1,0 +1,10 @@
+2018-08-01 16:18:56 INFO  LogUtils:46 - Calling Constructor : DriverUtil()
+2018-08-01 16:18:56 INFO  LogUtils:46 - Environment Level Properties Loaded Successfully
+2018-08-01 16:18:56 INFO  LogUtils:46 - Common Properties Loaded Successfully
+2018-08-01 16:18:56 INFO  LogUtils:46 - Reading Contents of Property File
+2018-08-01 16:18:56 INFO  LogUtils:46 - Windows
+2018-08-01 16:18:56 INFO  LogUtils:46 - Firefox
+2018-08-01 16:18:56 INFO  LogUtils:46 - No
+2018-08-01 16:18:56 INFO  LogUtils:46 - http://localhost:4444/wd/hub
+2018-08-01 16:18:56 INFO  LogUtils:46 - Entering Method : intializeDriver()
+2018-08-01 16:18:56 INFO  LogUtils:46 - Running Method : onExecutionFinish with Start Time : 1533120536774

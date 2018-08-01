@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import pageObject.project09.HomeActivity;
 import utils.DriverUtil;
 
@@ -16,14 +17,14 @@ import utils.DriverUtil;
  */
 public class TestClass01 {
 
-	AndroidDriver<MobileElement> androidDriverObj;
+	AndroidDriver<AndroidElement> androidDriverObj;
 	HomeActivity homeActivityObj;
 
 	@BeforeTest
 	public void setUp() {
 
 		DriverUtil driverUtilObj = new DriverUtil();
-		androidDriverObj = driverUtilObj.initializeAndroidDriverObj("abc","efg");
+		//androidDriverObj = driverUtilObj.initializeAndroidDriverObj("abc","efg");
 
 	}
 

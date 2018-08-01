@@ -1,4 +1,4 @@
-package webdriverScripts.others;
+package webdriverScripts.basic;
 
 import java.net.MalformedURLException;
 
@@ -24,8 +24,8 @@ public class BasicScript {
 
 	// Declaring variable 'remoteTest' of String Type to determine if test needs
 	// to run locally or remotely
-	String remoteTest = "http://10.10.1.73:4444/wd/hub";
-	//String remoteTest = "local";
+	String remoteTest = "http://localhost:4444/wd/hub";
+	// String remoteTest = "local";
 
 	@Test
 	public void basicScriptExample() throws MalformedURLException {

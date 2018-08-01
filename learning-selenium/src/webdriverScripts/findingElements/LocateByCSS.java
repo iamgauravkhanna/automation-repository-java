@@ -1,4 +1,4 @@
-package webdriverScripts.webElements.findingElements;
+package webdriverScripts.findingElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,22 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByPartialLinkText {
+public class LocateByCSS {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByPartialLinkText() throws InterruptedException {
+	public void testlocateByCSS() throws InterruptedException {
 
 		//
-		webDriver.get("http://book.theautomatedtester.co.uk/chapter2");
+		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		WebElement link = webDriver.findElement(By.partialLinkText("In"));
+		WebElement button = webDriver.findElement(By.cssSelector("html body div.mainbody p input#radiobutton"));
 
 		//
-		link.click();
+		button.click();
 
 		//
 		Thread.sleep(5000);

@@ -5,7 +5,7 @@ Author : Gaurav Khanna
 
  *********************************/
 
-package webdriverScripts.webElements.findingElements;
+package webdriverScripts.findingElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

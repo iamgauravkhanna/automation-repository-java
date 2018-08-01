@@ -79,19 +79,20 @@ public class DriverUtil {
 	 * 
 	 */
 	public WebDriver intializeDriver() {
-		
+
 		LogUtils.info("Entering Method : intializeDriver()");
 
 		if ((configPropertiesMap.get("IsRemote").equalsIgnoreCase("Yes"))) {
-
 
 			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Firefox")) {
 
 				LogUtils.info("Using Browser Firefox");
 
 				//
-				System.setProperty("webdriver.gecko.driver",
-						System.getProperty("user.dir") + "/resources/drivers/geckodriver.exe");
+				// System.setProperty("webdriver.gecko.driver",
+				// System.getProperty("user.dir") + "/resources/drivers/geckodriver.exe");
+
+				System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
 
 				//
 				capabilities = DesiredCapabilities.firefox();
@@ -102,9 +103,9 @@ public class DriverUtil {
 				//
 				capabilities.setCapability("marionette", true);
 			}
-			
+
 			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Chrome")) {
-				
+
 				//
 				DesiredCapabilities dc = new DesiredCapabilities();
 
@@ -116,9 +117,9 @@ public class DriverUtil {
 
 				//
 				dc.setPlatform(Platform.WINDOWS);
-				
-				String chromeDriverPath = System.getProperty("user.dir") + "/resources/drivers/chromedriver.exe" ;
-				
+
+				String chromeDriverPath = "src/test/resources/drivers/chromedriver.exe";
+
 				LogUtils.info("Path of Chrome Driver : " + chromeDriverPath);
 
 				//
@@ -163,9 +164,9 @@ public class DriverUtil {
 
 				//
 				dc.setPlatform(Platform.WINDOWS);
-				
-				String chromeDriverPath = System.getProperty("user.dir") + "/resources/drivers/chromedriver.exe" ;
-				
+
+				String chromeDriverPath = "src/test/resources/drivers/chromedriver.exe";
+
 				LogUtils.info("Path of Chrome Driver : " + chromeDriverPath);
 
 				//
@@ -180,7 +181,7 @@ public class DriverUtil {
 			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Firefox")) {
 
 				System.setProperty("webdriver.gecko.driver",
-						System.getProperty("user.dir") + "/resources/drivers/geckodriver.exe");
+						"src/test/resources/drivers/geckodriver.exe");
 
 				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 
@@ -343,34 +344,35 @@ public class DriverUtil {
 		// Created object of DesiredCapabilities class
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-/*		// Set BROWSER_NAME desired capability
-		capabilities.setCapability("BROWSER_NAME", "Android");
+		/*
+		 * // Set BROWSER_NAME desired capability
+		 * capabilities.setCapability("BROWSER_NAME", "Android");
+		 * 
+		 * // Set android VERSION desired capability
+		 * capabilities.setCapability("VERSION", "5.0.1");
+		 * 
+		 * // Set android deviceName desired capability
+		 * capabilities.setCapability("deviceName", "emulator-5554");
+		 * 
+		 * // Set platformName desired capability.
+		 * capabilities.setCapability("platformName", "Android");
+		 * 
+		 * // This package name of your app (you can get it from apk info app) //
+		 * capabilities.setCapability("appPackage", "com.android.calculator2");
+		 * 
+		 * // This is Launcher activity of your app (you can get it from apk info //
+		 * app) // capabilities.setCapability("appActivity", //
+		 * "com.android.calculator2.Calculator");
+		 * 
+		 * capabilities.setCapability("applicationName", "API Demos");
+		 * 
+		 * capabilities.setCapability("noReset", true);
+		 * 
+		 * capabilities.setCapability("appPackage", "io.appium.android.apis");
+		 * 
+		 * capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
+		 */
 
-		// Set android VERSION desired capability
-		capabilities.setCapability("VERSION", "5.0.1");
-
-		// Set android deviceName desired capability
-		capabilities.setCapability("deviceName", "emulator-5554");
-
-		// Set platformName desired capability.
-		capabilities.setCapability("platformName", "Android");
-
-		// This package name of your app (you can get it from apk info app)
-		// capabilities.setCapability("appPackage", "com.android.calculator2");
-
-		// This is Launcher activity of your app (you can get it from apk info
-		// app)
-		// capabilities.setCapability("appActivity",
-		// "com.android.calculator2.Calculator");
-
-		capabilities.setCapability("applicationName", "API Demos");
-
-		capabilities.setCapability("noReset", true);
-
-		capabilities.setCapability("appPackage", "io.appium.android.apis");
-
-		capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");*/
-		
 		// Set android VERSION desired capability
 		capabilities.setCapability("platformVersion", "7.1.1");
 
@@ -391,11 +393,11 @@ public class DriverUtil {
 		// It will launch the Calculator App in Android Device using the
 		// configurations specified in Desired Capabilities
 		try {
-		
+
 			androidDriverObj = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-			
+
 			System.out.println("Android Driver Intialized Successfully");
-		
+
 		} catch (MalformedURLException e) {
 
 			e.printStackTrace();

@@ -1,6 +1,4 @@
-package webdriverScripts.webElements.findingElements;
-
-import java.util.List;
+package webdriverScripts.findingElements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,22 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LocateByTagName {
+public class LocateByID {
 
 	//
 	WebDriver webDriver = new FirefoxDriver();
 
 	@Test
-	public void testlocateByTagName() throws InterruptedException {
+	public void testlocateByID() throws InterruptedException {
 
 		//
-		webDriver.get("http://book.theautomatedtester.co.uk");
+		webDriver.get("http://book.theautomatedtester.co.uk/chapter1");
 
 		//
-		List<WebElement> buttons = webDriver.findElements(By.tagName("a"));
+		WebElement button = webDriver.findElement(By.id("radiobutton"));
 
 		//
-		System.out.println(buttons.size());
+		button.click();
 
 		//
 		Thread.sleep(5000);
@@ -32,4 +30,5 @@ public class LocateByTagName {
 		webDriver.quit();
 
 	}
+
 }

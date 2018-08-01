@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import pageObject.project10.HomeActivity;
 import utils.DriverUtil;
 
@@ -32,7 +33,7 @@ public class TestClass01 {
 	@Test
 	public void TC001() {
 
-		homeActivityObj = new HomeActivity(androidDriverObj);
+		//homeActivityObj = new HomeActivity(androidDriverObj);
 
 	}
 
