@@ -3,10 +3,13 @@ package examples;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import org.json.simple.JSONObject;
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -21,11 +24,12 @@ public class ValidatePostMethod {
 
 		JSONObject requestParams = new JSONObject();
 
+		// Defining values in JSON Object
 		requestParams.put("FirstName", "Gaurav");
 		requestParams.put("LastName", "Khanna");
-		requestParams.put("UserName", "dummyUser034");
+		requestParams.put("UserName", "dummyUser45434");
 		requestParams.put("Password", "password1");
-		requestParams.put("Email", "dummyUser054@fake.com");
+		requestParams.put("Email", "dummyUser45654@fake.com");
 
 		System.out.println("JSON String :" + requestParams.toJSONString());
 
@@ -47,18 +51,24 @@ public class ValidatePostMethod {
 
 	}
 
-	@Test
-	public void validatePostMethod2() {
+	@Test(enabled = true)
+	public void validatePostMethod2() throws IOException {
 
-		String filePath = System.getProperty("user.dir") + "\\db_config.json";
+		String jsonFilePath = System.getProperty("user.dir") + "\\db_config.json";
 
-		System.out.println("File Path : " + filePath);
+		System.out.println("File Path : " + jsonFilePath);
+
+		byte[] encoded = Files.readAllBytes(Paths.get(jsonFilePath));
+
+		String myBody = new String(encoded, "UTF-8");
+
+		System.out.println("Body Content " + myBody);
 
 		RestAssured.baseURI = "http://restapi.demoqa.com/customer";
 
 		RequestSpecification request = RestAssured.given();
 
-		Response response = request.body(filePath.toString()).post("/register");
+		Response response = request.body(myBody).post("/register");
 
 		System.out.println(response.getBody().asString());
 
