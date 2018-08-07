@@ -49,6 +49,10 @@ public class CalculatorTests {
 	public void addition() throws Exception {
 
 		CommonUtils.printContextName(androidDriverObj);
+		
+		//androidDriverObj.openNotifications();
+		
+		Thread.sleep(5000);
 
 		// locate the Text '2' on the calculator by using By.name()
 		AndroidElement two = androidDriverObj.findElement(By.id("digit_2"));

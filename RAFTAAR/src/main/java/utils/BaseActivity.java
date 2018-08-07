@@ -42,8 +42,6 @@ public class BaseActivity {
 
 	public void clickSimple(By locator) {
 
-		// WebElement e = findElement(locator);
-
 		MobileElement e = findMobileElement(locator);
 
 		LogUtils.info("Value of Webelement " + e);
@@ -64,9 +62,9 @@ public class BaseActivity {
 
 	public MobileElement findMobileElement(By locator) {
 
-		// wait = new WebDriverWait(androidDriverObj, elementWaitTime);
+		wait = new WebDriverWait(androidDriverObj, elementWaitTime);
 
-		// wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
 		mobileElement = androidDriverObj.findElement(locator);
 
@@ -134,6 +132,26 @@ public class BaseActivity {
 
 		// act.press(startX, yAxis).moveTo(moveToXDirectionAt,
 		// yAxis).release().perform();
+	}
+
+	public void tap() {
+
+	}
+
+	public void swipe() {
+
+	}
+
+	public void press() {
+
+	}
+
+	public void longPress() {
+
+	}
+
+	public void drag() {
+
 	}
 
 }

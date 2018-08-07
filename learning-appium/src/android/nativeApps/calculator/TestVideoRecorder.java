@@ -7,19 +7,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 
 public class TestVideoRecorder {
 
 	//
-	WebDriver driver;
+	AndroidDriver<AndroidElement> androidDriverObj;
 
 	//
 	ATUTestRecorder recorder;
@@ -40,26 +39,26 @@ public class TestVideoRecorder {
 		// Created object of DesiredCapabilities class
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		// Set android VERSION desired capability
-		capabilities.setCapability("VERSION", "5.0.2");
+		//
+		capabilities.setCapability("deviceName", "emulator-5554");
 
-		// Set android deviceName desired capability
-		capabilities.setCapability("deviceName", "Emulator");
+		//
+		capabilities.setCapability("platformVersion", "7.1.1");
 
-		// Set platformName desired capability.
+		//
 		capabilities.setCapability("platformName", "Android");
 
-		// This package name of your app (you can get it from apk info app)
+		//
 		capabilities.setCapability("appPackage", "com.android.calculator2");
 
-		// This is Launcher activity of your app (you can get it from apk info
-		// app)
+		//
 		capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
 
-		// Create RemoteWebDriver instance and connect to the Appium server
-		// It will launch the Calculator App in Android Device using the
-		// configurations specified in Desired Capabilities
-		driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		//
+		capabilities.setCapability("noReset", "true");
+
+		//
+		androidDriverObj = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		// To start video recording of your PC screen.
 		recorder.start();
@@ -67,33 +66,32 @@ public class TestVideoRecorder {
 
 	@Test
 	public void testCal() throws Exception {
-
 		// locate the Text '2' on the calculator by using By.name()
-		WebElement two = driver.findElement(By.name("2"));
+		AndroidElement two = androidDriverObj.findElement(By.id("digit_2"));
 
-		// click on webelement
+		// click on AndroidElement
 		two.click();
 
 		//
-		WebElement plus = driver.findElement(By.name("+"));
+		AndroidElement plus = androidDriverObj.findElement(By.id("op_add"));
 
-		// click on webelement
+		// click on AndroidElement
 		plus.click();
 
 		//
-		WebElement four = driver.findElement(By.name("4"));
+		AndroidElement four = androidDriverObj.findElement(By.id("digit_4"));
 
-		// click on webelement
+		// click on AndroidElement
 		four.click();
 
 		//
-		WebElement equalTo = driver.findElement(By.name("="));
+		AndroidElement equalTo = androidDriverObj.findElement(By.id("eq"));
 
-		// click on webelement
+		// click on AndroidElement
 		equalTo.click();
 
 		// Get result from result text box.
-		String result = driver.findElement(By.className("android.widget.EditText")).getText();
+		String result = androidDriverObj.findElement(By.id("result")).getText();
 
 		//
 		System.out.println("Number sum result is : " + result + "\n");
@@ -104,7 +102,7 @@ public class TestVideoRecorder {
 	public void teardown() throws ATUTestRecorderException {
 
 		// close the app
-		driver.quit();
+		androidDriverObj.quit();
 
 		// Stop video recording.
 		recorder.stop();
