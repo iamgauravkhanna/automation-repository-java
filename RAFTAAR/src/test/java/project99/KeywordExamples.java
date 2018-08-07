@@ -9,14 +9,15 @@ import org.testng.annotations.Test;
 import utils.BasePage;
 import utils.DriverUtil;
 
-public class TestClass01 extends BasePage {
+public class KeywordExamples extends BasePage {
 
 	DriverUtil driverUtilObj;
 
 	List<WebElement> links;
 
-	@Test(timeOut = 120000)
-	public void TestMethod001() {
+	// Clicking Element
+	@Test
+	public void KeywordExample001() {
 
 		driverUtilObj = new DriverUtil();
 
@@ -24,26 +25,15 @@ public class TestClass01 extends BasePage {
 
 		maximizeBrowser();
 
-		openBrowser("http://toolsqa.com/");
+		openBrowser("https://not-just-a-tester.blogspot.com/");
 
 		links = findElements(By.tagName("a"));
 
 		System.out.println("Size Of Links : " + links.size());
 
-		for (int i = 1; i <= links.size(); i++)
-
-		{
-
+		for (int i = 1; i <= links.size(); i++) {
 			System.out.println("Link #" + i + " : " + links.get(i).getText());
-
 		}
-
-		quitBrowser();
-
-	}
-
-	@Test
-	public void TestMethod002() {
 
 	}
 

@@ -1,6 +1,8 @@
 package android.nativeApps.apiDemo;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.PointOption;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -34,7 +36,7 @@ public class ScrollHorizontalTab {
 	public void ScrollToTab() throws InterruptedException {
 
 		// Click on Views
-		driver.findElement(By.name("Views")).click();
+		driver.findElement(By.id("Views")).click();
 
 		System.out.println("Vertical scrolling has been started to find text -> Tabs.");
 
@@ -45,11 +47,11 @@ public class ScrollHorizontalTab {
 		System.out.println("Tabs text has been found and now clicking on It.");
 
 		// Click on Scrollable text element.
-		driver.findElement(By.name("5. Scrollable")).click();
+		driver.findElement(By.id("5. Scrollable")).click();
 
 		System.out.println("Horizontal scrolling has been started to find tab -> Tab 11.");
 
-		Point A = driver.findElement(By.name("Tab 1")).getLocation();
+		Point A = driver.findElement(By.id("Tab 1")).getLocation();
 
 		System.out.println("X Location : " + A.x);
 		System.out.println("Y Location : " + A.y);
@@ -58,12 +60,12 @@ public class ScrollHorizontalTab {
 		for (int i = 0; i <= 10; i++) {
 			// Set implicit wait to 2 seconds for fast horizontal scrolling.
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-			if (driver.findElements(By.name("Tab 11")).size() != 0) {
+			if (driver.findElements(By.id("Tab 11")).size() != 0) {
 
 				// If Tab 11 Is displayed then click on It.
 				System.out.println("Tab 11 has been found and now clicking on It.");
 
-				driver.findElement(By.name("Tab 11")).click();
+				driver.findElement(By.id("Tab 11")).click();
 
 				break;
 			} else {
@@ -105,7 +107,10 @@ public class ScrollHorizontalTab {
 		int YCoordinates = y;
 
 		// Swipe tabs from Right to Left.
-		driver.swipe(startx, YCoordinates, endx, YCoordinates, 3000);
+		// driver.swipe(startx, YCoordinates, endx, YCoordinates, 3000);
+
+		TouchAction actions = new TouchAction(driver).press(PointOption.point(startx, YCoordinates))
+				.moveTo(PointOption.point(endx, YCoordinates)).release().perform();
 	}
 
 	@AfterTest

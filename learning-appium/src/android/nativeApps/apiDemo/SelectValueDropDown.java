@@ -1,6 +1,7 @@
 package android.nativeApps.apiDemo;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -13,7 +14,7 @@ import org.testng.annotations.Test;
 
 public class SelectValueDropDown {
 
-	WebDriver webDriverObj;
+	AndroidDriver<AndroidElement> androidElementObj;
 	URL appiumServerURL;
 
 	@BeforeTest
@@ -25,38 +26,38 @@ public class SelectValueDropDown {
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("appPackage", "io.appium.android.apis");
 		capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
-		webDriverObj = new AndroidDriver<?>(appiumServerURL, capabilities);
+		androidElementObj = new AndroidDriver<AndroidElement>(appiumServerURL, capabilities);
 		// driver = new RemoteWebDriver(appiumServerURL, capabilities);
-		webDriverObj.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		androidElementObj.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
 	@Test
 	public void select() throws InterruptedException {
 
 		// Click on Views.
-		webDriverObj.findElement(By.name("Views")).click();
+		androidElementObj.findElement(By.id("Views")).click();
 
 		// Click on Controls.
-		webDriverObj.findElement(By.name("Controls")).click();
+		androidElementObj.findElement(By.id("Controls")).click();
 
 		// Click on 2. Dark Theme.
-		webDriverObj.findElement(By.name("2. Dark Theme")).click();
+		androidElementObj.findElement(By.id("2. Dark Theme")).click();
 
 		// Typing in text box using sendKeys command.
-		webDriverObj.findElement(By.id("io.appium.android.apis:id/edit")).sendKeys("Loerum Ipsoum");
+		androidElementObj.findElement(By.id("io.appium.android.apis:id/edit")).sendKeys("Loerum Ipsoum");
 
 		// To hide keyboard
-		// driver.hideKeyboard();
+		androidElementObj.hideKeyboard();
 
 		// Click on dropdown to open list.
-		webDriverObj.findElement(By.id("android:id/text1")).click();
+		androidElementObj.findElement(By.id("android:id/text1")).click();
 
 		// Select item "Mars" from drop down list.
-		webDriverObj.findElement(By.name("Mars")).click();
+		androidElementObj.findElement(By.name("Mars")).click();
 	}
 
 	@AfterTest
 	public void End() {
-		webDriverObj.quit();
+		androidElementObj.quit();
 	}
 }

@@ -1,12 +1,20 @@
 package android.nativeApps.swipelistview;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
+
+import static org.testng.Assert.assertEquals;
 
 import java.io.File;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,34 +24,21 @@ import org.testng.annotations.Test;
 
 public class SwipeHorizontalAndVertical {
 
-	AndroidDriver driver;
+	AndroidDriver<AndroidElement> driver;
 
 	Dimension size;
 
 	@BeforeTest
 	public void setUp() throws Exception {
 
-		// Set Drag-Sort Demos app folder path. This statement will refer
-		// project's folder path.
-		File classpathRoot = new File(System.getProperty("user.dir"));
-
-		// Set folder name "Apps" where .apk file is stored.
-		File appDir = new File(classpathRoot, "/apps");
-
-		// Set Drag-Sort Demos .apk file name.
-		File app = new File(appDir, "swipeListView.apk");
-
 		//
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		//
-		capabilities.setCapability("deviceName", "Emulator");
+		capabilities.setCapability("deviceName", "emulator-5554");
 
 		//
-		capabilities.setCapability("browserName", "Android");
-
-		//
-		capabilities.setCapability("platformVersion", "5.0.1");
+		capabilities.setCapability("platformVersion", "7.1.1");
 
 		//
 		capabilities.setCapability("platformName", "Android");
@@ -55,34 +50,46 @@ public class SwipeHorizontalAndVertical {
 		capabilities.setCapability("appActivity",
 				"com.fortysevendeg.android.swipelistview.sample.activities.SwipeListViewExampleActivity");
 
+		capabilities.setCapability("noReset", "true");
+
 		//
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		//
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		//
-		WebDriverWait wait = new WebDriverWait(driver, 300);
+		// WebDriverWait wait = new WebDriverWait(driver, 300);
 
 		//
-		wait.until(ExpectedConditions.elementToBeClickable(By.className("android.widget.RelativeLayout")));
+		// wait.until(ExpectedConditions.elementToBeClickable(By.className("android.widget.RelativeLayout")));
 	}
 
 	@Test
 	public void swipingHorizontal() throws InterruptedException {
 
-		// Get the size of screen.
-		size = driver.manage().window().getSize();
+		driver.findElementById("android:id/button1").click();
+
+		Thread.sleep(5000);
+
+		AndroidElement element = driver.findElementByXPath("//*[text()='Android Easter Egg']"); 
+				
+				
+				//driver
+				//.findElementById("com.fortysevendeg.android.swipelistview:id/example_row_tv_title");
 
 		//
-		System.out.println(size);
+		System.out.println(element.getSize());
 
-		// Find swipe start and end point from screen's with and height.
+		//
+		size = element.getSize();
+
+		// Find swipe start and end point from screen's width and height.
 		// Find startx point which is at right side of screen.
-		int startx = (int) (size.width * 0.70);
+		int startx = (int) (size.width * 0.20);
 
 		// Find endx point which is at left side of screen.
-		int endx = (int) (size.width * 0.30);
+		int endx = (int) (size.width * 0.70);
 
 		// Find vertical point where you wants to swipe. It is in middle of
 		// screen height.
@@ -90,51 +97,16 @@ public class SwipeHorizontalAndVertical {
 
 		System.out.println("startx = " + startx + " ,endx = " + endx + " , starty = " + starty);
 
-		// Swipe from Right to Left.
-		driver.swipe(startx, starty, endx, starty, 3000);
+		TouchAction touchAction = new TouchAction(driver);
 
-		Thread.sleep(2000);
+		touchAction.press(PointOption.point(endx, starty));
 
-		// Swipe from Left to Right.
-		driver.swipe(endx, starty, startx, starty, 3000);
+		Thread.sleep(5000);
 
-		Thread.sleep(2000);
-	}
+		touchAction.moveTo(PointOption.point(startx, starty)).release().perform();
+		
+		Thread.sleep(5000);
 
-	@Test
-	public void swipingVertical() throws InterruptedException {
-
-		// Get the size of screen.
-		size = driver.manage().window().getSize();
-
-		//
-		System.out.println(size);
-
-		// Find swipe start and end point from screen's with and height.
-		// Find starty point which is at bottom side of screen.
-		int starty = (int) (size.height * 0.80);
-
-		// Find endy point which is at top side of screen.
-		int endy = (int) (size.height * 0.20);
-
-		// Find horizontal point where you wants to swipe. It is in middle of
-		// screen width.
-		int startx = size.width / 2;
-
-		//
-		System.out.println("starty = " + starty + " ,endy = " + endy + " , startx = " + startx);
-
-		// Swipe from Bottom to Top.
-		driver.swipe(startx, starty, startx, endy, 3000);
-
-		//
-		Thread.sleep(2000);
-
-		// Swipe from Top to Bottom.
-		driver.swipe(startx, endy, startx, starty, 3000);
-
-		//
-		Thread.sleep(2000);
 	}
 
 	@AfterTest
