@@ -50,6 +50,9 @@ public class BasePage {
 	String originalColor = "none";
 
 	//
+	private int defaultPause = 10;
+
+	//
 	public static HashMap<String, String> testCaseMap;
 
 	// File, Sheet, S.No., Key, Value
@@ -109,10 +112,9 @@ public class BasePage {
 	public void click(By by) {
 
 		//
-		LogUtils.info("Using click()");
-
-		//
 		findElement(by).click();
+
+		LogUtils.info("Using click()");
 
 	}
 
@@ -198,10 +200,9 @@ public class BasePage {
 	public void openBrowser(String link) {
 
 		//
-		LogUtils.info("Using get()");
-
-		//
 		webDriverObj.get(link);
+
+		LogUtils.info("Open Browser");
 	}
 
 	/**
@@ -527,11 +528,27 @@ public class BasePage {
 	 * @param loc
 	 * @param text
 	 */
-	public void selectByValue(By loc, String text) {
+	public void selectByText(By loc, String text) {
 
 		Select selectObj = new Select(findElement(loc));
 
 		selectObj.selectByVisibleText(text);
+
+	}
+
+	public void selectByValue(By loc, String text) {
+
+		Select selectObj = new Select(findElement(loc));
+
+		selectObj.selectByValue(text);
+
+	}
+
+	public void selectByIndex(By loc, int indexValue) {
+
+		Select selectObj = new Select(findElement(loc));
+
+		selectObj.selectByIndex(indexValue);
 
 	}
 
@@ -606,12 +623,21 @@ public class BasePage {
 	public void pause() {
 
 		try {
-			Thread.sleep(10000);
+			LogUtils.info("Pausing for " + defaultPause + " seconds...");
+			Thread.sleep((defaultPause * 1000));
 			LogUtils.info("Pausing for 10 Secs");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+	}
+
+	public void pause(int seconds) {
+
+		defaultPause = seconds;
+
+		pause();
 
 	}
 
@@ -645,6 +671,8 @@ public class BasePage {
 		//
 		webDriverObj.manage().window().maximize();
 
+		LogUtils.info("Maximize Browser");
+
 	}
 
 	public String getPageTitle() {
@@ -665,21 +693,57 @@ public class BasePage {
 
 	}
 
+	// Wait still page is fully loaded
 	public void waitForPageLoaded() {
+
 		ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString()
 						.equals("complete");
 			}
 		};
+
 		try {
+
 			Thread.sleep(1000);
+
 			WebDriverWait wait = new WebDriverWait(webDriverObj, 90);
+
 			wait.until(expectation);
+
 			LogUtils.info("In Try Block of waitForPageLoaded() Method");
 		} catch (Throwable error) {
-			Assert.fail("Timeout waiting for Page Load Request to complete.");
+
+			Assert.fail("Waited for 90 Seconds for Page Load Request to complete.");
 		}
+	}
+
+	public void assertEquals(String actual, String expected) {
+
+		try {
+			JavaUtils.assertEqual(actual, expected);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public String getText(By locator) {
+
+		return webDriverObj.findElement(locator).getText();
+
+	}
+
+	public String getAttribute(By locator, String attribute) {
+
+		return webDriverObj.findElement(locator).getAttribute(attribute).toString();
+
+	}
+
+	public void clearText(By locator) {
+
+		webDriverObj.findElement(locator).clear();
+
 	}
 
 }

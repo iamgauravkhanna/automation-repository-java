@@ -1,1 +1,0 @@
-clean test -Dsurefire.suiteXmlFiles=src\test\resources\suites\project01.xml

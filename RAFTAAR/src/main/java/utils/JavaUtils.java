@@ -129,4 +129,11 @@ public class JavaUtils {
 		}
 	}
 
+	public static boolean assertEqual(String actual, String expected) throws Exception {
+
+		if (!actual.equals(expected))
+			throw new Exception("expected [" + expected + "] but found [" + actual + "]");
+		return true;
+	}
+
 }

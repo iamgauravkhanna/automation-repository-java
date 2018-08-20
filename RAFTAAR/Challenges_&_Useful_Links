@@ -36,3 +36,6 @@ https://reqres.in/api/users
 https://seleniumjava.com/2017/12/23/you-dont-need-static-driver-or-static-methods/
 
 https://www.testingexcellence.com/cookies-selenium-webdriver-rest-assured/
+
+Problem - How to suppress maven warnings
+Solution - https://stackoverflow.com/questions/37590679/how-to-suppress-maven-compiler-warnings-in-jenkins

@@ -20,7 +20,7 @@
 				<version>2.3.2</version>
 				<configuration>
 					<source>${jdk.level}</source>
-					<target>${jdk.level}</target>
+					<target>${jdk.level}</target>					
 				</configuration>
 			</plugin>
 			<plugin>

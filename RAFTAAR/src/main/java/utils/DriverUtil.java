@@ -88,10 +88,6 @@ public class DriverUtil {
 
 				LogUtils.info("Using Browser Firefox");
 
-				//
-				// System.setProperty("webdriver.gecko.driver",
-				// System.getProperty("user.dir") + "/resources/drivers/geckodriver.exe");
-
 				System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
 
 				//
