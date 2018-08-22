@@ -13,7 +13,7 @@ import utils.BasePage;
 import utils.DriverUtil;
 import utils.LogUtils;
 
-public class KeywordExamples extends BasePage {
+public class WebKeywordsExample extends BasePage {
 
 	DriverUtil driverUtilObj;
 
@@ -88,7 +88,7 @@ public class KeywordExamples extends BasePage {
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void BasicScriptTest2() {
 
 		maximizeBrowser();
@@ -120,6 +120,17 @@ public class KeywordExamples extends BasePage {
 		click(By.xpath("//input[@value='Find the amount of interest']"));
 
 		pause(20);
+
+	}
+
+	@Test(enabled = true)
+	public void GetAttributeTest() {
+
+		maximizeBrowser();
+
+		openBrowser("http://www.google.com");
+
+		System.out.println(getTagName(By.name("btnK")));
 
 	}
 

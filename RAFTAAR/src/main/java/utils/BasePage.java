@@ -182,13 +182,15 @@ public class BasePage {
 	 * 
 	 * @param locator
 	 */
-	public void getTagName(By locator) {
+	public String getTagName(By locator) {
 
 		//
 		LogUtils.info("Using getTagName()");
 
 		//
 		LogUtils.info("Tag Value is : " + findElement(locator).getTagName());
+
+		return findElement(locator).getTagName();
 
 	}
 
@@ -742,8 +744,10 @@ public class BasePage {
 
 	public void clearText(By locator) {
 
-		webDriverObj.findElement(locator).clear();
+		webDriverObj.findElement(locator).clear();		
 
 	}
+	
+	
 
 }
