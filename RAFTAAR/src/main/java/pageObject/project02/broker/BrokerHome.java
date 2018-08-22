@@ -1,12 +1,15 @@
 package pageObject.project02.broker;
 
 import utils.BasePage;
+import utils.BaseTest;
+import utils.JavaUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BrokerHome extends BasePage {
 
-	public static final String BROKER_URL = "https://qa08.product-phix-all-qa2.demo.hcinternal.net/broker/";
+	//public static final String BROKER_URL = "https://qa08.product-phix-all-qa2.demo.hcinternal.net/broker/";
 
 	public static final By LOGIN_LINK = By.linkText("Log In");
 
@@ -22,10 +25,10 @@ public class BrokerHome extends BasePage {
 
 	public void openHomePage() {
 
-		openBrowser(BrokerHome.BROKER_URL);
-
+		openBrowser(BaseTest.baseTesthashMapObj.get("BROKER_URL"));
+		
 		maximizeBrowser();
-
+		
 	}
 
 }

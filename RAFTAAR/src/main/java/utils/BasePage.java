@@ -38,6 +38,9 @@ public class BasePage {
 	public WebDriver webDriverObj;
 
 	//
+	public static HashMap<String, String> basePagehashMapObj = new HashMap<String, String>();;
+	
+	//
 	public static HashMap<String, String> propertiesMap;
 
 	//
@@ -72,7 +75,9 @@ public class BasePage {
 
 			// testCaseMap = getProperties();
 
-			createTestDataMap();
+			//createTestDataMap();
+			
+			basePagehashMapObj = new HashMap<String, String>();
 
 		} catch (Exception e) {
 
@@ -82,27 +87,9 @@ public class BasePage {
 
 	}
 
-	private void createTestDataMap() {
+	
 
-		File folder = new File(System.getProperty("user.dir") + "/assets");
-
-		File[] listOfFiles = folder.listFiles();
-
-		for (int i = 0; i < listOfFiles.length; i++) {
-
-			if (listOfFiles[i].isFile()) {
-
-				LogUtils.info("File " + listOfFiles[i].getName());
-
-			} else if (listOfFiles[i].isDirectory()) {
-
-				LogUtils.info("Directory " + listOfFiles[i].getName());
-
-			}
-
-		}
-
-	}
+	
 
 	/**
 	 * Method to click element using click() command

@@ -1,6 +1,8 @@
 package pageObject.project02.uiMap;
 
 import utils.BasePage;
+import utils.BaseTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -46,7 +48,7 @@ public class Auth0LogIn extends BasePage {
 
 	public void brokerLogin() {
 
-		login("1008714343@agencyadmin.com", "Testing@123");
+		login(BaseTest.baseTesthashMapObj.get("BROKER_USERNAME"), BaseTest.baseTesthashMapObj.get("BROKER_PASSWORD"));
 
 	}
 

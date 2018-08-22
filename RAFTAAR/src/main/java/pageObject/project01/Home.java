@@ -18,6 +18,7 @@ public class Home extends BasePage {
 	public void openHomePage() {
 
 		openBrowser(Home.HOME_URL);
+		
 
 	}
 

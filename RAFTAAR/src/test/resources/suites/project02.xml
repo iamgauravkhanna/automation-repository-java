@@ -8,12 +8,13 @@
 		<listener class-name="utils.CustomListener02" />
 		<listener class-name="utils.CustomListener03" />
 		<listener class-name="utils.CustomListener04" />
-		
+
 	</listeners>
 
 	<test name="Project 02 - Test 03">
 		<classes>
-			<class name="project02.TestClass03" />
+			<class name="project02.TestClass01" />
+			<class name="project02.TestClass02" />
 		</classes>
 	</test>
 

@@ -291,6 +291,10 @@ public class DriverUtil {
 			//
 			properties.load(resourceStream);
 
+			for (final String name : properties.stringPropertyNames()) {
+				BaseTest.baseTesthashMapObj.put(name, properties.getProperty(name));
+			}
+
 			//
 			LogUtils.info("Environment Level Properties Loaded Successfully");
 
@@ -349,7 +353,7 @@ public class DriverUtil {
 
 		// Set platformName desired capability.
 		capabilities.setCapability("platformName", "Android");
-		
+
 		// This package name of your app (you can get it from apk info app)
 		capabilities.setCapability("appPackage", "com.android.calculator2");
 
@@ -364,7 +368,7 @@ public class DriverUtil {
 
 			androidDriverObj = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
-			System.out.println("Android Driver Intialized Successfully");			
+			System.out.println("Android Driver Intialized Successfully");
 
 		} catch (MalformedURLException e) {
 
