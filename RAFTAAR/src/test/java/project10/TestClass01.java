@@ -17,7 +17,7 @@ import utils.DriverUtil;
  */
 public class TestClass01 {
 
-	AndroidDriver<MobileElement> androidDriverObj;
+	AndroidDriver<AndroidElement> androidDriverObj;
 	HomeActivity homeActivityObj;
 
 	@BeforeTest
@@ -25,8 +25,7 @@ public class TestClass01 {
 
 		DriverUtil driverUtilObj = new DriverUtil();
 
-		androidDriverObj = driverUtilObj.initializeAndroidDriverObj("org.zwanoo.android.speedtest",
-				"com.ookla.speedtest.softfacade.MainActivity");
+		androidDriverObj = driverUtilObj.initializeAndroidDriverObj();
 
 	}
 

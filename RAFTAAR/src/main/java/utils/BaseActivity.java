@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -45,7 +46,7 @@ public class BaseActivity {
 
 		MobileElement e = findMobileElement(locator);
 
-		LogUtils.info("Value of Webelement " + e);
+		LogUtils.info("Value of MobileElement " + e);
 
 		e.click();
 	}
@@ -155,9 +156,11 @@ public class BaseActivity {
 
 	}
 	
-	public void openActivity() {
-	
+	public void openActivity(String appPackage, String appActivity ) {
 		
+		Activity activityObj = new Activity(appPackage, appActivity) ;
+
+		androidDriverObj.startActivity(activityObj);
 	
 	}
 

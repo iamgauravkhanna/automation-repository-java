@@ -28,8 +28,8 @@ public class WebKeywordsExample extends BasePage {
 
 	}
 
-	@Test(enabled = false)
-	public void BasicScriptTest() {
+	@Test(enabled = false, description = "Basic Script Example 1")
+	public void TC001() {
 
 		maximizeBrowser();
 
@@ -68,8 +68,8 @@ public class WebKeywordsExample extends BasePage {
 
 	}
 
-	@Test(enabled = false)
-	public void GetElementByTagNameTest() {
+	@Test(enabled = false, description = "Get Element By Tagname Example")
+	public void TC002() {
 
 		List<WebElement> links;
 
@@ -88,8 +88,8 @@ public class WebKeywordsExample extends BasePage {
 
 	}
 
-	@Test(enabled = false)
-	public void BasicScriptTest2() {
+	@Test(enabled = false, description = "Basic Script Example 2")
+	public void TC003() {
 
 		maximizeBrowser();
 
@@ -123,8 +123,8 @@ public class WebKeywordsExample extends BasePage {
 
 	}
 
-	@Test(enabled = true)
-	public void GetAttributeTest() {
+	@Test(enabled = true, description = "Get Attribute Example")
+	public void TC004() {
 
 		maximizeBrowser();
 
