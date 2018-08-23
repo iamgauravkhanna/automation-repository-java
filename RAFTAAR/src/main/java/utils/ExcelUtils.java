@@ -2,6 +2,7 @@ package utils;
 
 import org.apache.poi.common.usermodel.Hyperlink;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -25,12 +26,21 @@ public class ExcelUtils {
 	// Constructor to Intialize File
 	public ExcelUtils(String path) {
 
+		System.out.println("Constructor to Intialize File");
+
 		this.path = path;
 		try {
+
+			System.out.println("File Path :" + path);
+
 			fis = new FileInputStream(path);
+
 			workbook = new XSSFWorkbook(fis);
+
 			sheet = workbook.getSheetAt(0);
+
 			fis.close();
+
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -52,6 +62,7 @@ public class ExcelUtils {
 	}
 
 	// returns the data from a cell
+	@SuppressWarnings("deprecation")
 	public String getCellData(String sheetName, String colName, int rowNum) {
 		try {
 			if (rowNum <= 0)
@@ -478,6 +489,24 @@ public class ExcelUtils {
 	public String getSheetName(int SheetNumber) {
 
 		return workbook.getSheetName(SheetNumber);
+
+	}
+	
+	public XSSFSheet getSheetName(String sheetName) {
+
+		return workbook.getSheet(sheetName);
+
+	}
+
+	public String getColumnName(int Coloumn, String sheetName) {
+		
+		sheet = getSheetName(sheetName);
+		
+		LogUtils.info(sheet.getSheetName());
+
+		return sheet.getRow(0).getCell(Coloumn).getRichStringCellValue().toString();
+		
+		
 
 	}
 

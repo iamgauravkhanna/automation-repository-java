@@ -74,6 +74,10 @@ public class Reusables extends BasePage {
 
 		AddEmployerObj = new AddEmployer(webDriverObj);
 		waitForPageLoaded();
+		JavaUtils.readTestDataFiles("test-data.xlsx", "signup", 2);
+		
+		// We need to modify condition when cell type is formuala, we need to get that as String
+		
 		AddEmployerObj.waitForEmployerPageToAppear();
 		AddEmployerObj.setCompanyName();
 		AddEmployerObj.pause();

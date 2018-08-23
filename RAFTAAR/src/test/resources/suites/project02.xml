@@ -14,7 +14,6 @@
 	<test name="Project 02 - Test 03">
 		<classes>
 			<class name="project02.TestClass01" />
-			<class name="project02.TestClass02" />
 		</classes>
 	</test>
 
