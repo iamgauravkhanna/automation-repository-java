@@ -18,11 +18,12 @@ public class TestClass01 extends BaseTest {
 
 	WebDriver webDriverObj;
 	Home homePageObj;
+	DriverUtil driverUtilObj;
 
 	@BeforeMethod
 	public void setUp() {
 
-		DriverUtil driverUtilObj = new DriverUtil();
+		driverUtilObj = new DriverUtil();
 		webDriverObj = driverUtilObj.intializeDriver();
 
 	}

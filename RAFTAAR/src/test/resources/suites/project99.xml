@@ -9,8 +9,9 @@
 	</listeners>
 	<test name="Project 99 - Test 01">
 		<classes>
-		<class name="project99.MobileKeywordsExample" />
-		<class name="project99.WebKeywordsExample" />
+		<!-- <class name="project99.MobileKeywordsExample" /> -->
+		<!-- <class name="project99.WebKeywordsExample" /> -->
+		<class name="project99.WebServicesKeywordsExample" />
 		</classes>
 	</test>
 </suite>

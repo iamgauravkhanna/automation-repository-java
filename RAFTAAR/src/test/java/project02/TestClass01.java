@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
  */
 public class TestClass01 extends BaseTest {
 
-	WebDriver webDriverObj;
 	Home employerHomeObj;
 	Auth0LogIn auth0LogInObj;
 	SignUp signUpObj;
@@ -31,8 +30,6 @@ public class TestClass01 extends BaseTest {
 	@BeforeTest
 	public void setUp() {
 
-		DriverUtil driverUtilObj = new DriverUtil();
-		webDriverObj = driverUtilObj.intializeDriver();
 		employerHomeObj = new Home(webDriverObj);
 		auth0LogInObj = new Auth0LogIn(webDriverObj);
 		signUpObj = new SignUp(webDriverObj);
@@ -41,6 +38,8 @@ public class TestClass01 extends BaseTest {
 		addEmployerPageObj = new AddEmployer(webDriverObj);
 		brokerHomePageObj = new BrokerHome(webDriverObj);
 		employerReusableObj = new Reusables(webDriverObj);
+		
+		System.out.println("setUp() Finished");
 	}
 
 	@Test(description = "Workflow #1")
@@ -48,6 +47,14 @@ public class TestClass01 extends BaseTest {
 
 		brokerHomePageObj.openHomePage();
 		auth0LogInObj.brokerLogin();
+
+		System.out.println("Test Method Finished");
+		
+	}
+
+	@Test(dependsOnMethods = "TC001")
+	public void TC002() {
+
 		topLinksObj.clickClientsTab();
 		manageEmployerPageObj.clickAddEmployer();
 		manageEmployerPageObj.clickEnterManually();
@@ -57,7 +64,7 @@ public class TestClass01 extends BaseTest {
 
 	@AfterTest
 	public void tearDown() {
-		
+
 		LogUtils.info("Calling tearDown() Method");
 		JavaUtils.printHashMapValues(baseTesthashMapObj);
 		webDriverObj.close();
