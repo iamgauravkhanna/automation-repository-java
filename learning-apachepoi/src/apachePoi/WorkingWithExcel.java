@@ -1,4 +1,9 @@
-package utils;
+package apachePoi;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Calendar;
 
 import org.apache.poi.common.usermodel.Hyperlink;
 import org.apache.poi.hssf.util.HSSFColor;
@@ -7,12 +12,16 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.xssf.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFHyperlink;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.*;
-import java.util.Calendar;
-
-public class ExcelUtils {
+public class WorkingWithExcel {
 
 	public String excelFilePath;
 	public FileInputStream fileInputStreamObj = null;
@@ -28,7 +37,7 @@ public class ExcelUtils {
 	 * 
 	 * @param excelFilePath
 	 */
-	public ExcelUtils(String excelFilePath) {
+	public WorkingWithExcel(String excelFilePath) {
 
 		System.out.println("Constructor to Intialize Excel File");
 
@@ -62,9 +71,9 @@ public class ExcelUtils {
 	 */
 	public static void main(String arg[]) throws IOException {
 
-		ExcelUtils excelUtilsObj = null;
+		WorkingWithExcel excelUtilsObj = null;
 
-		excelUtilsObj = new ExcelUtils(
+		excelUtilsObj = new WorkingWithExcel(
 				System.getProperty("user.dir") + "\\src\\test\\resources\\test-data\\test-data.xlsx");
 
 		System.out.println("Total No. of Sheets => " + excelUtilsObj.getSheetCount());
@@ -101,17 +110,8 @@ public class ExcelUtils {
 
 	}
 
-	/**
-	 * 
-	 * Column and Row number passed will be changed to (n-1) to make this user
-	 * friendly
-	 * 
-	 * @param sheetName
-	 * @param rowNum
-	 * @param colNum
-	 * @return
-	 */
-
+	// Coloumn and Row number passed will be change to (n-1) to make this user
+	// friendly
 	public String getCellData(String sheetName, int rowNum, int colNum) {
 
 		try {

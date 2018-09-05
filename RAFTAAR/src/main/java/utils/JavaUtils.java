@@ -137,29 +137,29 @@ public class JavaUtils {
 	}
 
 	public static void readTestDataFiles(String workBookName, String sheetName, int rowNumber) {
-		
+
 		LogUtils.info("Entered readTestDataFiles Method");
 
 		ExcelUtils excelUtilsObj = new ExcelUtils("./src/test/resources/test-data/" + workBookName);
-		
+
 		LogUtils.info("Entering into the Loop...");
 
 		for (int i = 0; i < excelUtilsObj.getColumnCount(sheetName); i++) {
-			
+
 			LogUtils.info("In the Loop...");
 
-			String key = excelUtilsObj.getColumnName(i,sheetName);
-			
+			String key = excelUtilsObj.getColumnName(i, sheetName);
+
 			LogUtils.info("Key = " + key);
-			
-			String value = excelUtilsObj.getCellData(sheetName, key, rowNumber);
-			
+
+			String value = excelUtilsObj.getCellData(sheetName, rowNumber, key);
+
 			LogUtils.info("Value = " + value);
-			
-			BaseTest.baseTesthashMapObj.put(key,value);
-			
+
+			BaseTest.baseTesthashMapObj.put(key, value);
+
 		}
-		
+
 		LogUtils.info("Exited the Loop....");
 
 	}
