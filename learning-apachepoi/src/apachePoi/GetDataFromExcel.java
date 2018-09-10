@@ -14,6 +14,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
 public class GetDataFromExcel {
+
 	public Map<String, Integer> getKnownGoodMap(String filePath) {
 		String key = "";
 		int value = 0;
