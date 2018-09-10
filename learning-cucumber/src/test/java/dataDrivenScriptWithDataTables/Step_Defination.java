@@ -1,6 +1,7 @@
 package dataDrivenScriptWithDataTables;
 
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,10 +9,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import cucumber.annotation.en.Given;
-import cucumber.annotation.en.Then;
-import cucumber.annotation.en.When;
-import cucumber.table.DataTable;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
 import junit.framework.Assert;
 
 public class Step_Defination {
@@ -51,7 +52,7 @@ public class Step_Defination {
 	@When("^I select value in drop down$")
 	public void executeSteps(DataTable DropDownValue) {
 
-		List<List<String>> data = DropDownValue.raw();
+		List<Map<String, String>> data = DropDownValue.asMaps();
 
 		// Click on Dropdown
 		Select dropdown = new Select(myDriver.findElement(By.id("selecttype")));

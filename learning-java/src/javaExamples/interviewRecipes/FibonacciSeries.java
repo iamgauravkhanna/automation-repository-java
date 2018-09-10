@@ -10,7 +10,7 @@ public class FibonacciSeries {
 		FibonacciSeries fibObj = new FibonacciSeries();
 
 		// Call printFibSeries method
-		fibObj.printFibSeries(10);
+		fibObj.printFibSeries(25);
 	}
 
 	public void printFibSeries(int numberOfElements) {

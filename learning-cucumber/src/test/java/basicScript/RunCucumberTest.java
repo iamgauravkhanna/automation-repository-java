@@ -1,10 +1,12 @@
 package basicScript;
 
 import org.junit.runner.RunWith;
-import cucumber.junit.Cucumber;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@Cucumber.Options(format = { "pretty", "html:target/cucumber" })
+@CucumberOptions(plugin = { "pretty" }, strict = true, monochrome = true)
 
 public class RunCucumberTest {
 }
