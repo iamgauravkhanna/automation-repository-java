@@ -44,8 +44,17 @@ public class LogUtils {
 	public static void info(String message) {
 
 		Log.info(message);
-		
+
 		System.out.println("Step Output : " + message);
+
+		try
+		{
+			ListenerUtil.getInstance().info(message);
+		}
+		catch (Exception e) {
+			
+			
+		}
 
 	}
 

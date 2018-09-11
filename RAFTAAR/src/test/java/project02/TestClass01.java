@@ -66,7 +66,7 @@ public class TestClass01 extends BaseTest {
 	public void tearDown() {
 
 		LogUtils.info("Calling tearDown() Method");
-		JavaUtils.printHashMapValues(baseTesthashMapObj);
+		JavaUtil.printHashMapValues(baseTesthashMapObj);
 		webDriverObj.close();
 
 	}

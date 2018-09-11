@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import pageObject.project02.uiMap.Employer;
 import utils.BasePage;
-import utils.JavaUtils;
+import utils.JavaUtil;
 
 public class Reusables extends BasePage {
 
@@ -30,7 +30,7 @@ public class Reusables extends BasePage {
 		 * ), 60);
 		 */
 
-		String Email = JavaUtils.generateEmail();
+		String Email = JavaUtil.generateEmail();
 
 		setVariable("EmployerEmail", Email);
 
@@ -66,7 +66,7 @@ public class Reusables extends BasePage {
 
 	public void EmployerLogIn() {
 
-		setText(By.name("emailId"), JavaUtils.replaceVariable("${EmployerEmail}"));
+		setText(By.name("emailId"), JavaUtil.replaceVariable("${EmployerEmail}"));
 
 	}
 
@@ -74,7 +74,7 @@ public class Reusables extends BasePage {
 
 		AddEmployerObj = new AddEmployer(webDriverObj);
 		waitForPageLoaded();
-		JavaUtils.readTestDataFiles("test-data.xlsx", "signup", 2);
+		JavaUtil.readTestDataFiles("test-data.xlsx", "signup", 2);
 		
 		// We need to modify condition when cell type is formuala, we need to get that as String
 		

@@ -278,6 +278,8 @@ public class DriverUtil {
 		//
 		Properties properties = new Properties();
 
+		System.out.println("Environment File Path => " + System.getProperty("EnvironmentFilePath"));
+
 		//
 		FileInputStream resourceStream = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\"
 				+ System.getProperty("EnvironmentFilePath"));
@@ -290,11 +292,12 @@ public class DriverUtil {
 
 			//
 			properties.load(resourceStream);
+/*
+			for (String name : properties.stringPropertyNames()) {
 
-			for (final String name : properties.stringPropertyNames()) {
 				BaseTest.baseTesthashMapObj.put(name, properties.getProperty(name));
 			}
-
+*/
 			//
 			LogUtils.info("Environment Level Properties Loaded Successfully");
 

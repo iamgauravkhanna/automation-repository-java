@@ -2,7 +2,7 @@ package pageObject.project02.broker;
 
 import utils.BasePage;
 import utils.BaseTest;
-import utils.JavaUtils;
+import utils.JavaUtil;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

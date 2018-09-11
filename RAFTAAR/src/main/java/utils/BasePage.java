@@ -25,6 +25,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.ExtentTest;
+
 /**
  * This is base class for web tests containing all the methods possible on UI.
  * 
@@ -39,7 +41,7 @@ public class BasePage {
 
 	//
 	public static HashMap<String, String> basePagehashMapObj = new HashMap<String, String>();;
-	
+
 	//
 	public static HashMap<String, String> propertiesMap;
 
@@ -75,8 +77,8 @@ public class BasePage {
 
 			// testCaseMap = getProperties();
 
-			//createTestDataMap();
-			
+			// createTestDataMap();
+
 			basePagehashMapObj = new HashMap<String, String>();
 
 		} catch (Exception e) {
@@ -86,10 +88,6 @@ public class BasePage {
 		}
 
 	}
-
-	
-
-	
 
 	/**
 	 * Method to click element using click() command
@@ -102,6 +100,8 @@ public class BasePage {
 		findElement(by).click();
 
 		LogUtils.info("Using click()");
+
+		ListenerUtil.getInstance().fail("Oops.. Assertion Failed !!!");
 
 	}
 
@@ -192,6 +192,7 @@ public class BasePage {
 		webDriverObj.get(link);
 
 		LogUtils.info("Open Browser");
+
 	}
 
 	/**
@@ -710,7 +711,7 @@ public class BasePage {
 	public void assertEquals(String actual, String expected) {
 
 		try {
-			JavaUtils.assertEqual(actual, expected);
+			JavaUtil.assertEqual(actual, expected);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -731,10 +732,8 @@ public class BasePage {
 
 	public void clearText(By locator) {
 
-		webDriverObj.findElement(locator).clear();		
+		webDriverObj.findElement(locator).clear();
 
 	}
-	
-	
 
 }

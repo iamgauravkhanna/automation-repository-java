@@ -1,7 +1,7 @@
 package pageObject.project02.broker;
 
 import utils.BasePage;
-import utils.JavaUtils;
+import utils.JavaUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -27,7 +27,7 @@ public class AddEmployer extends BasePage {
 
 	public void setCompanyName() {
 
-		setText(COMPANY_NAME, JavaUtils.generateRandomString());
+		setText(COMPANY_NAME, JavaUtil.generateRandomString());
 
 	}
 
@@ -43,13 +43,13 @@ public class AddEmployer extends BasePage {
 
 	public void setEIN() {
 
-		setText(By.id("employer.federalEmployerIdentificationNumber"), JavaUtils.generateRandomNumber(9));
+		setText(By.id("employer.federalEmployerIdentificationNumber"), JavaUtil.generateRandomNumber(9));
 
 	}
 
 	public void setFullTimeEEs() {
 
-		setText(By.name("employer.currentFullTimeEmployees"), JavaUtils.generateRandomNumber(2));
+		setText(By.name("employer.currentFullTimeEmployees"), JavaUtil.generateRandomNumber(2));
 
 	}
 
@@ -70,19 +70,19 @@ public class AddEmployer extends BasePage {
 
 	public void setFirstName() {
 
-		setText(By.name("employer.firstName"), JavaUtils.generateRandomString());
+		setText(By.name("employer.firstName"), JavaUtil.generateRandomString());
 
 	}
 
 	public void setLastName() {
 
-		setText(By.name("employer.lastName"), JavaUtils.generateRandomString());
+		setText(By.name("employer.lastName"), JavaUtil.generateRandomString());
 
 	}
 
 	public void setAddressLine1() {
 
-		setText(By.name("employer.address.streetAddressLine1"), JavaUtils.generateRandomString());
+		setText(By.name("employer.address.streetAddressLine1"), JavaUtil.generateRandomString());
 
 	}
 
@@ -104,13 +104,13 @@ public class AddEmployer extends BasePage {
 
 	public void setCity() {
 
-		setText(By.id("address.city"), JavaUtils.generateRandomString());
+		setText(By.id("address.city"), JavaUtil.generateRandomString());
 
 	}
 
 	public void setEmailID() {
 
-		setText(By.name("employer.emailId"), JavaUtils.generateEmail());
+		setText(By.name("employer.emailId"), JavaUtil.generateEmail());
 
 	}
 

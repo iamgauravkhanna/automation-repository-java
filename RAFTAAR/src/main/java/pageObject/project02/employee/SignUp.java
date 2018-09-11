@@ -1,7 +1,7 @@
 package pageObject.project02.employee;
 
 import utils.BasePage;
-import utils.JavaUtils;
+import utils.JavaUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -39,7 +39,7 @@ public class SignUp extends BasePage {
 
 	public void startSignUp() {
 
-		String Email = JavaUtils.generateEmail();
+		String Email = JavaUtil.generateEmail();
 
 		setVariable("EmployerEmail", Email);
 

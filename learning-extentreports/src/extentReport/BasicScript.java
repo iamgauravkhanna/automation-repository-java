@@ -15,95 +15,116 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.KlovReporter;
 
 /**
  * This is a basic script for using Selenium WebDriver
  */
 public class BasicScript {
 
-	// Declaring variable 'myDriver' of WebDriver Type
-	WebDriver myDriver;
+	WebDriver webDriverObj;
 
-	// Declaring variable 'baseUrl' of String Type
 	String baseUrl;
 
-	// start reporters
-	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extentReport.html");
+	ExtentHtmlReporter extentHtmlReporterObj = new ExtentHtmlReporter("extentReport1.html");
 
-	// create ExtentReports and attach reporter(s)
-	ExtentReports extent = new ExtentReports();
+	ExtentReports extentReportsObj = new ExtentReports();
+
+	KlovReporter klovReporterObj = new KlovReporter();
 
 	@BeforeTest
 	public void beforeTest() {
 
-		htmlReporter.config().setDocumentTitle(extent.getClass().getName());		
+		// specify mongoDb connection
+		klovReporterObj.initMongoDbConnection("localhost", 27017);
+
+		// specify project
+		// ! you must specify a project, other a "Default project will be used"
+		klovReporterObj.setProjectName("RAFTAAR");
+
+		// you must specify a reportName otherwise a default timestamp will be used
+		klovReporterObj.setReportName("Build#001");
+
+		// URL of the KLOV server
+		// you must specify the served URL to ensure all your runtime media is uploaded
+		// to the server
+		klovReporterObj.setKlovUrl("http://localhost:8005");
+
+		extentHtmlReporterObj.config().setDocumentTitle(extentReportsObj.getClass().getName());
 
 		// Attach HTML Report path to extent object
-		extent.attachReporter(htmlReporter);
+		extentReportsObj.attachReporter(extentHtmlReporterObj);
+
+		extentReportsObj.attachReporter(klovReporterObj);
 
 	}
 
 	@Test
-	public void basicScriptExample1() throws IOException {
+	public void basicScriptExample1() throws Exception {
 
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("basicScriptExample1", "This is first test using Extent Report");
+		ExtentTest extentTestObj = extentReportsObj.createTest("Basic Script Example #1",
+				"This is first test using Extent Report");
+
+		System.setProperty("webdriver.gecko.driver", "resources/drivers/geckodriver.exe");
 
 		// Initializing FireFox Driver
-		myDriver = new FirefoxDriver();
+		webDriverObj = new FirefoxDriver();
 
 		// Assigning URL to variable 'baseUrl'
 		baseUrl = "http://book.theautomatedtester.co.uk";
 
 		// Open the link
-		myDriver.get(baseUrl);
+		webDriverObj.get(baseUrl);
 
 		//
-		test.log(Status.INFO, "Opening URL :" + baseUrl);
+		extentTestObj.log(Status.INFO, "Opening URL :" + baseUrl);
 
 		// Maximize browser window
-		myDriver.manage().window().maximize();
+		webDriverObj.manage().window().maximize();
 
 		//
-		test.info("Maximize browser window");
+		extentTestObj.info("Maximize browser window");
 
 		// Get Page Title
-		String PageTitle = myDriver.getTitle();
+		String PageTitle = webDriverObj.getTitle();
 
 		// Printing Page Title
 		System.out.println("Page Title : " + PageTitle);
 
 		// Click on link
-		myDriver.findElement(By.linkText("Chapter1")).click();
+		webDriverObj.findElement(By.linkText("Chapter1")).click();
 
 		// Click on radio button
-		myDriver.findElement(By.id("radiobutton")).click();
+		webDriverObj.findElement(By.id("radiobutton")).click();
 
 		// Click on Drop down
-		Select dropdown = new Select(myDriver.findElement(By.id("selecttype")));
+		Select dropdown = new Select(webDriverObj.findElement(By.id("selecttype")));
 
 		// Select option from drop down
 		dropdown.selectByVisibleText("Selenium Core");
 
 		// Verify Text Present
 		Assert.assertEquals("Assert that this text is on the page",
-				myDriver.findElement(By.id("divontheleft")).getText());
+				webDriverObj.findElement(By.id("divontheleft")).getText());
 
 		// log with snapshot
-		test.fail("Assertion Failed",
-				MediaEntityBuilder.createScreenCaptureFromPath("C:\\office\\pictures\\2.jpg").build());
+		extentTestObj.fail("Assertion Failed", MediaEntityBuilder
+				.createScreenCaptureFromPath(GetScreenshot.getTheScreenshot(webDriverObj, "File1")).build());
 
 		// Verify Button Present
 		Assert.assertEquals("Verify this button he here",
-				myDriver.findElement(By.id("verifybutton")).getAttribute("value"));
+				webDriverObj.findElement(By.id("verifybutton")).getAttribute("value"));
 
 		// test with snapshot
-		test.addScreenCaptureFromPath("screenshot.png");
-		test.pass("Assertion Passed",
-				MediaEntityBuilder.createScreenCaptureFromPath("screenshots\\2.jpg", "Title of Screenshot").build());
+		extentTestObj.addScreenCaptureFromPath("screenshot.png");
+
+		extentTestObj.pass("Assertion Passed",
+				MediaEntityBuilder.createScreenCaptureFromPath(GetScreenshot.getTheScreenshot(webDriverObj, "File2"),
+						"Title of Screenshot").build());
 
 		// This will close the browser
-		myDriver.quit();
+		webDriverObj.quit();
 
 	}
 
@@ -111,63 +132,65 @@ public class BasicScript {
 	public void basicScriptExample2() throws IOException {
 
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("basicScriptExample2", "This is second test using Extent Report");
+		ExtentTest extentTestObj = extentReportsObj.createTest("Basic Script Example #2",
+				"This is second test using Extent Report");
 
 		// Initializing FireFox Driver
-		myDriver = new FirefoxDriver();
+		webDriverObj = new FirefoxDriver();
 
 		// Assigning URL to variable 'baseUrl'
 		baseUrl = "http://book.theautomatedtester.co.uk";
 
 		// Open the link
-		myDriver.get(baseUrl);
+		webDriverObj.get(baseUrl);
 
 		//
-		test.log(Status.INFO, "Opening URL :" + baseUrl);
+		extentTestObj.log(Status.INFO, "Opening URL :" + baseUrl);
 
 		// Maximize browser window
-		myDriver.manage().window().maximize();
+		webDriverObj.manage().window().maximize();
 
 		//
-		test.info("Maximize browser window");
+		extentTestObj.info("Maximize browser window");
 
 		// Get Page Title
-		String PageTitle = myDriver.getTitle();
+		String PageTitle = webDriverObj.getTitle();
 
 		// Printing Page Title
 		System.out.println("Page Title : " + PageTitle);
 
 		// Click on link
-		myDriver.findElement(By.linkText("Chapter1")).click();
+		webDriverObj.findElement(By.linkText("Chapter1")).click();
 
 		// Click on radio button
-		myDriver.findElement(By.id("radiobutton")).click();
+		webDriverObj.findElement(By.id("radiobutton")).click();
 
 		// Click on Drop down
-		Select dropdown = new Select(myDriver.findElement(By.id("selecttype")));
+		Select dropdown = new Select(webDriverObj.findElement(By.id("selecttype")));
 
 		// Select option from drop down
 		dropdown.selectByVisibleText("Selenium Core");
 
 		// Verify Text Present
 		Assert.assertEquals("Assert that this text is on the page",
-				myDriver.findElement(By.id("divontheleft")).getText());
+				webDriverObj.findElement(By.id("divontheleft")).getText());
 
 		// log with snapshot
-		test.fail("Assertion Failed",
-				MediaEntityBuilder.createScreenCaptureFromPath("C:\\office\\pictures\\2.jpg").build());
+		extentTestObj.fail("Assertion Failed",
+				MediaEntityBuilder.createScreenCaptureFromPath("test-output/3.jpg").build());
 
 		// Verify Button Present
 		Assert.assertEquals("Verify this button he here",
-				myDriver.findElement(By.id("verifybutton")).getAttribute("value"));
+				webDriverObj.findElement(By.id("verifybutton")).getAttribute("value"));
 
 		// test with snapshot
-		test.addScreenCaptureFromPath("screenshot.png");
-		test.pass("Assertion Passed", MediaEntityBuilder
-				.createScreenCaptureFromPath("C:\\office\\pictures\\2.jpg", "Title of Screenshot").build());
+		extentTestObj.addScreenCaptureFromPath("screenshot.png");
+
+		extentTestObj.pass("Assertion Passed",
+				MediaEntityBuilder.createScreenCaptureFromPath("test-output/4.jpg", "Title of Screenshot").build());
 
 		// This will close the browser
-		myDriver.quit();
+		webDriverObj.quit();
 
 	}
 
@@ -175,7 +198,7 @@ public class BasicScript {
 	public void afterTest() {
 
 		// calling flush writes everything to the log file
-		extent.flush();
+		extentReportsObj.flush();
 
 	}
 

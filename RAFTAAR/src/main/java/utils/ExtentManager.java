@@ -1,6 +1,7 @@
 package utils;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.KlovReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
@@ -16,7 +17,18 @@ public class ExtentManager {
 
 		if (extent == null)
 
-			createInstance("test-output/extent1927391283.html");
+		{
+			System.out.println(BaseTest.baseTesthashMapObj.get("logsDirectory"));
+			
+			String reportLink = BaseTest.baseTesthashMapObj.get("logsDirectory") + "\\" + JavaUtil.generateRandomNumber(10) + ".html" ;
+
+			BaseTest.baseTesthashMapObj.put("reportPath", reportLink);
+			
+			createInstance(reportLink);
+			
+			System.out.println("Extent Report Instance......");
+
+		}
 
 		return extent;
 	}
@@ -24,12 +36,20 @@ public class ExtentManager {
 	public static ExtentReports createInstance(String fileName) {
 
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
+
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
+
 		htmlReporter.config().setChartVisibilityOnOpen(true);
+
 		htmlReporter.config().setTheme(Theme.STANDARD);
-		htmlReporter.config().setDocumentTitle(fileName);
+		
+		String ReportTitle = "Report #" + JavaUtil.getCurrentTimeStamp() ;
+
+		htmlReporter.config().setDocumentTitle(ReportTitle);
+
 		htmlReporter.config().setEncoding("utf-8");
-		htmlReporter.config().setReportName(fileName);
+
+		htmlReporter.config().setReportName(ReportTitle);
 
 		extent = new ExtentReports();
 
@@ -38,15 +58,15 @@ public class ExtentManager {
 
 		// specify project
 		// ! you must specify a project, other a "Default project will be used"
-		klov.setProjectName("Java");
+		klov.setProjectName("RAFTAAR v3.0");
 
 		// you must specify a reportName otherwise a default timestamp will be used
-		klov.setReportName("AppBuild");
+		klov.setReportName(JavaUtil.getCurrentTimeStamp());
 
 		// URL of the KLOV server
 		// you must specify the served URL to ensure all your runtime media is uploaded
 		// to the server
-		klov.setKlovUrl("http://localhost:8081/");
+		klov.setKlovUrl("http://localhost:8005/");
 
 		extent.attachReporter(htmlReporter, klov);
 

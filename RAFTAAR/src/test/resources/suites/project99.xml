@@ -2,16 +2,16 @@
 <suite name="Regression Suite - Project 99" parallel="tests"
 	thread-count="10">
 	<listeners>
-		<listener class-name="utils.CustomListener01" />
+<!-- 		<listener class-name="utils.CustomListener01" />
 		<listener class-name="utils.CustomListener02" />
-		<listener class-name="utils.CustomListener03" />
+		<listener class-name="utils.CustomListener03" /> -->
 		<listener class-name="utils.CustomListener04" />
 	</listeners>
 	<test name="Project 99 - Test 01">
 		<classes>
 		<!-- <class name="project99.MobileKeywordsExample" /> -->
-		<!-- <class name="project99.WebKeywordsExample" /> -->
-		<class name="project99.WebServicesKeywordsExample" />
+		<class name="project99.WebKeywordsExample" />
+		<!-- <class name="project99.WebServicesKeywordsExample" /> -->
 		</classes>
 	</test>
 </suite>

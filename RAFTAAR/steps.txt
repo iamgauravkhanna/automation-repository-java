@@ -1,0 +1,8 @@
+Start Jenkins
+Start Selenium Grid
+Start Appium Server
+Start MongoDB
+Start Klov
+Start Mobile Emulator
+Start Selenium Node
+Start Selenium Node

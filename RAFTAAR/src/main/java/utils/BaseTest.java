@@ -18,20 +18,24 @@ public class BaseTest {
 	public WebDriver webDriverObj;
 
 	protected BaseTest() {
+		
+		System.out.println("Calling Base Test......");
 
-		System.setProperty("current.date.time", JavaUtils.getTimeStamp());
+		System.setProperty("current.date.time", JavaUtil.getTimeStamp());
 
-		String outputDirectory = System.getProperty("user.dir") + "\\results\\test-output_" + JavaUtils.getTimeStamp();
+		String outputDirectory = System.getProperty("user.dir") + "\\results\\test-output_" + JavaUtil.getTimeStamp();
 
 		System.setProperty("logsDirectory", outputDirectory);
 
-		JavaUtils.createDirectory(outputDirectory);
+		JavaUtil.createDirectory(outputDirectory);
 
 		LogUtils.info("Initalizing Log4j Properties File...");
 
 		PropertyConfigurator.configure("log4j.properties");
 
 		baseTesthashMapObj = new HashMap<String, String>();
+		
+		baseTesthashMapObj.put("logsDirectory", outputDirectory);
 
 		createTestDataMap();
 
