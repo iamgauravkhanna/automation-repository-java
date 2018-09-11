@@ -1,1 +1,0 @@
-java -jar C:\office\code\iamgauravkhanna\automation-repository-java\RAFTAAR\klov-0.1.0\klov-0.1.0.jar
