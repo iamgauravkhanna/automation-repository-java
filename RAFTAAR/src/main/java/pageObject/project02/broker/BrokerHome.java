@@ -25,7 +25,7 @@ public class BrokerHome extends BasePage {
 
 	public void openHomePage() {
 
-		openBrowser(BaseTest.baseTesthashMapObj.get("BROKER_URL"));
+		openBrowser(BaseTest.baseTestHashMapObj.get("BROKER_URL"));
 		
 		maximizeBrowser();
 		

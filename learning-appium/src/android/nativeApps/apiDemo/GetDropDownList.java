@@ -58,6 +58,8 @@ public class GetDropDownList {
 
 		// Click on dropdown to open list.
 		androidDriverObj.findElement(By.id("android:id/text1")).click();
+		
+		androidDriverObj.manage().logs().get("console");
 
 		// Locate all drop down list elements
 		List<AndroidElement> dropList = androidDriverObj.findElements(By.id("android:id/text1"));

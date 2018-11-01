@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.touch.offset.PointOption;
 import utils.CommonUtils;
+import utils.ScreenshotUtility;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -80,9 +81,13 @@ public class SetStarRating {
 		int tapAt = (int) (endX * 0.3);
 
 		TouchAction act = new TouchAction(androidDriverObj);
+		
+		CommonUtils.takeScreenshot(androidDriverObj);
 
 		// Set threeStarRatingbar to Rating = 1.0 using TouchAction class.
 		act.press(PointOption.point(tapAt, yAxis)).release().perform();
+		
+		CommonUtils.takeScreenshot(androidDriverObj);
 
 		try {
 			Thread.sleep(3000);
@@ -118,9 +123,13 @@ public class SetStarRating {
 		int tapAt = (int) (endX * 0.8);
 
 		TouchAction act = new TouchAction(androidDriverObj);
+		
+		CommonUtils.takeScreenshot(androidDriverObj);
 
 		// Set fiveStarRatingbar to Rating = 4 star using TouchAction class.
 		act.press(PointOption.point(tapAt, yAxis)).release().perform();
+		
+		CommonUtils.takeScreenshot(androidDriverObj);
 
 		try {
 			Thread.sleep(3000);

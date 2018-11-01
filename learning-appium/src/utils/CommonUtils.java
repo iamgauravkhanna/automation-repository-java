@@ -1,10 +1,15 @@
 package utils;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Set;
+import java.util.UUID;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -68,13 +73,14 @@ public class CommonUtils {
 
 	}
 
-	public static void waitForElementPresent(AndroidDriver driverObj, AndroidElement ele, int secondsToWait) {
+	public static void waitForElementPresent(AndroidDriver driverObj, AndroidElement androidElementObj,
+			int secondsToWait) {
 
 		try {
 
 			WebDriverWait wait = new WebDriverWait(driverObj, secondsToWait);
 
-			wait.until(ExpectedConditions.visibilityOf(ele));
+			wait.until(ExpectedConditions.visibilityOf(androidElementObj));
 
 			System.out.println("Great! Element Found");
 
@@ -84,6 +90,23 @@ public class CommonUtils {
 
 			System.out.println(e.getMessage());
 
+		}
+
+	}
+
+	public static void takeScreenshot(AndroidDriver driver) {
+
+		File srcFile = driver.getScreenshotAs(OutputType.FILE);
+
+		String filename = UUID.randomUUID().toString();
+
+		File targetFile = new File(filename + ".jpg");
+
+		try {
+			FileUtils.copyFile(srcFile, targetFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}

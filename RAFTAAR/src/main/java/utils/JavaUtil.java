@@ -156,7 +156,7 @@ public class JavaUtil {
 
 			LogUtils.info("Value = " + value);
 
-			BaseTest.baseTesthashMapObj.put(key, value);
+			BaseTest.baseTestHashMapObj.put(key, value);
 
 		}
 
@@ -173,7 +173,7 @@ public class JavaUtil {
 		return formatter.format(date);
 
 	}
-	
+
 	public static String getCurrentTimeStamp() {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy-HH-mm-ss");
@@ -182,6 +182,16 @@ public class JavaUtil {
 
 		return formatter.format(date);
 
+	}
+
+	public static void writeToFileApacheCommonIO(File file, String msg) {
+		
+		try {
+			//FileUtils.writeStringToFile(file, msg, true);
+			FileUtils.writeStringToFile(file, msg);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

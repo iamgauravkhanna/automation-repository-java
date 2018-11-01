@@ -70,6 +70,9 @@ public class ScreenOrientation {
 
 		//
 		Thread.sleep(5000);
+		
+		androidDriverObj.isKeyboardShown();
+		androidDriverObj.hideKeyboard();
 	}
 
 	@AfterTest

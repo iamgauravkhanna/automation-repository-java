@@ -75,11 +75,11 @@ public class BasePage {
 
 			LogUtils.info("Calling BasePage Constructor");
 
-			// testCaseMap = getProperties();
+			//getProperties();
 
-			// createTestDataMap();
+			//createTestDataMap();
 
-			basePagehashMapObj = new HashMap<String, String>();
+			//basePagehashMapObj = new HashMap<String, String>();
 
 		} catch (Exception e) {
 
@@ -188,7 +188,9 @@ public class BasePage {
 	 */
 	public void openBrowser(String link) {
 
-		//
+		
+		LogUtils.info("Link to Open => " + link);
+		
 		webDriverObj.get(link);
 
 		LogUtils.info("Open Browser");

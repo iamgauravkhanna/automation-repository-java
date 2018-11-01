@@ -48,7 +48,7 @@ public class Auth0LogIn extends BasePage {
 
 	public void brokerLogin() {
 
-		login(BaseTest.baseTesthashMapObj.get("BROKER_USERNAME"), BaseTest.baseTesthashMapObj.get("BROKER_PASSWORD"));
+		login(BaseTest.baseTestHashMapObj.get("BROKER_USERNAME"), BaseTest.baseTestHashMapObj.get("BROKER_PASSWORD"));
 
 	}
 

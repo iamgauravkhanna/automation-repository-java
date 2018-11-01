@@ -24,9 +24,9 @@ public class CheckElementPresent {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability("deviceName", "emulator-5554");
+		capabilities.setCapability("deviceName", "ZY22363PGD");
 
-		capabilities.setCapability("browserName", "Chrome");
+//		capabilities.setCapability("browserName", "Chrome");
 
 		capabilities.setCapability("platformVersion", "7.1.1");
 

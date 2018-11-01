@@ -22,7 +22,7 @@ public class ListenerUtil implements ITestListener {
 
 		System.out.println("Extent Reports Version 3 Test Suite started!");
 
-		test.get().info("Extent Reports Version 3 Test Suite started!");
+		//test.get().info("Extent Reports Version 3 Test Suite started!");
 	}
 
 	public synchronized void onFinish(ITestContext context) {
@@ -33,7 +33,7 @@ public class ListenerUtil implements ITestListener {
 
 		extentReportsObj.flush();
 		
-		System.out.println("Report Path => " + BaseTest.baseTesthashMapObj.get("reportPath"));
+		System.out.println("Report Path => " + BaseTest.baseTestHashMapObj.get("reportPath"));
 	}
 
 	public synchronized void onTestStart(ITestResult result) {

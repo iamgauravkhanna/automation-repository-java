@@ -4,14 +4,10 @@
 	thread-count="10">
 
 	<listeners>
-		<listener class-name="utils.CustomListener01" />
-		<listener class-name="utils.CustomListener02" />
-		<listener class-name="utils.CustomListener03" />
-		<listener class-name="utils.CustomListener04" />
-
+		<listener class-name="utils.ListenerUtil" />
 	</listeners>
 
-	<test name="Project 02 - Test 03">
+	<test name="Project 02 - Test 01">
 		<classes>
 			<class name="project02.TestClass01" />
 		</classes>

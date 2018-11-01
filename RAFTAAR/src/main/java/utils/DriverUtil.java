@@ -61,12 +61,10 @@ public class DriverUtil {
 
 		try {
 
-			// Get Properties File
 			getProperties();
 
 		} catch (Exception e) {
 
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -292,17 +290,22 @@ public class DriverUtil {
 
 			//
 			properties.load(resourceStream);
-/*
+
 			for (String name : properties.stringPropertyNames()) {
 
-				BaseTest.baseTesthashMapObj.put(name, properties.getProperty(name));
+				BaseTest.baseTestHashMapObj.put(name, properties.getProperty(name));
 			}
-*/
+
 			//
 			LogUtils.info("Environment Level Properties Loaded Successfully");
 
 			//
 			properties.load(resourceStream2);
+			
+			for (String name : properties.stringPropertyNames()) {
+
+				BaseTest.baseTestHashMapObj.put(name, properties.getProperty(name));
+			}
 
 			//
 			LogUtils.info("Common Properties Loaded Successfully");
@@ -333,6 +336,8 @@ public class DriverUtil {
 
 			//
 			configPropertiesMap.put(key, value);
+			
+			BaseTest.baseTestHashMapObj.put(key, value);
 
 		}
 

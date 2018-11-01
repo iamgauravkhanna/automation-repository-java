@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.remote.MobileCapabilityType;
 import utils.CommonUtils;
 
 public class spellthemTests {
@@ -30,11 +31,13 @@ public class spellthemTests {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability("deviceName", "emulator-5554");
+		capabilities.setCapability("deviceName", "ZY22363PGD");
 
 		capabilities.setCapability("platformVersion", "7.1.1");
 
 		capabilities.setCapability("platformName", "Android");
+				
+		capabilities.setCapability(MobileCapabilityType.AUTO_WEBVIEW, true);
 
 		capabilities.setCapability("appPackage", "com.spellthem.webpages");
 
@@ -52,7 +55,7 @@ public class spellthemTests {
 
 		Thread.sleep(30000);
 
-		androidDriverObj.context("WEBVIEW_com.spellthem.webpages");
+		//androidDriverObj.context("WEBVIEW_com.spellthem.webpages");
 
 		CommonUtils.waitForElementPresent(androidDriverObj,
 				androidDriverObj.findElement(By.xpath("//span[text()='Try Oracle Cloud Free']")), 30);

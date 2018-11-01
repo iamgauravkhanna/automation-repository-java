@@ -18,11 +18,11 @@ public class ExtentManager {
 		if (extent == null)
 
 		{
-			System.out.println(BaseTest.baseTesthashMapObj.get("logsDirectory"));
+			System.out.println(BaseTest.baseTestHashMapObj.get("logsDirectory"));
 			
-			String reportLink = BaseTest.baseTesthashMapObj.get("logsDirectory") + "\\" + JavaUtil.generateRandomNumber(10) + ".html" ;
+			String reportLink = BaseTest.baseTestHashMapObj.get("logsDirectory") + "\\" + JavaUtil.generateRandomNumber(10) + ".html" ;
 
-			BaseTest.baseTesthashMapObj.put("reportPath", reportLink);
+			BaseTest.baseTestHashMapObj.put("reportPath", reportLink);
 			
 			createInstance(reportLink);
 			

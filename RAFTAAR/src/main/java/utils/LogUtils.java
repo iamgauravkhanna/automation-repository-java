@@ -45,7 +45,7 @@ public class LogUtils {
 
 		Log.info(message);
 
-		System.out.println("Step Output : " + message);
+		System.out.println("INFO : " + message);
 
 		try
 		{

@@ -1,6 +1,9 @@
 package pageObject.project02.broker;
 
 import utils.BasePage;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,7 +19,14 @@ public class TopLinks extends BasePage {
 
 	public void clickClientsTab() {
 
-		// waitForPageLoaded();
+		waitForPageLoaded();
+		
+		try {
+			wait(10000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
 		
 		isClickable(CLIENTS_TAB);
 		

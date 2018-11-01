@@ -2,23 +2,36 @@ package utils;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.TestNG;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
-	public static HashMap<String, String> baseTesthashMapObj;
+	/*
+	 * public static ThreadLocal<ConcurrentHashMap<String, String>>
+	 * baseTestHashMapObj = new ThreadLocal<ConcurrentHashMap<String, String>>(){
+	 * 
+	 * @Override protected ConcurrentHashMap<String, String> initialValue() { return
+	 * baseTestHashMapObj.get(); }
+	 * 
+	 * };
+	 */
+
+	public static HashMap<String, String> baseTestHashMapObj = new HashMap<String, String>();
 
 	public WebDriver webDriverObj;
 
-	protected BaseTest() {
-		
+	public BaseTest() {
+
 		System.out.println("Calling Base Test......");
 
 		System.setProperty("current.date.time", JavaUtil.getTimeStamp());
@@ -33,11 +46,15 @@ public class BaseTest {
 
 		PropertyConfigurator.configure("log4j.properties");
 
-		baseTesthashMapObj = new HashMap<String, String>();
-		
-		baseTesthashMapObj.put("logsDirectory", outputDirectory);
+		BaseTest.baseTestHashMapObj.put("logsDirectory", outputDirectory);
+
+		BaseTest.baseTestHashMapObj.put("User", "Gaurav.Khanna");
 
 		createTestDataMap();
+		
+		//BasePage.getProperties();
+
+		System.out.println("Start Up Completed");
 
 	}
 
@@ -63,17 +80,13 @@ public class BaseTest {
 
 	}
 
-	@BeforeTest
-	public void setUpDriver() {
+	@AfterMethod(alwaysRun = true)
+	public void cleanUp() {
 
-		DriverUtil driverUtilObj = new DriverUtil();
-		webDriverObj = driverUtilObj.intializeDriver();
+		JavaUtil.writeToFileApacheCommonIO(new File(
+				baseTestHashMapObj.get("logsDirectory") + "\\" + "TestData_" + JavaUtil.getTimeStamp() + ".txt"),
+				baseTestHashMapObj.toString());
 
-	}
-
-	@BeforeClass
-	public void storeDriver(ITestContext ctx) {
-		ctx.setAttribute("webDriverObj", webDriverObj);
 	}
 
 }
