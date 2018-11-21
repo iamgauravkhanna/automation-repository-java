@@ -1,6 +1,5 @@
 package utils;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
@@ -24,8 +23,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import com.aventstack.extentreports.ExtentTest;
 
 /**
  * This is base class for web tests containing all the methods possible on UI.
@@ -75,11 +72,11 @@ public class BasePage {
 
 			LogUtils.info("Calling BasePage Constructor");
 
-			//getProperties();
+			// getProperties();
 
-			//createTestDataMap();
+			// createTestDataMap();
 
-			//basePagehashMapObj = new HashMap<String, String>();
+			// basePagehashMapObj = new HashMap<String, String>();
 
 		} catch (Exception e) {
 
@@ -101,7 +98,7 @@ public class BasePage {
 
 		LogUtils.info("Using click()");
 
-		ListenerUtil.getInstance().fail("Oops.. Assertion Failed !!!");
+		//ListenerUtil.getInstance().fail("Oops.. Assertion Failed !!!");
 
 	}
 
@@ -188,9 +185,8 @@ public class BasePage {
 	 */
 	public void openBrowser(String link) {
 
-		
 		LogUtils.info("Link to Open => " + link);
-		
+
 		webDriverObj.get(link);
 
 		LogUtils.info("Open Browser");
@@ -704,6 +700,7 @@ public class BasePage {
 			wait.until(expectation);
 
 			LogUtils.info("In Try Block of waitForPageLoaded() Method");
+
 		} catch (Throwable error) {
 
 			Assert.fail("Waited for 90 Seconds for Page Load Request to complete.");

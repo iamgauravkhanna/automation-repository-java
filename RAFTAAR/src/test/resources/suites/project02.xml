@@ -7,9 +7,15 @@
 		<listener class-name="utils.ListenerUtil" />
 	</listeners>
 
-	<test name="Project 02 - Test 01">
+	<test name="Project 02 - Test 01" parallel="classes">
 		<classes>
 			<class name="project02.TestClass01" />
+		</classes>
+	</test>
+
+	<test name="Project 02 - Test 02" parallel="classes">
+		<classes>
+			<class name="project02.TestClass02" />
 		</classes>
 	</test>
 

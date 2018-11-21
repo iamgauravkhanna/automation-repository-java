@@ -64,6 +64,16 @@ public class JavaUtil {
 
 		String resolvedString = sub.replace(templateString);
 
+		if (resolvedString.contains("${")) {
+			
+			System.out.println("String not resolved. Using baseTestHashMapObj");
+
+			sub = new StrSubstitutor(BaseTest.baseTestHashMapObj);
+
+			resolvedString = sub.replace(templateString);
+
+		}
+
 		return resolvedString;
 
 	}
@@ -136,6 +146,12 @@ public class JavaUtil {
 		return true;
 	}
 
+	/**
+	 * 
+	 * @param workBookName
+	 * @param sheetName
+	 * @param rowNumber
+	 */
 	public static void readTestDataFiles(String workBookName, String sheetName, int rowNumber) {
 
 		LogUtils.info("Entered readTestDataFiles Method");
@@ -150,9 +166,11 @@ public class JavaUtil {
 
 			String key = excelUtilsObj.getColumnName(i, sheetName);
 
+			System.out.println("Row, Coloumn : " + (rowNumber - 1) + "," + i);
+
 			LogUtils.info("Key = " + key);
 
-			String value = excelUtilsObj.getCellData(sheetName, rowNumber, key);
+			String value = excelUtilsObj.readCellData(sheetName, rowNumber, key);
 
 			LogUtils.info("Value = " + value);
 
@@ -161,6 +179,8 @@ public class JavaUtil {
 		}
 
 		LogUtils.info("Exited the Loop....");
+
+		excelUtilsObj.closeWorkBook();
 
 	}
 
@@ -185,9 +205,9 @@ public class JavaUtil {
 	}
 
 	public static void writeToFileApacheCommonIO(File file, String msg) {
-		
+
 		try {
-			//FileUtils.writeStringToFile(file, msg, true);
+			// FileUtils.writeStringToFile(file, msg, true);
 			FileUtils.writeStringToFile(file, msg);
 		} catch (IOException e) {
 			e.printStackTrace();

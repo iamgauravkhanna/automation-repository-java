@@ -1,22 +1,15 @@
 package pageObject.project02.broker;
 
 import utils.BasePage;
+import utils.BaseTest;
+import utils.JavaUtil;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import pageObject.project02.uiMap.Broker;
+
 public class ManageEmployer extends BasePage {
-
-	public final static By SEARCH_BY = By.id("filterType");
-
-	public final static By SEARCH_BY_EIN = By.xpath("//label[@for='status_ein']");
-
-	public final static By SEARCH_BY_TEXTBOX = By.id("searchEmployers");
-
-	public final static By SEARCH_ICON = By.xpath("//span[@class='input-group-btn']");
-
-	public final static By ADD_EMPLOYER = By.xpath("//button[text()='Add Employer']");
-
-	public final static By ENTER_MANUALLY = By.xpath("//button[text()='Enter Manually']");
 
 	public ManageEmployer(WebDriver driverObj) {
 
@@ -26,19 +19,62 @@ public class ManageEmployer extends BasePage {
 
 	public void clickAddEmployer() {
 
-		//waitForPageLoaded();
-		
-		isClickable(ADD_EMPLOYER);
-		
-		click(ADD_EMPLOYER);
+		// waitForPageLoaded();
+
+		// isClickable(ADD_EMPLOYER);
+
+		isClickable(Broker.MANAGE_EMPLOYERS__ADD_EMPLOYER_BUTTON);
+
+		// click(ADD_EMPLOYER);
+
+		click(Broker.MANAGE_EMPLOYERS__ADD_EMPLOYER_BUTTON);
 
 	}
 
 	public void clickEnterManually() {
 
-		//waitForPageLoaded();
-		
-		click(ENTER_MANUALLY);
+		// waitForPageLoaded();
+
+		// click(ENTER_MANUALLY);
+
+		click(Broker.MANAGE_EMPLOYERS_ENTER_MANUALLY_BUTTON);
+
+	}
+
+	public void filterEmployerByEIN() {
+
+		waitForPageLoaded();
+
+		waitFor(Broker.MANAGE_EMPLOYERS__SEARCH_BY, 30);
+
+		click(Broker.MANAGE_EMPLOYERS__SEARCH_BY);
+
+		click(Broker.MANAGE_EMPLOYERS__SEARCH_BY_EIN);
+
+		click(Broker.MANAGE_EMPLOYERS__SEARCH_BY_TEXTBOX);
+
+		setText(Broker.MANAGE_EMPLOYERS__SEARCH_BY_TEXTBOX,
+				Long.valueOf(BaseTest.baseTestHashMapObj.get("ein")).toString());
+
+		click(Broker.MANAGE_EMPLOYERS__SEARCH_ICON);
+
+		waitForPageLoaded();
+
+	}
+
+	public void clickOnEmployerName() {
+
+		String xpathExpression = JavaUtil.replaceVariable("//span[text()='${companyname}']");
+
+		click(By.xpath(xpathExpression));
+
+	}
+
+	public void waitForEmployerName() {
+
+		String xpathExpression = JavaUtil.replaceVariable("//span[text()='${companyname}']");
+
+		waitFor(By.xpath(xpathExpression));
 
 	}
 

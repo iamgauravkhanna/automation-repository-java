@@ -1,6 +1,7 @@
 package pageObject.project02.broker;
 
 import utils.BasePage;
+import utils.BaseTest;
 import utils.JavaUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,13 +28,13 @@ public class AddEmployer extends BasePage {
 
 	public void setCompanyName() {
 
-		setText(COMPANY_NAME, JavaUtil.generateRandomString());
+		setText(COMPANY_NAME, BaseTest.baseTestHashMapObj.get("companyname"));
 
 	}
 
 	public void setSIC() {
 
-		setText(SIC, "cotto");
+		setText(SIC, BaseTest.baseTestHashMapObj.get("sic"));
 		// pause();
 		// click(By.xpath("//*[text()='N (0131)']"));
 		waitFor(By.xpath("//ul[contains(@id,'typeahead')]/li[1]"));
@@ -42,8 +43,8 @@ public class AddEmployer extends BasePage {
 	}
 
 	public void setEIN() {
-
-		setText(By.id("employer.federalEmployerIdentificationNumber"), JavaUtil.generateRandomNumber(9));
+		
+		setText(By.id("employer.federalEmployerIdentificationNumber"), BaseTest.baseTestHashMapObj.get("ein"));
 
 	}
 

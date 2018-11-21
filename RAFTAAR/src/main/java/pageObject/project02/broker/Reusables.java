@@ -3,17 +3,27 @@ package pageObject.project02.broker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import pageObject.project02.employer.SignUp;
+import pageObject.project02.uiMap.Auth0LogIn;
 import pageObject.project02.uiMap.Employer;
 import utils.BasePage;
 import utils.JavaUtil;
+import utils.LogUtils;
 
 public class Reusables extends BasePage {
 
 	AddEmployer AddEmployerObj;
+	TopLinks topLinksObj;
+	ManageEmployer manageEmployerPageObj;
+	Auth0LogIn auth0LogInObj;
+	SignUp signUpObj;
+	BrokerHome brokerHomePageObj;
 
 	public Reusables(WebDriver driverObj) {
 
 		webDriverObj = driverObj;
+
+		LogUtils.info("Calling Reusables Constructor");
 
 	}
 
@@ -70,14 +80,17 @@ public class Reusables extends BasePage {
 
 	}
 
-	public void fillEmployerDetails() {
+	public void fillEmployerDetails(String workBook, String sheetName, int iterationNumber) {
 
 		AddEmployerObj = new AddEmployer(webDriverObj);
+		
 		waitForPageLoaded();
-		JavaUtil.readTestDataFiles("test-data.xlsx", "signup", 2);
 		
-		// We need to modify condition when cell type is formuala, we need to get that as String
-		
+		JavaUtil.readTestDataFiles(workBook,sheetName,iterationNumber);
+
+		// We need to modify condition when cell type is formuala, we need to get that
+		// as String
+
 		AddEmployerObj.waitForEmployerPageToAppear();
 		AddEmployerObj.setCompanyName();
 		AddEmployerObj.pause();
@@ -88,11 +101,41 @@ public class Reusables extends BasePage {
 		AddEmployerObj.setLastName();
 		AddEmployerObj.setAddressLine1();
 		AddEmployerObj.enterZipCode();
-		//AddEmployerObj.selectCounty();
+		// AddEmployerObj.selectCounty();
 		AddEmployerObj.setCity();
 		AddEmployerObj.setEmailID();
 		AddEmployerObj.clickAdd();
 		AddEmployerObj.clickOk();
+
+	}
+
+	public void addEmployer() {
+
+		topLinksObj = new TopLinks(webDriverObj);
+		manageEmployerPageObj = new ManageEmployer(webDriverObj);
+		
+		topLinksObj.clickClientsTab();
+		manageEmployerPageObj.clickAddEmployer();
+		manageEmployerPageObj.clickEnterManually();
+		fillEmployerDetails("test-data.xlsx", "signup", 2);
+
+	}
+
+	public void loginBroker() {
+
+		brokerHomePageObj = new BrokerHome(webDriverObj);
+		auth0LogInObj = new Auth0LogIn(webDriverObj);
+		
+		brokerHomePageObj.openHomePage();
+		auth0LogInObj.brokerLogin();
+
+	}
+
+	public void createPackage() {
+
+		manageEmployerPageObj.filterEmployerByEIN();
+		manageEmployerPageObj.waitForEmployerName();
+		manageEmployerPageObj.clickOnEmployerName();
 
 	}
 

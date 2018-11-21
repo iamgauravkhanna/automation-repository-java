@@ -4,8 +4,11 @@ import org.apache.poi.common.usermodel.Hyperlink;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.CellValue;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.*;
 
@@ -175,31 +178,51 @@ public class ExcelUtils {
 		}
 	}
 
-	// returns the data from a cell
+	/**
+	 * 
+	 * Returns the data from a cell on basis of row number (first row means 1 not 0)
+	 * and coloumn name
+	 * 
+	 * @param sheetName
+	 * @param rowNum
+	 * @param colName
+	 * @return
+	 */
 	public String getCellData(String sheetName, int rowNum, String colName) {
+
 		try {
+
 			if (rowNum <= 0)
 				return "";
 
 			int index = xssfWorkbookObj.getSheetIndex(sheetName);
+
 			int col_Num = -1;
+
 			if (index == -1)
 				return "";
 
 			xssfSheetObj = xssfWorkbookObj.getSheetAt(index);
+
 			xssRowObj = xssfSheetObj.getRow(0);
+
 			for (int i = 0; i < xssRowObj.getLastCellNum(); i++) {
+
 				// System.out.println(row.getCell(i).getStringCellValue().trim());
 				if (xssRowObj.getCell(i).getStringCellValue().trim().equals(colName.trim()))
 					col_Num = i;
 			}
+
 			if (col_Num == -1)
 				return "";
 
 			xssfSheetObj = xssfWorkbookObj.getSheetAt(index);
+
 			xssRowObj = xssfSheetObj.getRow(rowNum - 1);
+
 			if (xssRowObj == null)
 				return "";
+
 			xssCellObj = xssRowObj.getCell(col_Num);
 
 			if (xssCellObj == null)
@@ -211,13 +234,17 @@ public class ExcelUtils {
 					|| xssCellObj.getCellType() == Cell.CELL_TYPE_FORMULA) {
 
 				String cellText = String.valueOf(xssCellObj.getNumericCellValue());
+
 				if (DateUtil.isCellDateFormatted(xssCellObj)) {
 
 					double d = xssCellObj.getNumericCellValue();
 
 					Calendar cal = Calendar.getInstance();
+
 					cal.setTime(DateUtil.getJavaDate(d));
+
 					cellText = (String.valueOf(cal.get(Calendar.YEAR))).substring(2);
+
 					cellText = cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.MONTH) + 1 + "/" + cellText;
 
 				}
@@ -232,6 +259,131 @@ public class ExcelUtils {
 
 			e.printStackTrace();
 			return "row " + rowNum + " or column " + colName + " does not exist in xls";
+		}
+	}
+
+	public String readCellData(String sheetName, int rowNum, String colName) {
+
+		int index = xssfWorkbookObj.getSheetIndex(sheetName);
+
+		String returnCellValue = null;
+
+		CellType xssCellTypeObj;
+
+		CellValue xssCellValueObj = null;
+
+		xssfSheetObj = xssfWorkbookObj.getSheetAt(index);
+
+		xssRowObj = xssfSheetObj.getRow(0);
+
+		int col_Num = -1;
+
+		for (int i = 0; i < xssRowObj.getLastCellNum(); i++) {
+
+			if (xssRowObj.getCell(i).getStringCellValue().trim().equals(colName.trim())) {
+
+				col_Num = i;
+			}
+
+		}
+
+		if (col_Num == -1) {
+
+			System.out.println("Oops..! No such coloumn exist");
+
+			return returnCellValue;
+
+		} else {
+
+			xssRowObj = xssfSheetObj.getRow(rowNum - 1);
+
+			xssCellObj = xssRowObj.getCell(col_Num);
+
+			xssCellTypeObj = xssCellObj.getCellTypeEnum();
+			
+			System.out.println("Cell Type" + xssCellTypeObj.toString());
+
+			// Special Check if Cell Type is FORMULA
+			if (xssCellTypeObj == CellType.FORMULA) {
+
+				//System.out.println("Value Before Formula : " + xssCellObj.getStringCellValue());
+
+				LogUtils.info("Cell Type is FORMULA");
+
+				FormulaEvaluator evaluator = xssfWorkbookObj.getCreationHelper().createFormulaEvaluator();
+
+				// evaluator.clearAllCachedResultValues();
+
+				// evaluator.evaluateFormulaCellEnum(xssCellObj);
+
+				//System.out.println("Get Cell Formula : " + xssCellObj.getCellFormula());
+
+				xssCellValueObj = evaluator.evaluate(xssCellObj);
+
+				//System.out.println("Value After Formula : " + xssCellObj.getStringCellValue());
+
+				xssCellTypeObj = xssCellValueObj.getCellTypeEnum();
+
+				//System.out.println("Cell Value Obj : " + xssCellValueObj.formatAsString());
+
+			}
+
+			if (xssCellTypeObj == CellType.STRING) {
+
+				LogUtils.info("Cell Type is STRING");
+
+				if (xssCellValueObj != null) {
+
+					returnCellValue = xssCellValueObj.getStringValue();
+
+				} else {
+
+					returnCellValue = xssCellObj.getRichStringCellValue().toString();
+
+				}
+
+			} else if (xssCellTypeObj == CellType.NUMERIC) {
+
+				LogUtils.info("Cell Type is NUMERIC");
+
+				if (xssCellValueObj != null) {
+
+					//returnCellValue = String.valueOf(xssCellValueObj.getNumberValue());
+					
+					Double value = xssCellValueObj.getNumberValue();
+					Long longValue = value.longValue();
+					returnCellValue = new String(longValue.toString());
+
+				} else {
+
+					//Double value = xssCellObj.getNumericCellValue();
+
+					//returnCellValue = String.valueOf(value);
+					
+					Double value = xssCellObj.getNumericCellValue();
+					Long longValue = value.longValue();
+					returnCellValue = new String(longValue.toString());
+				}
+
+			} else if (xssCellTypeObj == CellType.BOOLEAN) {
+
+				LogUtils.info("Cell Type is BOOLEAN");
+
+				if (xssCellValueObj != null) {
+
+					returnCellValue = String.valueOf(xssCellValueObj.getBooleanValue());
+
+				} else {
+
+					Boolean value = xssCellObj.getBooleanCellValue();
+
+					returnCellValue = String.valueOf(value);
+				
+				}
+
+			}
+
+			return returnCellValue;
 		}
 	}
 
@@ -557,6 +709,17 @@ public class ExcelUtils {
 	public XSSFSheet getSheetName(String sheetName) {
 
 		return xssfWorkbookObj.getSheet(sheetName);
+
+	}
+
+	public void closeWorkBook() {
+
+		try {
+			xssfWorkbookObj.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

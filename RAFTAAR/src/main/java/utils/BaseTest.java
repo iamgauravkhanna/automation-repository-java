@@ -26,9 +26,11 @@ public class BaseTest {
 	 * };
 	 */
 
-	public static HashMap<String, String> baseTestHashMapObj = new HashMap<String, String>();
+	public volatile static HashMap<String, String> baseTestHashMapObj = new HashMap<String, String>();
 
 	public WebDriver webDriverObj;
+	
+	public DriverUtil driverUtilObj;
 
 	public BaseTest() {
 
@@ -55,6 +57,8 @@ public class BaseTest {
 		//BasePage.getProperties();
 
 		System.out.println("Start Up Completed");
+		
+		LogUtils.info("BeforeTest Method of BaseTest");
 
 	}
 
@@ -78,6 +82,15 @@ public class BaseTest {
 
 		}
 
+	}
+	
+	@BeforeTest
+	public void setUp() {
+		
+		driverUtilObj = new DriverUtil();
+		webDriverObj = driverUtilObj.intializeDriver();
+		
+		
 	}
 
 	@AfterMethod(alwaysRun = true)
