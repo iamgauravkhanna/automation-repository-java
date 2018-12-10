@@ -1,7 +1,5 @@
 package project01;
 
-import java.util.HashMap;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -9,6 +7,7 @@ import org.testng.annotations.Test;
 
 import pageObject.project01.Home;
 import utils.BaseTest;
+import utils.DataDictionary;
 import utils.DriverUtil;
 import utils.JavaUtil;
 
@@ -24,9 +23,9 @@ public class TestClass01 extends BaseTest {
 	DriverUtil driverUtilObj;
 
 	@BeforeMethod
-	public void setUp() {
+	public void doBefore() {
 
-		driverUtilObj = new DriverUtil();
+		driverUtilObj = new DriverUtil(baseTestHashMapObj);
 		webDriverObj = driverUtilObj.intializeDriver();
 
 	}
@@ -37,8 +36,8 @@ public class TestClass01 extends BaseTest {
 		homePageObj = new Home(webDriverObj);
 		homePageObj.openHomePage();
 		homePageObj.clickContactUs();
-		
-		baseTestHashMapObj.put("TC_ID", "001");
+
+		DataDictionary.getInstance().getDataDictionary().put("TC_ID", "001");
 
 	}
 
@@ -48,7 +47,7 @@ public class TestClass01 extends BaseTest {
 		homePageObj = new Home(webDriverObj);
 		homePageObj.openHomePage();
 		homePageObj.clickContactUs();
-		baseTestHashMapObj.put("TC_ID", "002");
+		DataDictionary.getInstance().putKey("TC_ID", "002");
 
 	}
 
@@ -58,17 +57,16 @@ public class TestClass01 extends BaseTest {
 		homePageObj = new Home(webDriverObj);
 		homePageObj.openHomePage();
 		homePageObj.clickContactUs();
-		baseTestHashMapObj.put("TC_ID", "003");
+		DataDictionary.getInstance().getDataDictionary().put("TC_ID", "003");
 
 	}
 
 	@AfterMethod
 	public void tearDown() {
-		
+
 		webDriverObj.quit();
-		
-		JavaUtil.printHashMapValues(baseTestHashMapObj);
-		
+
+		JavaUtil.printHashMapValues(DataDictionary.getInstance().getDataDictionary());
 
 	}
 

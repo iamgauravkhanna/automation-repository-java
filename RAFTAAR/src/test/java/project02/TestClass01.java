@@ -9,6 +9,9 @@ import org.testng.annotations.Test;
 
 /**
  * Test Suite containing Tests using POM Model
+ * 
+ * @author Gaurav.Khanna
+ * 
  */
 public class TestClass01 extends BaseTest {
 
@@ -17,9 +20,7 @@ public class TestClass01 extends BaseTest {
 	@BeforeTest
 	public void setUp1() {
 
-		LogUtils.info("BeforeTest Method of TestClass01");
-
-		brokerReusableObj = new Reusables(webDriverObj);
+		brokerReusableObj = new Reusables(webDriverObj, baseTestHashMapObj);
 
 	}
 
@@ -47,7 +48,7 @@ public class TestClass01 extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 
-		// webDriverObj.quit();
+		webDriverObj.quit();
 
 	}
 

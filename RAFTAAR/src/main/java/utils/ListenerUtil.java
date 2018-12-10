@@ -33,7 +33,7 @@ public class ListenerUtil implements ITestListener {
 
 		extentReportsObj.flush();
 		
-		System.out.println("Report Path => " + BaseTest.baseTestHashMapObj.get("reportPath"));
+		System.out.println("Report Path => " + DataDictionary.getInstance().getDataDictionary().get("reportPath"));
 	}
 
 	public synchronized void onTestStart(ITestResult result) {

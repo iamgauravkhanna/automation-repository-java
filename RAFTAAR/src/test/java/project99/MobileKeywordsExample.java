@@ -14,7 +14,7 @@ public class MobileKeywordsExample extends BaseActivity {
 	@BeforeMethod
 	public void StartUp() {
 
-		driverUtilObj = new DriverUtil();
+		driverUtilObj = new DriverUtil(baseTestHashMapObj);
 
 		androidDriverObj = driverUtilObj.initializeAndroidDriverObj();
 

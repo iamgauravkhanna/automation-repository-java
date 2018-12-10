@@ -20,7 +20,7 @@ public class WebKeywordsExample extends BasePage {
 	@BeforeMethod
 	public void StartUp() {
 
-		driverUtilObj = new DriverUtil();
+		driverUtilObj = new DriverUtil(basePageHashMapObj);
 
 		webDriverObj = driverUtilObj.intializeDriver();
 

@@ -1,5 +1,7 @@
 package pageObject.project02.broker;
 
+import java.util.HashMap;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -19,10 +21,12 @@ public class Reusables extends BasePage {
 	SignUp signUpObj;
 	BrokerHome brokerHomePageObj;
 
-	public Reusables(WebDriver driverObj) {
+	public Reusables(WebDriver driverObj, HashMap<String, String> hashMapObj) {
 
 		webDriverObj = driverObj;
 
+		basePageHashMapObj = hashMapObj ;
+		
 		LogUtils.info("Calling Reusables Constructor");
 
 	}
@@ -86,7 +90,7 @@ public class Reusables extends BasePage {
 		
 		waitForPageLoaded();
 		
-		JavaUtil.readTestDataFiles(workBook,sheetName,iterationNumber);
+		basePageHashMapObj = JavaUtil.readTestDataFiles(workBook,sheetName,iterationNumber);
 
 		// We need to modify condition when cell type is formuala, we need to get that
 		// as String

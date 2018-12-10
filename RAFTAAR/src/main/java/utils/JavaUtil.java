@@ -68,7 +68,7 @@ public class JavaUtil {
 			
 			System.out.println("String not resolved. Using baseTestHashMapObj");
 
-			sub = new StrSubstitutor(BaseTest.baseTestHashMapObj);
+			sub = new StrSubstitutor(DataDictionary.getInstance().getDataDictionary());
 
 			resolvedString = sub.replace(templateString);
 
@@ -151,14 +151,17 @@ public class JavaUtil {
 	 * @param workBookName
 	 * @param sheetName
 	 * @param rowNumber
+	 * @return 
 	 */
-	public static void readTestDataFiles(String workBookName, String sheetName, int rowNumber) {
+	public static HashMap<String, String> readTestDataFiles(String workBookName, String sheetName, int rowNumber) {
 
 		LogUtils.info("Entered readTestDataFiles Method");
 
 		ExcelUtils excelUtilsObj = new ExcelUtils("./src/test/resources/test-data/" + workBookName);
 
 		LogUtils.info("Entering into the Loop...");
+		
+		HashMap<String, String> hashMapObj = new HashMap<String, String>();
 
 		for (int i = 0; i < excelUtilsObj.getColumnCount(sheetName); i++) {
 
@@ -174,13 +177,15 @@ public class JavaUtil {
 
 			LogUtils.info("Value = " + value);
 
-			BaseTest.baseTestHashMapObj.put(key, value);
+			hashMapObj.put(key, value);
 
 		}
 
 		LogUtils.info("Exited the Loop....");
 
 		excelUtilsObj.closeWorkBook();
+		
+		return hashMapObj;
 
 	}
 

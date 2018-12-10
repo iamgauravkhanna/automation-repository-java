@@ -5,5 +5,4 @@ Start MongoDB
 Start Klov
 Start Mobile Emulator
 Start Selenium Node
-Start Selenium Node
-a
+Start Appium Node

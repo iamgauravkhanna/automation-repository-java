@@ -53,11 +53,13 @@ public class DriverUtil {
 	String originalColor = "none";
 
 	//
-	public static Map<String, String> configPropertiesMap = new HashMap<String, String>();
+	public Map<String, String> driverUtilHashMap = new HashMap<String, String>();
 
-	public DriverUtil() {
+	public DriverUtil(HashMap<String, String> hashMapObj) {
 
 		LogUtils.info("Calling Constructor : DriverUtil()");
+		
+		driverUtilHashMap = hashMapObj;
 
 		try {
 
@@ -81,9 +83,9 @@ public class DriverUtil {
 
 		LogUtils.info("Entering Method : intializeDriver()");
 
-		if ((configPropertiesMap.get("IsRemote").equalsIgnoreCase("Yes"))) {
+		if ((DataDictionary.getInstance().getKey("IsRemote").equalsIgnoreCase("Yes"))) {
 
-			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Firefox")) {
+			if (driverUtilHashMap.get("Browser").equalsIgnoreCase("Firefox")) {
 
 				LogUtils.info("Using Browser Firefox");
 
@@ -99,7 +101,7 @@ public class DriverUtil {
 				capabilities.setCapability("marionette", true);
 			}
 
-			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Chrome")) {
+			if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("Chrome")) {
 
 				//
 				DesiredCapabilities dc = new DesiredCapabilities();
@@ -126,7 +128,7 @@ public class DriverUtil {
 				webDriverObj.manage().window().maximize();
 			}
 
-			if (configPropertiesMap.get("Platform").equalsIgnoreCase("Windows")) {
+			if (DataDictionary.getInstance().getKey("Platform").equalsIgnoreCase("Windows")) {
 
 				capabilities.setPlatform(Platform.WINDOWS);
 			}
@@ -135,7 +137,7 @@ public class DriverUtil {
 
 			try {
 
-				webDriverObj = new RemoteWebDriver(new URL(configPropertiesMap.get("RemoteURL")), capabilities);
+				webDriverObj = new RemoteWebDriver(new URL(driverUtilHashMap.get("RemoteURL")), capabilities);
 
 			} catch (MalformedURLException e) {
 
@@ -147,7 +149,7 @@ public class DriverUtil {
 
 		} else {
 
-			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Chrome")) {
+			if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("Chrome")) {
 				//
 				DesiredCapabilities dc = new DesiredCapabilities();
 
@@ -173,7 +175,7 @@ public class DriverUtil {
 				webDriverObj.manage().window().maximize();
 			}
 
-			if (configPropertiesMap.get("Browser").equalsIgnoreCase("Firefox")) {
+			if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("Firefox")) {
 
 				System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
 
@@ -184,7 +186,7 @@ public class DriverUtil {
 				webDriverObj = new FirefoxDriver(capabilities);
 			}
 
-			if (configPropertiesMap.get("Browser").equalsIgnoreCase("IE")) {
+			if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("IE")) {
 
 				System.setProperty("webdriver.ie.driver",
 						System.getProperty("user.dir") + "/resources/drivers/IEDriverServer.exe");
@@ -293,7 +295,9 @@ public class DriverUtil {
 
 			for (String name : properties.stringPropertyNames()) {
 
-				BaseTest.baseTestHashMapObj.put(name, properties.getProperty(name));
+				driverUtilHashMap.put(name, properties.getProperty(name));
+				
+				System.out.println("Env Var : " + properties.getProperty(name));
 			}
 
 			//
@@ -304,7 +308,9 @@ public class DriverUtil {
 			
 			for (String name : properties.stringPropertyNames()) {
 
-				BaseTest.baseTestHashMapObj.put(name, properties.getProperty(name));
+				driverUtilHashMap.put(name, properties.getProperty(name));
+				
+				System.out.println(name + " : " + properties.getProperty(name));
 			}
 
 			//
@@ -332,19 +338,14 @@ public class DriverUtil {
 			String value = properties.getProperty(key);
 
 			//
-			// System.out.println(key + " => " + value);
+			System.out.println(key + " => " + value);
 
 			//
-			configPropertiesMap.put(key, value);
+			driverUtilHashMap.put(key, value);
 			
-			BaseTest.baseTestHashMapObj.put(key, value);
+			DataDictionary.getInstance().putKey(key, value);
 
 		}
-
-		LogUtils.info(configPropertiesMap.get("Platform"));
-		LogUtils.info(configPropertiesMap.get("Browser"));
-		LogUtils.info(configPropertiesMap.get("IsRemote"));
-		LogUtils.info(configPropertiesMap.get("RemoteURL"));
 
 	}
 

@@ -19,7 +19,7 @@ public class TestClass02 extends BaseTest {
 
 		LogUtils.info("BeforeTest Method of TestClass02");
 
-		brokerReusableObj = new Reusables(webDriverObj);
+		brokerReusableObj = new Reusables(webDriverObj,baseTestHashMapObj);
 
 	}
 

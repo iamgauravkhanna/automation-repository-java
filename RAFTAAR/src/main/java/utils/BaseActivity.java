@@ -1,6 +1,7 @@
 package utils;
 
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,7 @@ public class BaseActivity {
 	private int elementWaitTime = 10;
 	private String destDir;
 	private SimpleDateFormat dateFormat;
+	public HashMap<String, String> baseTestHashMapObj = new HashMap<String, String>();
 
 	/**
 	 * Constructor of this class

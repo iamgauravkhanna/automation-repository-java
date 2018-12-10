@@ -2,6 +2,7 @@ package pageObject.project02.broker;
 
 import utils.BasePage;
 import utils.BaseTest;
+import utils.DataDictionary;
 import utils.JavaUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,13 +29,13 @@ public class AddEmployer extends BasePage {
 
 	public void setCompanyName() {
 
-		setText(COMPANY_NAME, BaseTest.baseTestHashMapObj.get("companyname"));
+		setText(COMPANY_NAME, DataDictionary.getInstance().getDataDictionary().get("companyname"));
 
 	}
 
 	public void setSIC() {
 
-		setText(SIC, BaseTest.baseTestHashMapObj.get("sic"));
+		setText(SIC, DataDictionary.getInstance().getDataDictionary().get("sic"));
 		// pause();
 		// click(By.xpath("//*[text()='N (0131)']"));
 		waitFor(By.xpath("//ul[contains(@id,'typeahead')]/li[1]"));
@@ -44,7 +45,7 @@ public class AddEmployer extends BasePage {
 
 	public void setEIN() {
 		
-		setText(By.id("employer.federalEmployerIdentificationNumber"), BaseTest.baseTestHashMapObj.get("ein"));
+		setText(By.id("employer.federalEmployerIdentificationNumber"), DataDictionary.getInstance().getDataDictionary().get("ein"));
 
 	}
 

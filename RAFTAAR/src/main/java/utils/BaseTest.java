@@ -26,11 +26,14 @@ public class BaseTest {
 	 * };
 	 */
 
-	public volatile static HashMap<String, String> baseTestHashMapObj = new HashMap<String, String>();
+	// public HashMap<String, String> baseTestHashMapObj = new HashMap<String,
+	// String>();
 
 	public WebDriver webDriverObj;
-	
+
 	public DriverUtil driverUtilObj;
+
+	public HashMap<String, String> baseTestHashMapObj = new HashMap<String, String>();
 
 	public BaseTest() {
 
@@ -38,7 +41,8 @@ public class BaseTest {
 
 		System.setProperty("current.date.time", JavaUtil.getTimeStamp());
 
-		String outputDirectory = System.getProperty("user.dir") + "\\results\\test-output_" + JavaUtil.getTimeStamp();
+		String outputDirectory = System.getProperty("user.dir") + "\\results\\test-output_" + JavaUtil.getTimeStamp()
+				+ "_" + JavaUtil.generateRandomString();
 
 		System.setProperty("logsDirectory", outputDirectory);
 
@@ -48,16 +52,14 @@ public class BaseTest {
 
 		PropertyConfigurator.configure("log4j.properties");
 
-		BaseTest.baseTestHashMapObj.put("logsDirectory", outputDirectory);
+		baseTestHashMapObj.put("logsDirectory", outputDirectory);
 
-		BaseTest.baseTestHashMapObj.put("User", "Gaurav.Khanna");
+		baseTestHashMapObj.put("User", "Gaurav.Khanna");
 
 		createTestDataMap();
-		
-		//BasePage.getProperties();
 
 		System.out.println("Start Up Completed");
-		
+
 		LogUtils.info("BeforeTest Method of BaseTest");
 
 	}
@@ -83,14 +85,13 @@ public class BaseTest {
 		}
 
 	}
-	
+
 	@BeforeTest
 	public void setUp() {
-		
-		driverUtilObj = new DriverUtil();
+
+		driverUtilObj = new DriverUtil(baseTestHashMapObj);
 		webDriverObj = driverUtilObj.intializeDriver();
-		
-		
+
 	}
 
 	@AfterMethod(alwaysRun = true)

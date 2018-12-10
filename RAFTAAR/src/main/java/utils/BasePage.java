@@ -37,7 +37,7 @@ public class BasePage {
 	public WebDriver webDriverObj;
 
 	//
-	public static HashMap<String, String> basePagehashMapObj = new HashMap<String, String>();;
+	public static HashMap<String, String> basePageHashMapObj = new HashMap<String, String>();;
 
 	//
 	public static HashMap<String, String> propertiesMap;
@@ -198,10 +198,10 @@ public class BasePage {
 	 */
 	public void intializeDriver() {
 
-		if ((propertiesMap.get("IsRemote").equalsIgnoreCase("Yes"))) {
+		if ((DataDictionary.getInstance().getKey("IsRemote").equalsIgnoreCase("Yes"))) {
 
 			//
-			String browserName = propertiesMap.get("Browser");
+			String browserName = DataDictionary.getInstance().getKey("Browser");
 
 			//
 			LogUtils.info("Running Tests on Remote Browsers");
@@ -459,7 +459,7 @@ public class BasePage {
 			LogUtils.info(key + " => " + value);
 
 			//
-			propertiesMap.put(key, value);
+			DataDictionary.getInstance().putKey(key, value);
 
 		}
 

@@ -2,6 +2,7 @@ package pageObject.project02.broker;
 
 import utils.BasePage;
 import utils.BaseTest;
+import utils.DataDictionary;
 import utils.JavaUtil;
 
 import org.openqa.selenium.By;
@@ -54,7 +55,7 @@ public class ManageEmployer extends BasePage {
 		click(Broker.MANAGE_EMPLOYERS__SEARCH_BY_TEXTBOX);
 
 		setText(Broker.MANAGE_EMPLOYERS__SEARCH_BY_TEXTBOX,
-				Long.valueOf(BaseTest.baseTestHashMapObj.get("ein")).toString());
+				Long.valueOf(DataDictionary.getInstance().getDataDictionary().get("ein")).toString());
 
 		click(Broker.MANAGE_EMPLOYERS__SEARCH_ICON);
 
