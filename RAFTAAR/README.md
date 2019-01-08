@@ -14,7 +14,9 @@ RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open sour
  - Interaction with Databases (Oracle,MySQL,MongoDB)
  - Interaction with Properties files
  - Interaction with Shell Commands
- - TestNG, ReportNG, Allure & Extent Reports integrated for better reporting
+  - TestNG, ReportNG, Allure & Extent Reports integrated for better reporting
+  - Usage of TestNG and WebDriver Event Listeners
+ - Barcode, QR Code Reader
  
 
 # Software Stack
