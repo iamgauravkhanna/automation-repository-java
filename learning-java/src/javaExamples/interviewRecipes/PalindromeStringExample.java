@@ -1,21 +1,20 @@
 package javaExamples.interviewRecipes;
 
 /**
+ * 
  * Program to check if a string is a palindrome or not. Remember a string is a
  * palindrome if it remains unchanged when reversed, for example "dad" is a
  * palindrome as reverse of "dad" is "dad" whereas "program" is not a
  * palindrome.
- * 
- * @author Gaurav.Khanna
  *
  */
-class PalindromeStringExample1 {
+class PalindromeStringExample {
 
 	//
 	public static void main(String args[]) {
 
 		//
-		String original = "dazad";
+		String original = "nennen";
 
 		//
 		String reverse = "";

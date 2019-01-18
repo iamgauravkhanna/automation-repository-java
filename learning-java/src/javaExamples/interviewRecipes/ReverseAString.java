@@ -27,7 +27,7 @@ public class ReverseAString {
 		int i = str.length();
 		StringBuffer strb = new StringBuffer();
 		for (int j = i - 1; j >= 0; j--) {
-			strb = strb.append(str.charAt(j));
+			strb.append(str.charAt(j));
 		}
 
 		return strb.toString();
