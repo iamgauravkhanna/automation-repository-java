@@ -1,6 +1,6 @@
 # RAFTAAR
 
-RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open source automation framework for Web & Mobile Applications & Web Services Testing 
+RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open source automation framework for Web & Mobile & Web Services Testing 
 
 # Capabilities
 
