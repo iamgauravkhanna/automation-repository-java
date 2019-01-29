@@ -40,6 +40,16 @@
 			<artifactId>ashot</artifactId>
 			<version>1.5.4</version>
 		</dependency>
+		<dependency>
+			<groupId>ru.stqa.selenium</groupId>
+			<artifactId>webdriver-factory</artifactId>
+			<version>4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>3.2.0</version>
+		</dependency>
 	</dependencies>
 
 </project>
