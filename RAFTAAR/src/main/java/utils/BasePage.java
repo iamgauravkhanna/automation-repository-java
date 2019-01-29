@@ -469,7 +469,7 @@ public class BasePage {
 
 	public void waitFor(By locator, int time) {
 
-		WebDriverWait wait = new WebDriverWait(webDriverObj, time);
+		WebDriverWait wait = new WebDriverWait(webDriverObj, time);		
 
 		if (wait.until(ExpectedConditions.visibilityOfElementLocated(locator)) != null) {
 
