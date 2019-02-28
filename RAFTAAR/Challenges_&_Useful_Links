@@ -53,3 +53,8 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\JavaSoft\Prefs
 https://github.com/bonigarcia/webdrivermanager
 https://jsonplaceholder.typicode.com/users
 
+IWebDriver.Manage().Logs
+
+Using the EventFiringWebDriver class you can intercept all of the important method calls to IWebDriver and IWebElement
+
+Clean Sheet Plugin for better UI to work more efficiently
