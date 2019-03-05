@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-
-<suite name="Regression Suite - Project 99" parallel="tests"
-	thread-count="10">
-	<suite-files>
-		<suite-file path="src/test/resources/suites/project01.xml"></suite-file>
-		<suite-file path="src/test/resources/suites/project02.xml"></suite-file>
-	</suite-files>
-</suite>

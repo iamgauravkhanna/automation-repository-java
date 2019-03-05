@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Suite - Project 03" parallel="tests"
+	thread-count="1">
+
+	<!-- <listeners> <listener class-name="utils.CustomListener01" /> </listeners> -->
+
+	<test name="Project 03 - Test 01">
+		<classes>
+			<class name="web.project03.phptravels.Feature001" />
+		</classes>
+
+	</test>
+</suite>

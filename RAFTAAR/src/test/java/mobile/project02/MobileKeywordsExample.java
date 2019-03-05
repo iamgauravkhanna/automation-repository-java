@@ -5,16 +5,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.BaseActivity;
-import utils.DriverUtil;
+import utils.BrowserFactory;
 
 public class MobileKeywordsExample extends BaseActivity {
 
-	DriverUtil driverUtilObj;
+	BrowserFactory driverUtilObj;
 
 	@BeforeMethod
 	public void StartUp() {
 
-		driverUtilObj = new DriverUtil(baseTestHashMapObj);
+		driverUtilObj = new BrowserFactory();
 
 		androidDriverObj = driverUtilObj.initializeAndroidDriverObj();
 

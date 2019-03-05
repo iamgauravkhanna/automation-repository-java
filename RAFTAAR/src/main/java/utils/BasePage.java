@@ -198,7 +198,7 @@ public class BasePage {
 	 */
 	public void intializeDriver() {
 
-		if ((DataDictionary.getInstance().getKey("IsRemote").equalsIgnoreCase("Yes"))) {
+		if ((DataDictionary.getInstance().getKey("IsRemote").equalsIgnoreCase("No"))) {
 
 			//
 			String browserName = DataDictionary.getInstance().getKey("Browser");
@@ -223,7 +223,7 @@ public class BasePage {
 
 				//
 				System.setProperty("webdriver.gecko.driver",
-						System.getProperty("user.dir") + "/resources/drivers/geckodriver.exe");
+						System.getProperty("user.dir") + "/resources/drivers/gecko-driver/geckodriver-v0.24.0-win64/geckodriver.exe");
 
 				//
 				DesiredCapabilities capabilities = DesiredCapabilities.firefox();

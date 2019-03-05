@@ -1,39 +1,25 @@
 package utils;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.List;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
-import org.testng.TestNG;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
 
-	/*
-	 * public static ThreadLocal<ConcurrentHashMap<String, String>>
-	 * baseTestHashMapObj = new ThreadLocal<ConcurrentHashMap<String, String>>(){
-	 * 
-	 * @Override protected ConcurrentHashMap<String, String> initialValue() { return
-	 * baseTestHashMapObj.get(); }
-	 * 
-	 * };
-	 */
-
-	// public HashMap<String, String> baseTestHashMapObj = new HashMap<String,
-	// String>();
-
-	public WebDriver webDriverObj;
-
-	public DriverUtil driverUtilObj;
+	public WebDriver webDriverObj = null;
 
 	public HashMap<String, String> baseTestHashMapObj = new HashMap<String, String>();
+
+	private BrowserFactory browserFactoryObj;
 
 	public BaseTest() {
 
@@ -86,16 +72,23 @@ public class BaseTest {
 
 	}
 
-	@BeforeTest
+	@BeforeMethod
 	public void setUp() {
 
-		driverUtilObj = new DriverUtil(baseTestHashMapObj);
-		webDriverObj = driverUtilObj.intializeDriver();
+		browserFactoryObj = new BrowserFactory();
+
+		webDriverObj = browserFactoryObj.getBrowser();
 
 	}
 
-	@AfterMethod(alwaysRun = true)
+	@AfterMethod
 	public void cleanUp() {
+
+		LogUtils.info("========= Closing Browser =========");
+
+		webDriverObj.manage().deleteAllCookies();
+
+		webDriverObj.quit();
 
 		JavaUtil.writeToFileApacheCommonIO(new File(
 				baseTestHashMapObj.get("logsDirectory") + "\\" + "TestData_" + JavaUtil.getTimeStamp() + ".txt"),

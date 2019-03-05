@@ -45,11 +45,4 @@ public class TestClass01 extends BaseTest {
 
 	}
 
-	@AfterTest
-	public void tearDown() {
-
-		webDriverObj.quit();
-
-	}
-
 }

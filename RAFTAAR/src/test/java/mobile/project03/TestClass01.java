@@ -9,7 +9,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import mobile.project03.pageObject.HomeActivity;
 import utils.BaseTest;
-import utils.DriverUtil;
+import utils.BrowserFactory;
 
 /**
  * 
@@ -24,7 +24,7 @@ public class TestClass01 extends BaseTest{
 	@BeforeTest
 	public void setUp() {
 
-		DriverUtil driverUtilObj = new DriverUtil(baseTestHashMapObj);
+		BrowserFactory driverUtilObj = new BrowserFactory();
 
 		androidDriverObj = driverUtilObj.initializeAndroidDriverObj();
 

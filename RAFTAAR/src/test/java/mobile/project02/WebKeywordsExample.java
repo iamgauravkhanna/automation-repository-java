@@ -10,19 +10,19 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import utils.BasePage;
-import utils.DriverUtil;
+import utils.BrowserFactory;
 import utils.LogUtils;
 
 public class WebKeywordsExample extends BasePage {
 
-	DriverUtil driverUtilObj;
+	BrowserFactory driverUtilObj;
 
 	@BeforeMethod
 	public void StartUp() {
 
-		driverUtilObj = new DriverUtil(basePageHashMapObj);
+		driverUtilObj = new BrowserFactory();
 
-		webDriverObj = driverUtilObj.intializeDriver();
+		webDriverObj = driverUtilObj.getBrowser();
 
 		LogUtils.info("BeforeTest Execution Complete");
 

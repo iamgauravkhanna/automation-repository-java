@@ -36,9 +36,9 @@ RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open sour
 - Rest_Assured=3.0.3
 - poi=3.13
 - Log4j=1.2.17
-- Firefox=61
+- Firefox=65
+- Gecko_Driver=0.24.0
 - Chrome=67
-- Internet-Explorer=IE11
-- Gecko_Driver=0.16.0
 - Chrome_Driver=2.41
+- Internet-Explorer=IE11
 - Cucumber=2.4.0
