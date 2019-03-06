@@ -1,8 +1,9 @@
-package web.project02.pageObject.uiMap;
+package web.project02.healthcare.pageObject.uiMap;
 
 import utils.BasePage;
 import utils.BaseTest;
 import utils.DataDictionary;
+import utils.TestDataWriter;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -49,7 +50,7 @@ public class Auth0LogIn extends BasePage {
 
 	public void brokerLogin() {
 
-		login(basePageHashMapObj.get("BROKER_USERNAME"), basePageHashMapObj.get("BROKER_PASSWORD"));
+		login(TestDataWriter.getInstance().getKey("BROKER_USERNAME"), TestDataWriter.getInstance().getKey("BROKER_PASSWORD"));
 
 	}
 

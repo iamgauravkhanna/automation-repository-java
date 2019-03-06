@@ -1,10 +1,10 @@
-package web.project02.pageObject.broker;
+package web.project02.healthcare.pageObject.broker;
 
 import utils.BasePage;
 import utils.BaseTest;
 import utils.DataDictionary;
 import utils.JavaUtil;
-import web.project02.pageObject.uiMap.Broker;
+import web.project02.healthcare.pageObject.uiMap.Broker;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

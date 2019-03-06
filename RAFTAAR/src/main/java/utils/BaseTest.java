@@ -1,52 +1,40 @@
 package utils;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
 
-	public WebDriver webDriverObj = null;
+	public WebDriver webDriverObj ;
 
-	public HashMap<String, String> baseTestHashMapObj = new HashMap<String, String>();
+	public HashMap<String, String> testDataMap = new HashMap<String, String>();
 
 	private BrowserFactory browserFactoryObj;
 
-	public BaseTest() {
+	private String outputDirectory;
+	
+	public ThreadLocal<WebDriver> webDriverPool = new ThreadLocal<WebDriver>();
 
-		System.out.println("Calling Base Test......");
+	public BaseTest() {
 
 		System.setProperty("current.date.time", JavaUtil.getTimeStamp());
 
-		String outputDirectory = System.getProperty("user.dir") + "\\results\\test-output_" + JavaUtil.getTimeStamp()
-				+ "_" + JavaUtil.generateRandomString();
+		String fileSeperator = System.getProperty("file.separator");
+
+		outputDirectory = System.getProperty("user.dir") + fileSeperator + "test-results" + fileSeperator + "logs"
+				+ fileSeperator + "test-output_" + JavaUtil.getTimeStamp() + "_" + JavaUtil.generateRandomString();
 
 		System.setProperty("logsDirectory", outputDirectory);
 
 		JavaUtil.createDirectory(outputDirectory);
 
-		LogUtils.info("Initalizing Log4j Properties File...");
-
 		PropertyConfigurator.configure("log4j.properties");
-
-		baseTestHashMapObj.put("logsDirectory", outputDirectory);
-
-		baseTestHashMapObj.put("User", "Gaurav.Khanna");
-
-		createTestDataMap();
-
-		System.out.println("Start Up Completed");
-
-		LogUtils.info("BeforeTest Method of BaseTest");
 
 	}
 
@@ -75,24 +63,49 @@ public class BaseTest {
 	@BeforeMethod
 	public void setUp() {
 
+		LogUtils.info("============ setUp() begins ============");
+
+		TestDataWriter.getInstance().putKey("logsDirectory", outputDirectory);
+
+		TestDataWriter.getInstance().putKey("User", "Gaurav.Khanna");
+
+		// createTestDataMap();
+
 		browserFactoryObj = new BrowserFactory();
 
-		webDriverObj = browserFactoryObj.getBrowser();
+		webDriverPool.set(browserFactoryObj.getBrowser());
+
+		/*
+		 * if (DriverManager.getDriver() == null) {
+		 * 
+		 * DriverManager.setWebDriver(DriverFactory.createInstance()); }
+		 */
+
+		testDataMap.putAll(TestDataWriter.getInstance().getDataDictionary());
+
+		LogUtils.info("============ setUp() ends ============");
 
 	}
 
 	@AfterMethod
 	public void cleanUp() {
 
+		TestDataWriter.getInstance().putAllKeys(testDataMap);
+
 		LogUtils.info("========= Closing Browser =========");
 
-		webDriverObj.manage().deleteAllCookies();
+		webDriverPool.get().manage().deleteAllCookies();
 
-		webDriverObj.quit();
+		webDriverPool.get().quit();
 
-		JavaUtil.writeToFileApacheCommonIO(new File(
-				baseTestHashMapObj.get("logsDirectory") + "\\" + "TestData_" + JavaUtil.getTimeStamp() + ".txt"),
-				baseTestHashMapObj.toString());
+		testDataMap.putAll(TestDataWriter.getInstance().getDataDictionary());
+
+	}
+
+	@AfterTest
+	public void tearDown() {
+
+		LogUtils.info("====== Finally All Tests Are Executed ======");
 
 	}
 

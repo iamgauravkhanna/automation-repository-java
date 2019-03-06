@@ -1,6 +1,7 @@
-package web.project02.pageObject.broker;
+package web.project02.healthcare.pageObject.broker;
 
 import utils.BasePage;
+import utils.TestDataWriter;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +22,7 @@ public class BrokerHome extends BasePage {
 
 	public void openHomePage() {
 
-		openBrowser(basePageHashMapObj.get("BROKER_URL"));
+		openBrowser(TestDataWriter.getInstance().getKey("BROKER_URL"));
 
 		maximizeBrowser();
 

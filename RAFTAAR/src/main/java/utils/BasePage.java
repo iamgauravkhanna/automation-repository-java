@@ -70,7 +70,7 @@ public class BasePage {
 
 		try {
 
-			LogUtils.info("Calling BasePage Constructor");
+			LogUtils.info("=========== BasePage Constructor ===========");
 
 			// getProperties();
 
@@ -185,7 +185,7 @@ public class BasePage {
 	 */
 	public void openBrowser(String link) {
 
-		LogUtils.info("Link to Open => " + link);
+		LogUtils.info("Link to Open ======> " + link);
 
 		webDriverObj.get(link);
 

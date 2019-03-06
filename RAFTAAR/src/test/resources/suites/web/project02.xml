@@ -3,21 +3,12 @@
 <suite name="Regression Suite - Project 02" parallel="tests"
 	thread-count="10">
 
-<!-- 	<listeners>
-		<listener class-name="utils.ListenerUtil" />
-	</listeners>
- -->
+	<!-- <listeners> <listener class-name="utils.ListenerUtil" /> </listeners> -->
 
-<test name="Project 02 - Test 01" parallel="classes">
+	<test name="Project 02 - Test 01" parallel="methods" thread-count="5">
 		<classes>
-			<class name="web.project02.healthcare.TestClass01" />
+			<class name="web.project02.healthcare.Feature003" />
 		</classes>
 	</test>
-
-<!-- 	<test name="Project 02 - Test 02" parallel="classes">
-		<classes>
-			<class name="project02.TestClass02" />
-		</classes>
-	</test> -->
 
 </suite>

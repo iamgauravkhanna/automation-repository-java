@@ -88,7 +88,7 @@ public class BrowserFactory {
 
 		LogUtils.info("Entering Method : intializeDriver()");
 
-		if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("Chrome")) {
+		if (TestDataWriter.getInstance().getKey("Browser").equalsIgnoreCase("Chrome")) {
 
 			String chromeDriverPath = "src/test/resources/drivers/chrome-driver/2.46/chromedriver.exe";
 
@@ -102,7 +102,7 @@ public class BrowserFactory {
 
 			desiredCapabilitiesObj.setBrowserName("chrome");
 
-		} else if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("Firefox")) {
+		} else if (TestDataWriter.getInstance().getKey("Browser").equalsIgnoreCase("Firefox")) {
 
 			String firefoxDriverPath = "src/test/resources/drivers/gecko-driver/geckodriver-v0.24.0-win64/geckodriver.exe";
 
@@ -114,7 +114,7 @@ public class BrowserFactory {
 
 			desiredCapabilitiesObj.setCapability("marionette", true);
 
-		} else if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("IE"))
+		} else if (TestDataWriter.getInstance().getKey("Browser").equalsIgnoreCase("IE"))
 
 		{
 
@@ -132,17 +132,17 @@ public class BrowserFactory {
 
 		}
 
-		if (DataDictionary.getInstance().getKey("Platform").equalsIgnoreCase("Windows")) {
+		if (TestDataWriter.getInstance().getKey("Platform").equalsIgnoreCase("Windows")) {
 
 			desiredCapabilitiesObj.setPlatform(Platform.WINDOWS);
 
-		} else if (DataDictionary.getInstance().getKey("Platform").equalsIgnoreCase("Linux")) {
+		} else if (TestDataWriter.getInstance().getKey("Platform").equalsIgnoreCase("Linux")) {
 
 			desiredCapabilitiesObj.setPlatform(Platform.LINUX);
 
 		}
 
-		if ((DataDictionary.getInstance().getKey("IsRemote").equalsIgnoreCase("Yes"))) {
+		if ((TestDataWriter.getInstance().getKey("IsRemote").equalsIgnoreCase("Yes"))) {
 
 			LogUtils.info("Entering Block to run test on Remote Environment");
 
@@ -160,15 +160,15 @@ public class BrowserFactory {
 
 		} else {
 
-			if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("IE")) {
+			if (TestDataWriter.getInstance().getKey("Browser").equalsIgnoreCase("IE")) {
 				webDriverObj = new InternetExplorerDriver(desiredCapabilitiesObj);
 			}
 
-			if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("Firefox")) {
+			if (TestDataWriter.getInstance().getKey("Browser").equalsIgnoreCase("Firefox")) {
 				webDriverObj = new FirefoxDriver(desiredCapabilitiesObj);
 			}
 
-			if (DataDictionary.getInstance().getKey("Browser").equalsIgnoreCase("Chrome")) {
+			if (TestDataWriter.getInstance().getKey("Browser").equalsIgnoreCase("Chrome")) {
 				webDriverObj = new ChromeDriver(desiredCapabilitiesObj);
 			}
 
@@ -313,7 +313,7 @@ public class BrowserFactory {
 			//
 			driverUtilHashMap.put(key, value);
 
-			DataDictionary.getInstance().putKey(key, value);
+			TestDataWriter.getInstance().putKey(key, value);
 
 		}
 

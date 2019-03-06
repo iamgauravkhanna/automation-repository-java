@@ -1,4 +1,4 @@
-package web.project02.pageObject.uiMap;
+package web.project02.healthcare.pageObject.uiMap;
 
 import org.openqa.selenium.By;
 

@@ -5,7 +5,7 @@
 
 	<!-- <listeners> <listener class-name="utils.ListenerUtil" /> </listeners> -->
 
-	<test name="Project 01 - Test 01" parallel="methods" thread-count="5">
+	<test name="Project 01 - Test 01" parallel="methods" thread-count="10">
 		<classes>
 			<class name="web.project01.automationpractice.Feature001" />
 		</classes>

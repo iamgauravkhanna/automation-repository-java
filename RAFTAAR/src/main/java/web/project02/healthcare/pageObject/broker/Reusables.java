@@ -1,4 +1,4 @@
-package web.project02.pageObject.broker;
+package web.project02.healthcare.pageObject.broker;
 
 import java.util.HashMap;
 
@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 import utils.BasePage;
 import utils.JavaUtil;
 import utils.LogUtils;
-import web.project02.pageObject.employer.SignUp;
-import web.project02.pageObject.uiMap.Auth0LogIn;
-import web.project02.pageObject.uiMap.Employer;
+import web.project02.healthcare.pageObject.employer.SignUp;
+import web.project02.healthcare.pageObject.uiMap.Auth0LogIn;
+import web.project02.healthcare.pageObject.uiMap.Employer;
 
 public class Reusables extends BasePage {
 
@@ -21,12 +21,10 @@ public class Reusables extends BasePage {
 	SignUp signUpObj;
 	BrokerHome brokerHomePageObj;
 
-	public Reusables(WebDriver driverObj, HashMap<String, String> hashMapObj) {
+	public Reusables(WebDriver driverObj) {
 
 		webDriverObj = driverObj;
 
-		basePageHashMapObj = hashMapObj ;
-		
 		LogUtils.info("Calling Reusables Constructor");
 
 	}
@@ -87,10 +85,10 @@ public class Reusables extends BasePage {
 	public void fillEmployerDetails(String workBook, String sheetName, int iterationNumber) {
 
 		AddEmployerObj = new AddEmployer(webDriverObj);
-		
+
 		waitForPageLoaded();
-		
-		basePageHashMapObj = JavaUtil.readTestDataFiles(workBook,sheetName,iterationNumber);
+
+		basePageHashMapObj = JavaUtil.readTestDataFiles(workBook, sheetName, iterationNumber);
 
 		// We need to modify condition when cell type is formuala, we need to get that
 		// as String
@@ -117,7 +115,7 @@ public class Reusables extends BasePage {
 
 		topLinksObj = new TopLinks(webDriverObj);
 		manageEmployerPageObj = new ManageEmployer(webDriverObj);
-		
+
 		topLinksObj.clickClientsTab();
 		manageEmployerPageObj.clickAddEmployer();
 		manageEmployerPageObj.clickEnterManually();
@@ -129,7 +127,7 @@ public class Reusables extends BasePage {
 
 		brokerHomePageObj = new BrokerHome(webDriverObj);
 		auth0LogInObj = new Auth0LogIn(webDriverObj);
-		
+
 		brokerHomePageObj.openHomePage();
 		auth0LogInObj.brokerLogin();
 

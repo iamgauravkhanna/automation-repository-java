@@ -1,10 +1,13 @@
 package web.project01.automationpractice;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import utils.BaseTest;
 import utils.DataDictionary;
-import web.project01.pageObject.Home;
+import utils.DriverFactory;
+import utils.DriverManager;
+import web.project01.automationpractice.pageObject.Home;
 
 /**
  * 
@@ -13,15 +16,14 @@ import web.project01.pageObject.Home;
  */
 public class Feature001 extends BaseTest {
 
-	Home homePageObj;
+	ThreadLocal<Home> homePageObj = new ThreadLocal<Home>();
 
 	@Test
 	public void TC_001() {
 
-		homePageObj = new Home(webDriverObj);
-		homePageObj.openHomePage();
-		homePageObj.clickContactUs();
-
+		homePageObj.set(new Home(webDriverPool.get()));
+		homePageObj.get().openHomePage();
+		homePageObj.get().clickContactUs();
 		DataDictionary.getInstance().getDataDictionary().put("TC_ID", "001");
 
 	}
@@ -29,9 +31,9 @@ public class Feature001 extends BaseTest {
 	@Test
 	public void TC_002() {
 
-		homePageObj = new Home(webDriverObj);
-		homePageObj.openHomePage();
-		homePageObj.clickContactUs();
+		homePageObj.set(new Home(webDriverPool.get()));
+		homePageObj.get().openHomePage();
+		homePageObj.get().clickContactUs();
 		DataDictionary.getInstance().putKey("TC_ID", "002");
 
 	}
@@ -39,9 +41,9 @@ public class Feature001 extends BaseTest {
 	@Test
 	public void TC_003() {
 
-		homePageObj = new Home(webDriverObj);
-		homePageObj.openHomePage();
-		homePageObj.clickContactUs();
+		homePageObj.set(new Home(webDriverPool.get()));
+		homePageObj.get().openHomePage();
+		homePageObj.get().clickContactUs();
 		DataDictionary.getInstance().getDataDictionary().put("TC_ID", "003");
 
 	}

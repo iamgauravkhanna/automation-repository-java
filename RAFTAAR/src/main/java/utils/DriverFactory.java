@@ -1,56 +1,44 @@
 package utils;
 
-import org.openqa.selenium.Platform;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class DriverFactory {
 
-	private WebDriver webDriver;
+	private static Logger logger = LogManager.getLogger(DriverFactory.class);
 
-	private final String operatingSystem = System.getProperty("os.name").toUpperCase();
+	static WebDriver createInstance() {
 
-	private final String systemArchitecture = System.getProperty("os.arch");
+		WebDriver driver = null;
 
-	private DesiredCapabilities desiredCapabilitiesObj;
+		DesiredCapabilities desiredCapabilitiesObj;
 
-	WebDriver getDriver() {
+		try {
 
-		if (null == webDriver) {
+			String chromeDriverPath = "src/test/resources/drivers/chrome-driver/2.46/chromedriver.exe";
 
-			System.out.println("=================================================");
+			LogUtils.info("Path of Chrome Driver : " + chromeDriverPath);
 
-			System.out.println("Current Operating System: " + operatingSystem);
+			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-			System.out.println("Current Architecture: " + systemArchitecture);
+			desiredCapabilitiesObj = new DesiredCapabilities();
 
-			System.out.println("Current Browser Selection: Firefox");
+			desiredCapabilitiesObj = DesiredCapabilities.chrome();
 
-			System.out.println("=================================================");
+			desiredCapabilitiesObj.setBrowserName("chrome");
 
-			String firefoxDriverPath = "src/test/resources/drivers/gecko-driver/geckodriver-v0.24.0-win64/geckodriver.exe";
+			driver = new ChromeDriver(desiredCapabilitiesObj);
 
-			LogUtils.info("Path of Firefox Driver : " + firefoxDriverPath);
+			logger.debug(driver);
 
-			System.setProperty("webdriver.gecko.driver", firefoxDriverPath);
+		} catch (Exception e) {
 
-			desiredCapabilitiesObj = DesiredCapabilities.firefox();
-
-			desiredCapabilitiesObj.setCapability("marionette", true);
-			
-			desiredCapabilitiesObj.setPlatform(Platform.WINDOWS);
-
-			webDriver = new FirefoxDriver(desiredCapabilitiesObj);
+			e.printStackTrace();
 		}
 
-		return webDriver;
-	}
-
-	void quitDriver() {
-		if (null != webDriver) {
-			webDriver.quit();
-			webDriver = null;
-		}
+		return driver;
 	}
 }
