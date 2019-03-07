@@ -55,6 +55,16 @@ https://jsonplaceholder.typicode.com/users
 
 IWebDriver.Manage().Logs
 
+EventFiringWebDriver class 
+
+activeElement();
+
 Using the EventFiringWebDriver class you can intercept all of the important method calls to IWebDriver and IWebElement
 
 Clean Sheet Plugin for better UI to work more efficiently
+
+https://github.com/atinfo/awesome-test-automation/blob/master/java-test-automation.md
+
+https://github.com/atinfo/awesome-test-automation/blob/master/javascript-test-automation.md
+
+https://github.com/atinfo/awesome-test-automation/blob/master/python-test-automation.md

@@ -7,16 +7,19 @@ RAFTAAR (ROBUST AUTOMATION FRAMEWORK THAT ALLOW ARTIFICIAL RUNS) is an open sour
  - Automate Web Applications
  - Automate Mobile Applications - Android, iOS
  - Automate Web Services/API
- - Cross-browser testing on Chrome, Firefox, IE
+ - Cross-browser testing on Chrome, Firefox, IE, Safari
+ - Cross-platform testing on Windows, Mac, Chrome
  - Interaction with Excel (xls,xlsx,xlsm) files
  - Interaction with CSV files
  - Interaction with XML files
- - Interaction with Databases (Oracle,MySQL,MongoDB)
+ - Interaction with Databases (Oracle, MySQL, MongoDB)
  - Interaction with Properties files
  - Interaction with Shell Commands
-  - TestNG, ReportNG, Allure & Extent Reports integrated for better reporting
-  - Usage of TestNG and WebDriver Event Listeners
- - Barcode, QR Code Reader
+ - Interaction with Images
+ - Interaction with PDFs
+ - Interaction with Barcode and QR Code 
+ - Multiple reports support - TestNG, ReportNG, Allure & Extent Reports
+ - Usage of TestNG and WebDriver Event Listeners
  
 
 # Software Stack
